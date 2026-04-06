@@ -76,22 +76,62 @@ export default function HomePage() {
       <Navbar />
 
       {/* ── HERO ── */}
-     
-      <section
-        style={{
-          // backgroundImage: `url('/online-shopping-with-smartphone-lamb.jpg')`,
-          backgroundSize: "91%",
-          backgroundPosition: "left center",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "#FDFAF5",
-          padding: "64px 32px 56px",
-          display: "grid",
-          gridTemplateColumns: "1fr 380px",
-          gap: "48px",
-          alignItems: "center",
-          borderBottom: "0.5px solid #D5C9B0",
-        }}
-      >
+
+      {/* Add this to your global CSS or a <style> tag */}
+      <style>{`
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 48px;
+    align-items: center;
+    background-size: 91%;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-color: #FDFAF5;
+    padding: 64px 32px 56px;
+    border-bottom: 0.5px solid #D5C9B0;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 40px 20px 40px;
+    }
+  }
+
+  .hero-stats-card {
+    background: #F5F0E8;
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-stats-card {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+    .hero-stats-label {
+      grid-column: 1 / -1;
+    }
+    .hero-stat-item {
+      padding: 14px 12px !important;
+      border-bottom: 0.5px solid #D5C9B0 !important;
+    }
+    .hero-stat-item:nth-last-child(-n+2) {
+      border-bottom: none !important;
+    }
+  }
+
+  .hero-cta-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+`}</style>
+
+      <section className="hero-section">
         <div>
           <div
             style={{
@@ -107,7 +147,7 @@ export default function HomePage() {
           <h1
             style={{
               fontFamily: "var(--font-serif)",
-              fontSize: "38px",
+              fontSize: "clamp(26px, 4vw, 38px)",
               fontWeight: 500,
               lineHeight: 1.15,
               color: "#1C1C1C",
@@ -131,7 +171,11 @@ export default function HomePage() {
             for e-commerce businesses running 500 to 500,000 SKUs.
             Execution-heavy. SLA-backed. No lock-in.
           </p>
-          <Link href="/audit" style={{ display: "flex", gap: "10px", textDecoration: "none" }}>
+          <Link
+            href="/audit"
+            className="hero-cta-row"
+            style={{ textDecoration: "none" }}
+          >
             <div
               style={{
                 background: "#2D6A4F",
@@ -160,14 +204,9 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div
-          style={{
-            background: "#F5F0E8",
-            borderRadius: "8px",
-            padding: "24px",
-          }}
-        >
+        <div className="hero-stats-card">
           <div
+            className="hero-stats-label"
             style={{
               fontSize: "11px",
               color: "#888780",
@@ -180,6 +219,7 @@ export default function HomePage() {
           {stats.map((s, i) => (
             <div
               key={i}
+              className="hero-stat-item"
               style={{
                 padding: "14px 0",
                 borderBottom:
@@ -241,7 +281,35 @@ export default function HomePage() {
       </div>
 
       {/* ── SOLUTIONS ── */}
-      <section style={{ padding: "56px 32px", background: "#FDFAF5" }}>
+      <style>{`
+  .solutions-section {
+    padding: 56px 32px;
+    background: #FDFAF5;
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  @media (max-width: 1024px) {
+    .solutions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .solutions-section {
+      padding: 40px 20px;
+    }
+    .solutions-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+`}</style>
+
+      <section className="solutions-section">
         <div
           style={{
             fontSize: "10px",
@@ -256,7 +324,7 @@ export default function HomePage() {
         <h2
           style={{
             fontFamily: "var(--font-serif)",
-            fontSize: "26px",
+            fontSize: "clamp(20px, 3vw, 26px)",
             fontWeight: 500,
             color: "#1C1C1C",
             marginBottom: "8px",
@@ -277,13 +345,8 @@ export default function HomePage() {
           listings, the support, the data — that&apos;s where capacity quietly
           disappears. We fill that gap.
         </p>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3,minmax(0,1fr))",
-            gap: "16px",
-          }}
-        >
+
+        <div className="solutions-grid">
           {solutions.map((s) => (
             <div
               key={s.num}
@@ -414,7 +477,35 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section style={{ padding: "56px 32px", background: "#F5F0E8" }}>
+      <style>{`
+  .services-section {
+    padding: 56px 32px;
+    background: #F5F0E8;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .services-section {
+      padding: 40px 20px;
+    }
+    .services-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+`}</style>
+
+      <section className="services-section">
         <div
           style={{
             fontSize: "10px",
@@ -429,7 +520,7 @@ export default function HomePage() {
         <h2
           style={{
             fontFamily: "var(--font-serif)",
-            fontSize: "26px",
+            fontSize: "clamp(20px, 3vw, 26px)",
             fontWeight: 500,
             color: "#1C1C1C",
             marginBottom: "8px",
@@ -447,13 +538,7 @@ export default function HomePage() {
         >
           For buyers who know exactly what they need.
         </p>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(5,minmax(0,1fr))",
-            gap: "12px",
-          }}
-        >
+        <div className="services-grid">
           {services.map((s) => (
             <div
               key={s.title}
@@ -629,13 +714,11 @@ export default function HomePage() {
       >
         <div>
           <div
-            
             style={{
               fontFamily: "var(--font-serif)",
               fontSize: "22px",
               color: "#fff",
               fontWeight: 500,
-             
             }}
           >
             Start with a free catalog audit — no commitment.
@@ -662,7 +745,7 @@ export default function HomePage() {
             fontWeight: 500,
             whiteSpace: "nowrap",
             cursor: "pointer",
-            textDecoration:"none"
+            textDecoration: "none",
           }}
         >
           Get free catalog audit
