@@ -10,9 +10,31 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
+      <style>{`
+        .pricing-hero { background: #F5F0E8; padding: 48px 32px 40px; border-bottom: 0.5px solid #D5C9B0; }
+        .pricing-section { padding: 56px 32px; background: #FDFAF5; }
+        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; gap: 24px; }
+        .audit-banner-btn { background: #2D6A4F; color: #fff; padding: 13px 28px; border-radius: 4px; font-size: 13px; font-weight: 500; white-space: nowrap; cursor: pointer; flex-shrink: 0; }
+
+        @media (max-width: 1024px) {
+          .pricing-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 640px) {
+          .pricing-hero { padding: 36px 16px 32px; }
+          .pricing-hero h1 { font-size: 26px !important; }
+          .pricing-section { padding: 40px 16px; }
+          .pricing-grid { grid-template-columns: 1fr; }
+          .audit-banner { flex-direction: column; align-items: flex-start; padding: 28px 20px; }
+          .audit-banner-title { font-size: 18px !important; }
+          .audit-banner-btn { width: 100%; text-align: center; }
+        }
+      `}</style>
+
       <Navbar />
 
-      <div style={{ background: "#F5F0E8", padding: "48px 32px 40px", borderBottom: "0.5px solid #D5C9B0" }}>
+      <div className="pricing-hero">
         <div style={{ fontSize: "11px", color: "#2D6A4F", fontWeight: 500, marginBottom: "16px" }}>Pricing</div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "32px", fontWeight: 500, color: "#1C1C1C", marginBottom: "12px" }}>
           Transparent pricing. <em style={{ color: "#2D6A4F" }}>No surprises.</em>
@@ -22,8 +44,8 @@ export default function PricingPage() {
         </p>
       </div>
 
-      <section style={{ padding: "56px 32px", background: "#FDFAF5" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "16px", marginBottom: "32px" }}>
+      <section className="pricing-section">
+        <div className="pricing-grid">
 
           {/* Catalog & Listing */}
           <div style={{ border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "24px", background: "#FDFAF5" }}>
@@ -58,16 +80,16 @@ export default function PricingPage() {
         </div>
 
         {/* Audit Banner */}
-        <div style={{ background: "#1C1C1C", padding: "40px 32px", display: "flex", justifyContent: "space-between", alignItems: "center", borderRadius: "8px" }}>
+        <div className="audit-banner">
           <div>
-            <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>
+            <div className="audit-banner-title" style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>
               Not sure which plan fits? Start with the free audit.
             </div>
             <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.6)", marginTop: "6px" }}>
               We review 50 of your SKUs, deliver a written report, and recommend the right engagement. No credit card required.
             </div>
           </div>
-          <div style={{ background: "#2D6A4F", color: "#fff", padding: "13px 28px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, whiteSpace: "nowrap", cursor: "pointer" }}>
+          <div className="audit-banner-btn">
             Get free catalog audit
           </div>
         </div>

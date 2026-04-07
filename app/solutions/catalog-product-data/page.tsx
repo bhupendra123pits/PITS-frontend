@@ -89,25 +89,67 @@ export default function CatalogProductDataPage() {
 
       {/* ── WHAT'S INCLUDED ── */}
       <section style={{ padding: "56px 32px", borderBottom: "0.5px solid #D5C9B0" }}>
-        <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "10px" }}>WHAT&apos;S INCLUDED</div>
-        <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "26px", fontWeight: 500, color: "#1C1C1C", marginBottom: "8px" }}>
-          Everything in the catalog pipeline.
-        </h2>
-        <p style={{ fontSize: "13px", color: "#555550", lineHeight: 1.65, maxWidth: "520px", marginBottom: "36px" }}>
-          From raw supplier data to clean, live, platform-ready listings. Every service below is available standalone or as part of a retainer.
-        </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
-          {includes.map((item) => (
-            <div key={item.title} style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "20px" }}>
-              <div style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "8px" }}>
-                <CheckIcon />
-                <div style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C" }}>{item.title}</div>
-              </div>
-              <div style={{ fontSize: "12px", color: "#555550", lineHeight: 1.6, paddingLeft: "28px" }}>{item.body}</div>
-            </div>
-          ))}
+  <style>{`
+    .includes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1024px) {
+      .includes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .includes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .includes-section {
+        padding: 40px 16px;
+      }
+      .includes-heading {
+        font-size: 22px !important;
+      }
+    }
+  `}</style>
+
+  <div
+    className="includes-section"
+    style={{ padding: "56px 32px", borderBottom: "0.5px solid #D5C9B0" }}
+  >
+    <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "10px" }}>
+      WHAT&apos;S INCLUDED
+    </div>
+    <h2
+      className="includes-heading"
+      style={{ fontFamily: "var(--font-serif)", fontSize: "26px", fontWeight: 500, color: "#1C1C1C", marginBottom: "8px" }}
+    >
+      Everything in the catalog pipeline.
+    </h2>
+    <p style={{ fontSize: "13px", color: "#555550", lineHeight: 1.65, maxWidth: "520px", marginBottom: "36px" }}>
+      From raw supplier data to clean, live, platform-ready listings. Every service below is available standalone or as part of a retainer.
+    </p>
+
+    <div className="includes-grid">
+      {includes.map((item) => (
+        <div
+          key={item.title}
+          style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "20px" }}
+        >
+          <div style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "8px" }}>
+            <CheckIcon />
+            <div style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C" }}>{item.title}</div>
+          </div>
+          <div style={{ fontSize: "12px", color: "#555550", lineHeight: 1.6, paddingLeft: "28px" }}>
+            {item.body}
+          </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ── HOW IT WORKS ── */}
       <section style={{ padding: "56px 32px", background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}>

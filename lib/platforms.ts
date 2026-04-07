@@ -51,7 +51,7 @@ export const platforms: Record<string, Platform> = {
       "Weekly operational reporting",
     ],
     stats: [
-      { n: "500+", l: "Shopify stores served" },
+      { n: "100+", l: "Shopify stores served" },
       { n: "4hr", l: "Support response SLA" },
       { n: "99.1%", l: "Catalog accuracy rate" },
       { n: "15yrs", l: "Operations experience" },
@@ -89,7 +89,7 @@ export const platforms: Record<string, Platform> = {
     stats: [
       { n: "3x", l: "Avg. visibility lift" },
       { n: "99.1%", l: "Listing accuracy" },
-      { n: "500+", l: "Amazon stores managed" },
+      { n: "100+", l: "Amazon stores managed" },
       { n: "15yrs", l: "Seller Central experience" },
     ],
     also: ["Shopify", "eBay", "Walmart", "Etsy"],
@@ -125,7 +125,7 @@ export const platforms: Record<string, Platform> = {
     stats: [
       { n: "Top", l: "Rated Seller support" },
       { n: "99.1%", l: "Listing accuracy" },
-      { n: "500+", l: "eBay stores managed" },
+      { n: "100+", l: "eBay stores managed" },
       { n: "15yrs", l: "eBay operations experience" },
     ],
     also: ["Amazon", "Shopify", "Etsy", "Walmart"],
@@ -159,7 +159,7 @@ export const platforms: Record<string, Platform> = {
       "Image resizing and formatting",
     ],
     stats: [
-      { n: "500+", l: "Stores managed" },
+      { n: "100+", l: "Stores managed" },
       { n: "4hr", l: "Support response SLA" },
       { n: "99.1%", l: "Listing accuracy" },
       { n: "15yrs", l: "Marketplace experience" },
@@ -195,7 +195,7 @@ export const platforms: Record<string, Platform> = {
       "Multi-channel inventory sync",
     ],
     stats: [
-      { n: "500+", l: "Stores managed" },
+      { n: "100+", l: "Stores managed" },
       { n: "99.1%", l: "Data accuracy" },
       { n: "48hr", l: "Standard turnaround" },
       { n: "15yrs", l: "Platform experience" },
@@ -231,7 +231,7 @@ export const platforms: Record<string, Platform> = {
       "Mirakl marketplace operations",
     ],
     stats: [
-      { n: "500+", l: "Stores managed" },
+      { n: "100+", l: "Stores managed" },
       { n: "99.1%", l: "Listing accuracy" },
       { n: "6+", l: "Marketplaces supported" },
       { n: "15yrs", l: "Operations experience" },

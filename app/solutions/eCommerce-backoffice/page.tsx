@@ -69,7 +69,39 @@ export default function EcommerceBackofficePage() {
       </div>
 
       {/* ── SLA BAR ── */}
-      <div style={{ background: "#2D6A4F", padding: "20px 32px", display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
+      <style>{`
+        .sla-bar {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+        @media (max-width: 640px) {
+          .sla-bar {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            padding: 20px 16px !important;
+          }
+          .sla-promise-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .sla-stats-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+          .cta-banner {
+            flex-direction: column !important;
+            gap: 20px !important;
+            padding: 40px 16px !important;
+          }
+          .hero-buttons {
+            flex-direction: column !important;
+          }
+        }
+        @media (max-width: 1024px) {
+          .sla-promise-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
+      <div className="sla-bar" style={{ background: "#2D6A4F", padding: "20px 32px" }}>
         {slaItems.map((s) => (
           <div key={s.label} style={{ textAlign: "center" }}>
             <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>{s.metric}</div>
@@ -80,14 +112,37 @@ export default function EcommerceBackofficePage() {
 
       {/* ── SERVICES GRID ── */}
       <section style={{ padding: "56px 32px", borderBottom: "0.5px solid #D5C9B0" }}>
+        <style>{`
+          .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+          }
+          @media (max-width: 1024px) {
+            .services-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+          @media (max-width: 640px) {
+            .services-grid {
+              grid-template-columns: 1fr;
+            }
+            .services-section {
+              padding: 40px 16px;
+            }
+            .services-heading {
+              font-size: 22px !important;
+            }
+          }
+        `}</style>
         <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "10px" }}>WHAT WE MANAGE</div>
-        <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "26px", fontWeight: 500, color: "#1C1C1C", marginBottom: "8px" }}>
+        <h2 className="services-heading" style={{ fontFamily: "var(--font-serif)", fontSize: "26px", fontWeight: 500, color: "#1C1C1C", marginBottom: "8px" }}>
           Every recurring back-office task.
         </h2>
         <p style={{ fontSize: "13px", color: "#555550", lineHeight: 1.65, maxWidth: "520px", marginBottom: "36px" }}>
           Available as individual services or as a full managed backoffice retainer. All delivered with agreed SLAs and weekly reporting.
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "16px" }}>
+        <div className="services-grid">
           {services.map((s) => (
             <div key={s.title} style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "24px" }}>
               <div style={{ fontSize: "24px", marginBottom: "12px" }}>{s.icon}</div>
@@ -100,7 +155,7 @@ export default function EcommerceBackofficePage() {
 
       {/* ── SLA PROMISE ── */}
       <section style={{ padding: "56px 32px", background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "center" }}>
+        <div className="sla-promise-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "center" }}>
           <div>
             <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "10px" }}>THE SLA PROMISE</div>
             <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "26px", fontWeight: 500, color: "#1C1C1C", marginBottom: "14px" }}>
@@ -126,7 +181,7 @@ export default function EcommerceBackofficePage() {
             {[
               { n: "4hr", l: "Response SLA", sub: "Across all accounts" },
               { n: "98%", l: "Retention rate", sub: "Year on year" },
-              { n: "500+", l: "Stores managed", sub: "Globally" },
+              { n: "100+", l: "Stores managed", sub: "Globally" },
               { n: "15yrs", l: "Experience", sub: "E-commerce only" },
             ].map((s) => (
               <div key={s.l} style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "20px", textAlign: "center" }}>

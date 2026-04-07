@@ -23,3 +23,16 @@ model AuditRequest {
   hearAbout       String?
   createdAt       DateTime @default(now())
 }
+
+model ContactSubmission {
+  id         String   @id @default(cuid())
+  firstName  String
+  lastName   String
+  email      String
+  phone      String?
+  company    String
+  topic      String?
+  message    String?
+  hearAbout  String?
+  createdAt  DateTime @default(now())
+}

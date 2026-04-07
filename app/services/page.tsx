@@ -126,7 +126,7 @@ export default function ServicesPage() {
               From $0.50 per SKU · Retainers from $350/month
             </div>
             <div style={{ fontSize: "13px", color: "#0F6E56", lineHeight: 1.6 }}>
-              All services available standalone or bundled. Volume discounts for 500+ SKUs. No long contracts.
+              All services available standalone or bundled. Volume discounts for 100+ SKUs. No long contracts.
             </div>
           </div>
           <Link href="/pricing" style={{ background: "#2D6A4F", color: "#fff", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>

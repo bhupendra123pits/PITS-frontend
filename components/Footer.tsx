@@ -17,12 +17,12 @@ const serviceLinks = [
 ];
 
 const platformLinks = [
-  { label: "Amazon", href: "/platform/amazon" },
-  { label: "eBay", href: "/platform/ebay" },
-  { label: "Shopify", href: "/platform/shopify" },
-  { label: "Etsy", href: "/platform/etsy" },
-  { label: "BigCommerce & WooCommerce", href: "/platform/bigcommerce-woocommerce" },
-  { label: "Walmart & others", href: "/platform/walmart" },
+  { label: "Amazon", href: "/platforms/amazon" },
+  { label: "eBay", href: "/platforms/ebay" },
+  { label: "Shopify", href: "/platforms/shopify" },
+  { label: "Etsy", href: "/platforms/etsy" },
+  { label: "BigCommerce & WooCommerce", href: "/platforms/bigcommerce-woocommerce" },
+  { label: "Walmart & others", href: "/platforms/walmart" },
 ];
 
 const companyLinks = [
@@ -146,7 +146,7 @@ export default function Footer() {
         {/* Brand column */}
         <div className="footer-brand-col">
           <div style={{ marginBottom: "12px" }}>
-            <img src="/Logo_footer.png" alt="Professional ITS Logo" style={{ height: "55px" }} />
+            <img src="/PITS Logo 2026.png" alt="Professional ITS Logo" style={{ height: "55px" }} />
           </div>
           <div style={{ fontSize: "12px", color: "#888780", lineHeight: 1.6, maxWidth: "320px" }}>
             E-commerce back-office specialists since 2010. We handle catalog
@@ -213,10 +213,10 @@ export default function Footer() {
       <div style={{ borderTop: "0.5px solid #D5C9B0", paddingTop: "20px" }}>
         <div className="footer-bottom">
           <div style={{ fontSize: "11px", color: "#B4B2A9" }}>
-            © 2025 Professional ITS · professionalits.com
+            © 2026 Professional ITS · professionalits.com
           </div>
           <div style={{ fontSize: "11px", color: "#B4B2A9" }}>
-            US: +1-551-xxx-xxxx · India: +91-xxx-xxx-xxxx
+            US: +1 (732) 924-9050 · India: +91 98110 18501
           </div>
         </div>
       </div>

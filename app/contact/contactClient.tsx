@@ -25,19 +25,9 @@ const contactInfo = [
         <path d="M2 4l6 5 6-5M2 4h12v9H2V4z" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    label: "Email — US",
-    value: "us@professionalits.com",
+    label: "Email",
+    value: "info@professionalits.com",
     sub: "General enquiries & sales",
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 16 16" style={{ width: 14, height: 14 }} fill="none">
-        <path d="M2 4l6 5 6-5M2 4h12v9H2V4z" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    label: "Email — India",
-    value: "india@professionalits.com",
-    sub: "Operations & support",
   },
   {
     icon: (
@@ -46,7 +36,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Phone — US",
-    value: "+1-551-xxx-xxxx",
+    value: "+1 (732) 924-9050",
     sub: "Mon–Fri, 9am–6pm EST",
   },
   {
@@ -56,7 +46,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Phone — India",
-    value: "+91-xxx-xxx-xxxx",
+    value: "+91 98110 18501",
     sub: "Mon–Sat, 9am–7pm IST",
   },
 ];
@@ -77,6 +67,7 @@ const inputStyle = {
   background: "#FFFFFF",
   fontFamily: "inherit",
   outline: "none",
+  boxSizing: "border-box" as const,
 };
 
 const labelStyle = {
@@ -90,12 +81,68 @@ const labelStyle = {
 
 export default function ContactClient() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    topic: "",
+    message: "",
+    hearAbout: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    setError("");
+    console.log("Contact Form Data:", form);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+      console.log("API Response:", data);
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error("Submit error:", err);
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (submitted) {
     return (
       <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", minHeight: "100vh" }}>
+        <style>{`
+          .contact-submitted { padding: 80px 32px; }
+          @media (max-width: 768px) {
+            .contact-submitted { padding: 48px 20px; }
+            .contact-submitted h1 { font-size: 22px !important; }
+            .contact-submitted-btns { flex-direction: column; }
+            .contact-submitted-btns a { text-align: center; }
+          }
+        `}</style>
         <Navbar />
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "80px 32px", textAlign: "center" }}>
+        <div className="contact-submitted" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
           <div style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#E8F5EE", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px" }}>
             <svg viewBox="0 0 24 24" style={{ width: "24px", height: "24px" }} fill="none">
               <path d="M5 12L10 17L19 7" stroke="#2D6A4F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -107,7 +154,7 @@ export default function ContactClient() {
           <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.7, maxWidth: "420px", marginBottom: "32px" }}>
             Thanks for reaching out. We&apos;ll review your message and get back to you within 4 hours on business days.
           </p>
-          <div style={{ display: "flex", gap: "12px" }}>
+          <div className="contact-submitted-btns" style={{ display: "flex", gap: "12px" }}>
             <Link href="/" style={{ background: "#2D6A4F", color: "#fff", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none" }}>
               Back to home
             </Link>
@@ -123,15 +170,33 @@ export default function ContactClient() {
 
   return (
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
+      <style>{`
+        .contact-hero { padding: 48px 32px 40px; }
+        .contact-hero h1 { font-size: 34px; }
+        .contact-main { display: grid; grid-template-columns: 1fr 360px; }
+        .contact-form { padding: 40px 40px 56px; border-right: 0.5px solid #D5C9B0; }
+        .contact-sidebar { padding: 32px 24px; background: #FDFAF5; }
+        .form-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+        @media (max-width: 768px) {
+          .contact-hero { padding: 28px 20px 24px; }
+          .contact-hero h1 { font-size: 26px !important; }
+          .contact-main { grid-template-columns: 1fr; }
+          .contact-form { padding: 28px 20px 40px; border-right: none; border-bottom: 0.5px solid #D5C9B0; }
+          .contact-sidebar { padding: 28px 20px; }
+          .form-two-col { grid-template-columns: 1fr; }
+        }
+      `}</style>
+
       <Navbar />
 
       {/* ── HERO ── */}
-      <div style={{ background: "#F5F0E8", padding: "48px 32px 40px", borderBottom: "0.5px solid #D5C9B0" }}>
+      <div className="contact-hero" style={{ background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}>
         <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
           Home <span style={{ color: "#2D6A4F" }}>/ Contact</span>
         </div>
         <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "12px" }}>GET IN TOUCH</div>
-        <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "34px", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "12px" }}>
+        <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "12px" }}>
           Talk to someone who <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>knows the platforms.</em>
         </h1>
         <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.75, maxWidth: "560px" }}>
@@ -140,10 +205,10 @@ export default function ContactClient() {
       </div>
 
       {/* ── MAIN GRID ── */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 360px", gap: 0 }}>
+      <div className="contact-main">
 
         {/* ── FORM ── */}
-        <div style={{ padding: "40px 40px 56px", borderRight: "0.5px solid #D5C9B0" }}>
+        <div className="contact-form">
           <div style={{ fontSize: "10px", letterSpacing: "1.2px", color: "#2D6A4F", fontWeight: 500, marginBottom: "14px" }}>SEND US A MESSAGE</div>
           <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#1C1C1C", marginBottom: "6px" }}>
             What can we help you with?
@@ -152,76 +217,64 @@ export default function ContactClient() {
             Fill in the form and we&apos;ll get back to you within 4 hours on business days.
           </p>
 
-          {/* Contact details */}
+          {/* YOUR DETAILS */}
           <div style={{ fontSize: "10px", letterSpacing: "1.2px", color: "#555550", fontWeight: 500, marginBottom: "14px" }}>YOUR DETAILS</div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+          <div className="form-two-col" style={{ marginBottom: "14px" }}>
             <div>
               <label style={labelStyle}>First name <span style={{ color: "#2D6A4F" }}>*</span></label>
-              <input style={inputStyle} type="text" placeholder="Jane" />
+              <input style={inputStyle} name="firstName" type="text" placeholder="Jane"
+                value={form.firstName} onChange={handleChange} />
             </div>
             <div>
               <label style={labelStyle}>Last name <span style={{ color: "#2D6A4F" }}>*</span></label>
-              <input style={inputStyle} type="text" placeholder="Smith" />
+              <input style={inputStyle} name="lastName" type="text" placeholder="Smith"
+                value={form.lastName} onChange={handleChange} />
             </div>
           </div>
           <div style={{ marginBottom: "14px" }}>
             <label style={labelStyle}>Business email <span style={{ color: "#2D6A4F" }}>*</span></label>
-            <input style={inputStyle} type="email" placeholder="jane@yourstore.com" />
+            <input style={inputStyle} name="email" type="email" placeholder="jane@yourstore.com"
+              value={form.email} onChange={handleChange} />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "28px" }}>
+          <div className="form-two-col" style={{ marginBottom: "28px" }}>
             <div>
               <label style={labelStyle}>Phone number</label>
-              <input style={inputStyle} type="tel" placeholder="+1 555 000 0000" />
+              <input style={inputStyle} name="phone" type="tel" placeholder="+1 555 000 0000"
+                value={form.phone} onChange={handleChange} />
             </div>
             <div>
-              <label style={labelStyle}>Company / store name</label>
-              <input style={inputStyle} type="text" placeholder="Your Store Ltd" />
+              <label style={labelStyle}>Company email <span style={{ color: "#2D6A4F" }}>*</span></label>
+              <input style={inputStyle} name="company" type="text" placeholder="Your Store Ltd"
+                value={form.company} onChange={handleChange} />
             </div>
           </div>
 
-          {/* Enquiry details */}
+          {/* ENQUIRY DETAILS */}
           <div style={{ borderTop: "0.5px solid #EDE5D5", paddingTop: "24px", marginBottom: "14px" }}>
             <div style={{ fontSize: "10px", letterSpacing: "1.2px", color: "#555550", fontWeight: 500, marginBottom: "14px" }}>ENQUIRY DETAILS</div>
           </div>
           <div style={{ marginBottom: "14px" }}>
             <label style={labelStyle}>What are you enquiring about? <span style={{ color: "#2D6A4F" }}>*</span></label>
-            <select style={{ ...inputStyle, appearance: "none" as const }}>
+            <select style={{ ...inputStyle, appearance: "none" as const }} name="topic"
+              value={form.topic} onChange={handleChange}>
               <option value="">Select a topic</option>
               {topics.map((t) => <option key={t}>{t}</option>)}
             </select>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
-            <div>
-              <label style={labelStyle}>Approximate catalog size</label>
-              <select style={{ ...inputStyle, appearance: "none" as const }}>
-                <option value="">Select range</option>
-                <option>Under 500 SKUs</option>
-                <option>500 – 2,000 SKUs</option>
-                <option>2,000 – 10,000 SKUs</option>
-                <option>10,000 – 50,000 SKUs</option>
-                <option>50,000+ SKUs</option>
-              </select>
-            </div>
-            <div>
-              <label style={labelStyle}>Primary platform</label>
-              <select style={{ ...inputStyle, appearance: "none" as const }}>
-                <option value="">Select platform</option>
-                {["Amazon", "Shopify", "eBay", "Etsy", "WooCommerce", "BigCommerce", "Magento", "Walmart", "Other"].map((p) => (
-                  <option key={p}>{p}</option>
-                ))}
-              </select>
-            </div>
           </div>
           <div style={{ marginBottom: "14px" }}>
             <label style={labelStyle}>Your message <span style={{ color: "#2D6A4F" }}>*</span></label>
             <textarea
               style={{ ...inputStyle, height: "120px", resize: "none" as const }}
+              name="message"
               placeholder="Tell us about your project, current challenges, or what you'd like help with..."
+              value={form.message}
+              onChange={handleChange}
             />
           </div>
           <div style={{ marginBottom: "28px" }}>
             <label style={labelStyle}>How did you hear about us?</label>
-            <select style={{ ...inputStyle, appearance: "none" as const }}>
+            <select style={{ ...inputStyle, appearance: "none" as const }} name="hearAbout"
+              value={form.hearAbout} onChange={handleChange}>
               <option value="">Select one</option>
               <option>Google search</option>
               <option>LinkedIn</option>
@@ -231,13 +284,19 @@ export default function ContactClient() {
             </select>
           </div>
 
-          {/* Submit */}
+          {/* SUBMIT */}
           <div style={{ borderTop: "0.5px solid #EDE5D5", paddingTop: "24px" }}>
+            {error && (
+              <div style={{ background: "#FEF2F2", border: "0.5px solid #FECACA", borderRadius: "4px", padding: "10px 14px", fontSize: "12px", color: "#DC2626", marginBottom: "16px" }}>
+                {error}
+              </div>
+            )}
             <button
-              onClick={() => setSubmitted(true)}
-              style={{ width: "100%", background: "#2D6A4F", color: "#fff", border: "none", padding: "14px 24px", borderRadius: "4px", fontSize: "14px", fontWeight: 500, cursor: "pointer" }}
+              onClick={handleSubmit}
+              disabled={loading}
+              style={{ width: "100%", background: loading ? "#88B8A0" : "#2D6A4F", color: "#fff", border: "none", padding: "14px 24px", borderRadius: "4px", fontSize: "14px", fontWeight: 500, cursor: loading ? "not-allowed" : "pointer", transition: "background 0.15s" }}
             >
-              Send message →
+              {loading ? "Sending..." : "Send message →"}
             </button>
             <div style={{ textAlign: "center", fontSize: "11px", color: "#888780", marginTop: "10px" }}>
               We respond within 4 hours on business days · Your data is never shared
@@ -246,7 +305,7 @@ export default function ContactClient() {
         </div>
 
         {/* ── SIDEBAR ── */}
-        <div style={{ padding: "32px 24px", background: "#FDFAF5" }}>
+        <div className="contact-sidebar">
 
           {/* Contact info */}
           <div style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "20px", marginBottom: "16px" }}>
@@ -276,23 +335,7 @@ export default function ContactClient() {
             ))}
           </div>
 
-          {/* Response time */}
-          <div style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "20px", marginBottom: "16px" }}>
-            <div style={{ fontSize: "11px", fontWeight: 500, color: "#1C1C1C", marginBottom: "14px", letterSpacing: "0.3px" }}>WHAT TO EXPECT</div>
-            {[
-              { n: "4hr", l: "First response SLA" },
-              { n: "24hr", l: "Full proposal if needed" },
-              { n: "48hr", l: "Free audit delivery" },
-              { n: "98%", l: "Client retention rate" },
-            ].map((s) => (
-              <div key={s.l} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: "0.5px solid #F5F0E8" }}>
-                <div style={{ fontSize: "12px", color: "#555550" }}>{s.l}</div>
-                <div style={{ fontFamily: "var(--font-serif)", fontSize: "18px", fontWeight: 500, color: "#2D6A4F" }}>{s.n}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Prefer audit CTA */}
+          {/* Audit CTA */}
           <div style={{ background: "#E8F5EE", border: "0.5px solid #9FE1CB", borderRadius: "6px", padding: "16px" }}>
             <div style={{ fontSize: "12px", fontWeight: 500, color: "#085041", marginBottom: "6px" }}>
               Prefer to start with an audit?

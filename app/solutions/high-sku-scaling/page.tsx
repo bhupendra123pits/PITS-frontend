@@ -27,7 +27,7 @@ const forWho = [
 const capabilities = [
   "Supplier feed ingestion in any format — CSV, XML, XLSX, EDI",
   "Automated field mapping to platform taxonomy",
-  "High-volume bulk upload pipelines — 500+ SKUs/day",
+  "High-volume bulk upload pipelines — 100+ SKUs/day",
   "Multi-brand catalog architecture and governance",
   "Cross-platform synchronisation — one feed, multiple platforms",
   "Ongoing scaled maintenance retainers",
@@ -78,7 +78,7 @@ export default function HighSkuScalingPage() {
       <div style={{ background: "#2D6A4F", padding: "20px 32px", display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
         {[
           { n: "500K+", l: "SKUs managed" },
-          { n: "500+", l: "SKUs per day" },
+          { n: "100+", l: "SKUs per day" },
           { n: "99.1%", l: "Accuracy rate" },
           { n: "15yrs", l: "Operations experience" },
         ].map((s) => (

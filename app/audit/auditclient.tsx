@@ -1,8 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+}
 
 const platforms = [
   "Amazon", "eBay", "Shopify", "Walmart",
@@ -25,13 +36,14 @@ const steps = [
 ];
 
 const stats = [
-  { n: "500+", l: "Stores audited" },
+  { n: "100+", l: "Stores audited" },
   { n: "48hr", l: "Delivery time" },
   { n: "98%", l: "Retention rate" },
   { n: "$0", l: "Fully free" },
 ];
 
 export default function AuditPage() {
+  const isMobile = useIsMobile();
   const [selected, setSelected] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -63,27 +75,18 @@ export default function AuditPage() {
     );
 
   const handleSubmit = async () => {
-    const payload = {
-      ...form,
-      otherPlatforms: selected.join(", "),
-    };
-
-    // ✅ Console log all fields
+    const payload = { ...form, otherPlatforms: selected.join(", ") };
     console.log("Form Data:", payload);
-
     setLoading(true);
     setError("");
-
     try {
       const res = await fetch("/api/audit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
       const data = await res.json();
       console.log("API Response:", data);
-
       if (data.success) {
         setSubmitted(true);
       } else {
@@ -107,6 +110,7 @@ export default function AuditPage() {
     background: "#FFFFFF",
     fontFamily: "inherit",
     outline: "none",
+    boxSizing: "border-box" as const,
   };
 
   const labelStyle = {
@@ -121,20 +125,30 @@ export default function AuditPage() {
   if (submitted) {
     return (
       <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", minHeight: "100vh" }}>
+        <style>{`
+          .submitted-inner { padding: 80px 32px; }
+          .submitted-stats { grid-template-columns: repeat(4, 1fr); max-width: 400px; gap: 24px; }
+          @media (max-width: 768px) {
+            .submitted-inner { padding: 48px 20px; }
+            .submitted-h1 { font-size: 22px !important; }
+            .submitted-stats { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+            .submitted-next { padding: 16px !important; }
+          }
+        `}</style>
         <Navbar />
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "80px 32px", textAlign: "center" }}>
+        <div className="submitted-inner" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
           <div style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#E8F5EE", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px" }}>
             <svg viewBox="0 0 24 24" style={{ width: "24px", height: "24px" }} fill="none">
               <path d="M5 12L10 17L19 7" stroke="#2D6A4F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "28px", fontWeight: 500, color: "#1C1C1C", marginBottom: "12px" }}>
+          <h1 className="submitted-h1" style={{ fontFamily: "var(--font-serif)", fontSize: "28px", fontWeight: 500, color: "#1C1C1C", marginBottom: "12px" }}>
             Audit request received.
           </h1>
           <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.7, maxWidth: "440px", marginBottom: "32px" }}>
             We&apos;ll review your submission and confirm within 4 hours. Your written audit report will be delivered within 48 hours.
           </p>
-          <div style={{ display: "flex", gap: "24px", marginBottom: "40px" }}>
+          <div className="submitted-stats" style={{ display: "grid", marginBottom: "40px", width: "100%" }}>
             {stats.map((s) => (
               <div key={s.l} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-serif)", fontSize: "24px", fontWeight: 500, color: "#2D6A4F" }}>{s.n}</div>
@@ -142,7 +156,7 @@ export default function AuditPage() {
               </div>
             ))}
           </div>
-          <div style={{ background: "#F5F0E8", borderRadius: "8px", padding: "20px 28px", maxWidth: "400px", textAlign: "left" }}>
+          <div className="submitted-next" style={{ background: "#F5F0E8", borderRadius: "8px", padding: "20px 28px", maxWidth: "400px", width: "100%", textAlign: "left" }}>
             <div style={{ fontSize: "11px", color: "#2D6A4F", fontWeight: 500, letterSpacing: "0.5px", marginBottom: "8px" }}>WHAT HAPPENS NEXT</div>
             {steps.map((s) => (
               <div key={s.n} style={{ display: "flex", gap: "12px", marginBottom: "10px", alignItems: "flex-start" }}>
@@ -161,19 +175,53 @@ export default function AuditPage() {
 
   return (
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
+      <style>{`
+        /* HERO */
+        .audit-hero { padding: 48px 32px 40px; }
+        .audit-hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; }
+        .audit-h1 { font-size: 34px; }
+        .audit-hero-stats { display: flex; gap: 24px; }
+
+        /* MAIN LAYOUT */
+        .audit-main { display: grid; grid-template-columns: 1fr 340px; }
+
+        /* FORM */
+        .audit-form { padding: 40px 40px 56px; border-right: 0.5px solid #D5C9B0; }
+        .form-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+
+        /* SIDEBAR */
+        .audit-sidebar { padding: 32px 24px; background: #FDFAF5; }
+
+        @media (max-width: 768px) {
+          .audit-hero { padding: 28px 20px 24px; }
+          .audit-hero-grid { grid-template-columns: 1fr; gap: 0; }
+          .audit-h1 { font-size: 26px !important; }
+          .audit-hero-stats { display: none; }
+
+          .audit-main { grid-template-columns: 1fr; }
+
+          .audit-form { padding: 28px 20px 40px; border-right: none; border-bottom: 0.5px solid #D5C9B0; }
+          .form-two-col { grid-template-columns: 1fr; }
+          .platform-grid { grid-template-columns: repeat(2, 1fr); }
+
+          .audit-sidebar { padding: 28px 20px; }
+        }
+      `}</style>
+
       <Navbar />
 
       {/* HERO */}
-      <div style={{ background: "#F5F0E8", padding: "48px 32px 40px", borderBottom: "0.5px solid #D5C9B0" }}>
+      <div className="audit-hero" style={{ background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}>
         <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
           Home <span style={{ color: "#2D6A4F" }}>/ Free Catalog Audit</span>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: "40px" }}>
+        <div className="audit-hero-grid">
           <div>
             <div style={{ fontSize: "11px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "12px" }}>
               FREE · NO COMMITMENT · DELIVERED IN 48 HRS
             </div>
-            <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "34px", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "12px" }}>
+            <h1 className="audit-h1" style={{ fontFamily: "var(--font-serif)", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "12px" }}>
               Get your free catalog{" "}
               <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>audit.</em>
             </h1>
@@ -181,7 +229,7 @@ export default function AuditPage() {
               We review 50 of your SKUs — data completeness, listing quality, attribute accuracy — and deliver a written findings report. No credit card. No commitment.
             </p>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              {["Free — no credit card", "48hr turnaround", "Written findings report", "500+ stores audited"].map((t) => (
+              {["Free — no credit card", "48hr turnaround", "Written findings report", "100+ stores audited"].map((t) => (
                 <div key={t} style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "20px", padding: "5px 14px", fontSize: "11px", color: "#555550", display: "flex", alignItems: "center", gap: "6px" }}>
                   <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#2D6A4F", flexShrink: 0 }} />
                   {t}
@@ -189,7 +237,7 @@ export default function AuditPage() {
               ))}
             </div>
           </div>
-          <div style={{ display: "flex", gap: "24px" }}>
+          <div className="audit-hero-stats">
             {stats.map((s) => (
               <div key={s.l} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-serif)", fontSize: "26px", fontWeight: 500, color: "#2D6A4F" }}>{s.n}</div>
@@ -201,10 +249,10 @@ export default function AuditPage() {
       </div>
 
       {/* MAIN GRID */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: 0 }}>
+      <div className="audit-main">
 
         {/* FORM */}
-        <div style={{ padding: "40px 40px 56px", borderRight: "0.5px solid #D5C9B0" }}>
+        <div className="audit-form">
           <div style={{ marginBottom: "28px" }}>
             <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#1C1C1C", marginBottom: "6px" }}>Tell us about your store</h2>
             <p style={{ fontSize: "12px", color: "#888780", lineHeight: 1.6 }}>Takes about 3 minutes. The more detail you share, the more useful your audit report will be.</p>
@@ -212,7 +260,7 @@ export default function AuditPage() {
 
           {/* CONTACT */}
           <div style={{ fontSize: "10px", letterSpacing: "1.2px", color: "#2D6A4F", fontWeight: 500, marginBottom: "14px" }}>CONTACT DETAILS</div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+          <div className="form-two-col" style={{ marginBottom: "14px" }}>
             <div>
               <label style={labelStyle}>First name <span style={{ color: "#2D6A4F" }}>*</span></label>
               <input style={inputStyle} name="firstName" type="text" placeholder="Jane"
@@ -229,7 +277,7 @@ export default function AuditPage() {
             <input style={inputStyle} name="email" type="email" placeholder="jane@yourstore.com"
               value={form.email} onChange={handleChange} />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "28px" }}>
+          <div className="form-two-col" style={{ marginBottom: "28px" }}>
             <div>
               <label style={labelStyle}>Phone number</label>
               <input style={inputStyle} name="phone" type="tel" placeholder="+1 555 000 0000"
@@ -246,7 +294,7 @@ export default function AuditPage() {
           <div style={{ borderTop: "0.5px solid #EDE5D5", paddingTop: "24px", marginBottom: "14px" }}>
             <div style={{ fontSize: "10px", letterSpacing: "1.2px", color: "#2D6A4F", fontWeight: 500, marginBottom: "14px" }}>STORE DETAILS</div>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+          <div className="form-two-col" style={{ marginBottom: "14px" }}>
             <div>
               <label style={labelStyle}>Store URL</label>
               <input style={inputStyle} name="storeUrl" type="text" placeholder="www.yourstore.com"
@@ -275,7 +323,7 @@ export default function AuditPage() {
           </div>
           <div style={{ marginBottom: "28px" }}>
             <label style={labelStyle}>Other platforms you sell on</label>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px" }}>
+            <div className="platform-grid">
               {platforms.map((p) => (
                 <div key={p} onClick={() => togglePlatform(p)}
                   style={{ border: selected.includes(p) ? "1px solid #2D6A4F" : "0.5px solid #D5C9B0", borderRadius: "4px", padding: "8px 10px", fontSize: "12px", color: selected.includes(p) ? "#2D6A4F" : "#555550", background: selected.includes(p) ? "#E8F5EE" : "#FDFAF5", textAlign: "center" as const, cursor: "pointer", fontWeight: selected.includes(p) ? 500 : 400, transition: "all 0.15s" }}>
@@ -295,7 +343,7 @@ export default function AuditPage() {
               name="challenge" placeholder="e.g. Inaccurate attributes, duplicate listings..."
               value={form.challenge} onChange={handleChange} />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "36px" }}>
+          <div className="form-two-col" style={{ marginBottom: "36px" }}>
             <div>
               <label style={labelStyle}>Monthly order volume (approx.)</label>
               <select style={{ ...inputStyle, appearance: "none" as const }} name="orderVolume"
@@ -342,7 +390,7 @@ export default function AuditPage() {
         </div>
 
         {/* SIDEBAR */}
-        <div style={{ padding: "32px 24px", background: "#FDFAF5" }}>
+        <div className="audit-sidebar">
           <div style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "20px", marginBottom: "16px" }}>
             <div style={{ fontSize: "11px", fontWeight: 500, color: "#1C1C1C", marginBottom: "14px", letterSpacing: "0.3px" }}>WHAT YOU&apos;LL RECEIVE</div>
             {whatYouGet.map((item, i) => (
