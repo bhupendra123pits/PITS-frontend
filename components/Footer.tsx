@@ -146,7 +146,7 @@ export default function Footer() {
         {/* Brand column */}
         <div className="footer-brand-col">
           <div style={{ marginBottom: "12px" }}>
-            <img src="/PITS Logo 2026.png" alt="Professional ITS Logo" style={{ height: "55px" }} />
+            <img src="/PITS Logo Raw.png" alt="Professional ITS Logo" style={{ height: "65px" }} />
           </div>
           <div style={{ fontSize: "12px", color: "#888780", lineHeight: 1.6, maxWidth: "320px" }}>
             E-commerce back-office specialists since 2010. We handle catalog
