@@ -205,10 +205,11 @@ export default function Navbar() {
             src="/PITS Logo Raw.png"
             alt="Professional ITS Logo"
             style={{
-              height: "52px",
+              height: "53px",
               width: "auto",
               display: "block",
               objectFit: "contain",
+              marginTop:"4px",
             }}
           />
         </Link>
