@@ -67,10 +67,16 @@ const platformLinks = [
     href: "/platforms/shopify",
   },
   {
-    title: "BigCommerce / WooCommerce",
+    title: "BigCommerce",
     sub: null,
-    href: "/platforms/bigcommerce-woocommerce",
+    href: "/platforms/bigcommerce",
   },
+  {
+    title: "WooCommerce",
+    sub: null,
+    href: "/platforms/woocommerce",
+  },
+  
   {
     title: "Magento",
     sub: null,

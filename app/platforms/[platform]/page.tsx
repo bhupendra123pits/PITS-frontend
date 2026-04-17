@@ -193,7 +193,7 @@ export default async function PlatformPage({
           background: "#2D6A4F",
           padding: "20px 32px",
           display: "grid",
-          gridTemplateColumns: "repeat(4,1fr)",
+         gridTemplateColumns: `repeat(${p.stats.length},1fr)`,
         }}
       >
         {p.stats.map((s) => (
@@ -220,6 +220,117 @@ export default async function PlatformPage({
           </div>
         ))}
       </div>
+
+      {/* ── WHAT WE HANDLE (optional) ── */}
+      {p.whatWeHandle && p.whatWeHandle.length > 0 && (
+        <section style={{ padding: "56px 32px", borderBottom: "0.5px solid #D5C9B0" }}>
+          <div
+            style={{
+              fontSize: "10px",
+              letterSpacing: "1.5px",
+              color: "#2D6A4F",
+              fontWeight: 500,
+              marginBottom: "10px",
+            }}
+          >
+            WHAT WE HANDLE
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "26px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "40px",
+            }}
+          >
+            How we run your {p.name} store.
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "36px",maxWidth:"720px" }}>
+            {p.whatWeHandle.map((item) => (
+              <div key={item.title}>
+                <div
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    color: "#2D6A4F",
+                    marginBottom: "8px",
+                  }}
+                >
+                  {item.title}
+                </div>
+                {item.body && (
+                  <p
+                    style={{
+                      fontSize: "13px",
+                      color: "#555550",
+                      lineHeight: 1.75,
+                      marginBottom: item.bullets.length > 0 ? "12px" : 0,
+                    }}
+                  >
+                    {item.body}
+                  </p>
+                )}
+                {item.bullets.length > 0 && (
+                  <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
+                    {item.bullets.map((b) => (
+                      <li key={b} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                        <span style={{ color: "#2D6A4F", fontSize: "14px", lineHeight: "22px", flexShrink: 0 }}>•</span>
+                        <span style={{ fontSize: "13px", color: "#555550", lineHeight: 1.65 }}>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── WHY SECTION (optional) ── */}
+      {p.whySection && (
+        <section
+          style={{
+            background: "#1C1C1C",
+            padding: "48px 32px",
+            borderBottom: "0.5px solid #333",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "10px",
+              letterSpacing: "1.5px",
+              color: "#9FE1CB",
+              fontWeight: 500,
+              marginBottom: "12px",
+            }}
+          >
+            WHY IT MATTERS
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "22px",
+              fontWeight: 500,
+              color: "#fff",
+              marginBottom: "16px",
+              maxWidth: "640px",
+            }}
+          >
+            {p.whySection.title}
+          </h2>
+          <p
+            style={{
+              fontSize: "13px",
+              color: "rgba(255,255,255,0.65)",
+              lineHeight: 1.8,
+              maxWidth: "680px",
+            }}
+          >
+            {p.whySection.body}
+          </p>
+        </section>
+      )}
 
       {/* ── SERVICES GRID ── */}
       <section

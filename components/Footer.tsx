@@ -32,10 +32,8 @@ const serviceLinks = [
 const platformLinks = [
   { label: "Shopify", href: "/platforms/shopify" },
 
-  {
-    label: "BigCommerce & WooCommerce",
-    href: "/platforms/bigcommerce-woocommerce",
-  },
+  { label: "BigCommerce", href: "/platforms/bigcommerce" },
+  { label: "WooCommerce", href: "/platforms/woocommerce" },
   { label: "Magento", href: "/platforms/magento" },
   { label: "opencart", href: "/platforms/opencart" },
   { label: "volusion", href: "/platforms/volusion" },

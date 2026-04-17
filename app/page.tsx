@@ -43,7 +43,7 @@ const solutions = [
 ];
 
 const stats = [
-  { n: "500+", l: "E-commerce stores served globally" },
+  { n: "1500+", l: "E-commerce stores served globally" },
   { n: "98%", l: "Client retention rate, year on year" },
   { n: "4 hr", l: "Average response SLA across all accounts" },
   { n: "15 yrs", l: "In e-commerce operations — exclusively" },

@@ -220,11 +220,6 @@ export default async function MarketplacePage({
       {/* ── WHAT WE HANDLE (optional, e.g. Amazon) ── */}
       {m.whatWeHandle && m.whatWeHandle.length > 0 && (
         <section style={{ padding: "56px 32px", borderBottom: "0.5px solid #D5C9B0" }}>
-          <style>{`
-            .mkt-handle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-            @media (max-width: 768px) { .mkt-handle-grid { grid-template-columns: 1fr; } }
-            @media (max-width: 640px) { .mkt-handle-section { padding: 40px 16px !important; } }
-          `}</style>
           <div
             style={{
               fontSize: "10px",
@@ -242,48 +237,40 @@ export default async function MarketplacePage({
               fontSize: "26px",
               fontWeight: 500,
               color: "#1C1C1C",
-              marginBottom: "36px",
+              marginBottom: "40px",
             }}
           >
             How we run your {m.name} account.
           </h2>
-          <div className="mkt-handle-grid">
+          <div style={{ display: "flex", flexDirection: "column", gap: "36px", maxWidth:"720px" }}>
             {m.whatWeHandle.map((item) => (
-              <div
-                key={item.title}
-                style={{
-                  background: "#FFFFFF",
-                  border: "0.5px solid #D5C9B0",
-                  borderRadius: "8px",
-                  padding: "24px",
-                }}
-              >
+              <div key={item.title}>
                 <div
                   style={{
-                    fontSize: "14px",
+                    fontSize: "15px",
                     fontWeight: 600,
-                    color: "#1C1C1C",
-                    marginBottom: "10px",
+                    color: "#2D6A4F",
+                    marginBottom: "8px",
                   }}
                 >
                   {item.title}
                 </div>
                 <p
                   style={{
-                    fontSize: "12px",
+                    fontSize: "13px",
                     color: "#555550",
-                    lineHeight: 1.7,
-                    marginBottom: item.bullets.length > 0 ? "14px" : 0,
+                    lineHeight: 1.75,
+                    marginBottom: item.bullets.length > 0 ? "12px" : 0,
                   }}
                 >
                   {item.body}
                 </p>
                 {item.bullets.length > 0 && (
-                  <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "7px" }}>
+                  <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
                     {item.bullets.map((b) => (
-                      <li key={b} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-                        <span style={{ color: "#2D6A4F", fontSize: "12px", lineHeight: "20px", flexShrink: 0 }}>•</span>
-                        <span style={{ fontSize: "12px", color: "#555550", lineHeight: 1.65 }}>{b}</span>
+                      <li key={b} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                        <span style={{ color: "#2D6A4F", fontSize: "14px", lineHeight: "22px", flexShrink: 0 }}>•</span>
+                        <span style={{ fontSize: "13px", color: "#555550", lineHeight: 1.65 }}>{b}</span>
                       </li>
                     ))}
                   </ul>
