@@ -189,7 +189,7 @@ export default async function MarketplacePage({
           background: "#2D6A4F",
           padding: "20px 32px",
           display: "grid",
-          gridTemplateColumns: "repeat(4,1fr)",
+          gridTemplateColumns: `repeat(${m.stats.length},1fr)`,
         }}
       >
         {m.stats.map((s) => (
@@ -216,6 +216,128 @@ export default async function MarketplacePage({
           </div>
         ))}
       </div>
+
+      {/* ── WHAT WE HANDLE (optional, e.g. Amazon) ── */}
+      {m.whatWeHandle && m.whatWeHandle.length > 0 && (
+        <section style={{ padding: "56px 32px", borderBottom: "0.5px solid #D5C9B0" }}>
+          <style>{`
+            .mkt-handle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+            @media (max-width: 768px) { .mkt-handle-grid { grid-template-columns: 1fr; } }
+            @media (max-width: 640px) { .mkt-handle-section { padding: 40px 16px !important; } }
+          `}</style>
+          <div
+            style={{
+              fontSize: "10px",
+              letterSpacing: "1.5px",
+              color: "#2D6A4F",
+              fontWeight: 500,
+              marginBottom: "10px",
+            }}
+          >
+            WHAT WE HANDLE
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "26px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "36px",
+            }}
+          >
+            How we run your {m.name} account.
+          </h2>
+          <div className="mkt-handle-grid">
+            {m.whatWeHandle.map((item) => (
+              <div
+                key={item.title}
+                style={{
+                  background: "#FFFFFF",
+                  border: "0.5px solid #D5C9B0",
+                  borderRadius: "8px",
+                  padding: "24px",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: "14px",
+                    fontWeight: 600,
+                    color: "#1C1C1C",
+                    marginBottom: "10px",
+                  }}
+                >
+                  {item.title}
+                </div>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    color: "#555550",
+                    lineHeight: 1.7,
+                    marginBottom: item.bullets.length > 0 ? "14px" : 0,
+                  }}
+                >
+                  {item.body}
+                </p>
+                {item.bullets.length > 0 && (
+                  <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "7px" }}>
+                    {item.bullets.map((b) => (
+                      <li key={b} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
+                        <span style={{ color: "#2D6A4F", fontSize: "12px", lineHeight: "20px", flexShrink: 0 }}>•</span>
+                        <span style={{ fontSize: "12px", color: "#555550", lineHeight: 1.65 }}>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── WHY SECTION (optional, e.g. Amazon) ── */}
+      {m.whySection && (
+        <section
+          style={{
+            background: "#1C1C1C",
+            padding: "48px 32px",
+            borderBottom: "0.5px solid #333",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "10px",
+              letterSpacing: "1.5px",
+              color: "#9FE1CB",
+              fontWeight: 500,
+              marginBottom: "12px",
+            }}
+          >
+            WHY IT MATTERS
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "22px",
+              fontWeight: 500,
+              color: "#fff",
+              marginBottom: "16px",
+              maxWidth: "640px",
+            }}
+          >
+            {m.whySection.title}
+          </h2>
+          <p
+            style={{
+              fontSize: "13px",
+              color: "rgba(255,255,255,0.65)",
+              lineHeight: 1.8,
+              maxWidth: "680px",
+            }}
+          >
+            {m.whySection.body}
+          </p>
+        </section>
+      )}
 
       {/* ── SERVICES GRID ── */}
       <section

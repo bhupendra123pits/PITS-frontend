@@ -8,6 +8,12 @@ export type MarketplaceStat = {
   l: string;
 };
 
+export type WhatWeHandleItem = {
+  title: string;
+  body: string;
+  bullets: string[];
+};
+
 export type Marketplace = {
   name: string;
   slug: string;
@@ -19,6 +25,8 @@ export type Marketplace = {
   includes: string[];
   stats: MarketplaceStat[];
   also: string[];
+  whatWeHandle?: WhatWeHandleItem[];
+  whySection?: { title: string; body: string };
 };
 
 export const marketplaces: Record<string, Marketplace> = {
@@ -29,7 +37,7 @@ export const marketplaces: Record<string, Marketplace> = {
     heroHeadline: "Amazon marketplace operations, ",
     heroEm: "run by specialists.",
     description:
-      "Listing creation, Buy Box strategy, suppressed listing recovery, FBA management, and account health monitoring — handled by a team that works inside Seller Central every single day.",
+      "The world's most competitive marketplace demands more than a good product. Ranking in search, winning the Buy Box, and keeping your account healthy requires disciplined, daily execution. We provide the specialist team to deliver that — every day.",
     services: [
       { title: "Listing creation & optimisation", body: "Keyword-rich titles, bullet points, descriptions, and backend search terms — structured for Seller Central compliance and A9 visibility." },
       { title: "A+ Content & EBC", body: "Enhanced Brand Content and A+ Content creation. Brand story, comparison charts, and lifestyle imagery layout." },
@@ -53,8 +61,57 @@ export const marketplaces: Record<string, Marketplace> = {
       { n: "99.1%", l: "Listing accuracy" },
       { n: "500+", l: "Amazon stores managed" },
       { n: "15yrs", l: "Seller Central experience" },
+      { n: "A9", l: "Algorithm specialists" },
+
     ],
     also: ["eBay", "Walmart", "Etsy", "BestBuy"],
+    whatWeHandle: [
+      {
+        title: "Listing creation & optimisation",
+        body: "Every listing we write is built for both the A9 ranking algorithm and the buyer reading it. We research real buyer search behaviour, analyse competitor listings, and write titles, bullets, and descriptions that rank and convert.",
+        bullets: [
+          "Keyword-rich titles aligned to real buyer search intent — not guesswork",
+          "Benefit-led bullet points that answer buying objections before they form",
+          "Product descriptions written for conversion, not just compliance",
+          "Backend search term optimisation — all 250 bytes used correctly",
+          "A+ Content and Enhanced Brand Content creation",
+          "Parent-child variation setup and management",
+        ],
+      },
+      {
+        title: "Buy Box strategy",
+        body: "The Buy Box drives the overwhelming majority of Amazon sales. Getting there — and staying there — requires the right combination of price, fulfilment method, seller metrics, and inventory levels. We monitor and manage all of these.",
+        bullets: [
+          "Buy Box eligibility monitoring and improvement",
+          "Competitor pricing benchmarking and repricing strategy",
+          "Seller metric management — ODR, late dispatch, cancellation rates",
+          "FBA vs FBM analysis and recommendation",
+        ],
+      },
+      {
+        title: "Amazon operations",
+        body: "The operational work that keeps your account healthy and your listings live — handled by a team that works inside Seller Central every day.",
+        bullets: [
+          "Flat file and bulk upload management",
+          "Suppressed and stranded listing identification and resolution",
+          "FBA shipment planning and reconciliation",
+          "Account health monitoring and case management",
+          "Brand Registry setup and violation management",
+          "Sponsored Products campaign setup and reporting support",
+          "Negative feedback and review management",
+          "Competitor analysis and keyword gap reporting",
+        ],
+      },
+      {
+        title: "AI-assisted content",
+        body: "For high-volume catalogs where manual listing creation isn't practical, we use AI writing tools to generate first-draft content — then apply specialist review, fact-checking, and brand-voice editing before any output goes near your live account.",
+        bullets: [],
+      },
+    ],
+    whySection: {
+      title: "Why Amazon specialist knowledge matters",
+      body: "Amazon's A9 algorithm, Seller Central policies, and account health rules change constantly. A team that works across multiple platforms and calls themselves Amazon specialists often isn't — they're generalists who occasionally work on Amazon. Our team works in Seller Central every single day. When policies change, we already know. When your account flags, we catch it before it becomes a suspension.",
+    },
   },
 
   ebay: {
