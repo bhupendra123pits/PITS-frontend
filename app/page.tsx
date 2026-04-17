@@ -645,7 +645,6 @@ export default function HomePage() {
 
           <div className="marquee-inner">
             {[
-              "Vendulex",
               "Shopify",
               "eBay",
               "Walmart",
