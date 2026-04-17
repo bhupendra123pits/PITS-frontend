@@ -43,7 +43,7 @@ const solutions = [
 ];
 
 const stats = [
-  { n: "100+", l: "E-commerce stores served globally" },
+  { n: "500+", l: "E-commerce stores served globally" },
   { n: "98%", l: "Client retention rate, year on year" },
   { n: "4 hr", l: "Average response SLA across all accounts" },
   { n: "15 yrs", l: "In e-commerce operations — exclusively" },
@@ -600,14 +600,14 @@ export default function HomePage() {
         <div
           style={{
             textAlign: "center",
-            fontSize: "11px",
+            fontSize: "13px",
             letterSpacing: "1.5px",
             color: "#888780",
             fontWeight: 500,
             marginBottom: "28px",
           }}
         >
-          TRUSTED BY LEADING BRANDS
+          Platforms we support
         </div>
 
         <style>{`

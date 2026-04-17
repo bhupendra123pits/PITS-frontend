@@ -91,7 +91,7 @@ export const services: Record<string, Service> = {
       "Upload progress and completion reporting",
     ],
     stats: [
-      { n: "100+", l: "SKUs per day" },
+      { n: "500+", l: "SKUs per day" },
       { n: "99.1%", l: "First-pass accuracy" },
       { n: "48hr", l: "Standard turnaround" },
       { n: "8", l: "Platforms supported" },
@@ -167,7 +167,7 @@ export const services: Record<string, Service> = {
       "Delivery in upload-ready format",
     ],
     stats: [
-      { n: "100+", l: "Images per day" },
+      { n: "500+", l: "Images per day" },
       { n: "99%", l: "Compliance rate" },
       { n: "8", l: "Platforms supported" },
       { n: "48hr", l: "Standard turnaround" },
@@ -207,7 +207,7 @@ export const services: Record<string, Service> = {
     stats: [
       { n: "4hr", l: "Response SLA" },
       { n: "98%", l: "On-time processing" },
-      { n: "100+", l: "Stores managed" },
+      { n: "500+", l: "Stores managed" },
       { n: "15yrs", l: "Operations experience" },
     ],
     platforms: ["Amazon", "Shopify", "eBay", "Walmart", "BigCommerce", "WooCommerce", "Etsy"],

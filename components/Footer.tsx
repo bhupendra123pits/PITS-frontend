@@ -1,28 +1,58 @@
 import Link from "next/link";
 
 const solutionLinks = [
-  { label: "Catalog & data operations", href: "/solutions/catalog-product-data" },
-  { label: "Marketplace operations", href: "/solutions/marketplace-operations" },
+  {
+    label: "Catalog & data operations",
+    href: "/solutions/catalog-product-data",
+  },
+  {
+    label: "Marketplace operations",
+    href: "/solutions/marketplace-operations",
+  },
   { label: "Ecommerce backoffice", href: "/solutions/eCommerce-backoffice" },
   { label: "Data cleanup", href: "/solutions/product-data-cleanup" },
   { label: "High-SKU scaling", href: "/solutions/high-sku-scaling" },
 ];
 
 const serviceLinks = [
-  { label: "Product data management", href: "/services" },
-  { label: "Bulk uploads", href: "/services" },
-  { label: "Attribute structuring", href: "/services" },
-  { label: "Image processing", href: "/services" },
-  { label: "Order support", href: "/services" },
+  {
+    label: "Product data management",
+    href: "/services/product-data-management",
+  },
+  { label: "Bulk uploads", href: "/services/bulk-product-uploads" },
+  {
+    label: "Attribute structuring",
+    href: "/services/attribute-filter-structuring",
+  },
+  { label: "Image processing", href: "/services/image-processing-enrichment" },
+  { label: "Order support", href: "/services/order-inventory-support" },
+  { label: "All Services", href: "/services" },
 ];
 
 const platformLinks = [
-  { label: "Amazon", href: "/platforms/amazon" },
-  { label: "eBay", href: "/platforms/ebay" },
   { label: "Shopify", href: "/platforms/shopify" },
-  { label: "Etsy", href: "/platforms/etsy" },
-  { label: "BigCommerce & WooCommerce", href: "/platforms/bigcommerce-woocommerce" },
-  { label: "Walmart & others", href: "/platforms/walmart" },
+
+  {
+    label: "BigCommerce & WooCommerce",
+    href: "/platforms/bigcommerce-woocommerce",
+  },
+  { label: "Magento", href: "/platforms/magento" },
+  { label: "opencart", href: "/platforms/opencart" },
+  { label: "volusion", href: "/platforms/volusion" },
+  
+  
+];
+
+const marketplaceLinks = [
+  { label: "Amazon", href: "/marketplaces/amazon" },
+  { label: "eBay", href: "/marketplaces/ebay" },
+  { label: "Walmart", href: "/marketplaces/walmart" },
+  { label: "Etsy", href: "/marketplaces/etsy" },
+  { label: "BestBuy", href: "/marketplaces/bestbuy" },
+  { label: "Newegg", href: "/marketplaces/newegg" },
+  { label: "Houzz", href: "/marketplaces/houzz" },
+  { label: "Rakuten", href: "/marketplaces/rakuten" },
+  { label: "Poshmark", href: "/marketplaces/poshmark" },
 ];
 
 const companyLinks = [
@@ -37,7 +67,16 @@ const socialLinks = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/professional-it-sols-pvt.-ltd.",
     icon: (
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
         <rect x="2" y="9" width="4" height="12" />
         <circle cx="4" cy="4" r="2" />
@@ -57,7 +96,16 @@ const socialLinks = [
     label: "Facebook",
     href: "https://www.facebook.com/professionalits/",
     icon: (
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
       </svg>
     ),
@@ -66,7 +114,16 @@ const socialLinks = [
     label: "Instagram",
     href: "https://www.instagram.com/professional_it_solution",
     icon: (
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -77,12 +134,17 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#F5F0E8", borderTop: "0.5px solid #D5C9B0", padding: "40px 32px 24px" }}>
-
+    <footer
+      style={{
+        background: "#F5F0E8",
+        borderTop: "0.5px solid #D5C9B0",
+        padding: "40px 32px 24px",
+      }}
+    >
       <style>{`
         .footer-grid {
           display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+          grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
           gap: 32px;
           margin-bottom: 32px;
         }
@@ -142,13 +204,23 @@ export default function Footer() {
       `}</style>
 
       <div className="footer-grid">
-
         {/* Brand column */}
         <div className="footer-brand-col">
           <div style={{ marginBottom: "12px" }}>
-            <img src="/PITS Logo Raw.png" alt="Professional ITS Logo" style={{ height: "65px" }} />
+            <img
+              src="/PITS Logo Raw.png"
+              alt="Professional ITS Logo"
+              style={{ height: "65px" }}
+            />
           </div>
-          <div style={{ fontSize: "12px", color: "#888780", lineHeight: 1.6, maxWidth: "320px" }}>
+          <div
+            style={{
+              fontSize: "12px",
+              color: "#888780",
+              lineHeight: 1.6,
+              maxWidth: "320px",
+            }}
+          >
             E-commerce back-office specialists since 2010. We handle catalog
             operations, marketplace management, and store back-office —
             exclusively for online sellers.
@@ -157,56 +229,124 @@ export default function Footer() {
 
         {/* Solutions */}
         <div>
-          <div style={{ fontSize: "11px", fontWeight: 500, color: "#1C1C1C", marginBottom: "10px", letterSpacing: "0.5px" }}>
+          <div
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "10px",
+              letterSpacing: "0.5px",
+            }}
+          >
             Solutions
           </div>
           {solutionLinks.map((l) => (
-            <Link key={l.label} href={l.href} className="footer-link">{l.label}</Link>
+            <Link key={l.label} href={l.href} className="footer-link">
+              {l.label}
+            </Link>
           ))}
         </div>
 
         {/* Services */}
         <div>
-          <div style={{ fontSize: "11px", fontWeight: 500, color: "#1C1C1C", marginBottom: "10px", letterSpacing: "0.5px" }}>
+          <div
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "10px",
+              letterSpacing: "0.5px",
+            }}
+          >
             Services
           </div>
           {serviceLinks.map((l) => (
-            <Link key={l.label} href={l.href} className="footer-link">{l.label}</Link>
+            <Link key={l.label} href={l.href} className="footer-link">
+              {l.label}
+            </Link>
           ))}
         </div>
 
         {/* Platforms */}
         <div>
-          <div style={{ fontSize: "11px", fontWeight: 500, color: "#1C1C1C", marginBottom: "10px", letterSpacing: "0.5px" }}>
+          <div
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "10px",
+              letterSpacing: "0.5px",
+            }}
+          >
             Platforms
           </div>
           {platformLinks.map((l) => (
-            <Link key={l.label} href={l.href} className="footer-link">{l.label}</Link>
+            <Link key={l.label} href={l.href} className="footer-link">
+              {l.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Marketplaces */}
+        <div>
+          <div
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "10px",
+              letterSpacing: "0.5px",
+            }}
+          >
+            Marketplaces
+          </div>
+          {marketplaceLinks.map((l) => (
+            <Link key={l.label} href={l.href} className="footer-link">
+              {l.label}
+            </Link>
           ))}
         </div>
 
         {/* Company */}
         <div>
-          <div style={{ fontSize: "11px", fontWeight: 500, color: "#1C1C1C", marginBottom: "10px", letterSpacing: "0.5px" }}>
+          <div
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "10px",
+              letterSpacing: "0.5px",
+            }}
+          >
             Company
           </div>
           {companyLinks.map((l) =>
             l.href ? (
-              <Link key={l.label} href={l.href} className="footer-link">{l.label}</Link>
+              <Link key={l.label} href={l.href} className="footer-link">
+                {l.label}
+              </Link>
             ) : (
-              <span key={l.label} className="footer-link">{l.label}</span>
-            )
+              <span key={l.label} className="footer-link">
+                {l.label}
+              </span>
+            ),
           )}
           {/* Social Icons */}
           <div style={{ display: "flex", gap: "8px", marginTop: "16px" }}>
             {socialLinks.map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="social-icon">
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="social-icon"
+              >
                 {s.icon}
               </a>
             ))}
           </div>
         </div>
-
       </div>
 
       {/* Bottom bar */}
@@ -220,7 +360,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
     </footer>
   );
 }

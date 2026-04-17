@@ -62,23 +62,43 @@ const serviceLinks = [
 
 const platformLinks = [
   {
-    title: "Amazon",
-    sub: "Seller Central, FBA, A+",
-    href: "/platforms/amazon",
-  },
-  { title: "eBay", sub: "Cassini, store management", href: "/platforms/ebay" },
-  {
     title: "Shopify",
     sub: "Catalog, orders, support",
     href: "/platforms/shopify",
   },
-  { title: "Etsy", sub: "Catalog, orders, support", href: "/platforms/etsy" },
   {
-    title: "BigCommerce / WooCommerce / Magento",
+    title: "BigCommerce / WooCommerce",
     sub: null,
     href: "/platforms/bigcommerce-woocommerce",
   },
-  { title: "Walmart & others", sub: null, href: "/platforms/walmart" },
+  {
+    title: "Magento",
+    sub: null,
+    href: "/platforms/magento",
+  },
+  {
+    title: "OpenCart",
+    sub: null,
+    href: "/platforms/opencart",
+  },
+  {
+    title: "Volusion",
+    sub: null,
+    href: "/platforms/volusion",
+  },
+  // { title: "Walmart & others", sub: null, href: "/platforms/walmart" },
+];
+
+const marketplaceLinks = [
+  { title: "Amazon", href: "/marketplaces/amazon" },
+  { title: "eBay", href: "/marketplaces/ebay" },
+  { title: "Walmart", href: "/marketplaces/walmart" },
+  { title: "Etsy", href: "/marketplaces/etsy" },
+  { title: "BestBuy", href: "/marketplaces/bestbuy" },
+  { title: "Newegg", href: "/marketplaces/newegg" },
+  { title: "Houzz", href: "/marketplaces/houzz" },
+  { title: "Rakuten", href: "/marketplaces/rakuten" },
+  { title: "Poshmark", href: "/marketplaces/poshmark" },
 ];
 
 // All searchable pages
@@ -99,6 +119,7 @@ const allPages = [
     sub: l.sub ?? "",
     category: "Platform",
   })),
+  ...marketplaceLinks.map((l) => ({ ...l, sub: "", category: "Marketplace" })),
 ];
 
 export default function Navbar() {
@@ -209,7 +230,7 @@ export default function Navbar() {
               width: "auto",
               display: "block",
               objectFit: "contain",
-              marginTop:"4px",
+              marginTop: "4px",
             }}
           />
         </Link>
@@ -518,6 +539,122 @@ export default function Navbar() {
                     )}
                   </Link>
                 ))}
+              </div>
+            )}
+          </div>
+
+          {/* Marketplaces dropdown */}
+          <div style={{ position: "relative" }}>
+            <div
+              onClick={() => toggle("marketplaces")}
+              style={{
+                padding: "0 14px",
+                fontSize: "15px",
+                color: pathname.startsWith("/marketplaces")
+                  ? "#2D6A4F"
+                  : "#555550",
+                cursor: "pointer",
+                height: "56px",
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+                borderBottom: pathname.startsWith("/marketplaces")
+                  ? "2px solid #2D6A4F"
+                  : "2px solid transparent",
+              }}
+            >
+              Marketplaces
+              <svg
+                viewBox="0 0 10 6"
+                style={{
+                  width: 10,
+                  height: 10,
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: 2,
+                }}
+              >
+                <path d="M1 1l4 4 4-4" />
+              </svg>
+            </div>
+            {open === "marketplaces" && (
+              <div
+                style={{
+                  background: "#FDFAF5",
+                  border: "0.5px solid #D5C9B0",
+                  padding: "20px",
+                  position: "absolute",
+                  top: "56px",
+                  left: 0,
+                  minWidth: "380px",
+                  zIndex: 10,
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "0 24px",
+                }}
+              >
+                <div
+                  style={{
+                    gridColumn: "1/-1",
+                    marginBottom: "12px",
+                    fontSize: "10px",
+                    letterSpacing: "1px",
+                    color: "#2D6A4F",
+                    fontWeight: 500,
+                  }}
+                >
+                  Marketplaces
+                </div>
+                <div>
+                  {marketplaceLinks.slice(0, 5).map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={close}
+                      style={{
+                        display: "block",
+                        padding: "8px 0",
+                        borderBottom: "0.5px solid #EDE5D5",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: "13px",
+                          fontWeight: 500,
+                          color: "#1C1C1C",
+                        }}
+                      >
+                        {item.title}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+                <div>
+                  {marketplaceLinks.slice(5).map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={close}
+                      style={{
+                        display: "block",
+                        padding: "8px 0",
+                        borderBottom: "0.5px solid #EDE5D5",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: "13px",
+                          fontWeight: 500,
+                          color: "#1C1C1C",
+                        }}
+                      >
+                        {item.title}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -1186,6 +1323,71 @@ export default function Navbar() {
                           {p.sub}
                         </div>
                       )}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Marketplaces accordion */}
+            <div style={{ borderBottom: "0.5px solid #EDE5D5" }}>
+              <div
+                onClick={() => toggleMobile("marketplaces")}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  padding: "16px 0",
+                  fontSize: "15px",
+                  fontWeight: 500,
+                  color: pathname.startsWith("/marketplaces")
+                    ? "#2D6A4F"
+                    : "#1C1C1C",
+                  cursor: "pointer",
+                }}
+              >
+                Marketplaces
+                <svg
+                  viewBox="0 0 10 6"
+                  style={{
+                    width: 12,
+                    height: 12,
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: 2,
+                    transition: "transform 0.2s",
+                    transform:
+                      mobileExpanded === "marketplaces"
+                        ? "rotate(180deg)"
+                        : "none",
+                  }}
+                >
+                  <path d="M1 1l4 4 4-4" />
+                </svg>
+              </div>
+              {mobileExpanded === "marketplaces" && (
+                <div style={{ paddingBottom: "12px" }}>
+                  {marketplaceLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeMobile}
+                      style={{
+                        display: "block",
+                        padding: "10px 0 10px 16px",
+                        borderTop: "0.5px solid #F5F0E8",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: "13px",
+                          fontWeight: 500,
+                          color: "#1C1C1C",
+                        }}
+                      >
+                        {item.title}
+                      </div>
                     </Link>
                   ))}
                 </div>

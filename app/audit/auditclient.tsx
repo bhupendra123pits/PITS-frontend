@@ -36,7 +36,7 @@ const steps = [
 ];
 
 const stats = [
-  { n: "100+", l: "Stores audited" },
+  { n: "500+", l: "Stores audited" },
   { n: "48hr", l: "Delivery time" },
   { n: "98%", l: "Retention rate" },
   { n: "$0", l: "Fully free" },
@@ -229,7 +229,7 @@ export default function AuditPage() {
               We review 50 of your SKUs — data completeness, listing quality, attribute accuracy — and deliver a written findings report. No credit card. No commitment.
             </p>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              {["Free — no credit card", "48hr turnaround", "Written findings report", "100+ stores audited"].map((t) => (
+              {["Free — no credit card", "48hr turnaround", "Written findings report", "500+ stores audited"].map((t) => (
                 <div key={t} style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "20px", padding: "5px 14px", fontSize: "11px", color: "#555550", display: "flex", alignItems: "center", gap: "6px" }}>
                   <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#2D6A4F", flexShrink: 0 }} />
                   {t}

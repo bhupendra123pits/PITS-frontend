@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Results – Professional ITS",
   description:
-    "100+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
+    "500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
 };
 
 const stats = [
-  { n: "100+", l: "Stores served globally" },
+  { n: "500+", l: "Stores served globally" },
   { n: "98%", l: "Client retention rate" },
   { n: "4 hr", l: "Average response SLA" },
   { n: "15 yrs", l: "E-commerce operations experience" },

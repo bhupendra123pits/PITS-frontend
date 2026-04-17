@@ -61,6 +61,90 @@ const platforms = [
       "Performance dashboard monitoring",
     ],
   },
+  {
+    name: "Etsy",
+    color: "#F1641E",
+    services: [
+      "Listing creation with Etsy SEO best practices — titles, tags, and descriptions",
+      "Keyword research for Etsy search algorithm",
+      "Shop section and category organisation",
+      "Product photography editing to Etsy image standards",
+      "Pricing research and competitor analysis",
+      "Customer message handling and review follow-up",
+      "Shipping profile setup and management",
+      "Seasonal listing updates and promotional campaigns",
+    ],
+  },
+  {
+    name: "BestBuy",
+    color: "#003B64",
+    services: [
+      "Seller onboarding and Marketplace setup via BestBuy's vendor portal",
+      "Product listing creation and attribute mapping to BestBuy taxonomy",
+      "Content quality compliance — meeting BestBuy's strict data standards",
+      "Product description writing for tech and electronics categories",
+      "Image specification compliance and upload management",
+      "Pricing strategy and competitor monitoring",
+      "Order management and fulfilment tracking",
+      "Performance reporting and account health monitoring",
+    ],
+  },
+  {
+    name: "Newegg",
+    color: "#E2231A",
+    services: [
+      "Seller account setup and storefront configuration",
+      "Listing creation for electronics, components, and tech accessories",
+      "Attribute mapping to Newegg's category-specific item specifics",
+      "Product description writing for technical and specification-heavy products",
+      "Promotional pricing and Newegg Flash deal management",
+      "Image processing and compliance with Newegg image standards",
+      "Competitor price monitoring and repricing",
+      "Order fulfilment tracking and performance monitoring",
+    ],
+  },
+  {
+    name: "Houzz",
+    color: "#74B443",
+    services: [
+      "Seller account setup and Houzz Pro storefront configuration",
+      "Product listing creation for home décor, furniture, and renovation categories",
+      "Attribute and specification mapping to Houzz taxonomy",
+      "Product description writing for design-conscious buyers",
+      "Image editing and compliance with Houzz visual standards",
+      "Ideabook and project integration support",
+      "Pricing strategy and competitor analysis within home furnishings categories",
+      "Customer enquiry handling and review management",
+    ],
+  },
+  {
+    name: "Rakuten",
+    color: "#BF0000",
+    services: [
+      "Seller account setup and storefront customisation",
+      "Product listing creation and optimisation for Rakuten search",
+      "Merchant Quality Score (MQS) monitoring and improvement",
+      "Rakuten Super Points promotional campaign setup",
+      "Product description writing for Rakuten's brand-forward buyer base",
+      "Image processing and storefront visual setup",
+      "Competitor pricing research and repricing",
+      "Customer support and order management",
+    ],
+  },
+  {
+    name: "Poshmark",
+    color: "#CF1E55",
+    services: [
+      "Closet setup and brand profile optimisation",
+      "Listing creation with Poshmark SEO — titles, descriptions, and hashtags",
+      "Algorithm optimisation — sharing cadence, engagement strategy, and listing refresh",
+      "Product photography editing to Poshmark's visual standards",
+      "Pricing strategy accounting for Poshmark's fee structure and negotiation culture",
+      "Bundle discount structuring and Offers to Likers management",
+      "Community engagement — following, sharing, and buyer communication",
+      "Inventory management and cross-listing to other platforms",
+    ],
+  },
 ];
 
 const CheckIcon = () => (
@@ -194,9 +278,9 @@ export default function MarketplaceOperationsPage() {
       >
         {[
           { n: "3x", l: "Avg. visibility lift" },
-          { n: "100+", l: "Stores managed" },
+          { n: "500+", l: "Stores managed" },
           { n: "15yrs", l: "Marketplace experience" },
-          { n: "3", l: "Major platforms" },
+          { n: "9", l: "Platforms covered" },
         ].map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>
             <div
@@ -361,12 +445,14 @@ export default function MarketplaceOperationsPage() {
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
           {[
             "Shopify",
-            "Etsy",
             "BigCommerce",
             "WooCommerce",
             "OnBuy",
             "Fruugo",
             "Mirakl-based marketplaces",
+            "TikTok Shop",
+            "Facebook Shops",
+            "Instagram Shopping",
           ].map((p) => (
             <div
               key={p}

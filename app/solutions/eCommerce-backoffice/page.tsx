@@ -181,7 +181,7 @@ export default function EcommerceBackofficePage() {
             {[
               { n: "4hr", l: "Response SLA", sub: "Across all accounts" },
               { n: "98%", l: "Retention rate", sub: "Year on year" },
-              { n: "100+", l: "Stores managed", sub: "Globally" },
+              { n: "500+", l: "Stores managed", sub: "Globally" },
               { n: "15yrs", l: "Experience", sub: "E-commerce only" },
             ].map((s) => (
               <div key={s.l} style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "20px", textAlign: "center" }}>
