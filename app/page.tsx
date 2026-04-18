@@ -223,7 +223,7 @@ export default function HomePage() {
             Execution-heavy. SLA-backed. No lock-in.
           </p>
           <Link
-            href="/audit"
+            href="/solutions"
             className="hero-cta-row"
             style={{ textDecoration: "none" }}
           >
