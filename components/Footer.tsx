@@ -12,6 +12,8 @@ const solutionLinks = [
   { label: "Ecommerce backoffice", href: "/solutions/eCommerce-backoffice" },
   { label: "Data cleanup", href: "/solutions/product-data-cleanup" },
   { label: "High-SKU scaling", href: "/solutions/high-sku-scaling" },
+  { label: "All Solutions", href: "/solutions" },
+
 ];
 
 const serviceLinks = [
@@ -37,6 +39,8 @@ const platformLinks = [
   { label: "Magento", href: "/platforms/magento" },
   { label: "opencart", href: "/platforms/opencart" },
   { label: "volusion", href: "/platforms/volusion" },
+  { label: "All Platform", href: "/platforms" },
+
   
   
 ];
@@ -51,6 +55,8 @@ const marketplaceLinks = [
   { label: "Houzz", href: "/marketplaces/houzz" },
   { label: "Rakuten", href: "/marketplaces/rakuten" },
   { label: "Poshmark", href: "/marketplaces/poshmark" },
+  { label: "All Marketplace", href: "/marketplaces" },
+
 ];
 
 const companyLinks = [

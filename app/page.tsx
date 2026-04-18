@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import { SiShopify, SiEbay, SiWalmart, SiBigcommerce, SiWoocommerce, SiEtsy } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
@@ -15,30 +16,35 @@ const solutions = [
     title: "Catalog & product data operations",
     body: "High-SKU catalog builds, attribute structuring, bulk uploads, deduplication, and ongoing maintenance.",
     ai: true,
+    href: "/solutions/catalog-product-data",
   },
   {
     num: "02",
     title: "Marketplace operations",
     body: "Listing optimisation, Buy Box strategy, suppressed listing management, competitor intelligence — on Amazon, eBay, Walmart.",
     ai: false,
+    href: "/solutions/marketplace-operations",
   },
   {
     num: "03",
     title: "Ecommerce backoffice management",
     body: "Customer support, order processing, inventory monitoring, repricing — on an SLA you can hold us to.",
     ai: false,
+    href: "/solutions/eCommerce-backoffice",
   },
   {
     num: "04",
     title: "Product data cleanup & optimisation",
     body: "Messy data costs you sales. We audit, deduplicate, enrich, and restructure — at scale.",
     ai: true,
+    href: "/solutions/product-data-cleanup",
   },
   {
     num: "05",
     title: "High-SKU catalog scaling",
     body: "For distributors, wholesalers, and multi-brand sellers. Scale your catalog without scaling headcount.",
     ai: false,
+    href: "/solutions/high-sku-scaling",
   },
 ];
 
@@ -57,11 +63,39 @@ const services = [
   { title: "Order & inventory", sub: "SLA-backed" },
 ];
 
+const AmazonIcon = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <text x="1" y="13" fontSize="9" fontWeight="700" fill="#232F3E" fontFamily="Arial, sans-serif">amazon</text>
+    <path d="M3 17c4 2.5 12 2.5 18-1" stroke="#FF9900" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M18 14.5c1-1 2.5-.5 2 1" stroke="#FF9900" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+const MagentoIcon = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L3 6.5v11L12 22l9-4.5v-11L12 2z" fill="#EE672F"/>
+    <path d="M12 2v20" stroke="#fff" strokeWidth="1.5"/>
+    <path d="M7.5 5L12 7.5 16.5 5" stroke="#fff" strokeWidth="1.2" strokeLinecap="round"/>
+    <path d="M7.5 5v9l4.5 2.5V9.5" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M16.5 5v9L12 16.5" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const marqueebrands = [
+  { name: "Shopify",     color: "#96BF48", Icon: () => <SiShopify size={24} color="#96BF48" /> },
+  { name: "eBay",        color: "#E53238", Icon: () => <SiEbay size={24} color="#E53238" /> },
+  { name: "Walmart",     color: "#0071CE", Icon: () => <SiWalmart size={24} color="#0071CE" /> },
+  { name: "BigCommerce", color: "#003087", Icon: () => <SiBigcommerce size={24} color="#003087" /> },
+  { name: "WooCommerce", color: "#7F54B3", Icon: () => <SiWoocommerce size={24} color="#7F54B3" /> },
+  { name: "Magento",     color: "#EE672F", Icon: MagentoIcon },
+  { name: "Etsy",        color: "#F1641E", Icon: () => <SiEtsy size={24} color="#F1641E" /> },
+  { name: "Amazon",      color: "#FF9900", Icon: AmazonIcon },
+];
+
 const trustItems = [
   { n: "Amazon", l: "Seller Central specialists" },
   { n: "eBay", l: "Cassini-optimised listings" },
   { n: "Shopify", l: "Full back-office support" },
-  { n: "Walmart +", l: "BigCommerce, Magento, more" },
 ];
 
 export default function HomePage() {
@@ -128,6 +162,23 @@ export default function HomePage() {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+  }
+
+  .trust-bar {
+    background: #2D6A4F;
+    padding: 14px 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    .trust-bar {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 14px 12px;
+    }
+    .trust-bar-item {
+      text-align: center !important;
+    }
   }
 `}</style>
 
@@ -214,7 +265,7 @@ export default function HomePage() {
               letterSpacing: "0.5px",
             }}
           >
-            WHY CLIENTS STAY
+            BUILD ON TRUST
           </div>
           {stats.map((s, i) => (
             <div
@@ -247,16 +298,9 @@ export default function HomePage() {
       </section>
 
       {/* ── TRUST BAR ── */}
-      <div
-        style={{
-          background: "#2D6A4F",
-          padding: "14px 32px",
-          display: "grid",
-          gridTemplateColumns: "repeat(4,1fr)",
-        }}
-      >
+      <div className="trust-bar">
         {trustItems.map((t) => (
-          <div key={t.n} style={{ textAlign: "center" }}>
+          <div key={t.n} className="trust-bar-item" style={{ textAlign: "center" }}>
             <div
               style={{
                 fontFamily: "var(--font-serif)",
@@ -348,13 +392,16 @@ export default function HomePage() {
 
         <div className="solutions-grid">
           {solutions.map((s) => (
-            <div
+            <Link
               key={s.num}
+              href={s.href}
               style={{
                 background: "#FDFAF5",
                 border: "0.5px solid #D5C9B0",
                 borderRadius: "8px",
                 padding: "20px",
+                textDecoration: "none",
+                display: "block",
               }}
             >
               <div
@@ -388,42 +435,44 @@ export default function HomePage() {
               >
                 {s.body}
               </div>
-              {s.ai && (
-                <div
-                  style={{
-                    display: "inline-block",
-                    fontSize: "10px",
-                    color: "#2D6A4F",
-                    background: "#E8F5EE",
-                    padding: "3px 8px",
-                    borderRadius: "3px",
-                    marginBottom: "10px",
-                  }}
-                >
-                  AI-assisted
-                </div>
-              )}
-              {!s.ai && <div style={{ height: "20px" }} />}
+              <div style={{ marginBottom: "10px" }}>
+                {s.ai && (
+                  <div
+                    style={{
+                      display: "inline-block",
+                      fontSize: "10px",
+                      color: "#2D6A4F",
+                      background: "#E8F5EE",
+                      padding: "3px 8px",
+                      borderRadius: "3px",
+                    }}
+                  >
+                    AI-assisted
+                  </div>
+                )}
+              </div>
               <div
                 style={{
                   fontSize: "12px",
                   color: "#2D6A4F",
                   fontWeight: 500,
-                  cursor: "pointer",
                 }}
               >
                 Learn more →
               </div>
-            </div>
+            </Link>
           ))}
 
           {/* CTA Card */}
-          <div
+          <Link
+            href="/audit"
             style={{
               background: "#E8F5EE",
               border: "0.5px solid #9FE1CB",
               borderRadius: "8px",
               padding: "20px",
+              textDecoration: "none",
+              display: "block",
             }}
           >
             <div
@@ -467,12 +516,11 @@ export default function HomePage() {
                 fontSize: "11px",
                 fontWeight: 500,
                 display: "inline-block",
-                cursor: "pointer",
               }}
             >
               Claim free audit
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -607,7 +655,7 @@ export default function HomePage() {
             marginBottom: "28px",
           }}
         >
-          Platforms we support
+          Every channel that matters
         </div>
 
         <style>{`
@@ -644,56 +692,29 @@ export default function HomePage() {
           />
 
           <div className="marquee-inner">
-            {[
-              "Shopify",
-              "eBay",
-              "Walmart",
-              "BigCommerce",
-              "WooCommerce",
-              "Magento",
-              "Etsy",
-              "Amazon",
-              "Shopify",
-              "eBay",
-              "Walmart",
-              "BigCommerce",
-              "WooCommerce",
-              "Magento",
-              "Etsy",
-            ].map((brand, i) => (
+            {[...marqueebrands, ...marqueebrands].map((brand, i) => (
               <div
                 key={i}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  padding: "0 40px",
+                  gap: "10px",
+                  padding: "0 36px",
                   borderRight: "0.5px solid #D5C9B0",
                   height: "56px",
-                  minWidth: "140px",
                   flexShrink: 0,
                 }}
               >
+                <brand.Icon />
                 <span
                   style={{
-                    fontSize: "15px",
+                    fontSize: "14px",
                     fontWeight: 600,
-                    color: "#B4B2A9",
-                    letterSpacing: "-0.3px",
+                    color: "#555550",
+                    letterSpacing: "-0.2px",
                   }}
                 >
-                  <span
-                    style={{
-                      width: "7px",
-                      height: "7px",
-                      borderRadius: "50%",
-                      background: "#2D6A4F",
-                      marginRight: "7px",
-                      display: "inline-block",
-                      opacity: 0.5,
-                    }}
-                  />
-                  {brand}
+                  {brand.name}
                 </span>
               </div>
             ))}

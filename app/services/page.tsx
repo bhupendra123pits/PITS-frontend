@@ -27,8 +27,10 @@ export const metadata: Metadata = {
   },
 };
 
+const nums = ["01", "02", "03", "04", "05"];
+
 const CheckIcon = () => (
-  <div style={{ width: "16px", height: "16px", borderRadius: "50%", background: "#E8F5EE", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+  <div style={{ width: "16px", height: "16px", borderRadius: "50%", background: "#E8F5EE", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", marginTop: "2px" }}>
     <svg viewBox="0 0 10 10" style={{ width: "9px", height: "9px" }} fill="none">
       <path d="M2 5L4.5 7.5L8 3" stroke="#2D6A4F" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -36,6 +38,8 @@ const CheckIcon = () => (
 );
 
 export default function ServicesPage() {
+  const serviceList = Object.values(services);
+
   return (
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
       <Navbar />
@@ -45,81 +49,115 @@ export default function ServicesPage() {
         <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
           Home <span style={{ color: "#2D6A4F" }}>/ Services</span>
         </div>
-        <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "34px", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "12px" }}>
-          Every execution service we <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>provide.</em>
+        <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "14px" }}>
+          Every execution service we{" "}
+          <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>provide.</em>
         </h1>
-        <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.7, maxWidth: "560px", marginBottom: "24px" }}>
+        <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.75, maxWidth: "560px", marginBottom: "28px" }}>
           For buyers who know exactly what they need. All services are available standalone or as part of a monthly retainer. No lock-in.
         </p>
-        {/* quick jump links */}
-        <style>{`
-          .service-jump:hover { border-color: #2D6A4F !important; color: #2D6A4F !important; }
-        `}</style>
-        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-          {Object.values(services).map((s) => (
-            <a key={s.slug} href={`#${s.slug}`} className="service-jump"
-              style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "4px", padding: "6px 14px", fontSize: "12px", color: "#555550", textDecoration: "none", transition: "all 0.15s" }}>
-              {s.name}
-            </a>
-          ))}
+        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+          <Link href="/audit" style={{ background: "#2D6A4F", color: "#fff", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none" }}>
+            Get free catalog audit
+          </Link>
+          <Link href="/pricing" style={{ border: "0.5px solid #B4B2A9", color: "#555550", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", textDecoration: "none" }}>
+            View pricing
+          </Link>
         </div>
       </div>
 
-      {/* ── SERVICES SECTIONS ── */}
-      {Object.values(services).map((s, idx) => (
-        <section key={s.slug} id={s.slug}
-          style={{ padding: "56px 32px", background: idx % 2 === 0 ? "#FDFAF5" : "#F5F0E8", borderBottom: "0.5px solid #D5C9B0", scrollMarginTop: "56px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "56px", alignItems: "start" }}>
+      {/* ── STATS BAR ── */}
+      <div style={{ background: "#2D6A4F", padding: "20px 32px", display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
+        {[
+          { n: "5", l: "Core execution services" },
+          { n: "99.1%", l: "Data accuracy rate" },
+          { n: "500+", l: "SKUs per day" },
+          { n: "15 yrs", l: "Operations experience" },
+        ].map((s) => (
+          <div key={s.l} style={{ textAlign: "center" }}>
+            <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>{s.n}</div>
+            <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.7)", marginTop: "2px" }}>{s.l}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── SERVICE CARDS ── */}
+      <style>{`
+        .svc-page { padding: 56px 32px; }
+        .svc-card { background: #fff; border: 0.5px solid #D5C9B0; border-radius: 8px; padding: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px; text-decoration: none; color: inherit; transition: border-color 0.15s; }
+        .svc-card:hover { border-color: #2D6A4F; }
+        .svc-card:hover .svc-learn { color: #1a4a35; }
+        .svc-bullets { display: flex; flex-direction: column; gap: 8px; }
+        @media (max-width: 768px) {
+          .svc-page { padding: 40px 16px; }
+          .svc-card { grid-template-columns: 1fr; gap: 16px; }
+        }
+        @media (max-width: 640px) {
+          .svc-stats { grid-template-columns: repeat(2,1fr) !important; }
+        }
+      `}</style>
+
+      <section className="svc-page">
+        <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "10px" }}>ALL SERVICES</div>
+        <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 500, color: "#1C1C1C", marginBottom: "36px" }}>
+          Five services. One execution team.
+        </h2>
+
+        {serviceList.map((s, i) => (
+          <Link key={s.slug} href={`/services/${s.slug}`} className="svc-card">
+            {/* Left — info */}
             <div>
-              <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "10px" }}>
-                {String(idx + 1).padStart(2, "0")} — SERVICE
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <span style={{ fontFamily: "var(--font-serif)", fontSize: "24px", color: "#D5C9B0", fontWeight: 500 }}>
+                  {nums[i]}
+                </span>
               </div>
-              <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "26px", fontWeight: 500, color: "#1C1C1C", marginBottom: "6px" }}>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#1C1C1C", marginBottom: "8px", lineHeight: 1.25 }}>
                 {s.name}
-              </h2>
-              <p style={{ fontSize: "13px", color: "#2D6A4F", fontWeight: 500, marginBottom: "14px" }}>{s.tagline}</p>
-              <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.75, marginBottom: "24px", maxWidth: "520px" }}>
-                {s.description}
+              </h3>
+              <p style={{ fontSize: "13px", color: "#555550", lineHeight: 1.65, marginBottom: "16px" }}>
+                {s.tagline}
               </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "20px" }}>
-                {s.includes.slice(0, 6).map((item) => (
-                  <div key={item} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-                    <CheckIcon />
-                    <span style={{ fontSize: "12px", color: "#555550", lineHeight: 1.5 }}>{item}</span>
+              <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", marginBottom: "16px" }}>
+                {s.platforms.slice(0, 5).map((p) => (
+                  <span key={p} style={{ fontSize: "10px", color: "#888780", border: "0.5px solid #D5C9B0", borderRadius: "3px", padding: "2px 8px", background: "#F5F0E8" }}>
+                    {p}
+                  </span>
+                ))}
+                {s.platforms.length > 5 && (
+                  <span style={{ fontSize: "10px", color: "#888780", border: "0.5px solid #D5C9B0", borderRadius: "3px", padding: "2px 8px", background: "#F5F0E8" }}>
+                    +{s.platforms.length - 5} more
+                  </span>
+                )}
+              </div>
+              <div style={{ display: "flex", gap: "24px", marginBottom: "16px" }}>
+                {s.stats.slice(0, 2).map((stat) => (
+                  <div key={stat.l}>
+                    <div style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#2D6A4F" }}>{stat.n}</div>
+                    <div style={{ fontSize: "10px", color: "#888780", marginTop: "2px" }}>{stat.l}</div>
                   </div>
                 ))}
               </div>
-              <Link href={`/services/${s.slug}`}
-                style={{ fontSize: "13px", color: "#2D6A4F", fontWeight: 500, textDecoration: "none" }}>
-                View full service details →
-              </Link>
+              <span className="svc-learn" style={{ fontSize: "12px", color: "#2D6A4F", fontWeight: 500, transition: "color 0.15s" }}>
+                Learn more →
+              </span>
             </div>
 
-            {/* Right — stats + CTA */}
-            <div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "14px" }}>
-                {s.stats.slice(0, 2).map((stat) => (
-                  <div key={stat.l} style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "16px", textAlign: "center" }}>
-                    <div style={{ fontFamily: "var(--font-serif)", fontSize: "24px", fontWeight: 500, color: "#2D6A4F" }}>{stat.n}</div>
-                    <div style={{ fontSize: "11px", color: "#888780", marginTop: "4px" }}>{stat.l}</div>
-                  </div>
-                ))}
-              </div>
-              <Link href={`/services/${s.slug}`}
-                style={{ display: "block", background: "#2D6A4F", color: "#fff", padding: "11px 20px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textAlign: "center", textDecoration: "none", marginBottom: "8px" }}>
-                Learn more
-              </Link>
-              <Link href="/audit"
-                style={{ display: "block", border: "0.5px solid #D5C9B0", color: "#555550", padding: "10px 20px", borderRadius: "4px", fontSize: "12px", textAlign: "center", textDecoration: "none" }}>
-                Get free audit
-              </Link>
+            {/* Right — bullets */}
+            <div className="svc-bullets">
+              {s.includes.slice(0, 6).map((b) => (
+                <div key={b} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                  <CheckIcon />
+                  <span style={{ fontSize: "12px", color: "#555550", lineHeight: 1.5 }}>{b}</span>
+                </div>
+              ))}
             </div>
-          </div>
-        </section>
-      ))}
+          </Link>
+        ))}
+      </section>
 
       {/* ── PRICING NOTE ── */}
-      <section style={{ padding: "40px 32px", background: "#E8F5EE", borderBottom: "0.5px solid #9FE1CB" }}>
+      <section style={{ padding: "32px", background: "#E8F5EE", borderTop: "0.5px solid #9FE1CB", borderBottom: "0.5px solid #9FE1CB" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "20px" }}>
           <div>
             <div style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#085041", marginBottom: "6px" }}>

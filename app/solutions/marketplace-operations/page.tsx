@@ -28,6 +28,7 @@ const platforms = [
   {
     name: "Amazon",
     color: "#FF9900",
+    href: "/marketplaces/amazon",
     services: [
       "Listing creation — titles, bullets, descriptions, backend keywords",
       "A+ Content and Enhanced Brand Content",
@@ -40,6 +41,7 @@ const platforms = [
   {
     name: "eBay",
     color: "#E53238",
+    href: "/marketplaces/ebay",
     services: [
       "Cassini-optimised listing creation",
       "Item Specifics and category structuring",
@@ -52,6 +54,7 @@ const platforms = [
   {
     name: "Walmart",
     color: "#0071CE",
+    href: "/marketplaces/walmart",
     services: [
       "Seller Center setup and onboarding",
       "Listing creation and attribute mapping",
@@ -64,6 +67,7 @@ const platforms = [
   {
     name: "Etsy",
     color: "#F1641E",
+    href: "/marketplaces/etsy",
     services: [
       "Listing creation with Etsy SEO best practices — titles, tags, and descriptions",
       "Keyword research for Etsy search algorithm",
@@ -78,6 +82,7 @@ const platforms = [
   {
     name: "BestBuy",
     color: "#003B64",
+    href: "/marketplaces/bestbuy",
     services: [
       "Seller onboarding and Marketplace setup via BestBuy's vendor portal",
       "Product listing creation and attribute mapping to BestBuy taxonomy",
@@ -92,6 +97,7 @@ const platforms = [
   {
     name: "Newegg",
     color: "#E2231A",
+    href: "/marketplaces/newegg",
     services: [
       "Seller account setup and storefront configuration",
       "Listing creation for electronics, components, and tech accessories",
@@ -106,6 +112,7 @@ const platforms = [
   {
     name: "Houzz",
     color: "#74B443",
+    href: "/marketplaces/houzz",
     services: [
       "Seller account setup and Houzz Pro storefront configuration",
       "Product listing creation for home décor, furniture, and renovation categories",
@@ -120,6 +127,7 @@ const platforms = [
   {
     name: "Rakuten",
     color: "#BF0000",
+    href: "/marketplaces/rakuten",
     services: [
       "Seller account setup and storefront customisation",
       "Product listing creation and optimisation for Rakuten search",
@@ -134,6 +142,7 @@ const platforms = [
   {
     name: "Poshmark",
     color: "#CF1E55",
+    href: "/marketplaces/poshmark",
     services: [
       "Closet setup and brand profile optimisation",
       "Listing creation with Poshmark SEO — titles, descriptions, and hashtags",
@@ -336,6 +345,21 @@ export default function MarketplaceOperationsPage() {
         font-size: 22px !important;
       }
     }
+    .platform-btn {
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .platform-btn:hover {
+      background: #2D6A4F !important;
+      color: #fff !important;
+      border-color: #2D6A4F !important;
+    }
+    .also-tag {
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .also-tag:hover {
+      border-color: #2D6A4F !important;
+      color: #2D6A4F !important;
+    }
   `}</style>
 
         <div
@@ -347,7 +371,7 @@ export default function MarketplaceOperationsPage() {
             marginBottom: "10px",
           }}
         >
-          BY PLATFORM
+          YOU ARE COVERED
         </div>
         <h2
           className="platforms-heading"
@@ -359,7 +383,7 @@ export default function MarketplaceOperationsPage() {
             marginBottom: "8px",
           }}
         >
-          Specialists on every platform.
+          Specialists of every marketplace.
         </h2>
         <p
           style={{
@@ -371,7 +395,7 @@ export default function MarketplaceOperationsPage() {
           }}
         >
           Each marketplace has its own algorithm, rules, and best practices. We
-          don&apos;t generalise — we have dedicated specialists per platform.
+          don&apos;t generalise — we have dedicated specialists per marketplace.
         </p>
 
         <div className="platforms-grid">
@@ -418,6 +442,26 @@ export default function MarketplaceOperationsPage() {
                   </span>
                 </div>
               ))}
+              <div style={{ borderTop: "0.5px solid #D5C9B0", marginTop: "16px", paddingTop: "16px" }}>
+                <Link
+                  href={p.href}
+                  className="platform-btn"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    border: "0.5px solid #1C1C1C",
+                    borderRadius: "4px",
+                    padding: "9px 18px",
+                    fontSize: "12px",
+                    fontWeight: 500,
+                    color: "#1C1C1C",
+                    textDecoration: "none",
+                  }}
+                >
+                  Learn more →
+                </Link>
+              </div>
             </div>
           ))}
         </div>
@@ -444,18 +488,28 @@ export default function MarketplaceOperationsPage() {
         </div>
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
           {[
-            "Shopify",
-            "BigCommerce",
-            "WooCommerce",
-            "OnBuy",
-            "Fruugo",
-            "Mirakl-based marketplaces",
-            "TikTok Shop",
-            "Facebook Shops",
-            "Instagram Shopping",
+            { name: "Shopify", href: "/platforms/shopify" },
+            { name: "BigCommerce", href: "/platforms/bigcommerce" },
+            { name: "WooCommerce", href: "/platforms/woocommerce" },
+            { name: "Magento", href: "/platforms/magento" },
+            { name: "Opencart", href: "/platforms/opencart" },
+            { name: "Volusion", href: "/platforms/volusion" },
+            { name: "Amazon", href: "/marketplaces/amazon" },
+            { name: "ebay", href: "/marketplaces/ebay" },
+            { name: "Walmart", href: "/marketplaces/walmart" },
+            { name: "Etsy", href: "/marketplaces/etsy" },
+            { name: "Bestbuy", href: "/marketplaces/bestbuy" },
+            { name: "Newegg", href: "/marketplaces/newegg" },
+            { name: "Houzz", href: "/marketplaces/houzz" },
+            { name: "Rakuten", href: "/marketplaces/rakuten" },
+            { name: "Poshmark", href: "/marketplaces/poshmark" },
+
+
           ].map((p) => (
-            <div
-              key={p}
+            <Link
+              key={p.name}
+              href={p.href}
+              className="also-tag"
               style={{
                 border: "0.5px solid #D5C9B0",
                 borderRadius: "3px",
@@ -463,10 +517,11 @@ export default function MarketplaceOperationsPage() {
                 fontSize: "13px",
                 color: "#555550",
                 background: "#FDFAF5",
+                textDecoration: "none",
               }}
             >
-              {p}
-            </div>
+              {p.name}
+            </Link>
           ))}
         </div>
       </section>

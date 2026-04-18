@@ -68,43 +68,41 @@ const platformLinks = [
   },
   {
     title: "BigCommerce",
-    sub: null,
+    sub: "Bulk uploads, attributes, data",
     href: "/platforms/bigcommerce",
   },
   {
     title: "WooCommerce",
-    sub: null,
+    sub: "Catalog, data, order support",
     href: "/platforms/woocommerce",
   },
-  
   {
     title: "Magento",
-    sub: null,
+    sub: "Catalog, attributes, enrichment",
     href: "/platforms/magento",
   },
   {
     title: "OpenCart",
-    sub: null,
+    sub: "Listings, catalog, data",
     href: "/platforms/opencart",
   },
   {
     title: "Volusion",
-    sub: null,
+    sub: "Catalog, uploads, data",
     href: "/platforms/volusion",
   },
-  // { title: "Walmart & others", sub: null, href: "/platforms/walmart" },
 ];
 
 const marketplaceLinks = [
-  { title: "Amazon", href: "/marketplaces/amazon" },
-  { title: "eBay", href: "/marketplaces/ebay" },
-  { title: "Walmart", href: "/marketplaces/walmart" },
-  { title: "Etsy", href: "/marketplaces/etsy" },
-  { title: "BestBuy", href: "/marketplaces/bestbuy" },
-  { title: "Newegg", href: "/marketplaces/newegg" },
-  { title: "Houzz", href: "/marketplaces/houzz" },
-  { title: "Rakuten", href: "/marketplaces/rakuten" },
-  { title: "Poshmark", href: "/marketplaces/poshmark" },
+  { title: "Amazon", sub: "Listings, Buy Box, A+ Content", href: "/marketplaces/amazon" },
+  { title: "eBay", sub: "Listings, Promoted Ads, store", href: "/marketplaces/ebay" },
+  { title: "Walmart", sub: "Listings, Buy Box, fulfilment", href: "/marketplaces/walmart" },
+  { title: "Etsy", sub: "Listings, SEO, shop setup", href: "/marketplaces/etsy" },
+  { title: "BestBuy", sub: "Onboarding, listings, compliance", href: "/marketplaces/bestbuy" },
+  { title: "Newegg", sub: "Listings, repricing, tech specs", href: "/marketplaces/newegg" },
+  { title: "Houzz", sub: "Listings, storefront, décor", href: "/marketplaces/houzz" },
+  { title: "Rakuten", sub: "Listings, MQS, promotions", href: "/marketplaces/rakuten" },
+  { title: "Poshmark", sub: "Closet, listings, engagement", href: "/marketplaces/poshmark" },
 ];
 
 // All searchable pages
@@ -125,7 +123,7 @@ const allPages = [
     sub: l.sub ?? "",
     category: "Platform",
   })),
-  ...marketplaceLinks.map((l) => ({ ...l, sub: "", category: "Marketplace" })),
+  ...marketplaceLinks.map((l) => ({ ...l, category: "Marketplace" })),
 ];
 
 export default function Navbar() {
@@ -203,6 +201,17 @@ export default function Navbar() {
           .nav-hamburger { display: flex; }
           .nav-search-desktop { display: none; }
         }
+        .dd-link { display: block; padding: 8px 0; border-bottom: 0.5px solid #EDE5D5; text-decoration: none; }
+        .dd-link:hover .dd-title { color: #2D6A4F; }
+        .dd-link:hover .dd-arrow { opacity: 1; transform: translateX(0); }
+        .dd-title { font-size: 14px; font-weight: 500; color: #1C1C1C; margin-bottom: 2px; display: flex; align-items: center; justify-content: space-between; transition: color 0.15s; }
+        .dd-sub { font-size: 11px; color: #888780; }
+        .dd-arrow { opacity: 0; transform: translateX(-4px); transition: opacity 0.15s, transform 0.15s; font-size: 12px; color: #2D6A4F; }
+        .dd-heading { font-size: 13px; font-weight: 600; color: #2D6A4F; margin-bottom: 12px; letter-spacing: 0; }
+        .dd-heading-link { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: #2D6A4F; margin-bottom: 12px; text-decoration: none; cursor: pointer; }
+        .dd-heading-link .dd-h-arrow { opacity: 0; transform: translateX(-4px); transition: opacity 0.15s, transform 0.15s; }
+        .dd-heading-link:hover .dd-h-arrow { opacity: 1; transform: translateX(0); }
+        .dd-heading-link:hover { color: #1a4a35; }
       `}</style>
 
       <nav
@@ -296,73 +305,22 @@ export default function Navbar() {
                   gap: "0 24px",
                 }}
               >
-                <div
-                  style={{
-                    gridColumn: "1/-1",
-                    marginBottom: "12px",
-                    fontSize: "10px",
-                    letterSpacing: "1px",
-                    color: "#2D6A4F",
-                    fontWeight: 500,
-                  }}
-                >
-                  Solutions
+                <div style={{ gridColumn: "1/-1" }}>
+                  <Link href="/solutions" onClick={close} className="dd-heading-link">All Solutions <span className="dd-h-arrow">→</span></Link>
                 </div>
                 <div>
                   {solutionLinks.slice(0, 3).map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={close}
-                      style={{
-                        display: "block",
-                        padding: "8px 0",
-                        borderBottom: "0.5px solid #EDE5D5",
-                        textDecoration: "none",
-                      }}
-                    >
-                      <div
-                        style={{
-                          fontSize: "13px",
-                          fontWeight: 500,
-                          color: "#1C1C1C",
-                          marginBottom: "2px",
-                        }}
-                      >
-                        {item.title}
-                      </div>
-                      <div style={{ fontSize: "11px", color: "#888780" }}>
-                        {item.sub}
-                      </div>
+                    <Link key={item.href} href={item.href} onClick={close} className="dd-link">
+                      <div className="dd-title">{item.title}<span className="dd-arrow">→</span></div>
+                      <div className="dd-sub">{item.sub}</div>
                     </Link>
                   ))}
                 </div>
                 <div>
                   {solutionLinks.slice(3).map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={close}
-                      style={{
-                        display: "block",
-                        padding: "8px 0",
-                        borderBottom: "0.5px solid #EDE5D5",
-                        textDecoration: "none",
-                      }}
-                    >
-                      <div
-                        style={{
-                          fontSize: "13px",
-                          fontWeight: 500,
-                          color: "#1C1C1C",
-                          marginBottom: "2px",
-                        }}
-                      >
-                        {item.title}
-                      </div>
-                      <div style={{ fontSize: "11px", color: "#888780" }}>
-                        {item.sub}
-                      </div>
+                    <Link key={item.href} href={item.href} onClick={close} className="dd-link">
+                      <div className="dd-title">{item.title}<span className="dd-arrow">→</span></div>
+                      <div className="dd-sub">{item.sub}</div>
                     </Link>
                   ))}
                 </div>
@@ -416,42 +374,11 @@ export default function Navbar() {
                   zIndex: 10,
                 }}
               >
-                <div
-                  style={{
-                    fontSize: "10px",
-                    letterSpacing: "1px",
-                    color: "#2D6A4F",
-                    fontWeight: 500,
-                    marginBottom: "10px",
-                  }}
-                >
-                  Execution services
-                </div>
+                <Link href="/services" onClick={close} className="dd-heading-link">All services <span className="dd-h-arrow">→</span></Link>
                 {serviceLinks.map((s) => (
-                  <Link
-                    key={s.href}
-                    href={s.href}
-                    onClick={close}
-                    style={{
-                      display: "block",
-                      padding: "8px 0",
-                      borderBottom: "0.5px solid #EDE5D5",
-                      textDecoration: "none",
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontSize: "13px",
-                        fontWeight: 500,
-                        color: "#1C1C1C",
-                        marginBottom: "2px",
-                      }}
-                    >
-                      {s.title}
-                    </div>
-                    <div style={{ fontSize: "11px", color: "#888780" }}>
-                      {s.sub}
-                    </div>
+                  <Link key={s.href} href={s.href} onClick={close} className="dd-link">
+                    <div className="dd-title">{s.title}<span className="dd-arrow">→</span></div>
+                    <div className="dd-sub">{s.sub}</div>
                   </Link>
                 ))}
               </div>
@@ -505,44 +432,11 @@ export default function Navbar() {
                   zIndex: 10,
                 }}
               >
-                <div
-                  style={{
-                    fontSize: "10px",
-                    letterSpacing: "1px",
-                    color: "#2D6A4F",
-                    fontWeight: 500,
-                    marginBottom: "10px",
-                  }}
-                >
-                  Platforms we support
-                </div>
+                <Link href="/platforms" onClick={close} className="dd-heading-link">All Platforms <span className="dd-h-arrow">→</span></Link>
                 {platformLinks.map((p) => (
-                  <Link
-                    key={p.href}
-                    href={p.href}
-                    onClick={close}
-                    style={{
-                      display: "block",
-                      padding: "8px 0",
-                      borderBottom: "0.5px solid #EDE5D5",
-                      textDecoration: "none",
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontSize: "13px",
-                        fontWeight: 500,
-                        color: "#1C1C1C",
-                        marginBottom: "2px",
-                      }}
-                    >
-                      {p.title}
-                    </div>
-                    {p.sub && (
-                      <div style={{ fontSize: "11px", color: "#888780" }}>
-                        {p.sub}
-                      </div>
-                    )}
+                  <Link key={p.href} href={p.href} onClick={close} className="dd-link">
+                    <div className="dd-title">{p.title}<span className="dd-arrow">→</span></div>
+                    {p.sub && <div className="dd-sub">{p.sub}</div>}
                   </Link>
                 ))}
               </div>
@@ -599,65 +493,22 @@ export default function Navbar() {
                   gap: "0 24px",
                 }}
               >
-                <div
-                  style={{
-                    gridColumn: "1/-1",
-                    marginBottom: "12px",
-                    fontSize: "10px",
-                    letterSpacing: "1px",
-                    color: "#2D6A4F",
-                    fontWeight: 500,
-                  }}
-                >
-                  Marketplaces
+                <div style={{ gridColumn: "1/-1" }}>
+                  <Link href="/marketplaces" onClick={close} className="dd-heading-link">All Marketplaces <span className="dd-h-arrow">→</span></Link>
                 </div>
                 <div>
                   {marketplaceLinks.slice(0, 5).map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={close}
-                      style={{
-                        display: "block",
-                        padding: "8px 0",
-                        borderBottom: "0.5px solid #EDE5D5",
-                        textDecoration: "none",
-                      }}
-                    >
-                      <div
-                        style={{
-                          fontSize: "13px",
-                          fontWeight: 500,
-                          color: "#1C1C1C",
-                        }}
-                      >
-                        {item.title}
-                      </div>
+                    <Link key={item.href} href={item.href} onClick={close} className="dd-link">
+                      <div className="dd-title">{item.title}<span className="dd-arrow">→</span></div>
+                      <div className="dd-sub">{item.sub}</div>
                     </Link>
                   ))}
                 </div>
                 <div>
                   {marketplaceLinks.slice(5).map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={close}
-                      style={{
-                        display: "block",
-                        padding: "8px 0",
-                        borderBottom: "0.5px solid #EDE5D5",
-                        textDecoration: "none",
-                      }}
-                    >
-                      <div
-                        style={{
-                          fontSize: "13px",
-                          fontWeight: 500,
-                          color: "#1C1C1C",
-                        }}
-                      >
-                        {item.title}
-                      </div>
+                    <Link key={item.href} href={item.href} onClick={close} className="dd-link">
+                      <div className="dd-title">{item.title}<span className="dd-arrow">→</span></div>
+                      <div className="dd-sub">{item.sub}</div>
                     </Link>
                   ))}
                 </div>
@@ -1390,9 +1241,13 @@ export default function Navbar() {
                           fontSize: "13px",
                           fontWeight: 500,
                           color: "#1C1C1C",
+                          marginBottom: "2px",
                         }}
                       >
                         {item.title}
+                      </div>
+                      <div style={{ fontSize: "11px", color: "#888780" }}>
+                        {item.sub}
                       </div>
                     </Link>
                   ))}
