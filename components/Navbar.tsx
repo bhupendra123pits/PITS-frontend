@@ -1019,6 +1019,10 @@ export default function Navbar() {
               </div>
               {mobileExpanded === "solutions" && (
                 <div style={{ paddingBottom: "12px" }}>
+                  <Link href="/solutions" onClick={closeMobile} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 0 10px 16px", borderTop: "0.5px solid #F5F0E8", textDecoration: "none" }}>
+                    <span style={{ fontSize: "13px", fontWeight: 600, color: "#2D6A4F" }}>All Solutions</span>
+                    <span style={{ fontSize: "12px", color: "#2D6A4F", paddingRight: "4px" }}>→</span>
+                  </Link>
                   {solutionLinks.map((item) => (
                     <Link
                       key={item.href}
@@ -1084,6 +1088,10 @@ export default function Navbar() {
               </div>
               {mobileExpanded === "services" && (
                 <div style={{ paddingBottom: "12px" }}>
+                  <Link href="/services" onClick={closeMobile} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 0 10px 16px", borderTop: "0.5px solid #F5F0E8", textDecoration: "none" }}>
+                    <span style={{ fontSize: "13px", fontWeight: 600, color: "#2D6A4F" }}>All Services</span>
+                    <span style={{ fontSize: "12px", color: "#2D6A4F", paddingRight: "4px" }}>→</span>
+                  </Link>
                   {serviceLinks.map((s) => (
                     <Link
                       key={s.href}
@@ -1153,6 +1161,10 @@ export default function Navbar() {
               </div>
               {mobileExpanded === "platforms" && (
                 <div style={{ paddingBottom: "12px" }}>
+                  <Link href="/platforms" onClick={closeMobile} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 0 10px 16px", borderTop: "0.5px solid #F5F0E8", textDecoration: "none" }}>
+                    <span style={{ fontSize: "13px", fontWeight: 600, color: "#2D6A4F" }}>All Platforms</span>
+                    <span style={{ fontSize: "12px", color: "#2D6A4F", paddingRight: "4px" }}>→</span>
+                  </Link>
                   {platformLinks.map((p) => (
                     <Link
                       key={p.href}
@@ -1224,6 +1236,10 @@ export default function Navbar() {
               </div>
               {mobileExpanded === "marketplaces" && (
                 <div style={{ paddingBottom: "12px" }}>
+                  <Link href="/marketplaces" onClick={closeMobile} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 0 10px 16px", borderTop: "0.5px solid #F5F0E8", textDecoration: "none" }}>
+                    <span style={{ fontSize: "13px", fontWeight: 600, color: "#2D6A4F" }}>All Marketplaces</span>
+                    <span style={{ fontSize: "12px", color: "#2D6A4F", paddingRight: "4px" }}>→</span>
+                  </Link>
                   {marketplaceLinks.map((item) => (
                     <Link
                       key={item.href}
