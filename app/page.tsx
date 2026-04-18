@@ -265,7 +265,7 @@ export default function HomePage() {
               letterSpacing: "0.5px",
             }}
           >
-            BUILD ON TRUST
+            BUILT ON TRUST
           </div>
           {stats.map((s, i) => (
             <div

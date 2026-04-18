@@ -26,7 +26,8 @@ export default function PlatformsPage() {
       {/* ── HERO ── */}
       <div style={{ background: "#F5F0E8", padding: "48px 32px 40px", borderBottom: "0.5px solid #D5C9B0" }}>
         <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
-          Home <span style={{ color: "#2D6A4F" }}>/ Platforms</span>
+          <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>Home</Link>
+          <span style={{ color: "#2D6A4F" }}> / Platforms</span>
         </div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "34px", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "12px" }}>
           Every platform you sell on, <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>covered.</em>
