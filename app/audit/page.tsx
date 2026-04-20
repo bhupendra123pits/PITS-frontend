@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     siteName: "Professional ITS",
     type: "website",
   },
+  alternates: {
+    canonical: "https://professionalits.com/audit",
+  },
 };
 
 export default function AuditPage() {

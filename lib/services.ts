@@ -58,7 +58,7 @@ export const services: Record<string, Service> = {
       { n: "48hr", l: "Standard turnaround" },
       { n: "15yrs", l: "Operations experience" },
     ],
-    platforms: ["Amazon", "Shopify", "eBay", "BigCommerce", "WooCommerce", "Magento", "Walmart", "Etsy"],
+    platforms: ["Shopify", "BigCommerce", "WooCommerce", "Magento", "OpenCart", "Volusion"],
     relatedServices: ["bulk-product-uploads", "attribute-filter-structuring", "image-processing-enrichment"],
   },
 
@@ -96,7 +96,7 @@ export const services: Record<string, Service> = {
       { n: "48hr", l: "Standard turnaround" },
       { n: "8", l: "Platforms supported" },
     ],
-    platforms: ["Amazon", "Shopify", "eBay", "BigCommerce", "WooCommerce", "Magento", "Walmart", "Etsy"],
+    platforms: ["Shopify", "BigCommerce", "WooCommerce", "Magento", "OpenCart", "Volusion"],
     relatedServices: ["product-data-management", "attribute-filter-structuring", "image-processing-enrichment"],
   },
 
@@ -134,7 +134,7 @@ export const services: Record<string, Service> = {
       { n: "500K+", l: "Attributes structured" },
       { n: "15yrs", l: "Platform experience" },
     ],
-    platforms: ["Amazon", "Shopify", "eBay", "BigCommerce", "WooCommerce", "Magento", "Walmart"],
+    platforms: ["Shopify", "BigCommerce", "WooCommerce", "Magento", "OpenCart", "Volusion"],
     relatedServices: ["product-data-management", "bulk-product-uploads", "image-processing-enrichment"],
   },
 
@@ -172,7 +172,7 @@ export const services: Record<string, Service> = {
       { n: "8", l: "Platforms supported" },
       { n: "48hr", l: "Standard turnaround" },
     ],
-    platforms: ["Amazon", "Shopify", "eBay", "Etsy", "Walmart", "BigCommerce", "WooCommerce"],
+    platforms: ["Shopify", "BigCommerce", "WooCommerce", "Magento", "OpenCart", "Volusion"],
     relatedServices: ["product-data-management", "bulk-product-uploads", "attribute-filter-structuring"],
   },
 
@@ -210,7 +210,7 @@ export const services: Record<string, Service> = {
       { n: "500+", l: "Stores managed" },
       { n: "15yrs", l: "Operations experience" },
     ],
-    platforms: ["Amazon", "Shopify", "eBay", "Walmart", "BigCommerce", "WooCommerce", "Etsy"],
+    platforms: ["Shopify", "BigCommerce", "WooCommerce", "Magento", "OpenCart", "Volusion"],
     relatedServices: ["product-data-management", "bulk-product-uploads", "attribute-filter-structuring"],
   },
 };

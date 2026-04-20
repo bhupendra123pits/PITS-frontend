@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     siteName: "Professional ITS",
     type: "website",
   },
+  alternates: {
+    canonical: "https://professionalits.com/platforms",
+  },
 };
 
 export default function PlatformsPage() {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { services, serviceSlugs } from "@/lib/services";
+import { platforms } from "@/lib/platforms";
 
 export async function generateStaticParams() {
   return serviceSlugs.map((slug) => ({ service: slug }));
@@ -444,21 +445,30 @@ export default async function ServicePage({
               PLATFORMS
             </div>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              {s.platforms.map((p) => (
-                <div
-                  key={p}
-                  style={{
-                    border: "0.5px solid #D5C9B0",
-                    borderRadius: "3px",
-                    padding: "5px 12px",
-                    fontSize: "12px",
-                    color: "#555550",
-                    background: "#FDFAF5",
-                  }}
-                >
-                  {p}
-                </div>
-              ))}
+              {s.platforms.map((p) => {
+                const slug = p.toLowerCase().replace(/\s+/g, "");
+                const hasPage = !!platforms[slug];
+                const tagStyle = {
+                  border: "0.5px solid #D5C9B0",
+                  borderRadius: "3px",
+                  padding: "5px 12px",
+                  fontSize: "12px",
+                  background: "#FDFAF5",
+                };
+                return hasPage ? (
+                  <Link
+                    key={p}
+                    href={`/platforms/${slug}`}
+                    style={{ ...tagStyle, color: "#2D6A4F", textDecoration: "none", fontWeight: 500 }}
+                  >
+                    {p}
+                  </Link>
+                ) : (
+                  <div key={p} style={{ ...tagStyle, color: "#555550" }}>
+                    {p}
+                  </div>
+                );
+              })}
             </div>
           </div>
 

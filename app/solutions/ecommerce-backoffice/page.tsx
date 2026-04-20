@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     siteName: "Professional ITS",
     type: "website",
   },
+  alternates: {
+    canonical: "https://professionalits.com/solutions/ecommerce-backoffice",
+  },
 };
 
 const services = [

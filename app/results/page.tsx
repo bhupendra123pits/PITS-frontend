@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "Results – Professional ITS",
   description:
     "500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
+  alternates: {
+    canonical: "https://professionalits.com/results",
+  },
+  openGraph: {
+    title: "Results – Professional ITS",
+    description: "500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
+    url: "https://professionalits.com/results",
+    siteName: "Professional ITS",
+    type: "website",
+  },
 };
 
 const stats = [

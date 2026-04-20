@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     siteName: "Professional ITS",
     type: "website",
   },
+  alternates: {
+    canonical: "https://professionalits.com/solutions/product-data-cleanup",
+  },
 };
 
 const problems = [

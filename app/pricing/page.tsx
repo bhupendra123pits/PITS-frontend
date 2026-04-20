@@ -6,6 +6,16 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Pricing – Professional ITS",
   description: "Transparent pricing with no surprises. Per SKU, monthly retainers, and virtual assistant options. Start with a free catalog audit.",
+  alternates: {
+    canonical: "https://professionalits.com/pricing",
+  },
+  openGraph: {
+    title: "Pricing – Professional ITS",
+    description: "Transparent pricing with no surprises. Per SKU, monthly retainers, and virtual assistant options.",
+    url: "https://professionalits.com/pricing",
+    siteName: "Professional ITS",
+    type: "website",
+  },
 };
 
 export default function PricingPage() {

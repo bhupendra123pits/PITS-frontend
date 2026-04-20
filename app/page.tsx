@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
   description:
     "Catalog operations, marketplace management, and store back-office for e-commerce businesses running 500 to 500,000 SKUs. Execution-heavy. SLA-backed. No lock-in.",
+  alternates: {
+    canonical: "https://professionalits.com",
+  },
+  openGraph: {
+    title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
+    description: "Catalog operations, marketplace management, and store back-office for e-commerce businesses running 500 to 500,000 SKUs.",
+    url: "https://professionalits.com",
+    siteName: "Professional ITS",
+    type: "website",
+  },
 };
 
 const solutions = [
@@ -95,7 +105,6 @@ const marqueebrands = [
 const trustItems = [
   { n: "Amazon", l: "Seller Central specialists" },
   { n: "Shopify", l: "Full back-office support" },
-
   { n: "eBay", l: "Cassini-optimised listings" },
 ];
 
