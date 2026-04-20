@@ -13,7 +13,6 @@ const solutionLinks = [
   { label: "Data cleanup", href: "/solutions/product-data-cleanup" },
   { label: "High-SKU scaling", href: "/solutions/high-sku-scaling" },
   { label: "All Solutions", href: "/solutions" },
-
 ];
 
 const serviceLinks = [
@@ -40,9 +39,6 @@ const platformLinks = [
   { label: "opencart", href: "/platforms/opencart" },
   { label: "volusion", href: "/platforms/volusion" },
   { label: "All Platform", href: "/platforms" },
-
-  
-  
 ];
 
 const marketplaceLinks = [
@@ -56,13 +52,14 @@ const marketplaceLinks = [
   { label: "Rakuten", href: "/marketplaces/rakuten" },
   { label: "Poshmark", href: "/marketplaces/poshmark" },
   { label: "All Marketplace", href: "/marketplaces" },
-
 ];
 
 const companyLinks = [
   { label: "Results", href: "/results" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Free catalog audit", href: "/audit" },
+  { label: "Team", href: "/home" },
+  { label: "Company", href: "/home" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -322,7 +319,7 @@ export default function Footer() {
               letterSpacing: "0.5px",
             }}
           >
-            Company
+            About
           </div>
           {companyLinks.map((l) =>
             l.href ? (

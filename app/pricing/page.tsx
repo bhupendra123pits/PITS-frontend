@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pricing – Professional ITS",
@@ -80,7 +81,7 @@ export default function PricingPage() {
         </div>
 
         {/* Audit Banner */}
-        <div className="audit-banner">
+        <Link href="/audit" className="audit-banner">
           <div>
             <div className="audit-banner-title" style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>
               Not sure which plan fits? Start with the free audit.
@@ -92,7 +93,7 @@ export default function PricingPage() {
           <div className="audit-banner-btn">
             Get free catalog audit
           </div>
-        </div>
+        </Link>
       </section>
 
       <Footer />

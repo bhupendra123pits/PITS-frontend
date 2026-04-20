@@ -188,17 +188,15 @@ export default async function PlatformPage({
       </div>
 
       {/* ── STATS BAR ── */}
-      <div
-        style={{
-          background: "#2D6A4F",
-          padding: "20px 32px",
-          display: "grid",
-         gridTemplateColumns: `repeat(${p.stats.length},1fr)`,
-        }}
-      >
+      <style>{`
+        .plat-stats { display: grid; grid-template-columns: repeat(${p.stats.length}, 1fr); background: #2D6A4F; padding: 20px 32px; }
+        @media (max-width: 640px) { .plat-stats { padding: 16px; gap: 8px; } .plat-stats > div .stat-n { font-size: 16px !important; } .plat-stats > div .stat-l { font-size: 9px !important; } }
+      `}</style>
+      <div className="plat-stats">
         {p.stats.map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>
             <div
+              className="stat-n"
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "22px",
@@ -209,6 +207,7 @@ export default async function PlatformPage({
               {s.n}
             </div>
             <div
+              className="stat-l"
               style={{
                 fontSize: "11px",
                 color: "rgba(255,255,255,0.7)",

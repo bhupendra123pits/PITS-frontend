@@ -33,6 +33,7 @@ const slaItems = [
   { metric: "Weekly", label: "Reporting cadence" },
 ];
 
+
 const CheckIcon = () => (
   <div style={{ width: "18px", height: "18px", borderRadius: "50%", background: "#E8F5EE", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", marginTop: "2px" }}>
     <svg viewBox="0 0 10 10" style={{ width: "10px", height: "10px" }} fill="none">
@@ -76,9 +77,18 @@ export default function EcommerceBackofficePage() {
         }
         @media (max-width: 640px) {
           .sla-bar {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            padding: 20px 16px !important;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            padding: 16px 12px !important;
+          }
+          .sla-bar > div {
+            padding: 0 4px;
+          }
+          .sla-bar .sla-metric {
+            font-size: 16px !important;
+          }
+          .sla-bar .sla-label {
+            font-size: 9px !important;
           }
           .sla-promise-grid {
             grid-template-columns: 1fr !important;
@@ -104,8 +114,8 @@ export default function EcommerceBackofficePage() {
       <div className="sla-bar" style={{ background: "#2D6A4F", padding: "20px 32px" }}>
         {slaItems.map((s) => (
           <div key={s.label} style={{ textAlign: "center" }}>
-            <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>{s.metric}</div>
-            <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.7)", marginTop: "2px" }}>{s.label}</div>
+            <div className="sla-metric" style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>{s.metric}</div>
+            <div className="sla-label" style={{ fontSize: "11px", color: "rgba(255,255,255,0.7)", marginTop: "2px" }}>{s.label}</div>
           </div>
         ))}
       </div>

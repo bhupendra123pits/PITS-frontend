@@ -77,7 +77,7 @@ export const marketplaces: Record<string, Marketplace> = {
     stats: [
       { n: "3x", l: "Avg. visibility lift" },
       { n: "99.1%", l: "Listing accuracy" },
-      { n: "500+", l: "Amazon stores managed" },
+      // { n: "500+", l: "Amazon stores managed" },
       { n: "15yrs", l: "Seller Central experience" },
       { n: "A9", l: "Algorithm specialists" },
     ],
@@ -178,7 +178,7 @@ export const marketplaces: Record<string, Marketplace> = {
     stats: [
       { n: "Top", l: "Rated Seller support" },
       { n: "99.1%", l: "Listing accuracy" },
-      { n: "500+", l: "eBay stores managed" },
+      // { n: "500+", l: "eBay stores managed" },
       { n: "15yrs", l: "eBay operations experience" },
       { n: "Cassini", l: "Algorithm specialists" },
     ],
@@ -276,7 +276,7 @@ export const marketplaces: Record<string, Marketplace> = {
       { n: "99.1%", l: "Listing accuracy" },
       { n: "Content", l: "Score specialists" },
       { n: "Seller Center ", l: "Specialists review" },
-      { n: "Content Score ", l: "Optimisation" },
+      // { n: "Content Score ", l: "Optimisation" },
 
     ],
     also: ["Amazon", "eBay", "BestBuy", "Newegg"],
@@ -368,7 +368,7 @@ export const marketplaces: Record<string, Marketplace> = {
     stats: [
       { n: "500+", l: "Shops managed" },
       { n: "Etsy SEO", l: "Algorithm specialists" },
-      { n: "99.1%", l: "Listing accuracy" },
+      // { n: "99.1%", l: "Listing accuracy" },
       { n: "15yrs", l: "Marketplace experience" },
       { n: "Shop", l: "Full Management" },
 
@@ -464,7 +464,7 @@ export const marketplaces: Record<string, Marketplace> = {
       { n: "99.1%", l: "Content accuracy" },
       { n: "BestBuy ", l: "Vendor portal specialists" },
       { n: "500+", l: "Brands supported" },
-      { n: "15yrs", l: "Operations experience" },
+      // { n: "15yrs", l: "Operations experience" },
       { n: "Tech", l: "Category expertise" },
 
     ],
@@ -746,7 +746,7 @@ export const marketplaces: Record<string, Marketplace> = {
       { n: "48hr", l: "Standard turnaround" },
       { n: "500+", l: "Brands supported" },
       { n: "15yrs", l: "Operations experience" },
-      { n: "Brand-forward", l: "Storefront approach" },
+      // { n: "Brand-forward", l: "Storefront approach" },
 
     ],
     also: ["Amazon", "eBay", "Walmart", "Etsy"],
@@ -842,7 +842,7 @@ export const marketplaces: Record<string, Marketplace> = {
       { n: "48hr", l: "Standard turnaround" },
       { n: "500+", l: "Closets managed" },
       { n: "15yrs", l: "Fashion catalog experience" },
-      { n: "Social-first", l: "Algorithm expertise" },
+      // { n: "Social-first", l: "Algorithm expertise" },
 
     ],
     also: ["Etsy", "eBay", "Amazon", "Houzz"],

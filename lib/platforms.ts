@@ -228,7 +228,7 @@ export const platforms: Record<string, Platform> = {
     ],
     stats: [
       { n: "500+", l: "Stores managed" },
-      { n: "99.1%", l: "Data accuracy" },
+      // { n: "99.1%", l: "Data accuracy" },
       { n: "WooCommerce", l: "Catalog specialists" },
       { n: "15yrs", l: "Platform experience" },
       { n: "WordPress-native", l: "Platform Knowledge" },
