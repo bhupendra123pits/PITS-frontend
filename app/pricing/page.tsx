@@ -81,7 +81,7 @@ export default function PricingPage() {
         </div>
 
         {/* Audit Banner */}
-        <Link href="/audit" className="audit-banner">
+        <Link href="/audit" className="audit-banner" style={{ textDecoration: "none", display: "flex" }}>
           <div>
             <div className="audit-banner-title" style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>
               Not sure which plan fits? Start with the free audit.

@@ -94,8 +94,9 @@ const marqueebrands = [
 
 const trustItems = [
   { n: "Amazon", l: "Seller Central specialists" },
-  { n: "eBay", l: "Cassini-optimised listings" },
   { n: "Shopify", l: "Full back-office support" },
+
+  { n: "eBay", l: "Cassini-optimised listings" },
 ];
 
 export default function HomePage() {
