@@ -63,7 +63,7 @@ const solutions = [
   {
     num: "03",
     title: "Ecommerce backoffice management",
-    href: "/solutions/eCommerce-backoffice",
+    href: "/solutions/ecommerce-backoffice",
     ai: false,
     tagline: "Customer support, order processing, and inventory monitoring — on an SLA you can hold us to.",
     bullets: [

@@ -18,7 +18,7 @@ const solutionLinks = [
   {
     title: "Ecommerce backoffice",
     sub: "Support, orders, inventory",
-    href: "/solutions/eCommerce-backoffice",
+    href: "/solutions/ecommerce-backoffice",
   },
   {
     title: "Product data cleanup",
