@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import { SiShopify, SiWalmart, SiBigcommerce, SiEtsy, SiHouzz, SiNewegg, SiRakuten } from "react-icons/si";
+import { SiShopify, SiBigcommerce, SiEtsy, SiHouzz, SiNewegg, SiRakuten } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
@@ -120,7 +120,7 @@ const MagentoIcon = () => (
 const marqueebrands = [
   { name: "Shopify",     color: "#96BF48", Icon: () => <SiShopify size={24} color="#96BF48" />,     href: "/platforms/shopify" },
   { name: "eBay",        color: "#E53238", Icon: () => <img src="/ebaylogo.png" alt="eBay" width={42} height={42} style={{ objectFit: "contain" }} />,         href: "/marketplaces/ebay" },
-  { name: "Walmart",     color: "#0071CE", Icon: () => <SiWalmart size={54} color="#0071CE" />,      href: "/marketplaces/walmart" },
+  { name: "Walmart",     color: "#0071CE", Icon: () => <img src="/wallmartlogo.png" alt="Walmart" width={42} height={42} style={{ objectFit: "contain" }} />,      href: "/marketplaces/walmart" },
   { name: "BigCommerce", color: "#003087", Icon: () => <SiBigcommerce size={24} color="#003087" />,  href: "/platforms/bigcommerce" },
   { name: "WooCommerce", color: "#7F54B3", Icon: () => <img src="/woologo.png" alt="WooCommerce" width={42} height={42} style={{ objectFit: "contain" }} />,  href: "/platforms/woocommerce" },
   { name: "Magento",     color: "#EE672F", Icon: MagentoIcon,                                        href: "/platforms/magento" },
