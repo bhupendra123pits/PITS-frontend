@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import { SiShopify, SiEbay, SiWalmart, SiBigcommerce, SiWoocommerce, SiEtsy, SiHouzz, SiNewegg, SiRakuten } from "react-icons/si";
+import { SiShopify, SiWalmart, SiBigcommerce, SiEtsy, SiHouzz, SiNewegg, SiRakuten } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
@@ -74,16 +74,8 @@ const services = [
 ];
 
 const AmazonIcon = () => (
-  <svg viewBox="0 0 60 62" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-    {/* gray shadow */}
-    <text x="6" y="46" fontSize="54" fontWeight="900" fill="#C8C8C8" fontFamily="'Arial Rounded MT Bold','Arial Black',Arial,sans-serif">a</text>
-    {/* black letter */}
-    <text x="3" y="43" fontSize="54" fontWeight="900" fill="#000000" fontFamily="'Arial Rounded MT Bold','Arial Black',Arial,sans-serif">a</text>
-    {/* orange smile */}
-    <path d="M5 53 Q30 67 54 52" stroke="#FF9A00" strokeWidth="4.5" fill="none" strokeLinecap="round"/>
-    {/* arrowhead */}
-    <polyline points="48,48 55,52 51,58" fill="none" stroke="#FF9A00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
+  // eslint-disable-next-line @next/next/no-img-element
+  <img src="/amazonlogo.png" alt="Amazon" width={42} height={42} style={{ objectFit: "contain" }} />
 );
 
 const OpenCartIcon = () => (
@@ -127,10 +119,10 @@ const MagentoIcon = () => (
 
 const marqueebrands = [
   { name: "Shopify",     color: "#96BF48", Icon: () => <SiShopify size={24} color="#96BF48" />,     href: "/platforms/shopify" },
-  { name: "eBay",        color: "#E53238", Icon: () => <SiEbay size={24} color="#E53238" />,         href: "/marketplaces/ebay" },
-  { name: "Walmart",     color: "#0071CE", Icon: () => <SiWalmart size={24} color="#0071CE" />,      href: "/marketplaces/walmart" },
+  { name: "eBay",        color: "#E53238", Icon: () => <img src="/ebaylogo.png" alt="eBay" width={42} height={42} style={{ objectFit: "contain" }} />,         href: "/marketplaces/ebay" },
+  { name: "Walmart",     color: "#0071CE", Icon: () => <SiWalmart size={54} color="#0071CE" />,      href: "/marketplaces/walmart" },
   { name: "BigCommerce", color: "#003087", Icon: () => <SiBigcommerce size={24} color="#003087" />,  href: "/platforms/bigcommerce" },
-  { name: "WooCommerce", color: "#7F54B3", Icon: () => <SiWoocommerce size={25} color="#7F54B3" />,  href: "/platforms/woocommerce" },
+  { name: "WooCommerce", color: "#7F54B3", Icon: () => <img src="/woologo.png" alt="WooCommerce" width={42} height={42} style={{ objectFit: "contain" }} />,  href: "/platforms/woocommerce" },
   { name: "Magento",     color: "#EE672F", Icon: MagentoIcon,                                        href: "/platforms/magento" },
   { name: "Etsy",        color: "#F1641E", Icon: () => <SiEtsy size={24} color="#F1641E" />,         href: "/marketplaces/etsy" },
   { name: "Amazon",      color: "#FF9900", Icon: AmazonIcon,                                         href: "/marketplaces/amazon" },
