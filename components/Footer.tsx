@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const solutionLinks = [
   {
-    label: "Catalog & data operations",
+    label: "Catalog & product data",
     href: "/solutions/catalog-product-data",
   },
   {
@@ -10,8 +10,8 @@ const solutionLinks = [
     href: "/solutions/marketplace-operations",
   },
   { label: "Ecommerce backoffice", href: "/solutions/ecommerce-backoffice" },
-  { label: "Data cleanup", href: "/solutions/product-data-cleanup" },
-  { label: "High-SKU scaling", href: "/solutions/high-sku-scaling" },
+  { label: "Product Data cleanup", href: "/solutions/product-data-cleanup" },
+  { label: "High-SKU catalog scaling", href: "/solutions/high-sku-scaling" },
   { label: "All Solutions", href: "/solutions" },
 ];
 
@@ -20,13 +20,13 @@ const serviceLinks = [
     label: "Product data management",
     href: "/services/product-data-management",
   },
-  { label: "Bulk uploads", href: "/services/bulk-product-uploads" },
+  { label: "Bulk Product uploads", href: "/services/bulk-product-uploads" },
   {
-    label: "Attribute structuring",
+    label: "Attribute & filter structuring",
     href: "/services/attribute-filter-structuring",
   },
-  { label: "Image processing", href: "/services/image-processing-enrichment" },
-  { label: "Order support", href: "/services/order-inventory-support" },
+  { label: "Image processing & enrichment", href: "/services/image-processing-enrichment" },
+  { label: "Order & inventory support", href: "/services/order-inventory-support" },
   { label: "All Services", href: "/services" },
 ];
 
@@ -36,9 +36,9 @@ const platformLinks = [
   { label: "BigCommerce", href: "/platforms/bigcommerce" },
   { label: "WooCommerce", href: "/platforms/woocommerce" },
   { label: "Magento", href: "/platforms/magento" },
-  { label: "opencart", href: "/platforms/opencart" },
-  { label: "volusion", href: "/platforms/volusion" },
-  { label: "All Platform", href: "/platforms" },
+  { label: "Opencart", href: "/platforms/opencart" },
+  { label: "Volusion", href: "/platforms/volusion" },
+  { label: "All Platforms", href: "/platforms" },
 ];
 
 const marketplaceLinks = [
@@ -51,14 +51,14 @@ const marketplaceLinks = [
   { label: "Houzz", href: "/marketplaces/houzz" },
   { label: "Rakuten", href: "/marketplaces/rakuten" },
   { label: "Poshmark", href: "/marketplaces/poshmark" },
-  { label: "All Marketplace", href: "/marketplaces" },
+  { label: "All Marketplaces", href: "/marketplaces" },
 ];
 
 const companyLinks = [
   { label: "Results", href: "/results" },
   { label: "Free catalog audit", href: "/audit" },
-  { label: "Team", href: "/home" },
-  { label: "Company", href: "/home" },
+  { label: "Team", href: "/team" },
+  { label: "Company", href: "/company" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];

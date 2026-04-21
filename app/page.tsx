@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import { SiShopify, SiEbay, SiWalmart, SiBigcommerce, SiWoocommerce, SiEtsy } from "react-icons/si";
+import { SiShopify, SiEbay, SiWalmart, SiBigcommerce, SiWoocommerce, SiEtsy, SiHouzz, SiNewegg, SiRakuten } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
@@ -66,18 +66,52 @@ const stats = [
 ];
 
 const services = [
-  { title: "Product data management", sub: "End-to-end" },
-  { title: "Bulk product uploads", sub: "Any platform" },
-  { title: "Attribute structuring", sub: "Filter-ready" },
-  { title: "Image processing", sub: "Compliant sets" },
-  { title: "Order & inventory", sub: "SLA-backed" },
+  { title: "Product data management",        sub: "End-to-end",     href: "/services/product-data-management" },
+  { title: "Bulk product uploads",           sub: "Any platform",   href: "/services/bulk-product-uploads" },
+  { title: "Attribute & filter structuring", sub: "Filter-ready",   href: "/services/attribute-filter-structuring" },
+  { title: "Image processing & enrichment",  sub: "Compliant sets", href: "/services/image-processing-enrichment" },
+  { title: "Order & inventory support",      sub: "SLA-backed",     href: "/services/order-inventory-support" },
 ];
 
 const AmazonIcon = () => (
+  <svg viewBox="0 0 60 62" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+    {/* gray shadow */}
+    <text x="6" y="46" fontSize="54" fontWeight="900" fill="#C8C8C8" fontFamily="'Arial Rounded MT Bold','Arial Black',Arial,sans-serif">a</text>
+    {/* black letter */}
+    <text x="3" y="43" fontSize="54" fontWeight="900" fill="#000000" fontFamily="'Arial Rounded MT Bold','Arial Black',Arial,sans-serif">a</text>
+    {/* orange smile */}
+    <path d="M5 53 Q30 67 54 52" stroke="#FF9A00" strokeWidth="4.5" fill="none" strokeLinecap="round"/>
+    {/* arrowhead */}
+    <polyline points="48,48 55,52 51,58" fill="none" stroke="#FF9A00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const OpenCartIcon = () => (
   <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <text x="1" y="13" fontSize="9" fontWeight="700" fill="#232F3E" fontFamily="Arial, sans-serif">amazon</text>
-    <path d="M3 17c4 2.5 12 2.5 18-1" stroke="#FF9900" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M18 14.5c1-1 2.5-.5 2 1" stroke="#FF9900" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M1 3h2.2l2.8 10.5h9.5l2-7.5H6.5" stroke="#23ACDF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="9" cy="20" r="1.5" fill="#23ACDF"/>
+    <circle cx="16.5" cy="20" r="1.5" fill="#23ACDF"/>
+  </svg>
+);
+
+const VolusionIcon = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+    <rect width="24" height="24" rx="4" fill="#1E2D5B"/>
+    <text x="4" y="17" fontSize="14" fontWeight="800" fill="#4DB8FF" fontFamily="Arial, sans-serif">V</text>
+  </svg>
+);
+
+const BestBuyIcon = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+    <rect width="24" height="24" rx="2" fill="#FFE000"/>
+    <text x="2" y="16" fontSize="8.5" fontWeight="800" fill="#0046BE" fontFamily="Arial, sans-serif">BBY</text>
+  </svg>
+);
+
+const PoshmarkIcon = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+    <rect width="24" height="24" rx="4" fill="#FF2A5E"/>
+    <text x="5" y="17" fontSize="14" fontWeight="800" fill="#FFFFFF" fontFamily="Arial, sans-serif">P</text>
   </svg>
 );
 
@@ -92,14 +126,21 @@ const MagentoIcon = () => (
 );
 
 const marqueebrands = [
-  { name: "Shopify",     color: "#96BF48", Icon: () => <SiShopify size={24} color="#96BF48" /> },
-  { name: "eBay",        color: "#E53238", Icon: () => <SiEbay size={24} color="#E53238" /> },
-  { name: "Walmart",     color: "#0071CE", Icon: () => <SiWalmart size={24} color="#0071CE" /> },
-  { name: "BigCommerce", color: "#003087", Icon: () => <SiBigcommerce size={24} color="#003087" /> },
-  { name: "WooCommerce", color: "#7F54B3", Icon: () => <SiWoocommerce size={24} color="#7F54B3" /> },
-  { name: "Magento",     color: "#EE672F", Icon: MagentoIcon },
-  { name: "Etsy",        color: "#F1641E", Icon: () => <SiEtsy size={24} color="#F1641E" /> },
-  { name: "Amazon",      color: "#FF9900", Icon: AmazonIcon },
+  { name: "Shopify",     color: "#96BF48", Icon: () => <SiShopify size={24} color="#96BF48" />,     href: "/platforms/shopify" },
+  { name: "eBay",        color: "#E53238", Icon: () => <SiEbay size={24} color="#E53238" />,         href: "/marketplaces/ebay" },
+  { name: "Walmart",     color: "#0071CE", Icon: () => <SiWalmart size={24} color="#0071CE" />,      href: "/marketplaces/walmart" },
+  { name: "BigCommerce", color: "#003087", Icon: () => <SiBigcommerce size={24} color="#003087" />,  href: "/platforms/bigcommerce" },
+  { name: "WooCommerce", color: "#7F54B3", Icon: () => <SiWoocommerce size={25} color="#7F54B3" />,  href: "/platforms/woocommerce" },
+  { name: "Magento",     color: "#EE672F", Icon: MagentoIcon,                                        href: "/platforms/magento" },
+  { name: "Etsy",        color: "#F1641E", Icon: () => <SiEtsy size={24} color="#F1641E" />,         href: "/marketplaces/etsy" },
+  { name: "Amazon",      color: "#FF9900", Icon: AmazonIcon,                                         href: "/marketplaces/amazon" },
+  { name: "OpenCart",    color: "#23ACDF", Icon: OpenCartIcon,                                       href: "/platforms/opencart" },
+  { name: "Volusion",    color: "#4DB8FF", Icon: VolusionIcon,                                       href: "/platforms/volusion" },
+  { name: "BestBuy",     color: "#0046BE", Icon: BestBuyIcon,                                        href: "/marketplaces/bestbuy" },
+  { name: "Newegg",      color: "#E2231A", Icon: () => <SiNewegg size={24} color="#E2231A" />,       href: "/marketplaces/newegg" },
+  { name: "Houzz",       color: "#73BA42", Icon: () => <SiHouzz size={24} color="#73BA42" />,        href: "/marketplaces/houzz" },
+  { name: "Rakuten",     color: "#BF0000", Icon: () => <SiRakuten size={24} color="#BF0000" />,      href: "/marketplaces/rakuten" },
+  { name: "Poshmark",    color: "#FF2A5E", Icon: PoshmarkIcon,                                       href: "/marketplaces/poshmark" },
 ];
 
 const trustItems = [
@@ -598,14 +639,18 @@ export default function HomePage() {
         </p>
         <div className="services-grid">
           {services.map((s) => (
-            <div
+            <Link
               key={s.title}
+              href={s.href}
               style={{
                 background: "#FDFAF5",
                 border: "0.5px solid #D5C9B0",
                 borderRadius: "6px",
                 padding: "14px",
                 textAlign: "center",
+                textDecoration: "none",
+                display: "block",
+                cursor: "pointer",
               }}
             >
               <div
@@ -640,7 +685,7 @@ export default function HomePage() {
                 {s.title}
               </div>
               <div style={{ fontSize: "11px", color: "#888780" }}>{s.sub}</div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -669,7 +714,7 @@ export default function HomePage() {
         </div>
 
         <style>{`
-          .marquee-inner { display: flex; animation: marquee 28s linear infinite; white-space: nowrap; }
+          .marquee-inner { display: flex; animation: marquee 60s linear infinite; white-space: nowrap; }
           .marquee-inner:hover { animation-play-state: paused; }
            @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
          `}</style>
@@ -703,8 +748,9 @@ export default function HomePage() {
 
           <div className="marquee-inner">
             {[...marqueebrands, ...marqueebrands].map((brand, i) => (
-              <div
+              <Link
                 key={i}
+                href={brand.href}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -713,6 +759,8 @@ export default function HomePage() {
                   borderRight: "0.5px solid #D5C9B0",
                   height: "56px",
                   flexShrink: 0,
+                  textDecoration: "none",
+                  cursor: "pointer",
                 }}
               >
                 <brand.Icon />
@@ -726,7 +774,7 @@ export default function HomePage() {
                 >
                   {brand.name}
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -2,15 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   generateEtags: false,
-  async redirects() {
-    return [
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-    ]
-  },
   async headers() {
     return [
       {
