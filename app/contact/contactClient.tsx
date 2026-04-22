@@ -28,6 +28,7 @@ const contactInfo = [
     label: "Email",
     value: "info@professionalits.com",
     sub: "General enquiries & sales",
+    href: undefined,
   },
   {
     icon: (
@@ -38,6 +39,7 @@ const contactInfo = [
     label: "Phone — US",
     value: "+1 (732) 924-9050",
     sub: "Mon–Fri, 9am–6pm EST",
+    href: undefined,
   },
   {
     icon: (
@@ -48,14 +50,21 @@ const contactInfo = [
     label: "Phone — India",
     value: "+91 98110 18501",
     sub: "Mon–Sat, 9am–7pm IST",
+    href: undefined,
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 16 16" style={{ width: 14, height: 14 }} fill="none">
+        <path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    label: "Office",
+    value: "Professional ITS, 87, City Center, Kailash Vihar, Tulsi Vihar Colony, Gwalior, Madhya Pradesh 474002",
+    sub: "View on Google Maps",
+    href: "https://www.google.com/maps/place/Professional+ITS/@26.2076895,78.1560436,14z/data=!4m22!1m15!4m14!1m6!1m2!1s0x3976c432313ac96b:0x2333ef1bc802b789!2sProfessional+ITS,+87,+City+Center,+Kailash+Vihar,+Tulsi+Vihar+Colony,+Gwalior,+Madhya+Pradesh+474002!2m2!1d78.1920936!2d26.2076896!1m6!1m2!1s0x3976c432313ac96b:0x2333ef1bc802b789!2sProfessional+ITS,+87,+City+Center,+Kailash+Vihar,+Tulsi+Vihar+Colony,+Gwalior,+Madhya+Pradesh+474002!2m2!1d78.1920936!2d26.2076896!3m5!1s0x3976c432313ac96b:0x2333ef1bc802b789!8m2!3d26.2076896!4d78.1920936!16s%2Fg%2F1tfc502t?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
 
-const hours = [
-  { day: "Monday – Friday", time: "9am – 6pm EST / 9am – 7pm IST" },
-  { day: "Saturday", time: "9am – 2pm IST (limited)" },
-  { day: "Sunday", time: "Closed" },
-];
 
 const inputStyle = {
   width: "100%",
@@ -310,30 +319,33 @@ export default function ContactClient() {
           {/* Contact info */}
           <div style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "20px", marginBottom: "16px" }}>
             <div style={{ fontSize: "11px", fontWeight: 500, color: "#1C1C1C", marginBottom: "16px", letterSpacing: "0.3px" }}>CONTACT DETAILS</div>
-            {contactInfo.map((c, i) => (
-              <div key={c.label} style={{ display: "flex", gap: "12px", alignItems: "flex-start", marginBottom: i < contactInfo.length - 1 ? "14px" : 0 }}>
-                <div style={{ width: "32px", height: "32px", borderRadius: "6px", background: "#E8F5EE", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  {c.icon}
+            {contactInfo.map((c, i) => {
+              const inner = (
+                <>
+                  <div style={{ width: "32px", height: "32px", borderRadius: "6px", background: "#E8F5EE", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    {c.icon}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: "11px", color: "#888780", marginBottom: "2px" }}>{c.label}</div>
+                    <div style={{ fontSize: "13px", fontWeight: 500, color: "#1C1C1C", lineHeight: 1.55 }}>{c.value}</div>
+                    <div style={{ fontSize: "11px", color: c.href ? "#2D6A4F" : "#888780", marginTop: "1px" }}>{c.sub}</div>
+                  </div>
+                </>
+              );
+              return c.href ? (
+                <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer"
+                  style={{ display: "flex", gap: "12px", alignItems: "flex-start", marginBottom: i < contactInfo.length - 1 ? "14px" : 0, textDecoration: "none", cursor: "pointer" }}>
+                  {inner}
+                </a>
+              ) : (
+                <div key={c.label} style={{ display: "flex", gap: "12px", alignItems: "flex-start", marginBottom: i < contactInfo.length - 1 ? "14px" : 0 }}>
+                  {inner}
                 </div>
-                <div>
-                  <div style={{ fontSize: "11px", color: "#888780", marginBottom: "2px" }}>{c.label}</div>
-                  <div style={{ fontSize: "13px", fontWeight: 500, color: "#1C1C1C" }}>{c.value}</div>
-                  <div style={{ fontSize: "11px", color: "#888780", marginTop: "1px" }}>{c.sub}</div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          {/* Office hours */}
-          <div style={{ background: "#F5F0E8", borderRadius: "8px", padding: "20px", marginBottom: "16px" }}>
-            <div style={{ fontSize: "11px", fontWeight: 500, color: "#1C1C1C", marginBottom: "14px", letterSpacing: "0.3px" }}>OFFICE HOURS</div>
-            {hours.map((h) => (
-              <div key={h.day} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: "0.5px solid #EDE5D5" }}>
-                <div style={{ fontSize: "12px", color: "#555550" }}>{h.day}</div>
-                <div style={{ fontSize: "12px", color: h.time === "Closed" ? "#B4B2A9" : "#2D6A4F", fontWeight: 500 }}>{h.time}</div>
-              </div>
-            ))}
-          </div>
+       
 
           {/* Audit CTA */}
           <div style={{ background: "#E8F5EE", border: "0.5px solid #9FE1CB", borderRadius: "6px", padding: "16px" }}>

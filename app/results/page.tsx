@@ -22,7 +22,7 @@ const stats = [
   { n: "1500+", l: "Stores served globally" },
   { n: "98%", l: "Client retention rate" },
   { n: "4 hr", l: "Average response SLA" },
-  { n: "15 yrs", l: "E-commerce operations experience" },
+  { n: "17 yrs", l: "E-commerce operations experience" },
 ];
 
 const results = [

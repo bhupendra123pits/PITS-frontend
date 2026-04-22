@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import { SiShopify, SiBigcommerce, SiEtsy, SiHouzz, SiNewegg, SiRakuten } from "react-icons/si";
+import { SiShopify, SiBigcommerce, SiEtsy, SiHouzz, SiRakuten } from "react-icons/si";
 
 export const metadata: Metadata = {
-  title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
+  title: "Professional ITS – E-Commerce Back-Office Specialists Since 2009",
   description:
     "Catalog operations, marketplace management, and store back-office for e-commerce businesses running 500 to 500,000 SKUs. Execution-heavy. SLA-backed. No lock-in.",
   alternates: {
     canonical: "https://professionalits.com",
   },
   openGraph: {
-    title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
+    title: "Professional ITS – E-Commerce Back-Office Specialists Since 2009",
     description: "Catalog operations, marketplace management, and store back-office for e-commerce businesses running 500 to 500,000 SKUs.",
     url: "https://professionalits.com",
     siteName: "Professional ITS",
@@ -62,7 +62,7 @@ const stats = [
   { n: "1500+", l: "E-commerce stores served globally" },
   { n: "98%", l: "Client retention rate, year on year" },
   { n: "4 hr", l: "Average response SLA across all accounts" },
-  { n: "15 yrs", l: "In e-commerce operations — exclusively" },
+  { n: "17 yrs", l: "In e-commerce operations — exclusively" },
 ];
 
 const services = [
@@ -119,8 +119,8 @@ const MagentoIcon = () => (
 
 const marqueebrands = [
   { name: "Shopify",     color: "#96BF48", Icon: () => <SiShopify size={24} color="#96BF48" />,     href: "/platforms/shopify" },
-  { name: "eBay",        color: "#E53238", Icon: () => <img src="/ebaylogo.png" alt="eBay" width={42} height={42} style={{ objectFit: "contain" }} />,         href: "/marketplaces/ebay" },
-  { name: "Walmart",     color: "#0071CE", Icon: () => <img src="/wallmartlogo.png" alt="Walmart" width={42} height={42} style={{ objectFit: "contain" }} />,      href: "/marketplaces/walmart" },
+  { name: "eBay",        color: "#E53238", Icon: () => <img src="/edited_ebay_logo.png" alt="eBay" width={42} height={42} style={{ objectFit: "contain" }} />,         href: "/marketplaces/ebay" },
+  { name: "Walmart",     color: "#0071CE", Icon: () => <img src="/wallmartlogo.png" alt="Walmart" width={32} height={32} style={{ objectFit: "contain" }} />,      href: "/marketplaces/walmart" },
   { name: "BigCommerce", color: "#003087", Icon: () => <SiBigcommerce size={24} color="#003087" />,  href: "/platforms/bigcommerce" },
   { name: "WooCommerce", color: "#7F54B3", Icon: () => <img src="/woologo.png" alt="WooCommerce" width={42} height={42} style={{ objectFit: "contain" }} />,  href: "/platforms/woocommerce" },
   { name: "Magento",     color: "#EE672F", Icon: MagentoIcon,                                        href: "/platforms/magento" },
@@ -129,7 +129,7 @@ const marqueebrands = [
   { name: "OpenCart",    color: "#23ACDF", Icon: OpenCartIcon,                                       href: "/platforms/opencart" },
   { name: "Volusion",    color: "#4DB8FF", Icon: VolusionIcon,                                       href: "/platforms/volusion" },
   { name: "BestBuy",     color: "#0046BE", Icon: BestBuyIcon,                                        href: "/marketplaces/bestbuy" },
-  { name: "Newegg",      color: "#E2231A", Icon: () => <SiNewegg size={24} color="#E2231A" />,       href: "/marketplaces/newegg" },
+  { name: "Newegg",      color: "#E2231A", Icon: () => <img src="/Newegg_Logo_1.png" alt="Newegg" width={42} height={42} style={{ objectFit: "contain" }} />, href: "/marketplaces/newegg" },
   { name: "Houzz",       color: "#73BA42", Icon: () => <SiHouzz size={24} color="#73BA42" />,        href: "/marketplaces/houzz" },
   { name: "Rakuten",     color: "#BF0000", Icon: () => <SiRakuten size={24} color="#BF0000" />,      href: "/marketplaces/rakuten" },
   { name: "Poshmark",    color: "#FF2A5E", Icon: PoshmarkIcon,                                       href: "/marketplaces/poshmark" },
@@ -236,7 +236,7 @@ export default function HomePage() {
               marginBottom: "16px",
             }}
           >
-            E-COMMERCE BACK-OFFICE SPECIALISTS · SINCE 2010
+            E-COMMERCE BACK-OFFICE SPECIALISTS · SINCE 2009
           </div>
           <h1
             style={{
@@ -773,15 +773,15 @@ export default function HomePage() {
       </div>
 
       {/* ── AUDIT BANNER ── */}
-      <div
-        style={{
-          background: "#1C1C1C",
-          padding: "40px 32px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <style>{`
+        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: flex-start; align-items: center; }
+        .audit-banner-btn { margin-left: 280px; flex-shrink: 0; }
+        @media (max-width: 600px) {
+          .audit-banner { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+          .audit-banner-btn { margin-left: 0; margin-top: 20px; }
+        }
+      `}</style>
+      <div className="audit-banner">
         <div>
           <div
             style={{
@@ -806,6 +806,7 @@ export default function HomePage() {
         </div>
         <Link
           href="/audit"
+          className="audit-banner-btn"
           style={{
             background: "#2D6A4F",
             color: "#fff",

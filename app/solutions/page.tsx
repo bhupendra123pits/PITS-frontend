@@ -151,7 +151,7 @@ export default function SolutionsPage() {
         {[
           { n: "5", l: "Core solution areas" },
           { n: "1500+", l: "Stores served globally" },
-          { n: "15 yrs", l: "E-commerce operations" },
+          { n: "17 yrs", l: "E-commerce operations" },
           { n: "98%", l: "Client retention rate" },
         ].map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>
@@ -224,7 +224,15 @@ export default function SolutionsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <div style={{ background: "#1C1C1C", padding: "48px 32px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "24px", flexWrap: "wrap" }}>
+      <style>{`
+        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: flex-start; align-items: center; }
+        .audit-banner-btn { margin-left: 80px; flex-shrink: 0; }
+        @media (max-width: 600px) {
+          .audit-banner { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+          .audit-banner-btn { margin-left: 0; margin-top: 20px; }
+        }
+      `}</style>
+      <div className="audit-banner">
         <div>
           <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500, marginBottom: "8px" }}>
             Not sure which solution fits?
@@ -233,7 +241,7 @@ export default function SolutionsPage() {
             Start with a free catalog audit. We&apos;ll review your setup and recommend exactly where we can have the most impact.
           </div>
         </div>
-        <Link href="/audit" style={{ background: "#2D6A4F", color: "#fff", padding: "13px 28px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>
+        <Link href="/audit" className="audit-banner-btn" style={{ background: "#2D6A4F", color: "#fff", padding: "13px 28px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>
           Get free catalog audit
         </Link>
       </div>

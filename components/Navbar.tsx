@@ -112,8 +112,11 @@ const allPages = [
   { title: "Pricing", sub: "Plans and pricing", href: "/pricing" },
   { title: "Free Catalog Audit", sub: "Get a free audit of your catalog", href: "/audit" },
   { title: "Contact", sub: "Get in touch with us", href: "/contact" },
-  { title: "Team", sub: "Meet the specialists behind PITS", href: "/team", category: "Company" },
-  { title: "Company", sub: "Who we are, our story and principles", href: "/company", category: "Company" },
+  { title: "Privacy Policy", sub: "Information", href: "/privacy" },
+  { title: "Terms of Services", sub: "Terms of Use", href: "/terms" },
+
+
+
   ...solutionLinks.map((l) => ({ ...l, category: "Solution" })),
   ...serviceLinks.map((l) => ({ ...l, category: "Service" })),
   ...platformLinks.map((l) => ({

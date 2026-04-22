@@ -55,10 +55,10 @@ const marketplaceLinks = [
 ];
 
 const companyLinks = [
+  { label: "About", href: "/about"},
   { label: "Results", href: "/results" },
-  { label: "Free catalog audit", href: "/audit" },
-  { label: "Team", href: "/team" },
-  { label: "Company", href: "/company" },
+  // { label: "Team", href: "/team" },
+  // { label: "Company", href: "/company" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];
@@ -220,12 +220,28 @@ export default function Footer() {
               color: "#888780",
               lineHeight: 1.6,
               maxWidth: "320px",
+              marginBottom: "16px",
             }}
           >
-            E-commerce back-office specialists since 2010. We handle catalog
+            E-commerce back-office specialists since 2009. We handle catalog
             operations, marketplace management, and store back-office —
             exclusively for online sellers.
           </div>
+          <Link
+            href="/audit"
+            style={{
+              display: "inline-block",
+              background: "#2D6A4F",
+              color: "#fff",
+              fontSize: "11px",
+              fontWeight: 500,
+              padding: "8px 16px",
+              borderRadius: "4px",
+              textDecoration: "none",
+            }}
+          >
+            Get Free catalog audit →
+          </Link>
         </div>
 
         {/* Solutions */}
@@ -319,7 +335,7 @@ export default function Footer() {
               letterSpacing: "0.5px",
             }}
           >
-            About
+            Company
           </div>
           {companyLinks.map((l) =>
             l.href ? (
@@ -354,7 +370,22 @@ export default function Footer() {
       <div style={{ borderTop: "0.5px solid #D5C9B0", paddingTop: "20px" }}>
         <div className="footer-bottom">
           <div style={{ fontSize: "11px", color: "#B4B2A9" }}>
-            © 2026 Professional ITS · professionalits.com
+            © 2026 Professional ITS
+          </div>
+          <div style={{ display: "flex", gap: "16px" }}>
+            <Link
+              href="/privacy"
+              style={{ fontSize: "11px", color: "#B4B2A9", textDecoration: "none" }}
+              
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              style={{ fontSize: "11px", color: "#B4B2A9", textDecoration: "none" }}
+            >
+              Terms of Service
+            </Link>
           </div>
           <div style={{ fontSize: "11px", color: "#B4B2A9" }}>
             US: +1 (732) 924-9050 · India: +91 98110 18501

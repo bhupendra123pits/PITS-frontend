@@ -73,7 +73,7 @@ export default function ServicesPage() {
           { n: "5", l: "Core execution services" },
           { n: "99.1%", l: "Data accuracy rate" },
           { n: "500+", l: "SKUs per day" },
-          { n: "15 yrs", l: "Operations experience" },
+          { n: "17 yrs", l: "Operations experience" },
         ].map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>
             <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>{s.n}</div>
@@ -175,7 +175,15 @@ export default function ServicesPage() {
       </section>
 
       {/* ── CTA BANNER ── */}
-      <div style={{ background: "#1C1C1C", padding: "48px 32px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "24px" }}>
+      <style>{`
+        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: flex-start; align-items: center; }
+        .audit-banner-btn { margin-left: 80px; flex-shrink: 0; }
+        @media (max-width: 600px) {
+          .audit-banner { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+          .audit-banner-btn { margin-left: 0; margin-top: 20px; }
+        }
+      `}</style>
+      <div className="audit-banner">
         <div>
           <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500, marginBottom: "8px" }}>
             Not sure which service you need?
@@ -184,7 +192,7 @@ export default function ServicesPage() {
             Start with a free catalog audit. We&apos;ll review your store and recommend exactly which services would have the most impact.
           </div>
         </div>
-        <Link href="/audit" style={{ background: "#2D6A4F", color: "#fff", padding: "13px 28px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>
+        <Link href="/audit" className="audit-banner-btn" style={{ background: "#2D6A4F", color: "#fff", padding: "13px 28px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>
           Get free catalog audit
         </Link>
       </div>
