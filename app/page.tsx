@@ -75,7 +75,7 @@ const services = [
 
 const AmazonIcon = () => (
   // eslint-disable-next-line @next/next/no-img-element
-  <img src="/amazonlogo.png" alt="Amazon" width={42} height={42} style={{ objectFit: "contain" }} />
+  <img src="/Amazonlogo.png" alt="Amazon" width={42} height={42} style={{ objectFit: "contain" }} />
 );
 
 const OpenCartIcon = () => (
