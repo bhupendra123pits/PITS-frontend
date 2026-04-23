@@ -3,42 +3,32 @@ import { prisma } from "@/lib/prisma";
 import { transporter } from "@/lib/mailer";
 
 export async function POST(req: NextRequest) {
-  // console.log("✅ API route hit");
-
   try {
     const body = await req.json();
-    console.log("📦 Body received:", body);
 
     const {
-      firstName, lastName, email, phone, company,
-      storeUrl, skuCount, primaryPlatform, otherPlatforms,
-      challenge, orderVolume, hearAbout,
+      firstName, lastName, email, company,
+      storeUrl, primaryPlatform,
+      challenge, hearAbout,
     } = body;
 
-    // Validation
     if (!firstName || !lastName || !email || !company) {
-      console.log("❌ Validation failed");
       return NextResponse.json(
         { success: false, error: "Name, email and company are required." },
         { status: 400 }
       );
     }
 
-    console.log("💾 Saving to Supabase...");
-    // 1. Save to Supabase
     const record = await prisma.auditRequest.create({
       data: {
-        firstName, lastName, email, phone, company,
-        storeUrl, skuCount, primaryPlatform, otherPlatforms,
-        challenge, orderVolume, hearAbout,
+        firstName, lastName, email, company,
+        storeUrl, primaryPlatform,
+        challenge, hearAbout,
       },
     });
-    console.log("✅ Saved to DB, record ID:", record.id);
 
-    console.log("📧 Sending notification email...");
-    // 2. Mail to you
     await transporter.sendMail({
-      from: `"Professional ITS" <${process.env.GMAIL_USER}>`,
+      from: `"Professional ITS" <info@professionalits.com>`,
       to: process.env.MAIL_RECEIVER,
       subject: `New Audit Request #${record.id} — ${company}`,
       html: `
@@ -54,10 +44,6 @@ export async function POST(req: NextRequest) {
               <td style="padding:8px 0;">${email}</td>
             </tr>
             <tr style="border-bottom:1px solid #eee;">
-              <td style="padding:8px 0;color:#888;">Phone</td>
-              <td style="padding:8px 0;">${phone || "—"}</td>
-            </tr>
-            <tr style="border-bottom:1px solid #eee;">
               <td style="padding:8px 0;color:#888;">Company</td>
               <td style="padding:8px 0;">${company}</td>
             </tr>
@@ -66,24 +52,12 @@ export async function POST(req: NextRequest) {
               <td style="padding:8px 0;">${storeUrl || "—"}</td>
             </tr>
             <tr style="border-bottom:1px solid #eee;">
-              <td style="padding:8px 0;color:#888;">SKU Count</td>
-              <td style="padding:8px 0;">${skuCount || "—"}</td>
-            </tr>
-            <tr style="border-bottom:1px solid #eee;">
-              <td style="padding:8px 0;color:#888;">Primary Platform</td>
+              <td style="padding:8px 0;color:#888;">Primary Channel</td>
               <td style="padding:8px 0;">${primaryPlatform || "—"}</td>
-            </tr>
-            <tr style="border-bottom:1px solid #eee;">
-              <td style="padding:8px 0;color:#888;">Other Platforms</td>
-              <td style="padding:8px 0;">${otherPlatforms || "—"}</td>
             </tr>
             <tr style="border-bottom:1px solid #eee;">
               <td style="padding:8px 0;color:#888;">Challenge</td>
               <td style="padding:8px 0;">${challenge || "—"}</td>
-            </tr>
-            <tr style="border-bottom:1px solid #eee;">
-              <td style="padding:8px 0;color:#888;">Order Volume</td>
-              <td style="padding:8px 0;">${orderVolume || "—"}</td>
             </tr>
             <tr style="border-bottom:1px solid #eee;">
               <td style="padding:8px 0;color:#888;">Heard About Us</td>
@@ -97,30 +71,44 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
-    console.log("✅ Notification email sent");
 
-    console.log("📧 Sending confirmation to user...");
-    // 3. Confirmation to user
     await transporter.sendMail({
-      from: `"Professional ITS" <${process.env.GMAIL_USER}>`,
+      from: `"Professional ITS" <info@professionalits.com>`,
       to: email,
       subject: "We received your audit request — Professional ITS",
       html: `
-        <div style="font-family: sans-serif; max-width: 540px; color: #1C1C1C;">
-          <h2 style="color: #2D6A4F;">Thanks, ${firstName}!</h2>
-          <p style="color:#555; line-height:1.6;">
-            We've received your free catalog audit request for <strong>${company}</strong>.
-          </p>
-          <p style="color:#555; line-height:1.6;">
-            Our team will review your details and get back to you within <strong>4 hours</strong>.
-            Your written audit report will be delivered within <strong>48 hours</strong>.
-          </p>
+        <div style="font-family: sans-serif; max-width: 560px; color: #1C1C1C; line-height: 1.6;">
+          <p style="color:#555;">Hi ${firstName},</p>
+          <p style="color:#555;">We've received your free catalog audit request. Here's a summary of what we have on file:</p>
+
+          <div style="background:#F5F0E8; border-radius:6px; padding:16px 20px; margin:20px 0;">
+            <p style="margin:0 0 6px 0; color:#555;">— Store: <strong>${company}</strong></p>
+            <p style="margin:0 0 6px 0; color:#555;">— URL: <strong>${storeUrl || "Not provided"}</strong></p>
+            <p style="margin:0; color:#555;">— Channel: <strong>${primaryPlatform || "Not provided"}</strong></p>
+          </div>
+
+          <p style="color:#1C1C1C; font-weight:600; margin-bottom:6px;">What happens next:</p>
+          <p style="color:#555; margin-top:0;">Within 4 business hours (typically sooner), someone from our audit team will reach out by email to confirm scope and pick the 50 SKUs we'll review. Once scope is confirmed, your written audit report is delivered within 48 hours.</p>
+
+          <p style="color:#1C1C1C; font-weight:600; margin-bottom:6px;">Your written report will include:</p>
+          <p style="color:#555; margin:0 0 4px 0;">— 50-SKU data completeness review</p>
+          <p style="color:#555; margin:0 0 4px 0;">— Listing quality score</p>
+          <p style="color:#555; margin:0 0 4px 0;">— Attribute and filter accuracy check</p>
+          <p style="color:#555; margin:0 0 16px 0;">— Prioritised recommendations — what we'd fix first</p>
+
+          <p style="color:#555;">At the end, you can optionally book a 15-minute walkthrough call with the auditor. No sales pitch, just the findings.</p>
+          <p style="color:#555;">No credit card required. No commitment. No lock-in, ever.</p>
+          <p style="color:#555;">Questions before then? Just reply to this email.</p>
+
           <br/>
-          <p style="color:#888; font-size:12px;">— Team Professional ITS</p>
+          <p style="color:#555; margin-bottom:2px;">— The Professional ITS Audit Team</p>
+          <p style="color:#888; font-size:12px; margin:0;">info@professionalits.com · +1 (732) 924-9050</p>
+          <br/>
+          <p style="color:#aaa; font-size:11px; margin:0;">Professional ITS — E-commerce back-office specialists since 2009</p>
+          <p style="color:#aaa; font-size:11px; margin:0;">professionalits.com</p>
         </div>
       `,
     });
-    console.log("✅ Confirmation email sent to user");
 
     return NextResponse.json({ success: true, id: record.id });
 

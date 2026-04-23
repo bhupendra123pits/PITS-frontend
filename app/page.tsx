@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     url: "https://professionalits.com",
     siteName: "Professional ITS",
     type: "website",
+    images: [{ url: "https://professionalits.com/og-image.png", width: 1200, height: 630, alt: "Professional ITS" }],
   },
 };
 
@@ -66,11 +67,11 @@ const stats = [
 ];
 
 const services = [
-  { title: "Product data management",        sub: "End-to-end",     href: "/services/product-data-management" },
-  { title: "Bulk product uploads",           sub: "Any platform",   href: "/services/bulk-product-uploads" },
-  { title: "Attribute & filter structuring", sub: "Filter-ready",   href: "/services/attribute-filter-structuring" },
-  { title: "Image processing & enrichment",  sub: "Compliant sets", href: "/services/image-processing-enrichment" },
-  { title: "Order & inventory support",      sub: "SLA-backed",     href: "/services/order-inventory-support" },
+  { title: "Product data management",        sub: "End-to-end",     href: "/services/product-data-management",      img: "/Product_data_management.png" },
+  { title: "Bulk product uploads",           sub: "Any platform",   href: "/services/bulk-product-uploads",         img: "/Bulk_product_uploads.png" },
+  { title: "Attribute & filter structuring", sub: "Filter-ready",   href: "/services/attribute-filter-structuring", img: "/Attribute&filter_structuring.png" },
+  { title: "Image processing & enrichment",  sub: "Compliant sets", href: "/services/image-processing-enrichment",  img: "/Image_processing&enrichment.png" },
+  { title: "Order & inventory support",      sub: "SLA-backed",     href: "/services/order-inventory-support",      img: "/Order&inventory_support.png" },
 ];
 
 const AmazonIcon = () => (
@@ -647,24 +648,30 @@ export default function HomePage() {
             >
               <div
                 style={{
-                  width: "32px",
-                  height: "32px",
-                  background: "#E8F5EE",
+                  width: s.img ? "56px" : "32px",
+                  height: s.img ? "56px" : "32px",
+                  background: s.img ? "transparent" : "#E8F5EE",
                   borderRadius: "4px",
                   margin: "0 auto 10px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  overflow: "hidden",
                 }}
               >
-                <div
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    background: "#2D6A4F",
-                    borderRadius: "50%",
-                  }}
-                />
+                {s.img ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+                ) : (
+                  <div
+                    style={{
+                      width: "8px",
+                      height: "8px",
+                      background: "#2D6A4F",
+                      borderRadius: "50%",
+                    }}
+                  />
+                )}
               </div>
               <div
                 style={{

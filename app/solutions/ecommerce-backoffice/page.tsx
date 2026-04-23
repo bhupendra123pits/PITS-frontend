@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     url: "https://professionalits.com/solutions/ecommerce-backoffice",
     siteName: "Professional ITS",
     type: "website",
+    images: [{ url: "https://professionalits.com/og-image.png", width: 1200, height: 630, alt: "Professional ITS" }],
   },
   alternates: {
     canonical: "https://professionalits.com/solutions/ecommerce-backoffice",

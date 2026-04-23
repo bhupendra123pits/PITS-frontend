@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "Terms of Service – Professional ITS",
   description:
     "Terms governing your use of the Professional ITS website and services.",
+  openGraph: {
+    title: "Terms of Service – Professional ITS",
+    description: "Terms governing your use of the Professional ITS website and services.",
+    url: "https://professionalits.com/terms",
+    siteName: "Professional ITS",
+    type: "website",
+    images: [{ url: "https://professionalits.com/og-image.png", width: 1200, height: 630, alt: "Professional ITS" }],
+  },
   alternates: {
     canonical: "https://professionalits.com/terms",
   },

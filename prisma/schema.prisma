@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model AuditRequest {
@@ -12,14 +13,10 @@ model AuditRequest {
   firstName       String
   lastName        String
   email           String
-  phone           String?
   company         String
   storeUrl        String?
-  skuCount        String?
   primaryPlatform String?
-  otherPlatforms  String?
   challenge       String?
-  orderVolume     String?
   hearAbout       String?
   createdAt       DateTime @default(now())
 }

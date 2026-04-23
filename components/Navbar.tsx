@@ -239,7 +239,7 @@ export default function Navbar() {
           style={{ textDecoration: "none", flexShrink: 0 }}
         >
           <img
-            src="/PITS Logo Raw.png"
+            src="/PITS_Logo.png"
             alt="Professional ITS Logo"
             style={{
               height: "53px",

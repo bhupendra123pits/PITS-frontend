@@ -10,7 +10,7 @@ const solutionLinks = [
     href: "/solutions/marketplace-operations",
   },
   { label: "Ecommerce backoffice", href: "/solutions/ecommerce-backoffice" },
-  { label: "Product Data cleanup", href: "/solutions/product-data-cleanup" },
+  { label: "Product data cleanup", href: "/solutions/product-data-cleanup" },
   { label: "High-SKU catalog scaling", href: "/solutions/high-sku-scaling" },
   { label: "All Solutions", href: "/solutions" },
 ];
@@ -20,7 +20,7 @@ const serviceLinks = [
     label: "Product data management",
     href: "/services/product-data-management",
   },
-  { label: "Bulk Product uploads", href: "/services/bulk-product-uploads" },
+  { label: "Bulk product uploads", href: "/services/bulk-product-uploads" },
   {
     label: "Attribute & filter structuring",
     href: "/services/attribute-filter-structuring",
@@ -209,7 +209,7 @@ export default function Footer() {
         <div className="footer-brand-col">
           <div style={{ marginBottom: "12px" }}>
             <img
-              src="/PITS Logo Raw.png"
+              src="/PITS_Logo.png"
               alt="Professional ITS Logo"
               style={{ height: "65px" }}
             />
