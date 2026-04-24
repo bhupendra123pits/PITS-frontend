@@ -10,10 +10,8 @@ datasource db {
 
 model AuditRequest {
   id              Int      @id @default(autoincrement())
-  firstName       String
-  lastName        String
+  name            String
   email           String
-  company         String
   storeUrl        String?
   primaryPlatform String?
   challenge       String?
@@ -22,14 +20,11 @@ model AuditRequest {
 }
 
 model ContactSubmission {
-  id         String   @id @default(cuid())
-  firstName  String
-  lastName   String
-  email      String
-  phone      String?
-  company    String
-  topic      String?
-  message    String?
-  hearAbout  String?
-  createdAt  DateTime @default(now())
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  topic     String?
+  message   String?
+  hearAbout String?
+  createdAt DateTime @default(now())
 }

@@ -20,21 +20,20 @@ const steps = [
   { n: "4", title: "Optional walkthrough call", body: "15 minutes with the auditor to walk through every finding." },
 ];
 
+const emptyForm = {
+  name: "",
+  email: "",
+  storeUrl: "",
+  primaryPlatform: "",
+  challenge: "",
+  hearAbout: "",
+};
+
 export default function AuditPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    company: "",
-    storeUrl: "",
-    primaryPlatform: "",
-    challenge: "",
-    hearAbout: "",
-  });
+  const [form, setForm] = useState(emptyForm);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -108,14 +107,11 @@ export default function AuditPage() {
           <h1 className="submitted-h1" style={{ fontFamily: "var(--font-serif)", fontSize: "28px", fontWeight: 500, color: "#1C1C1C", marginBottom: "12px" }}>
             Audit request received.
           </h1>
-          <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.7, maxWidth: "440px", marginBottom: "32px" }}>
+          <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.7, maxWidth: "440px", marginBottom: "24px" }}>
             We&apos;ll review your submission and confirm within 4 hours. Your written audit report will be delivered within 48 hours.
           </p>
           <button
-            onClick={() => {
-              setSubmitted(false);
-              setForm({ firstName: "", lastName: "", email: "", company: "", storeUrl: "", primaryPlatform: "", challenge: "", hearAbout: "" });
-            }}
+            onClick={() => { setSubmitted(false); setForm(emptyForm); }}
             style={{ marginBottom: "24px", background: "transparent", border: "1px solid #2D6A4F", color: "#2D6A4F", borderRadius: "4px", padding: "10px 22px", fontSize: "13px", fontWeight: 500, cursor: "pointer", letterSpacing: "0.2px" }}
           >
             ← Submit another audit request
@@ -145,7 +141,6 @@ export default function AuditPage() {
         .audit-h1 { font-size: 34px; }
         .audit-main { display: grid; grid-template-columns: 1fr 340px; }
         .audit-form { padding: 40px 40px 56px; border-right: 0.5px solid #D5C9B0; }
-        .form-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         .audit-sidebar { padding: 32px 24px; background: #FDFAF5; }
 
         @media (max-width: 768px) {
@@ -154,7 +149,6 @@ export default function AuditPage() {
           .audit-h1 { font-size: 26px !important; }
           .audit-main { grid-template-columns: 1fr; }
           .audit-form { padding: 28px 20px 40px; border-right: none; border-bottom: 0.5px solid #D5C9B0; }
-          .form-two-col { grid-template-columns: 1fr; }
           .audit-sidebar { padding: 28px 20px; }
         }
       `}</style>
@@ -163,12 +157,12 @@ export default function AuditPage() {
 
       {/* HERO */}
       <div className="audit-hero" style={{ background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}>
-        <Link href={'/'} style={{ fontSize: "11px", color: "#888780", marginBottom: "14px", textDecoration:"none" }}>
+        <Link href="/" style={{ fontSize: "11px", color: "#888780", marginBottom: "14px", textDecoration: "none" }}>
           Home <span style={{ color: "#2D6A4F" }}>/ Free Catalog Audit</span>
         </Link>
         <div className="audit-hero-grid">
           <div>
-            <div style={{ fontSize: "11px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "12px", marginTop:"10px"}}>
+            <div style={{ fontSize: "11px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "12px", marginTop: "10px" }}>
               FREE · NO COMMITMENT · DELIVERED IN 48 HRS
             </div>
             <h1 className="audit-h1" style={{ fontFamily: "var(--font-serif)", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "12px" }}>
@@ -197,44 +191,28 @@ export default function AuditPage() {
         <div className="audit-form">
           <div style={{ marginBottom: "28px" }}>
             <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#1C1C1C", marginBottom: "6px" }}>Tell us about your store</h2>
-            <p style={{ fontSize: "12px", color: "#888780", lineHeight: 1.6 }}>Takes about 3 minutes. The more detail you share, the more useful your audit report will be.</p>
+            <p style={{ fontSize: "12px", color: "#888780", lineHeight: 1.6 }}>The more detail you share, the more useful your audit report will be.</p>
           </div>
 
-          {/* CONTACT */}
-          <div style={{ fontSize: "10px", letterSpacing: "1.2px", color: "#2D6A4F", fontWeight: 500, marginBottom: "14px" }}>CONTACT DETAILS</div>
-          <div className="form-two-col" style={{ marginBottom: "14px" }}>
-            <div>
-              <label style={labelStyle}>First name <span style={{ color: "#2D6A4F" }}>*</span></label>
-              <input style={inputStyle} name="firstName" type="text" placeholder="Jane"
-                value={form.firstName} onChange={handleChange} />
-            </div>
-            <div>
-              <label style={labelStyle}>Last name <span style={{ color: "#2D6A4F" }}>*</span></label>
-              <input style={inputStyle} name="lastName" type="text" placeholder="Smith"
-                value={form.lastName} onChange={handleChange} />
-            </div>
-          </div>
           <div style={{ marginBottom: "14px" }}>
-            <label style={labelStyle}>Business email <span style={{ color: "#2D6A4F" }}>*</span></label>
-            <input style={inputStyle} name="email" type="email" placeholder="jane@yourstore.com"
+            <label style={labelStyle}>Name <span style={{ color: "#2D6A4F" }}>*</span></label>
+            <input style={inputStyle} name="name" type="text" placeholder="Your name"
+              value={form.name} onChange={handleChange} />
+          </div>
+
+          <div style={{ marginBottom: "14px" }}>
+            <label style={labelStyle}>Email address <span style={{ color: "#2D6A4F" }}>*</span></label>
+            <input style={inputStyle} name="email" type="email" placeholder="you@yourstore.com"
               value={form.email} onChange={handleChange} />
           </div>
-          <div style={{ marginBottom: "28px" }}>
-            <label style={labelStyle}>Company / store name <span style={{ color: "#2D6A4F" }}>*</span></label>
-            <input style={inputStyle} name="company" type="text" placeholder="Your Store Ltd"
-              value={form.company} onChange={handleChange} />
-          </div>
 
-          {/* STORE */}
-          <div style={{ borderTop: "0.5px solid #EDE5D5", paddingTop: "24px", marginBottom: "14px" }}>
-            <div style={{ fontSize: "10px", letterSpacing: "1.2px", color: "#2D6A4F", fontWeight: 500, marginBottom: "14px" }}>STORE DETAILS</div>
-          </div>
           <div style={{ marginBottom: "14px" }}>
             <label style={labelStyle}>Store URL</label>
             <input style={inputStyle} name="storeUrl" type="text" placeholder="www.yourstore.com"
               value={form.storeUrl} onChange={handleChange} />
           </div>
-          <div style={{ marginBottom: "28px" }}>
+
+          <div style={{ marginBottom: "14px" }}>
             <label style={labelStyle}>Primary selling channel <span style={{ color: "#2D6A4F" }}>*</span></label>
             <select style={{ ...inputStyle, appearance: "none" as const }} name="primaryPlatform"
               value={form.primaryPlatform} onChange={handleChange}>
@@ -264,16 +242,13 @@ export default function AuditPage() {
             </select>
           </div>
 
-          {/* CHALLENGE */}
-          <div style={{ borderTop: "0.5px solid #EDE5D5", paddingTop: "24px", marginBottom: "14px" }}>
-            <div style={{ fontSize: "10px", letterSpacing: "1.2px", color: "#2D6A4F", fontWeight: 500, marginBottom: "14px" }}>YOUR SITUATION</div>
-          </div>
           <div style={{ marginBottom: "14px" }}>
             <label style={labelStyle}>Biggest catalog challenge right now</label>
             <textarea style={{ ...inputStyle, height: "88px", resize: "none" as const }}
               name="challenge" placeholder="e.g. Inaccurate attributes, duplicate listings..."
               value={form.challenge} onChange={handleChange} />
           </div>
+
           <div style={{ marginBottom: "36px" }}>
             <label style={labelStyle}>How did you hear about us?</label>
             <select style={{ ...inputStyle, appearance: "none" as const }} name="hearAbout"

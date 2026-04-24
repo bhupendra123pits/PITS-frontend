@@ -22,70 +22,41 @@ const contactInfo = [
   {
     icon: (
       <svg viewBox="0 0 16 16" style={{ width: 14, height: 14 }} fill="none">
-        <path
-          d="M2 4l6 5 6-5M2 4h12v9H2V4z"
-          stroke="#2D6A4F"
-          strokeWidth="1.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <path d="M2 4l6 5 6-5M2 4h12v9H2V4z" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     label: "Email",
     value: "info@professionalits.com",
     sub: "General enquiries & sales",
-    href: undefined,
   },
   {
     icon: (
       <svg viewBox="0 0 16 16" style={{ width: 14, height: 14 }} fill="none">
-        <path
-          d="M3 3.5c0 5.523 4.477 10 10 10l1-2.5-2.5-1-.75 1.5A8.5 8.5 0 014.5 4.25L6 3.5 5 1 3 2l-.001 1.5z"
-          stroke="#2D6A4F"
-          strokeWidth="1.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <path d="M3 3.5c0 5.523 4.477 10 10 10l1-2.5-2.5-1-.75 1.5A8.5 8.5 0 014.5 4.25L6 3.5 5 1 3 2l-.001 1.5z" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     label: "Phone — US",
     value: "+1 (732) 924-9050",
     sub: "Mon–Fri, 9am–6pm EST",
-    href: undefined,
   },
   {
     icon: (
       <svg viewBox="0 0 16 16" style={{ width: 14, height: 14 }} fill="none">
-        <path
-          d="M3 3.5c0 5.523 4.477 10 10 10l1-2.5-2.5-1-.75 1.5A8.5 8.5 0 014.5 4.25L6 3.5 5 1 3 2l-.001 1.5z"
-          stroke="#2D6A4F"
-          strokeWidth="1.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <path d="M3 3.5c0 5.523 4.477 10 10 10l1-2.5-2.5-1-.75 1.5A8.5 8.5 0 014.5 4.25L6 3.5 5 1 3 2l-.001 1.5z" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     label: "Phone — India",
     value: "+91 98110 18501",
     sub: "Mon–Sat, 9am–7pm IST",
-    href: undefined,
   },
   {
     icon: (
       <svg viewBox="0 0 16 16" style={{ width: 14, height: 14 }} fill="none">
-        <path
-          d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-          stroke="#2D6A4F"
-          strokeWidth="1.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     label: "Office",
-    value:
-      "Professional ITS, 87, City Center, Kailash Vihar, Tulsi Vihar Colony, Gwalior, Madhya Pradesh 474002",
-    
+    value: "Professional ITS, 87, City Center, Kailash Vihar, Tulsi Vihar Colony, Gwalior, Madhya Pradesh 474002",
   },
 ];
 
@@ -111,26 +82,16 @@ const labelStyle = {
   letterSpacing: "0.3px",
 };
 
+const emptyForm = { name: "", email: "", topic: "", message: "", hearAbout: "" };
+
 export default function ContactClient() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    company: "",
-    topic: "",
-    message: "",
-    hearAbout: "",
-  });
+  const [form, setForm] = useState(emptyForm);
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -138,18 +99,13 @@ export default function ContactClient() {
   const handleSubmit = async () => {
     setLoading(true);
     setError("");
-    console.log("Contact Form Data:", form);
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-
       const data = await res.json();
-      console.log("API Response:", data);
-
       if (data.success) {
         setSubmitted(true);
       } else {
@@ -165,13 +121,7 @@ export default function ContactClient() {
 
   if (submitted) {
     return (
-      <div
-        style={{
-          fontFamily: "var(--font-sans)",
-          background: "#FDFAF5",
-          minHeight: "100vh",
-        }}
-      >
+      <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", minHeight: "100vh" }}>
         <style>{`
           .contact-submitted { padding: 80px 32px; }
           @media (max-width: 768px) {
@@ -182,94 +132,23 @@ export default function ContactClient() {
           }
         `}</style>
         <Navbar />
-        <div
-          className="contact-submitted"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
-        >
-          <div
-            style={{
-              width: "56px",
-              height: "56px",
-              borderRadius: "50%",
-              background: "#E8F5EE",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginBottom: "24px",
-            }}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              style={{ width: "24px", height: "24px" }}
-              fill="none"
-            >
-              <path
-                d="M5 12L10 17L19 7"
-                stroke="#2D6A4F"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+        <div className="contact-submitted" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
+          <div style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#E8F5EE", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px" }}>
+            <svg viewBox="0 0 24 24" style={{ width: "24px", height: "24px" }} fill="none">
+              <path d="M5 12L10 17L19 7" stroke="#2D6A4F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <h1
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "28px",
-              fontWeight: 500,
-              color: "#1C1C1C",
-              marginBottom: "12px",
-            }}
-          >
+          <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "28px", fontWeight: 500, color: "#1C1C1C", marginBottom: "12px" }}>
             Message received.
           </h1>
-          <p
-            style={{
-              fontSize: "14px",
-              color: "#555550",
-              lineHeight: 1.7,
-              maxWidth: "420px",
-              marginBottom: "32px",
-            }}
-          >
-            Thanks for reaching out. We&apos;ll review your message and get back
-            to you within 4 hours on business days.
+          <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.7, maxWidth: "420px", marginBottom: "32px" }}>
+            Thanks for reaching out. We&apos;ll review your message and get back to you within 4 hours on business days.
           </p>
-          <div
-            className="contact-submitted-btns"
-            style={{ display: "flex", gap: "12px" }}
-          >
-            <Link
-              href="/"
-              style={{
-                background: "#2D6A4F",
-                color: "#fff",
-                padding: "12px 24px",
-                borderRadius: "4px",
-                fontSize: "13px",
-                fontWeight: 500,
-                textDecoration: "none",
-              }}
-            >
+          <div className="contact-submitted-btns" style={{ display: "flex", gap: "12px" }}>
+            <Link href="/" style={{ background: "#2D6A4F", color: "#fff", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none" }}>
               Back to home
             </Link>
-            <Link
-              href="/audit"
-              style={{
-                border: "0.5px solid #D5C9B0",
-                color: "#555550",
-                padding: "12px 24px",
-                borderRadius: "4px",
-                fontSize: "13px",
-                textDecoration: "none",
-              }}
-            >
+            <Link href="/audit" style={{ border: "0.5px solid #D5C9B0", color: "#555550", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", textDecoration: "none" }}>
               Get free audit
             </Link>
           </div>
@@ -280,20 +159,13 @@ export default function ContactClient() {
   }
 
   return (
-    <div
-      style={{
-        fontFamily: "var(--font-sans)",
-        background: "#FDFAF5",
-        color: "#1C1C1C",
-      }}
-    >
+    <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
       <style>{`
         .contact-hero { padding: 48px 32px 40px; }
         .contact-hero h1 { font-size: 34px; }
         .contact-main { display: grid; grid-template-columns: 1fr 360px; }
         .contact-form { padding: 40px 40px 56px; border-right: 0.5px solid #D5C9B0; }
         .contact-sidebar { padding: 32px 24px; background: #FDFAF5; }
-        .form-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
         @media (max-width: 768px) {
           .contact-hero { padding: 28px 20px 24px; }
@@ -301,241 +173,75 @@ export default function ContactClient() {
           .contact-main { grid-template-columns: 1fr; }
           .contact-form { padding: 28px 20px 40px; border-right: none; border-bottom: 0.5px solid #D5C9B0; }
           .contact-sidebar { padding: 28px 20px; }
-          .form-two-col { grid-template-columns: 1fr; }
         }
       `}</style>
 
       <Navbar />
 
-      {/* ── HERO ── */}
-      <div
-        className="contact-hero"
-        style={{ background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}
-      >
-        <Link href={'/'}
-          style={{ fontSize: "11px", color: "#888780", marginBottom: "14px", textDecoration:"none" }}
-        >
+      {/* HERO */}
+      <div className="contact-hero" style={{ background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}>
+        <Link href="/" style={{ fontSize: "11px", color: "#888780", marginBottom: "14px", textDecoration: "none" }}>
           Home <span style={{ color: "#2D6A4F" }}>/ Contact</span>
         </Link>
-        <div
-          style={{
-            fontSize: "10px",
-            letterSpacing: "1.5px",
-            color: "#2D6A4F",
-            fontWeight: 500,
-            marginBottom: "12px",
-            marginTop:"10px"
-          }}
-        >
+        <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "12px", marginTop: "10px" }}>
           GET IN TOUCH
         </div>
-        <h1
-          style={{
-            fontFamily: "var(--font-serif)",
-            fontWeight: 500,
-            lineHeight: 1.15,
-            color: "#1C1C1C",
-            marginBottom: "12px",
-          }}
-        >
+        <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "12px" }}>
           Talk to someone who{" "}
-          <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>
-            knows the platforms.
-          </em>
+          <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>knows the platforms.</em>
         </h1>
-        <p
-          style={{
-            fontSize: "14px",
-            color: "#555550",
-            lineHeight: 1.75,
-            maxWidth: "560px",
-          }}
-        >
-          Whether you have a specific project, a question about our services, or
-          just want to understand what&apos;s possible — we respond within 4
-          hours on business days.
+        <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.75, maxWidth: "560px" }}>
+          Whether you have a specific project, a question about our services, or just want to understand what&apos;s possible — we respond within 4 hours on business days.
         </p>
       </div>
 
-      {/* ── MAIN GRID ── */}
+      {/* MAIN GRID */}
       <div className="contact-main">
-        {/* ── FORM ── */}
+
+        {/* FORM */}
         <div className="contact-form">
-          <div
-            style={{
-              fontSize: "10px",
-              letterSpacing: "1.2px",
-              color: "#2D6A4F",
-              fontWeight: 500,
-              marginBottom: "14px",
-            }}
-          >
+          <div style={{ fontSize: "10px", letterSpacing: "1.2px", color: "#2D6A4F", fontWeight: 500, marginBottom: "14px" }}>
             SEND US A MESSAGE
           </div>
-          <h2
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "20px",
-              fontWeight: 500,
-              color: "#1C1C1C",
-              marginBottom: "6px",
-            }}
-          >
+          <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#1C1C1C", marginBottom: "6px" }}>
             What can we help you with?
           </h2>
-          <p
-            style={{
-              fontSize: "12px",
-              color: "#888780",
-              lineHeight: 1.6,
-              marginBottom: "28px",
-            }}
-          >
-            Fill in the form and we&apos;ll get back to you within 4 hours on
-            business days.
+          <p style={{ fontSize: "12px", color: "#888780", lineHeight: 1.6, marginBottom: "28px" }}>
+            Fill in the form and we&apos;ll get back to you within 4 hours on business days.
           </p>
 
-          {/* YOUR DETAILS */}
-          <div
-            style={{
-              fontSize: "10px",
-              letterSpacing: "1.2px",
-              color: "#555550",
-              fontWeight: 500,
-              marginBottom: "14px",
-            }}
-          >
-            YOUR DETAILS
-          </div>
-          <div className="form-two-col" style={{ marginBottom: "14px" }}>
-            <div>
-              <label style={labelStyle}>
-                First name <span style={{ color: "#2D6A4F" }}>*</span>
-              </label>
-              <input
-                style={inputStyle}
-                name="firstName"
-                type="text"
-                placeholder="Jane"
-                value={form.firstName}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label style={labelStyle}>
-                Last name <span style={{ color: "#2D6A4F" }}>*</span>
-              </label>
-              <input
-                style={inputStyle}
-                name="lastName"
-                type="text"
-                placeholder="Smith"
-                value={form.lastName}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
           <div style={{ marginBottom: "14px" }}>
-            <label style={labelStyle}>
-              Business email <span style={{ color: "#2D6A4F" }}>*</span>
-            </label>
-            <input
-              style={inputStyle}
-              name="email"
-              type="email"
-              placeholder="jane@yourstore.com"
-              value={form.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-two-col" style={{ marginBottom: "28px" }}>
-            <div>
-              <label style={labelStyle}>Phone number</label>
-              <input
-                style={inputStyle}
-                name="phone"
-                type="tel"
-                placeholder="+1 555 000 0000"
-                value={form.phone}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label style={labelStyle}>
-                Company email <span style={{ color: "#2D6A4F" }}>*</span>
-              </label>
-              <input
-                style={inputStyle}
-                name="company"
-                type="text"
-                placeholder="Your Store Ltd"
-                value={form.company}
-                onChange={handleChange}
-              />
-            </div>
+            <label style={labelStyle}>Name <span style={{ color: "#2D6A4F" }}>*</span></label>
+            <input style={inputStyle} name="name" type="text" placeholder="Your name"
+              value={form.name} onChange={handleChange} />
           </div>
 
-          {/* ENQUIRY DETAILS */}
-          <div
-            style={{
-              borderTop: "0.5px solid #EDE5D5",
-              paddingTop: "24px",
-              marginBottom: "14px",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "10px",
-                letterSpacing: "1.2px",
-                color: "#555550",
-                fontWeight: 500,
-                marginBottom: "14px",
-              }}
-            >
-              ENQUIRY DETAILS
-            </div>
-          </div>
           <div style={{ marginBottom: "14px" }}>
-            <label style={labelStyle}>
-              What are you enquiring about?{" "}
-              <span style={{ color: "#2D6A4F" }}>*</span>
-            </label>
-            <select
-              style={{ ...inputStyle, appearance: "none" as const }}
-              name="topic"
-              value={form.topic}
-              onChange={handleChange}
-            >
+            <label style={labelStyle}>Email <span style={{ color: "#2D6A4F" }}>*</span></label>
+            <input style={inputStyle} name="email" type="email" placeholder="you@yourstore.com"
+              value={form.email} onChange={handleChange} />
+          </div>
+
+          <div style={{ marginBottom: "14px" }}>
+            <label style={labelStyle}>What are you enquiring about? <span style={{ color: "#2D6A4F" }}>*</span></label>
+            <select style={{ ...inputStyle, appearance: "none" as const }} name="topic"
+              value={form.topic} onChange={handleChange}>
               <option value="">Select a topic</option>
-              {topics.map((t) => (
-                <option key={t}>{t}</option>
-              ))}
+              {topics.map((t) => <option key={t}>{t}</option>)}
             </select>
           </div>
+
           <div style={{ marginBottom: "14px" }}>
-            <label style={labelStyle}>
-              Your message <span style={{ color: "#2D6A4F" }}>*</span>
-            </label>
-            <textarea
-              style={{
-                ...inputStyle,
-                height: "120px",
-                resize: "none" as const,
-              }}
-              name="message"
-              placeholder="Tell us about your project, current challenges, or what you'd like help with..."
-              value={form.message}
-              onChange={handleChange}
-            />
+            <label style={labelStyle}>Your message <span style={{ color: "#888780", fontWeight: 400 }}>(optional)</span></label>
+            <textarea style={{ ...inputStyle, height: "120px", resize: "none" as const }}
+              name="message" placeholder="Tell us about your project, current challenges, or what you'd like help with..."
+              value={form.message} onChange={handleChange} />
           </div>
+
           <div style={{ marginBottom: "28px" }}>
-            <label style={labelStyle}>How did you hear about us?</label>
-            <select
-              style={{ ...inputStyle, appearance: "none" as const }}
-              name="hearAbout"
-              value={form.hearAbout}
-              onChange={handleChange}
-            >
+            <label style={labelStyle}>How did you hear about us? <span style={{ color: "#888780", fontWeight: 400 }}>(optional)</span></label>
+            <select style={{ ...inputStyle, appearance: "none" as const }} name="hearAbout"
+              value={form.hearAbout} onChange={handleChange}>
               <option value="">Select one</option>
               <option>Google search</option>
               <option>LinkedIn</option>
@@ -548,223 +254,85 @@ export default function ContactClient() {
           {/* SUBMIT */}
           <div style={{ borderTop: "0.5px solid #EDE5D5", paddingTop: "24px" }}>
             {error && (
-              <div
-                style={{
-                  background: "#FEF2F2",
-                  border: "0.5px solid #FECACA",
-                  borderRadius: "4px",
-                  padding: "10px 14px",
-                  fontSize: "12px",
-                  color: "#DC2626",
-                  marginBottom: "16px",
-                }}
-              >
+              <div style={{ background: "#FEF2F2", border: "0.5px solid #FECACA", borderRadius: "4px", padding: "10px 14px", fontSize: "12px", color: "#DC2626", marginBottom: "16px" }}>
                 {error}
               </div>
             )}
             <button
               onClick={handleSubmit}
               disabled={loading}
-              style={{
-                width: "100%",
-                background: loading ? "#88B8A0" : "#2D6A4F",
-                color: "#fff",
-                border: "none",
-                padding: "14px 24px",
-                borderRadius: "4px",
-                fontSize: "14px",
-                fontWeight: 500,
-                cursor: loading ? "not-allowed" : "pointer",
-                transition: "background 0.15s",
-              }}
+              style={{ width: "100%", background: loading ? "#88B8A0" : "#2D6A4F", color: "#fff", border: "none", padding: "14px 24px", borderRadius: "4px", fontSize: "14px", fontWeight: 500, cursor: loading ? "not-allowed" : "pointer", transition: "background 0.15s" }}
             >
               {loading ? "Sending..." : "Send message →"}
             </button>
-            <div
-              style={{
-                textAlign: "center",
-                fontSize: "11px",
-                color: "#888780",
-                marginTop: "10px",
-              }}
-            >
-              We respond within 4 hours on business days · Your data is never
-              shared
+            <div style={{ textAlign: "center", fontSize: "11px", color: "#888780", marginTop: "10px" }}>
+              We respond within 4 hours on business days · Your data is never shared
             </div>
           </div>
         </div>
 
-        {/* ── SIDEBAR ── */}
+        {/* SIDEBAR */}
         <div className="contact-sidebar">
-          {/* Contact info */}
-          <div
-            style={{
-              background: "#FFFFFF",
-              border: "0.5px solid #D5C9B0",
-              borderRadius: "8px",
-              padding: "20px",
-              marginBottom: "16px",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "11px",
-                fontWeight: 500,
-                color: "#1C1C1C",
-                marginBottom: "16px",
-                letterSpacing: "0.3px",
-              }}
-            >
+          <div style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "20px", marginBottom: "16px" }}>
+            <div style={{ fontSize: "11px", fontWeight: 500, color: "#1C1C1C", marginBottom: "16px", letterSpacing: "0.3px" }}>
               CONTACT DETAILS
             </div>
-            {contactInfo.map((c, i) => {
-              const inner = (
-                <>
-                  <div
-                    style={{
-                      width: "32px",
-                      height: "32px",
-                      borderRadius: "6px",
-                      background: "#E8F5EE",
-                      flexShrink: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    {c.icon}
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: "11px",
-                        color: "#888780",
-                        marginBottom: "2px",
-                      }}
-                    >
-                      {c.label}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "13px",
-                        fontWeight: 500,
-                        color: "#1C1C1C",
-                        lineHeight: 1.55,
-                      }}
-                    >
-                      {c.value}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "11px",
-                        color: c.href ? "#2D6A4F" : "#888780",
-                        marginTop: "1px",
-                      }}
-                    >
-                      {c.sub}
-                    </div>
-                  </div>
-                </>
-              );
-              return c.href ? (
-                <a
-                  key={c.label}
-                  href={c.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "flex",
-                    gap: "12px",
-                    alignItems: "flex-start",
-                    marginBottom: i < contactInfo.length - 1 ? "14px" : 0,
-                    textDecoration: "none",
-                    cursor: "pointer",
-                  }}
-                >
-                  {inner}
-                </a>
-              ) : (
-                <div
-                  key={c.label}
-                  style={{
-                    display: "flex",
-                    gap: "12px",
-                    alignItems: "flex-start",
-                    marginBottom: i < contactInfo.length - 1 ? "14px" : 0,
-                  }}
-                >
-                  {inner}
-                </div>
-              );
-            })}
-              {/* Map */}
-          <div
-            style={{
-              borderRadius: "8px",
-              overflow: "hidden",
-              border: "0.5px solid #D5C9B0",
-              marginBottom: "2px",
-              marginTop:"15px"
-            }}
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.6613487636378!2d78.19056254107994!3d26.207692453695984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c432313ac96b%3A0x2333ef1bc802b789!2sProfessional%20ITS!5e0!3m2!1sen!2sin!4v1776878216706!5m2!1sen!2sin"
-              width="100%"
-              height="140"
-              style={{ border: 0, display: "block" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          </div>
 
-        
+            {/* WhatsApp — top of contact details */}
+            <a
+              href="https://wa.me/919811018501?text=Hi%2C%20I%27d%20like%20a%20free%20catalog%20audit"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "flex", alignItems: "center", gap: "12px", background: "#25D366", borderRadius: "6px", padding: "10px 14px", textDecoration: "none", marginBottom: "16px" }}
+            >
+              <div style={{ width: "32px", height: "32px", borderRadius: "6px", background: "rgba(255,255,255,0.2)", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <svg viewBox="0 0 24 24" style={{ width: "16px", height: "16px" }} fill="#ffffff">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </div>
+              <div>
+                <div style={{ fontSize: "12px", fontWeight: 600, color: "#ffffff" }}>Chat on WhatsApp</div>
+                <div style={{ fontSize: "11px", color: "#d4f5e0" }}>Quick questions? We reply fast.</div>
+              </div>
+            </a>
+
+            {/* Contact info entries */}
+            {contactInfo.map((c, i) => (
+              <div key={c.label} style={{ display: "flex", gap: "12px", alignItems: "flex-start", marginBottom: i < contactInfo.length - 1 ? "14px" : 0 }}>
+                <div style={{ width: "32px", height: "32px", borderRadius: "6px", background: "#E8F5EE", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  {c.icon}
+                </div>
+                <div>
+                  <div style={{ fontSize: "11px", color: "#888780", marginBottom: "2px" }}>{c.label}</div>
+                  <div style={{ fontSize: "13px", fontWeight: 500, color: "#1C1C1C", lineHeight: 1.55 }}>{c.value}</div>
+                  {"sub" in c && <div style={{ fontSize: "11px", color: "#888780", marginTop: "1px" }}>{c.sub}</div>}
+                </div>
+              </div>
+            ))}
+
+            {/* Map */}
+            <div style={{ borderRadius: "8px", overflow: "hidden", border: "0.5px solid #D5C9B0", marginTop: "16px" }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.6613487636378!2d78.19056254107994!3d26.207692453695984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c432313ac96b%3A0x2333ef1bc802b789!2sProfessional%20ITS!5e0!3m2!1sen!2sin!4v1776878216706!5m2!1sen!2sin"
+                width="100%"
+                height="140"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
 
           {/* Audit CTA */}
-          <div
-            style={{
-              background: "#E8F5EE",
-              border: "0.5px solid #9FE1CB",
-              borderRadius: "6px",
-              padding: "16px",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "12px",
-                fontWeight: 500,
-                color: "#085041",
-                marginBottom: "6px",
-              }}
-            >
+          <div style={{ background: "#E8F5EE", border: "0.5px solid #9FE1CB", borderRadius: "6px", padding: "16px" }}>
+            <div style={{ fontSize: "12px", fontWeight: 500, color: "#085041", marginBottom: "6px" }}>
               Prefer to start with an audit?
             </div>
-            <div
-              style={{
-                fontSize: "11px",
-                color: "#0F6E56",
-                lineHeight: 1.6,
-                marginBottom: "12px",
-              }}
-            >
-              A free 50-SKU catalog audit is the fastest way to get a concrete
-              picture of what we&apos;d fix and how we&apos;d work together.
+            <div style={{ fontSize: "11px", color: "#0F6E56", lineHeight: 1.6, marginBottom: "12px" }}>
+              A free 50-SKU catalog audit is the fastest way to get a concrete picture of what we&apos;d fix and how we&apos;d work together.
             </div>
-            <Link
-              href="/audit"
-              style={{
-                display: "block",
-                background: "#2D6A4F",
-                color: "#fff",
-                padding: "10px 16px",
-                borderRadius: "4px",
-                fontSize: "12px",
-                fontWeight: 500,
-                textAlign: "center",
-                textDecoration: "none",
-              }}
-            >
+            <Link href="/audit" style={{ display: "block", background: "#2D6A4F", color: "#fff", padding: "10px 16px", borderRadius: "4px", fontSize: "12px", fontWeight: 500, textAlign: "center", textDecoration: "none" }}>
               Get free catalog audit
             </Link>
           </div>
