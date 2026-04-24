@@ -55,8 +55,8 @@ const contactInfo = [
         <path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    label: "Office",
-    value: "Professional ITS, 87, City Center, Kailash Vihar, Tulsi Vihar Colony, Gwalior, Madhya Pradesh 474002",
+    label: "Office Address",
+    value: "Professional ITS, 87 Kailash Vihar, City Center, Gwalior M.P. INDIA 474002",
   },
 ];
 
