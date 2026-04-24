@@ -491,14 +491,16 @@ export default function ProductDataCleanupPage() {
       </section>
 
       {/* ── CTA BANNER ── */}
+      <style>{`
+        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: space-between; align-items: center; }
+        .audit-banner-btn { margin-left: 80px; flex-shrink: 0; }
+        @media (max-width: 600px) {
+          .audit-banner { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+          .audit-banner-btn { margin-left: 0; margin-top: 20px; }
+        }
+      `}</style>
       <div
-        style={{
-          background: "#1C1C1C",
-          padding: "48px 32px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
+        className="audit-banner"
       >
         <div>
           <div
@@ -535,6 +537,8 @@ export default function ProductDataCleanupPage() {
             fontWeight: 500,
             textDecoration: "none",
             whiteSpace: "nowrap",
+            marginRight:"120px",
+            marginTop:"5px"
           }}
         >
           Get free catalog audit

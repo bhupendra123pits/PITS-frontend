@@ -186,7 +186,15 @@ export default function CatalogProductDataPage() {
       </section>
 
       {/* ── CTA BANNER ── */}
-      <div style={{ background: "#1C1C1C", padding: "48px 32px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <style>{`
+        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: space-between; align-items: center; }
+        .audit-banner-btn { margin-left: 80px; flex-shrink: 0; }
+        @media (max-width: 600px) {
+          .audit-banner { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+          .audit-banner-btn { margin-left: 0; margin-top: 20px; }
+        }
+      `}</style>
+      <div className="audit-banner">
         <div>
           <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500, marginBottom: "8px" }}>
             Start with a free catalog audit.
@@ -195,7 +203,7 @@ export default function CatalogProductDataPage() {
             We review 50 of your SKUs and deliver a written findings report within 48 hours. No credit card required.
           </div>
         </div>
-        <Link href="/audit" style={{ background: "#2D6A4F", color: "#fff", padding: "13px 28px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>
+        <Link href="/audit" className="audit-banner-btn" style={{ background: "#2D6A4F", color: "#fff", padding: "13px 28px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap", marginRight: "120px" }}>
           Get free catalog audit
         </Link>
       </div>

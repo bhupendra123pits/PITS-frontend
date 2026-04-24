@@ -164,13 +164,6 @@ export default function Footer() {
           }
         }
         @media (max-width: 540px) {
-          .footer-grid {
-            grid-template-columns: 1fr;
-            gap: 24px;
-          }
-          .footer-brand-col {
-            grid-column: 1;
-          }
           .footer-bottom {
             flex-direction: column;
             align-items: flex-start;

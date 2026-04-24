@@ -101,7 +101,7 @@ export default function PricingPage() {
               We review 50 of your SKUs, deliver a written report, and recommend the right engagement. No credit card required.
             </div>
           </div>
-          <div className="audit-banner-btn">
+          <div className="audit-banner-btn" style={{ marginRight: "120px" }}>
             Get free catalog audit
           </div>
         </Link>

@@ -100,11 +100,11 @@ export default function AboutPage() {
           margin-top: 6px;
           flex-shrink: 0;
         }
-        .about-cta-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: flex-start; align-items: center; }
-        .about-cta-banner-btn { margin-left: 80px; flex-shrink: 0; }
+        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: space-between; align-items: center; }
+        .audit-banner-btn { margin-left: 80px; flex-shrink: 0; }
         @media (max-width: 600px) {
-          .about-cta-banner { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
-          .about-cta-banner-btn { margin-left: 0; margin-top: 20px; }
+          .audit-banner { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+          .audit-banner-btn { margin-left: 0; margin-top: 20px; }
         }
         @media (max-width: 1024px) {
           .about-two-col {
@@ -128,13 +128,6 @@ export default function AboutPage() {
           }
           .about-stats-grid {
             grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 540px) {
-          .about-cta-banner {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 36px 20px;
           }
         }
       `}</style>
@@ -574,7 +567,7 @@ export default function AboutPage() {
         </div>
         <Link
           href="/audit"
-          className="about-cta-banner-btn"
+          className="audit-banner-btn"
           style={{
             background: "#2D6A4F",
             color: "#fff",
@@ -584,6 +577,7 @@ export default function AboutPage() {
             fontWeight: 500,
             whiteSpace: "nowrap",
             textDecoration: "none",
+            marginRight: "120px",
           }}
         >
           Get free catalog audit

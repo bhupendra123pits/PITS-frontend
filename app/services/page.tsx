@@ -176,8 +176,8 @@ export default function ServicesPage() {
       </section>
 
       {/* ── CTA BANNER ── */}
-      <style>{`
-        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: flex-start; align-items: center; }
+     <style>{`
+        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: space-between; align-items: center; }
         .audit-banner-btn { margin-left: 80px; flex-shrink: 0; }
         @media (max-width: 600px) {
           .audit-banner { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
@@ -193,7 +193,7 @@ export default function ServicesPage() {
             Start with a free catalog audit. We&apos;ll review your store and recommend exactly which services would have the most impact.
           </div>
         </div>
-        <Link href="/audit" className="audit-banner-btn" style={{ background: "#2D6A4F", color: "#fff", padding: "13px 28px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>
+        <Link href="/audit" className="audit-banner-btn" style={{ background: "#2D6A4F", color: "#fff", padding: "13px 28px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap", marginRight: "150px"}}>
           Get free catalog audit
         </Link>
       </div>

@@ -136,6 +136,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const searchRef = useRef<HTMLDivElement>(null);
+  const mobileSearchRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const toggle = (id: string) => setOpen(open === id ? null : id);
@@ -159,7 +160,9 @@ export default function Navbar() {
   // Close search on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
-      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+      const insideDesktop = searchRef.current?.contains(e.target as Node);
+      const insideMobile = mobileSearchRef.current?.contains(e.target as Node);
+      if (!insideDesktop && !insideMobile) {
         setSearchOpen(false);
         setSearchQuery("");
       }
@@ -866,6 +869,7 @@ export default function Navbar() {
           <div style={{ padding: "8px 24px 40px" }}>
             {/* Mobile Search */}
             <div
+              ref={mobileSearchRef}
               style={{ padding: "12px 0", borderBottom: "0.5px solid #EDE5D5" }}
             >
               <div
@@ -922,6 +926,7 @@ export default function Navbar() {
                   {filteredResults.map((item, i) => (
                     <div
                       key={i}
+                      onMouseDown={(e) => e.preventDefault()}
                       onClick={() => {
                         handleSearchSelect(item.href);
                         closeMobile();

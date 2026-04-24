@@ -781,8 +781,8 @@ export default function HomePage() {
 
       {/* ── AUDIT BANNER ── */}
       <style>{`
-        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: flex-start; align-items: center; }
-        .audit-banner-btn { margin-left: 280px; flex-shrink: 0; }
+        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: space-between; align-items: center; }
+        .audit-banner-btn { margin-left: 80px; flex-shrink: 0; }
         @media (max-width: 600px) {
           .audit-banner { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
           .audit-banner-btn { margin-left: 0; margin-top: 20px; }
@@ -824,6 +824,7 @@ export default function HomePage() {
             whiteSpace: "nowrap",
             cursor: "pointer",
             textDecoration: "none",
+            marginRight: "120px",
           }}
         >
           Get free catalog audit
