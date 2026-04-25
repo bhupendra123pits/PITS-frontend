@@ -56,7 +56,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Office Address",
-    value: "Professional ITS, 87 Kailash Vihar, City Center, Gwalior M.P. INDIA 474002",
+    value: "",
   },
 ];
 
@@ -304,7 +304,15 @@ export default function ContactClient() {
                 </div>
                 <div>
                   <div style={{ fontSize: "11px", color: "#888780", marginBottom: "2px" }}>{c.label}</div>
-                  <div style={{ fontSize: "13px", fontWeight: 500, color: "#1C1C1C", lineHeight: 1.55 }}>{c.value}</div>
+                  {c.label === "Office Address" ? (
+                    <div style={{ fontSize: "13px", lineHeight: 1.65 }}>
+                      <span style={{ fontWeight: 600, color: "#1C1C1C" }}>Professional ITS</span>
+                      <br />
+                      <span style={{ fontWeight: 400, color: "#888780" }}>87, Kailash Vihar, City Center<br />Gwalior M.P. INDIA 474002</span>
+                    </div>
+                  ) : (
+                    <div style={{ fontSize: "13px", fontWeight: 500, color: "#1C1C1C", lineHeight: 1.55 }}>{c.value}</div>
+                  )}
                   {"sub" in c && <div style={{ fontSize: "11px", color: "#888780", marginTop: "1px" }}>{c.sub}</div>}
                 </div>
               </div>
