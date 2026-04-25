@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import { platforms } from "@/lib/platforms";
 
 export const metadata: Metadata = {
-  title: "Platforms We Support – Professional ITS",
+  title: "E-Commerce Platforms We Support — Professional ITS",
   description:
-    "Back-office services for Amazon, Shopify, eBay, Etsy, BigCommerce, WooCommerce, Walmart, and more. Platform-specific specialists for every major marketplace.",
+    "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009",
   keywords: ["Amazon back-office", "Shopify management", "eBay operations", "ecommerce platform support"],
   openGraph: {
     title: "Platforms We Support – Professional ITS",

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pricing – Professional ITS",
-  description: "Transparent pricing with no surprises. Per SKU, monthly retainers, and virtual assistant options. Start with a free catalog audit.",
+  description: "Transparent pricing for e-commerce back-office services. From $0.50 per SKU. Retainers from $350/month. No lock-in contracts",
   alternates: {
     canonical: "https://professionalits.com/pricing",
   },

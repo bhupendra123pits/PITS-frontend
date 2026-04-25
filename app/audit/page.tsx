@@ -4,7 +4,7 @@ import AuditClient from "./auditclient";
 export const metadata: Metadata = {
   title: "Free Catalog Audit – Professional ITS",
   description:
-    "Get a free 50-SKU catalog audit. We review data completeness, listing quality, and attribute accuracy — and deliver a written report within 48 hours. No credit card required.",
+    "We review 50 of your SKUs and deliver a written findings report. No credit card, no sales call, no commitment. Find out what we'd fix.",
   keywords: [
     "free ecommerce catalog audit",
     "product listing audit",

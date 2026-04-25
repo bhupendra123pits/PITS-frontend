@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Results – Professional ITS",
   description:
-    "500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
+    "Real outcomes from 1,500+ e-commerce stores. 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce",
   alternates: {
     canonical: "https://professionalits.com/results",
   },

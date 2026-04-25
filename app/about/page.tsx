@@ -5,21 +5,28 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "About Professional ITS – E-Commerce Back-Office Specialists Since 2009",
+    "About Professional ITS — 19 Years in E-Commerce Operations",
   description:
-    "Nineteen years in business. Seventeen focused exclusively on e-commerce catalog, marketplace, and back-office work. Independent, founder-led, and built around operators who've worked inside the platforms.",
+    "Professional ITS has focused on e-commerce back-office operations since 2009. Founder-led, independent, India-based. 1,500+ stores served.",
   alternates: {
     canonical: "https://professionalits.com/about",
   },
   openGraph: {
     title:
-      "About Professional ITS – E-Commerce Back-Office Specialists Since 2009",
+      "About Professional ITS — 19 Years in E-Commerce Operations",
     description:
-      "Nineteen years in business. Seventeen focused exclusively on e-commerce catalog, marketplace, and back-office work.",
+      "Professional ITS has focused on e-commerce back-office operations since 2009. Founder-led, independent, India-based. 1,500+ stores served.",
     url: "https://professionalits.com/about",
     siteName: "Professional ITS",
     type: "website",
     images: [{ url: "https://professionalits.com/og-image.png", width: 1200, height: 630, alt: "Professional ITS" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Professional ITS — 19 Years in E-Commerce Operations",
+    description:
+      "Professional ITS has focused on e-commerce back-office operations since 2009. Founder-led, independent, India-based. 1,500+ stores served.",
+    images: ["https://professionalits.com/og-image.png"],
   },
 };
 

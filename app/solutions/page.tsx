@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Solutions – Professional ITS",
+  title: "E-Commerce Back-Office Solutions — Professional ITS",
   description:
-    "End-to-end e-commerce solutions — catalog operations, marketplace management, backoffice support, product data cleanup, and high-SKU scaling. Handled by specialists.",
+    "Five solution areas for e-commerce operations: catalog, marketplace ops, back-office, data cleanup, high-SKU scaling. Tailored to your platform.",
   keywords: [
     "ecommerce solutions",
     "catalog operations",
