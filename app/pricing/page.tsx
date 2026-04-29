@@ -5,23 +5,38 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pricing – Professional ITS",
-  description: "Transparent pricing for e-commerce back-office services. From $0.50 per SKU. Retainers from $350/month. No lock-in contracts",
+  description:
+    "Transparent pricing for e-commerce back-office services. From $0.50 per SKU. Retainers from $350/month. No lock-in contracts",
   alternates: {
     canonical: "https://professionalits.com/pricing",
   },
   openGraph: {
     title: "Pricing – Professional ITS",
-    description: "Transparent pricing with no surprises. Per SKU, monthly retainers, and virtual assistant options.",
+    description:
+      "Transparent pricing with no surprises. Per SKU, monthly retainers, and virtual assistant options.",
     url: "https://professionalits.com/pricing",
     siteName: "Professional ITS",
     type: "website",
-    images: [{ url: "https://professionalits.com/og-image.png", width: 1200, height: 630, alt: "Professional ITS" }],
+    images: [
+      {
+        url: "https://professionalits.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Professional ITS",
+      },
+    ],
   },
 };
 
 export default function PricingPage() {
   return (
-    <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
+    <div
+      style={{
+        fontFamily: "var(--font-sans)",
+        background: "#FDFAF5",
+        color: "#1C1C1C",
+      }}
+    >
       <style>{`
         .pricing-hero { background: #F5F0E8; padding: 48px 32px 40px; border-bottom: 0.5px solid #D5C9B0; }
         .pricing-section { padding: 56px 32px; background: #FDFAF5; }
@@ -45,60 +60,303 @@ export default function PricingPage() {
       `}</style>
 
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            url: "https://professionalits.com/pricing",
+            name: "Pricing — Ecommerce Outsourcing Services | Professional ITS",
+            description:
+              "Transparent ecommerce outsourcing pricing. Per-SKU catalog services from $0.50, monthly retainers from 40 hrs, VAs from $350/month.",
+            mainEntity: {
+              "@type": "Offer",
+              name: "Ecommerce Back-Office Services",
+              description:
+                "Per-SKU catalog services, monthly retainers, and dedicated ecommerce VAs.",
+              seller: {
+                "@id": "https://professionalits.com/#organization",
+              },
+              priceSpecification: [
+                {
+                  "@type": "UnitPriceSpecification",
+                  name: "Data entry (standard)",
+                  price: "0.50",
+                  priceCurrency: "USD",
+                  unitText: "per SKU",
+                  minPrice: "0.50",
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  name: "Listing creation + copy",
+                  price: "2.00",
+                  priceCurrency: "USD",
+                  unitText: "per SKU",
+                  minPrice: "2.00",
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  name: "Part-time ecommerce VA (20 hrs/wk)",
+                  price: "350.00",
+                  priceCurrency: "USD",
+                  unitText: "per month",
+                  minPrice: "350.00",
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  name: "Full-time ecommerce VA (40 hrs/wk)",
+                  price: "600.00",
+                  priceCurrency: "USD",
+                  unitText: "per month",
+                  minPrice: "600.00",
+                },
+              ],
+            },
+          }),
+        }}
+      />
 
       <div className="pricing-hero">
-        <div style={{ fontSize: "11px", color: "#2D6A4F", fontWeight: 500, marginBottom: "16px" }}>Pricing</div>
-        <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "32px", fontWeight: 500, color: "#1C1C1C", marginBottom: "12px" }}>
-          Transparent pricing. <em style={{ color: "#2D6A4F" }}>No surprises.</em>
+        <div
+          style={{
+            fontSize: "11px",
+            color: "#2D6A4F",
+            fontWeight: 500,
+            marginBottom: "16px",
+          }}
+        >
+          Pricing
+        </div>
+        <h1
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontSize: "32px",
+            fontWeight: 500,
+            color: "#1C1C1C",
+            marginBottom: "12px",
+          }}
+        >
+          Transparent pricing.{" "}
+          <em style={{ color: "#2D6A4F" }}>No surprises.</em>
         </h1>
-        <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.65, maxWidth: "560px" }}>
-          No long contracts. No hidden fees. Start with a free catalog audit and scale as you grow. Custom scopes quoted on request.
+        <p
+          style={{
+            fontSize: "14px",
+            color: "#555550",
+            lineHeight: 1.65,
+            maxWidth: "560px",
+          }}
+        >
+          No long contracts. No hidden fees. Start with a free catalog audit and
+          scale as you grow. Custom scopes quoted on request.
         </p>
       </div>
 
       <section className="pricing-section">
         <div className="pricing-grid">
-
           {/* Catalog & Listing */}
-          <div style={{ border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "24px", background: "#FDFAF5" }}>
-            <div style={{ fontSize: "11px", color: "#2D6A4F", fontWeight: 500, letterSpacing: "0.5px", marginBottom: "10px" }}>CATALOG &amp; LISTING</div>
-            <div style={{ fontFamily: "var(--font-serif)", fontSize: "14px", color: "#1C1C1C", marginBottom: "16px" }}>Per SKU / per hour</div>
-            {["Data entry (standard) — from $0.50/SKU", "Listing creation + copy — from $2.00/SKU", "Listing optimisation — from $1.50/SKU", "AI-assisted writing — from $1.00/SKU", "Catalog enrichment — by scope"].map((b) => (
-              <div key={b} style={{ fontSize: "13px", color: "#555550", padding: "5px 0 5px 16px", borderLeft: "2px solid #E8F5EE", marginBottom: "6px" }}>{b}</div>
+          <div
+            style={{
+              border: "0.5px solid #D5C9B0",
+              borderRadius: "8px",
+              padding: "24px",
+              background: "#FDFAF5",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "11px",
+                color: "#2D6A4F",
+                fontWeight: 500,
+                letterSpacing: "0.5px",
+                marginBottom: "10px",
+              }}
+            >
+              CATALOG &amp; LISTING
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "14px",
+                color: "#1C1C1C",
+                marginBottom: "16px",
+              }}
+            >
+              Per SKU / per hour
+            </div>
+            {[
+              "Data entry (standard) — from $0.50/SKU",
+              "Listing creation + copy — from $2.00/SKU",
+              "Listing optimisation — from $1.50/SKU",
+              "AI-assisted writing — from $1.00/SKU",
+              "Catalog enrichment — by scope",
+            ].map((b) => (
+              <div
+                key={b}
+                style={{
+                  fontSize: "13px",
+                  color: "#555550",
+                  padding: "5px 0 5px 16px",
+                  borderLeft: "2px solid #E8F5EE",
+                  marginBottom: "6px",
+                }}
+              >
+                {b}
+              </div>
             ))}
           </div>
 
           {/* Monthly Retainer - Featured */}
-          <div style={{ border: "2px solid #2D6A4F", borderRadius: "8px", padding: "24px", background: "#FDFAF5", position: "relative" }}>
-            <div style={{ position: "absolute", top: "-12px", left: "20px", background: "#2D6A4F", color: "#fff", fontSize: "10px", padding: "4px 12px", borderRadius: "3px", fontWeight: 500 }}>
+          <div
+            style={{
+              border: "2px solid #2D6A4F",
+              borderRadius: "8px",
+              padding: "24px",
+              background: "#FDFAF5",
+              position: "relative",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                top: "-12px",
+                left: "20px",
+                background: "#2D6A4F",
+                color: "#fff",
+                fontSize: "10px",
+                padding: "4px 12px",
+                borderRadius: "3px",
+                fontWeight: 500,
+              }}
+            >
               MOST POPULAR
             </div>
-            <div style={{ fontSize: "11px", color: "#2D6A4F", fontWeight: 500, letterSpacing: "0.5px", marginBottom: "10px" }}>MONTHLY RETAINER</div>
-            <div style={{ fontFamily: "var(--font-serif)", fontSize: "14px", color: "#1C1C1C", marginBottom: "16px" }}>Ongoing operational support</div>
-            {["Starter — 40 hrs/month", "Growth — 80 hrs/month", "Scale — 160 hrs/month + account mgr"].map((b) => (
-              <div key={b} style={{ fontSize: "13px", color: "#555550", padding: "5px 0 5px 16px", borderLeft: "2px solid #E8F5EE", marginBottom: "6px" }}>{b}</div>
+            <div
+              style={{
+                fontSize: "11px",
+                color: "#2D6A4F",
+                fontWeight: 500,
+                letterSpacing: "0.5px",
+                marginBottom: "10px",
+              }}
+            >
+              MONTHLY RETAINER
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "14px",
+                color: "#1C1C1C",
+                marginBottom: "16px",
+              }}
+            >
+              Ongoing operational support
+            </div>
+            {[
+              "Starter — 40 hrs/month",
+              "Growth — 80 hrs/month",
+              "Scale — 160 hrs/month + account mgr",
+            ].map((b) => (
+              <div
+                key={b}
+                style={{
+                  fontSize: "13px",
+                  color: "#555550",
+                  padding: "5px 0 5px 16px",
+                  borderLeft: "2px solid #E8F5EE",
+                  marginBottom: "6px",
+                }}
+              >
+                {b}
+              </div>
             ))}
-            <div style={{ marginTop: "14px", fontSize: "11px", color: "#888780" }}>Includes weekly reporting + dedicated contact</div>
+            <div
+              style={{ marginTop: "14px", fontSize: "11px", color: "#888780" }}
+            >
+              Includes weekly reporting + dedicated contact
+            </div>
           </div>
 
           {/* Virtual Assistants */}
-          <div style={{ border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "24px", background: "#FDFAF5" }}>
-            <div style={{ fontSize: "11px", color: "#2D6A4F", fontWeight: 500, letterSpacing: "0.5px", marginBottom: "10px" }}>VIRTUAL ASSISTANTS</div>
-            <div style={{ fontFamily: "var(--font-serif)", fontSize: "14px", color: "#1C1C1C", marginBottom: "16px" }}>E-commerce trained specialists</div>
-            {["Part-time (20 hrs/wk) — from $350/mo", "Full-time (40 hrs/wk) — from $600/mo", "Onboarding in 48–72 hours", "Replacement guarantee"].map((b) => (
-              <div key={b} style={{ fontSize: "13px", color: "#555550", padding: "5px 0 5px 16px", borderLeft: "2px solid #E8F5EE", marginBottom: "6px" }}>{b}</div>
+          <div
+            style={{
+              border: "0.5px solid #D5C9B0",
+              borderRadius: "8px",
+              padding: "24px",
+              background: "#FDFAF5",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "11px",
+                color: "#2D6A4F",
+                fontWeight: 500,
+                letterSpacing: "0.5px",
+                marginBottom: "10px",
+              }}
+            >
+              VIRTUAL ASSISTANTS
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "14px",
+                color: "#1C1C1C",
+                marginBottom: "16px",
+              }}
+            >
+              E-commerce trained specialists
+            </div>
+            {[
+              "Part-time (20 hrs/wk) — from $350/mo",
+              "Full-time (40 hrs/wk) — from $600/mo",
+              "Onboarding in 48–72 hours",
+              "Replacement guarantee",
+            ].map((b) => (
+              <div
+                key={b}
+                style={{
+                  fontSize: "13px",
+                  color: "#555550",
+                  padding: "5px 0 5px 16px",
+                  borderLeft: "2px solid #E8F5EE",
+                  marginBottom: "6px",
+                }}
+              >
+                {b}
+              </div>
             ))}
           </div>
         </div>
 
         {/* Audit Banner */}
-        <Link href="/audit" className="audit-banner" style={{ textDecoration: "none", display: "flex" }}>
+        <Link
+          href="/audit"
+          className="audit-banner"
+          style={{ textDecoration: "none", display: "flex" }}
+        >
           <div>
-            <div className="audit-banner-title" style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>
+            <div
+              className="audit-banner-title"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "22px",
+                color: "#fff",
+                fontWeight: 500,
+              }}
+            >
               Not sure which plan fits? Start with the free audit.
             </div>
-            <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.6)", marginTop: "6px" }}>
-              We review 50 of your SKUs, deliver a written report, and recommend the right engagement. No credit card required.
+            <div
+              style={{
+                fontSize: "13px",
+                color: "rgba(255,255,255,0.6)",
+                marginTop: "6px",
+              }}
+            >
+              We review 50 of your SKUs, deliver a written report, and recommend
+              the right engagement. No credit card required.
             </div>
           </div>
           <div className="audit-banner-btn" style={{ marginRight: "120px" }}>

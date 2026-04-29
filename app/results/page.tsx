@@ -11,11 +11,19 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Results – Professional ITS",
-    description: "500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
+    description:
+      "500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
     url: "https://professionalits.com/results",
     siteName: "Professional ITS",
     type: "website",
-    images: [{ url: "https://professionalits.com/og-image.png", width: 1200, height: 630, alt: "Professional ITS" }],
+    images: [
+      {
+        url: "https://professionalits.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Professional ITS",
+      },
+    ],
   },
 };
 
@@ -54,6 +62,64 @@ export default function ResultsPage() {
       }}
     >
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            url: "https://professionalits.com/results",
+            name: "Client Results & Case Studies | Professional ITS",
+            description:
+              "Real outcomes from 1,500+ ecommerce stores. 98% client retention, 4-hour SLA.",
+            mainEntity: {
+              "@type": "ItemList",
+              name: "Client Results",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  item: {
+                    "@type": "Article",
+                    name: "Wholesale distributor: 200 to 8,000 SKUs in six weeks",
+                    description:
+                      "A wholesale distributor needed to launch a full product catalog on Amazon and Shopify simultaneously. Professional ITS managed bulk upload, attribute structuring, and image processing — hitting the launch date at 98.4% listing accuracy.",
+                    author: {
+                      "@id": "https://professionalits.com/#organization",
+                    },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  item: {
+                    "@type": "Article",
+                    name: "Multi-channel seller: response time from 36 hours to under 4",
+                    description:
+                      "A mid-size Amazon and eBay seller struggling with SLAs during peak periods. Professional ITS took over customer support and maintained a 3.8-hour average response time in the first 90 days.",
+                    author: {
+                      "@id": "https://professionalits.com/#organization",
+                    },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  item: {
+                    "@type": "Article",
+                    name: "Manufacturer: raw spreadsheet to live marketplace in three weeks",
+                    description:
+                      "A manufacturer entering ecommerce provided raw supplier data in Excel. Professional ITS mapped, cleaned, enriched, and uploaded 1,200 SKUs across Amazon, eBay, and WooCommerce within three weeks.",
+                    author: {
+                      "@id": "https://professionalits.com/#organization",
+                    },
+                  },
+                },
+              ],
+            },
+          }),
+        }}
+      />
 
       <div
         style={{

@@ -201,10 +201,10 @@ export default function TermsPage() {
                 <div>
                   Email:{" "}
                   <a
-                    href="mailto:info@professionalits.com"
+                    href="mailto:audit@professionalits.com"
                     style={{ color: "#2D6A4F", textDecoration: "none" }}
                   >
-                    info@professionalits.com
+                    audit@professionalits.com
                   </a>
                 </div>
                 <div>US: +1 (732) 924-9050 · India: +91 98110 18501</div>

@@ -26,7 +26,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Email",
-    value: "info@professionalits.com",
+    value: "audit@professionalits.com",
     sub: "General enquiries & sales",
   },
   {

@@ -144,6 +144,219 @@ const trustItems = [
 
 export default function HomePage() {
   return (
+    <>
+    {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+
+              // 1. Organization
+              {
+                "@type": "Organization",
+                "@id": "https://professionalits.com/#organization",
+                "name": "Professional ITS",
+                "legalName": "Professional IT Sols Pvt. Ltd.",
+                "url": "https://professionalits.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://professionalits.com/PITS_Logo.png",
+                  "width": 200,
+                  "height": 60
+                },
+                "foundingDate": "2007",
+                "description": "Ecommerce back-office specialists since 2009. Catalog operations, marketplace management, and store back-office for online sellers running 500 to 500,000 SKUs.",
+                "numberOfEmployees": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 10,
+                  "maxValue": 50
+                },
+                "address": [
+                  {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Gwalior",
+                    "addressRegion": "Madhya Pradesh",
+                    "addressCountry": "IN"
+                  }
+                ],
+                "contactPoint": [
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+17329249050",
+                    "contactType": "customer service",
+                    "areaServed": "US",
+                    "availableLanguage": "English"
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+919811018501",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": "English"
+                  }
+                ],
+                "sameAs": []
+              },
+
+              // 2. WebSite (enables Google Sitelinks Search Box)
+              {
+                "@type": "WebSite",
+                "@id": "https://professionalits.com/#website",
+                "url": "https://professionalits.com",
+                "name": "Professional ITS",
+                "description": "Ecommerce back-office specialists since 2009.",
+                "publisher": {
+                  "@id": "https://professionalits.com/#organization"
+                }
+              },
+
+              // 3. WebPage
+              {
+                "@type": "WebPage",
+                "@id": "https://professionalits.com/#webpage",
+                "url": "https://professionalits.com",
+                "name": "Ecommerce Back-Office Specialists Since 2009 | Professional ITS",
+                "description": "Ecommerce back-office specialists since 2009. Catalog management, marketplace operations, and store back-office for online sellers running 500 to 500,000 SKUs. SLA-backed. No lock-in.",
+                "isPartOf": {
+                  "@id": "https://professionalits.com/#website"
+                },
+                "about": {
+                  "@id": "https://professionalits.com/#organization"
+                },
+                "inLanguage": "en-US"
+              },
+
+              // 4. ProfessionalService
+              {
+                "@type": "ProfessionalService",
+                "@id": "https://professionalits.com/#service",
+                "name": "Professional ITS",
+                "url": "https://professionalits.com",
+                "image": "https://professionalits.com/PITS_Logo.png",
+                "description": "Ecommerce back-office specialists since 2009. Catalog operations, marketplace management, and store back-office for online sellers.",
+                "priceRange": "$$",
+                "currenciesAccepted": "USD",
+                "paymentAccepted": "Invoice, Bank Transfer",
+                "areaServed": [
+                  "US", "GB", "AU", "CA", "IN"
+                ],
+                "serviceType": [
+                  "Ecommerce Catalog Management",
+                  "Marketplace Operations",
+                  "Product Data Entry",
+                  "Bulk Product Uploads",
+                  "Amazon Seller Central Management",
+                  "eBay Listing Optimisation",
+                  "Ecommerce Back-Office Outsourcing"
+                ],
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Ecommerce Back-Office Services",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Catalog & Product Data Operations",
+                        "url": "https://professionalits.com/solutions/catalog-product-data",
+                        "description": "High-SKU catalog builds, attribute structuring, bulk uploads, deduplication, and ongoing maintenance."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Marketplace Operations",
+                        "url": "https://professionalits.com/solutions/marketplace-operations",
+                        "description": "Listing optimisation, Buy Box strategy, suppressed listing management on Amazon, eBay, and Walmart."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Ecommerce Back-Office Management",
+                        "url": "https://professionalits.com/solutions/ecommerce-backoffice",
+                        "description": "Customer support, order processing, inventory monitoring, and repricing on an SLA."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Product Data Cleanup & Optimisation",
+                        "url": "https://professionalits.com/solutions/product-data-cleanup",
+                        "description": "Audit, deduplicate, enrich, and restructure messy ecommerce product data at scale."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "High-SKU Catalog Scaling",
+                        "url": "https://professionalits.com/solutions/high-sku-scaling",
+                        "description": "Scale catalogs from hundreds to hundreds of thousands of SKUs without scaling headcount."
+                      }
+                    }
+                  ]
+                },
+                
+              },
+
+              // 5. FAQPage (from homepage content)
+              {
+                "@type": "FAQPage",
+                "@id": "https://professionalits.com/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum catalog size you work with?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We work with ecommerce businesses running 500 to 500,000 SKUs. If your catalog is smaller, we recommend starting with a free audit to assess fit."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is your response SLA?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Our average response SLA is 4 hours across all accounts, maintained consistently regardless of engagement size."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Which platforms and marketplaces do you support?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We support Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion as platforms. For marketplaces: Amazon, eBay, Walmart, Etsy, BestBuy, Newegg, Houzz, Rakuten, and Poshmark."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is there a contract or lock-in period?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. Professional ITS operates without long-term contracts or lock-in. Engagements can scale up or down based on actual workload."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How do I get started?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Start with a free catalog audit. We review 50 of your SKUs, check data completeness and listing quality, and deliver a written findings report within 48 hours. No credit card required."
+                    }
+                  }
+                ]
+              }
+
+            ]
+          })
+        }}
+      />
     <div
       style={{
         fontFamily: "var(--font-sans)",
@@ -833,5 +1046,6 @@ export default function HomePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

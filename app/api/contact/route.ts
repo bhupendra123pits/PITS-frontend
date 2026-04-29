@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     // Emails are best-effort — a mail failure must never return 500
     try {
       await transporter.sendMail({
-        from: `"Professional ITS" <info@professionalits.com>`,
+        from: `"Professional ITS" <audit@professionalits.com>`,
         to: process.env.MAIL_RECEIVER,
         subject: `New Contact Enquiry — ${name}`,
         html: `
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
 
     try {
       await transporter.sendMail({
-        from: `"Professional ITS" <info@professionalits.com>`,
+        from: `"Professional ITS" <audit@professionalits.com>`,
         to: email,
         subject: "We received your message — Professional ITS",
         html: `
@@ -74,7 +74,7 @@ export async function POST(req: NextRequest) {
             <p style="color:#555;">Our team will review your message and get back to you within <strong>4 hours</strong> on business days.</p>
             <br/>
             <p style="color:#555; margin-bottom:2px;">— The Professional ITS Team</p>
-            <p style="color:#888; font-size:12px; margin:0;">info@professionalits.com · +1 (732) 924-9050</p>
+            <p style="color:#888; font-size:12px; margin:0;">audit@professionalits.com · +1 (732) 924-9050</p>
             <br/>
             <p style="color:#aaa; font-size:11px; margin:0;">Professional ITS — E-commerce back-office specialists since 2009</p>
             <p style="color:#aaa; font-size:11px; margin:0;">professionalits.com</p>

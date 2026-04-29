@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     // Emails are best-effort — a mail failure must never return 500
     try {
       await transporter.sendMail({
-        from: `"Professional ITS" <info@professionalits.com>`,
+        from: `"Professional ITS" <${process.env.GMAIL_USER}>`,
         to: process.env.MAIL_RECEIVER,
         subject: `New Audit Request #${record.id} — ${name}`,
         html: `
@@ -46,14 +46,11 @@ export async function POST(req: NextRequest) {
                 <td style="padding:8px 0;color:#888;">Primary Channel</td>
                 <td style="padding:8px 0;">${primaryPlatform || "—"}</td>
               </tr>
+              ${challenge ? `
               <tr style="border-bottom:1px solid #eee;">
                 <td style="padding:8px 0;color:#888;">Challenge</td>
-                <td style="padding:8px 0;">${challenge || "—"}</td>
-              </tr>
-              <tr style="border-bottom:1px solid #eee;">
-                <td style="padding:8px 0;color:#888;">Heard About Us</td>
-                <td style="padding:8px 0;">${hearAbout || "—"}</td>
-              </tr>
+                <td style="padding:8px 0;">${challenge}</td>
+              </tr>` : ""}
               <tr>
                 <td style="padding:8px 0;color:#888;">Submitted</td>
                 <td style="padding:8px 0;">${new Date().toLocaleString()}</td>
@@ -68,13 +65,13 @@ export async function POST(req: NextRequest) {
 
     try {
       await transporter.sendMail({
-        from: `"Professional ITS" <info@professionalits.com>`,
+        from: `"Professional ITS" <${process.env.GMAIL_USER}>`,
         to: email,
         subject: "We received your audit request — Professional ITS",
         html: `
           <div style="font-family: sans-serif; max-width: 560px; color: #1C1C1C; line-height: 1.6;">
             <p style="color:#555;">Hi ${name},</p>
-            <p style="color:#555;">We've received your free catalog audit request. Here's a summary of what we have on file:</p>
+            <p style="color:#555;">We received your audit request — Professional ITS → Your audit request is confirmed — Professional ITS:</p>
 
             <div style="background:#F5F0E8; border-radius:6px; padding:16px 20px; margin:20px 0;">
               <p style="margin:0 0 6px 0; color:#555;">— Name: <strong>${name}</strong></p>
@@ -97,7 +94,7 @@ export async function POST(req: NextRequest) {
 
             <br/>
             <p style="color:#555; margin-bottom:2px;">— The Professional ITS Audit Team</p>
-            <p style="color:#888; font-size:12px; margin:0;">info@professionalits.com · +1 (732) 924-9050</p>
+            <p style="color:#888; font-size:12px; margin:0;">audit@professionalits.com · +1 (732) 924-9050</p>
             <br/>
             <p style="color:#aaa; font-size:11px; margin:0;">Professional ITS — E-commerce back-office specialists since 2009</p>
             <p style="color:#aaa; font-size:11px; margin:0;">professionalits.com</p>

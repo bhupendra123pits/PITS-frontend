@@ -55,6 +55,38 @@ export default function AboutPage() {
     >
       <Navbar />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "url": "https://professionalits.com/about",
+            "name": "About Professional ITS — 17 Years in Ecommerce Operations",
+            "description": "Professional ITS has operated exclusively in ecommerce back-office since 2009. Founder-led, India-based, globally trusted.",
+            "mainEntity": {
+              "@type": "Organization",
+              "@id": "https://professionalits.com/#organization",
+              "name": "Professional ITS",
+              "legalName": "Professional IT Sols Pvt. Ltd.",
+              "foundingDate": "2007",
+              "numberOfEmployees": {
+                "@type": "QuantitativeValue",
+                "minValue": 10,
+                "maxValue": 50
+              },
+              "description": "Ecommerce back-office specialists since 2009. Founder-led, independently operated, delivering catalog and marketplace operations exclusively.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Gwalior",
+                "addressRegion": "Madhya Pradesh",
+                "addressCountry": "IN"
+              }
+            }
+          })
+        }}
+      />
+
       <style>{`
         .about-section {
           padding: 56px 32px;
