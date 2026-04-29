@@ -68,7 +68,7 @@ export default function AuditPage() {
   };
 
   const handleSubmit = async () => {
-    if (!captchaVerified) {
+    if (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) {
       setError("Please complete the CAPTCHA verification.");
       return;
     }
@@ -545,14 +545,16 @@ export default function AuditPage() {
 
           {/* SUBMIT */}
           <div style={{ borderTop: "0.5px solid #EDE5D5", paddingTop: "28px" }}>
-            <div style={{ marginBottom: "16px" }}>
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                onChange={(token) => setCaptchaVerified(!!token)}
-                onExpired={() => setCaptchaVerified(false)}
-              />
-            </div>
+            {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+              <div style={{ marginBottom: "16px" }}>
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                  onChange={(token) => setCaptchaVerified(!!token)}
+                  onExpired={() => setCaptchaVerified(false)}
+                />
+              </div>
+            )}
             {error && (
               <div
                 style={{
@@ -570,17 +572,17 @@ export default function AuditPage() {
             )}
             <button
               onClick={handleSubmit}
-              disabled={loading || !captchaVerified}
+              disabled={loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified)}
               style={{
                 width: "100%",
-                background: loading || !captchaVerified ? "#88B8A0" : "#2D6A4F",
+                background: loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) ? "#88B8A0" : "#2D6A4F",
                 color: "#fff",
                 border: "none",
                 padding: "14px 24px",
                 borderRadius: "4px",
                 fontSize: "14px",
                 fontWeight: 500,
-                cursor: loading || !captchaVerified ? "not-allowed" : "pointer",
+                cursor: loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) ? "not-allowed" : "pointer",
                 letterSpacing: "0.2px",
                 transition: "background 0.15s",
               }}
