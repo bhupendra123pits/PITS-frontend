@@ -243,7 +243,7 @@ export default function Navbar() {
         >
           <img
             src="/PITS_Logo.png"
-            alt="Professional ITS Logo"
+            alt="Professional ITS — E-Commerce Back-Office Specialists"
             style={{
               height: "53px",
               width: "auto",

@@ -164,7 +164,8 @@ export default function HomePage() {
                   "@type": "ImageObject",
                   "url": "https://professionalits.com/PITS_Logo.png",
                   "width": 200,
-                  "height": 60
+                  "height": 60,
+                  "caption": "Professional ITS — E-Commerce Back-Office Specialists"
                 },
                 "foundingDate": "2007",
                 "description": "Ecommerce back-office specialists since 2009. Catalog operations, marketplace management, and store back-office for online sellers running 500 to 500,000 SKUs.",
@@ -176,8 +177,10 @@ export default function HomePage() {
                 "address": [
                   {
                     "@type": "PostalAddress",
+                    "streetAddress": "87, Kailash Vihar, City Center",
                     "addressLocality": "Gwalior",
                     "addressRegion": "Madhya Pradesh",
+                    "postalCode": "474002",
                     "addressCountry": "IN"
                   }
                 ],
@@ -251,6 +254,15 @@ export default function HomePage() {
                   "eBay Listing Optimisation",
                   "Ecommerce Back-Office Outsourcing"
                 ],
+                "telephone": "+17329249050",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "87, Kailash Vihar, City Center",
+                  "addressLocality": "Gwalior",
+                  "addressRegion": "Madhya Pradesh",
+                  "postalCode": "474002",
+                  "addressCountry": "IN"
+                },
                 "hasOfferCatalog": {
                   "@type": "OfferCatalog",
                   "name": "Ecommerce Back-Office Services",

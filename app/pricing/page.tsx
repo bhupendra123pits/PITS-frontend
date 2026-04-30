@@ -41,8 +41,8 @@ export default function PricingPage() {
         .pricing-hero { background: #F5F0E8; padding: 48px 32px 40px; border-bottom: 0.5px solid #D5C9B0; }
         .pricing-section { padding: 56px 32px; background: #FDFAF5; }
         .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 32px; }
-        .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; gap: 24px; }
-        .audit-banner-btn { background: #2D6A4F; color: #fff; padding: 13px 28px; border-radius: 4px; font-size: 13px; font-weight: 500; white-space: nowrap; cursor: pointer; flex-shrink: 0; }
+        .inclusions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .pricing-cta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
         @media (max-width: 1024px) {
           .pricing-grid { grid-template-columns: 1fr 1fr; }
@@ -51,11 +51,11 @@ export default function PricingPage() {
         @media (max-width: 640px) {
           .pricing-hero { padding: 36px 16px 32px; }
           .pricing-hero h1 { font-size: 26px !important; }
+          .pricing-decision { padding: 32px 16px 0; }
           .pricing-section { padding: 40px 16px; }
           .pricing-grid { grid-template-columns: 1fr; }
-          .audit-banner { flex-direction: column; align-items: flex-start; padding: 28px 20px; }
-          .audit-banner-title { font-size: 18px !important; }
-          .audit-banner-btn { width: 100%; text-align: center; }
+          .inclusions-grid { grid-template-columns: 1fr 1fr; }
+          .pricing-cta-row { grid-template-columns: 1fr; }
         }
       `}</style>
 
@@ -118,15 +118,24 @@ export default function PricingPage() {
       />
 
       <div className="pricing-hero">
+        <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
+          <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>
+            Home
+          </Link>
+          <span> / </span>
+          <span style={{ color: "#2D6A4F" }}>Pricing</span>
+        </div>
         <div
           style={{
             fontSize: "11px",
+            letterSpacing: "1.5px",
             color: "#2D6A4F",
             fontWeight: 500,
-            marginBottom: "16px",
+            marginBottom: "12px",
+            marginTop: "10px",
           }}
         >
-          Pricing
+          PRICING
         </div>
         <h1
           style={{
@@ -148,12 +157,90 @@ export default function PricingPage() {
             maxWidth: "560px",
           }}
         >
-          No long contracts. No hidden fees. Start with a free catalog audit and
-          scale as you grow. Custom scopes quoted on request.
+          No long contracts. No hidden fees. Three ways to engage — pick what
+          fits, scale as you grow. Start with a free catalog audit if you&apos;re
+          not sure.
         </p>
       </div>
 
-      <section className="pricing-section">
+      {/* Decision aid */}
+      <div style={{ padding: "40px 32px 0", background: "#FDFAF5" }} className="pricing-decision">
+        <div
+          style={{
+            fontSize: "13px",
+            fontWeight: 500,
+            color: "#1C1C1C",
+            marginBottom: "20px",
+            letterSpacing: "0.1px",
+          }}
+        >
+          Choose by what you need
+        </div>
+        <div className="pricing-grid" style={{ marginBottom: 0 }}>
+          {[
+            {
+              title: "One-time work",
+              body: "Catalog cleanup, listing creation, migrations, image processing, attribute fixes.",
+              tag: "Per SKU",
+            },
+            {
+              title: "Ongoing managed operations",
+              body: "Account-managed engagement with weekly reporting and a dedicated contact.",
+              tag: "Monthly retainer",
+            },
+            {
+              title: "Dedicated team member",
+              body: "A specialist working your hours, on tasks you assign. You direct the workflow.",
+              tag: "Virtual assistant",
+            },
+          ].map((opt) => (
+            <div
+              key={opt.title}
+              style={{
+                background: "#F5F0E8",
+                border: "0.5px solid #D5C9B0",
+                borderBottom: "none",
+                borderRadius: "8px 8px 0 0",
+                padding: "20px 20px 18px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  color: "#1C1C1C",
+                  marginBottom: "8px",
+                  lineHeight: 1.4,
+                }}
+              >
+                {opt.title}
+              </div>
+              <div
+                style={{
+                  fontSize: "12px",
+                  color: "#555550",
+                  lineHeight: 1.65,
+                  marginBottom: "14px",
+                }}
+              >
+                {opt.body}
+              </div>
+              <div
+                style={{
+                  fontSize: "11px",
+                  fontWeight: 500,
+                  color: "#2D6A4F",
+                  letterSpacing: "0.2px",
+                }}
+              >
+                → {opt.tag}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section className="pricing-section" style={{ paddingTop: "0" }}>
         <div className="pricing-grid">
           {/* Catalog & Listing */}
           <div
@@ -164,6 +251,7 @@ export default function PricingPage() {
               background: "#FDFAF5",
             }}
           >
+            {/* Eyebrow */}
             <div
               style={{
                 fontSize: "11px",
@@ -175,22 +263,40 @@ export default function PricingPage() {
             >
               CATALOG &amp; LISTING
             </div>
+
+            {/* Title */}
             <div
               style={{
                 fontFamily: "var(--font-serif)",
-                fontSize: "14px",
+                fontSize: "22px",
+                fontWeight: 500,
                 color: "#1C1C1C",
-                marginBottom: "16px",
+                marginBottom: "6px",
+                lineHeight: 1.2,
               }}
             >
-              Per SKU / per hour
+              Per SKU
             </div>
+
+            {/* Subtitle */}
+            <div
+              style={{
+                fontSize: "12px",
+                color: "#888780",
+                marginBottom: "20px",
+                lineHeight: 1.5,
+              }}
+            >
+              Best for one-time work. Invoiced monthly, no minimum commitment.
+            </div>
+
+            {/* Line items */}
             {[
-              "Data entry (standard) — from $0.50/SKU",
-              "Listing creation + copy — from $2.00/SKU",
-              "Listing optimisation — from $1.50/SKU",
-              "AI-assisted writing — from $1.00/SKU",
-              "Catalog enrichment — by scope",
+              "Data entry (standard) — from $0.50 per SKU",
+              "Listing creation + copywriting — from $2.00 per SKU",
+              "Listing optimisation — from $1.50 per SKU",
+              "AI-assisted writing — from $1.00 per SKU",
+              "Catalog enrichment — from $1.50 per SKU",
             ].map((b) => (
               <div
                 key={b}
@@ -205,6 +311,22 @@ export default function PricingPage() {
                 {b}
               </div>
             ))}
+
+            {/* Footnote */}
+            <div
+              style={{
+                marginTop: "16px",
+                paddingTop: "14px",
+                borderTop: "0.5px solid #E8E4DC",
+                fontSize: "11px",
+                color: "#888780",
+                lineHeight: 1.65,
+              }}
+            >
+              AI-assisted writing: drafted with AI, reviewed and refined by a
+              human specialist. Catalog enrichment pricing varies by attribute
+              depth and language requirements — contact us for a scoped quote.
+            </div>
           </div>
 
           {/* Monthly Retainer - Featured */}
@@ -217,6 +339,7 @@ export default function PricingPage() {
               position: "relative",
             }}
           >
+            {/* Badge */}
             <div
               style={{
                 position: "absolute",
@@ -228,10 +351,13 @@ export default function PricingPage() {
                 padding: "4px 12px",
                 borderRadius: "3px",
                 fontWeight: 500,
+                letterSpacing: "0.5px",
               }}
             >
               MOST POPULAR
             </div>
+
+            {/* Eyebrow */}
             <div
               style={{
                 fontSize: "11px",
@@ -243,38 +369,129 @@ export default function PricingPage() {
             >
               MONTHLY RETAINER
             </div>
+
+            {/* Title */}
             <div
               style={{
                 fontFamily: "var(--font-serif)",
-                fontSize: "14px",
+                fontSize: "22px",
+                fontWeight: 500,
                 color: "#1C1C1C",
-                marginBottom: "16px",
+                marginBottom: "6px",
+                lineHeight: 1.2,
               }}
             >
               Ongoing operational support
             </div>
+
+            {/* Subtitle */}
+            <div
+              style={{
+                fontSize: "12px",
+                color: "#888780",
+                marginBottom: "20px",
+                lineHeight: 1.5,
+              }}
+            >
+              Best for stores needing managed operations. Month-to-month, 30-day
+              cancellation. Includes weekly reporting + a dedicated account
+              contact.
+            </div>
+
+            {/* Tiers */}
             {[
-              "Starter — 40 hrs/month",
-              "Growth — 80 hrs/month",
-              "Scale — 160 hrs/month + account mgr",
-            ].map((b) => (
+              {
+                label: "Starter",
+                hours: "40 hours per month",
+                price: "from $400 per month",
+                rate: "$10.00/hour",
+              },
+              {
+                label: "Growth",
+                hours: "80 hours per month",
+                price: "from $720 per month",
+                rate: "$9.00/hour",
+              },
+              {
+                label: "Scale",
+                hours: "160 hours per month + dedicated account manager",
+                price: "from $1,200 per month",
+                rate: "$7.50/hour",
+              },
+            ].map((tier) => (
               <div
-                key={b}
+                key={tier.label}
                 style={{
-                  fontSize: "13px",
-                  color: "#555550",
-                  padding: "5px 0 5px 16px",
-                  borderLeft: "2px solid #E8F5EE",
-                  marginBottom: "6px",
+                  padding: "12px 14px",
+                  background: "#F0F7F4",
+                  border: "0.5px solid #C2DDD4",
+                  borderRadius: "6px",
+                  marginBottom: "8px",
                 }}
               >
-                {b}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "baseline",
+                    marginBottom: "3px",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "12px",
+                      fontWeight: 600,
+                      color: "#1C1C1C",
+                      letterSpacing: "0.2px",
+                    }}
+                  >
+                    {tier.label}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "11px",
+                      color: "#2D6A4F",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {tier.rate}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    fontSize: "12px",
+                    color: "#555550",
+                    marginBottom: "4px",
+                  }}
+                >
+                  {tier.hours}
+                </div>
+                <div
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: 500,
+                    color: "#1C1C1C",
+                  }}
+                >
+                  {tier.price}
+                </div>
               </div>
             ))}
+
+            {/* Footnote */}
             <div
-              style={{ marginTop: "14px", fontSize: "11px", color: "#888780" }}
+              style={{
+                marginTop: "16px",
+                paddingTop: "14px",
+                borderTop: "0.5px solid #C2DDD4",
+                fontSize: "11px",
+                color: "#888780",
+                lineHeight: 1.65,
+              }}
             >
-              Includes weekly reporting + dedicated contact
+              All retainer engagements include weekly reporting, a dedicated
+              contact, and platform-trained operators. Custom hour blocks
+              available on request.
             </div>
           </div>
 
@@ -287,6 +504,7 @@ export default function PricingPage() {
               background: "#FDFAF5",
             }}
           >
+            {/* Eyebrow */}
             <div
               style={{
                 fontSize: "11px",
@@ -298,71 +516,434 @@ export default function PricingPage() {
             >
               VIRTUAL ASSISTANTS
             </div>
+
+            {/* Title */}
             <div
               style={{
                 fontFamily: "var(--font-serif)",
-                fontSize: "14px",
+                fontSize: "22px",
+                fontWeight: 500,
                 color: "#1C1C1C",
-                marginBottom: "16px",
+                marginBottom: "6px",
+                lineHeight: 1.2,
               }}
             >
               E-commerce trained specialists
             </div>
+
+            {/* Subtitle */}
+            <div
+              style={{
+                fontSize: "12px",
+                color: "#888780",
+                marginBottom: "20px",
+                lineHeight: 1.5,
+              }}
+            >
+              Best when you want a dedicated team member. Month-to-month, 30-day
+              cancellation. You direct the work; we provide the operator.
+            </div>
+
+            {/* Line items */}
             {[
-              "Part-time (20 hrs/wk) — from $350/mo",
-              "Full-time (40 hrs/wk) — from $600/mo",
-              "Onboarding in 48–72 hours",
-              "Replacement guarantee",
-            ].map((b) => (
+              {
+                text: "Part-time (20 hrs/week) — from $200 per week",
+                rate: "$10.00/hour",
+              },
+              {
+                text: "Full-time (40 hrs/week) — from $360 per week",
+                rate: "$9.00/hour",
+              },
+            ].map((item) => (
               <div
-                key={b}
+                key={item.text}
                 style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "baseline",
                   fontSize: "13px",
                   color: "#555550",
                   padding: "5px 0 5px 16px",
                   borderLeft: "2px solid #E8F5EE",
                   marginBottom: "6px",
+                  gap: "8px",
                 }}
               >
-                {b}
+                <span>{item.text}</span>
+                <span
+                  style={{
+                    fontSize: "11px",
+                    color: "#2D6A4F",
+                    fontWeight: 500,
+                    whiteSpace: "nowrap",
+                    flexShrink: 0,
+                  }}
+                >
+                  {item.rate}
+                </span>
               </div>
             ))}
+
+            {/* Inclusions */}
+            <div
+              style={{
+                marginTop: "16px",
+                paddingTop: "14px",
+                borderTop: "0.5px solid #E8E4DC",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "11px",
+                  fontWeight: 500,
+                  color: "#1C1C1C",
+                  letterSpacing: "0.3px",
+                  marginBottom: "8px",
+                }}
+              >
+                INCLUDED
+              </div>
+              {[
+                "Onboarding within 48–72 hours",
+                "Replacement within 7 days at no additional cost if a VA isn't the right fit",
+                "Weekly check-in with the assigned operator",
+              ].map((inc) => (
+                <div
+                  key={inc}
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "8px",
+                    marginBottom: "6px",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "14px",
+                      height: "14px",
+                      borderRadius: "50%",
+                      background: "#E8F5EE",
+                      flexShrink: 0,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginTop: "1px",
+                    }}
+                  >
+                    <svg viewBox="0 0 10 10" width="8" height="8" fill="none">
+                      <path
+                        d="M2 5L4 7L8 3"
+                        stroke="#2D6A4F"
+                        strokeWidth="1.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <span
+                    style={{
+                      fontSize: "12px",
+                      color: "#555550",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    {inc}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Footnote */}
+            <div
+              style={{
+                marginTop: "16px",
+                paddingTop: "14px",
+                borderTop: "0.5px solid #E8E4DC",
+                fontSize: "11px",
+                color: "#888780",
+                lineHeight: 1.65,
+              }}
+            >
+              Pricing reflects standard skill profiles. Senior or
+              platform-specialist VAs available at higher rates. Contact us for
+              a scoped quote.
+            </div>
           </div>
         </div>
 
-        {/* Audit Banner */}
-        <Link
-          href="/audit"
-          className="audit-banner"
-          style={{ textDecoration: "none", display: "flex" }}
+        {/* Included across every engagement */}
+        <div
+          style={{
+            borderTop: "0.5px solid #D5C9B0",
+            paddingTop: "40px",
+            marginBottom: "40px",
+          }}
         >
-          <div>
-            <div
-              className="audit-banner-title"
+          <div
+            style={{
+              fontSize: "13px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "20px",
+              letterSpacing: "0.1px",
+            }}
+          >
+            Included across every engagement
+          </div>
+          <div className="inclusions-grid">
+            {[
+              {
+                icon: (
+                  <path
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                    stroke="#2D6A4F"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                ),
+                title: "4-hour response SLA",
+                body: "Across every account, every size.",
+              },
+              {
+                icon: (
+                  <path
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    stroke="#2D6A4F"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                ),
+                title: "Dedicated point of contact",
+                body: "Same person, every conversation.",
+              },
+              {
+                icon: (
+                  <path
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                    stroke="#2D6A4F"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                ),
+                title: "Platform-trained specialists",
+                body: "Seller Central, Shopify admin, Walmart Seller Center, and more.",
+              },
+              {
+                icon: (
+                  <path
+                    d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"
+                    stroke="#2D6A4F"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                ),
+                title: "No long contracts",
+                body: "Month-to-month with 30-day cancellation.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                style={{
+                  background: "#F5F0E8",
+                  border: "0.5px solid #D5C9B0",
+                  borderRadius: "8px",
+                  padding: "18px 16px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    borderRadius: "50%",
+                    background: "#E8F5EE",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "12px",
+                  }}
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                  >
+                    {item.icon}
+                  </svg>
+                </div>
+                <div
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    color: "#1C1C1C",
+                    marginBottom: "4px",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {item.title}
+                </div>
+                <div
+                  style={{
+                    fontSize: "12px",
+                    color: "#555550",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {item.body}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Footnote */}
+          <div
+            style={{
+              marginTop: "16px",
+              fontSize: "11px",
+              color: "#888780",
+              lineHeight: 1.65,
+            }}
+          >
+            All prices in USD. Quotes available in GBP, EUR, and AUD on
+            request. Prices exclusive of applicable taxes (GST, VAT, sales
+            tax).
+          </div>
+        </div>
+
+        {/* CTA Row */}
+        <div className="pricing-cta-row">
+
+          {/* Free audit CTA */}
+          <div
+            style={{
+              background: "#1C1C1C",
+              borderRadius: "8px",
+              padding: "36px 32px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              gap: "24px",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "22px",
+                  fontWeight: 500,
+                  color: "#fff",
+                  marginBottom: "10px",
+                  lineHeight: 1.25,
+                }}
+              >
+                Not sure which plan fits?
+              </div>
+              <div
+                style={{
+                  fontSize: "13px",
+                  color: "rgba(255,255,255,0.6)",
+                  lineHeight: 1.7,
+                }}
+              >
+                Start with a free catalog audit. We review 50 of your SKUs,
+                deliver a written findings report, and recommend the right
+                engagement. No credit card. No commitment.
+              </div>
+            </div>
+            <Link
+              href="/audit"
               style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "22px",
+                display: "inline-block",
+                background: "#2D6A4F",
                 color: "#fff",
-                fontWeight: 500,
-              }}
-            >
-              Not sure which plan fits? Start with the free audit.
-            </div>
-            <div
-              style={{
+                textDecoration: "none",
+                padding: "13px 24px",
+                borderRadius: "4px",
                 fontSize: "13px",
-                color: "rgba(255,255,255,0.6)",
-                marginTop: "6px",
+                fontWeight: 500,
+                alignSelf: "flex-start",
               }}
             >
-              We review 50 of your SKUs, deliver a written report, and recommend
-              the right engagement. No credit card required.
+              Get free catalog audit →
+            </Link>
+          </div>
+
+          {/* Talk to our team CTA */}
+          <div
+            style={{
+              background: "#F5F0E8",
+              border: "0.5px solid #D5C9B0",
+              borderRadius: "8px",
+              padding: "36px 32px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              gap: "24px",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "22px",
+                  fontWeight: 500,
+                  color: "#1C1C1C",
+                  marginBottom: "10px",
+                  lineHeight: 1.25,
+                }}
+              >
+                Already know what you need?
+              </div>
+              <div
+                style={{
+                  fontSize: "13px",
+                  color: "#555550",
+                  lineHeight: 1.7,
+                }}
+              >
+                Tell us about your store and the work involved. We&apos;ll come
+                back with a scoped quote within 4 business hours.
+              </div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <Link
+                href="/contact"
+                style={{
+                  display: "inline-block",
+                  background: "#2D6A4F",
+                  color: "#fff",
+                  textDecoration: "none",
+                  padding: "13px 24px",
+                  borderRadius: "4px",
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  alignSelf: "flex-start",
+                }}
+              >
+                Get a custom quote →
+              </Link>
+              <a
+                href="https://wa.me/919811018501?text=Hi%2C%20I%27d%20like%20a%20custom%20quote%20for%20Professional%20ITS%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: "12px",
+                  color: "#555550",
+                  textDecoration: "none",
+                }}
+              >
+                Or message us on WhatsApp:{" "}
+                <span style={{ color: "#2D6A4F", fontWeight: 500 }}>
+                  +91 98110 18501
+                </span>
+              </a>
             </div>
           </div>
-          <div className="audit-banner-btn" style={{ marginRight: "120px" }}>
-            Get free catalog audit
-          </div>
-        </Link>
+
+        </div>
       </section>
 
       <Footer />

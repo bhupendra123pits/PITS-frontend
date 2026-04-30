@@ -203,7 +203,7 @@ export default function Footer() {
           <div style={{ marginBottom: "12px" }}>
             <img
               src="/PITS_Logo.png"
-              alt="Professional ITS Logo"
+              alt="Professional ITS — E-Commerce Back-Office Specialists"
               style={{ height: "65px" }}
             />
           </div>

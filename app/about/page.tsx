@@ -78,8 +78,10 @@ export default function AboutPage() {
               "description": "Ecommerce back-office specialists since 2009. Founder-led, independently operated, delivering catalog and marketplace operations exclusively.",
               "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "87, Kailash Vihar, City Center",
                 "addressLocality": "Gwalior",
                 "addressRegion": "Madhya Pradesh",
+                "postalCode": "474002",
                 "addressCountry": "IN"
               }
             }

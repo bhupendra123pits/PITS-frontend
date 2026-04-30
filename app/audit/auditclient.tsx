@@ -37,7 +37,7 @@ const formSteps = [
   {
     n: "1",
     title: "Submit this form",
-    body: "Takes 3 minutes. Share your store details and biggest challenge.",
+    body: "Takes about 2 minutes. Share your store details and biggest challenge.",
   },
   ...steps.map((s, i) => ({ ...s, n: String(i + 2) })),
 ];
@@ -47,6 +47,7 @@ const emptyForm = {
   email: "",
   storeUrl: "",
   primaryPlatform: "",
+  primaryPlatformOther: "",
   challenge: "",
   hearAbout: "",
 };
@@ -84,10 +85,15 @@ export default function AuditPage() {
     setLoading(true);
     setError("");
     try {
+      const payload = { ...form };
+      if (payload.primaryPlatform === "Other" && payload.primaryPlatformOther.trim()) {
+        payload.primaryPlatform = payload.primaryPlatformOther.trim();
+      }
+      delete (payload as { primaryPlatformOther?: string }).primaryPlatformOther;
       const res = await fetch("/api/audit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       if (data.success) {
@@ -532,11 +538,20 @@ export default function AuditPage() {
                 <option value="Volusion">Volusion</option>
               </optgroup>
               <optgroup label="Other">
-                <option value="Other">
-                  Other (please describe in challenge field)
-                </option>
+                <option value="Other">Other</option>
               </optgroup>
             </select>
+            {form.primaryPlatform === "Other" && (
+              <input
+                style={{ ...inputStyle, marginTop: "8px" }}
+                name="primaryPlatformOther"
+                type="text"
+                placeholder="Please describe your selling channel"
+                value={form.primaryPlatformOther}
+                onChange={handleChange}
+                autoFocus
+              />
+            )}
           </div>
 
           <div style={{ marginBottom: "36px" }}>
