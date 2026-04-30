@@ -33,6 +33,15 @@ const steps = [
   },
 ];
 
+const formSteps = [
+  {
+    n: "1",
+    title: "Submit this form",
+    body: "Takes 3 minutes. Share your store details and biggest challenge.",
+  },
+  ...steps.map((s, i) => ({ ...s, n: String(i + 2) })),
+];
+
 const emptyForm = {
   name: "",
   email: "",
@@ -544,7 +553,7 @@ export default function AuditPage() {
           </div>
 
           {/* SUBMIT */}
-          <div style={{ borderTop: "0.5px solid #EDE5D5", paddingTop: "28px" }}>
+          <div style={{ borderTop: "0.5px solid #edd9d5", paddingTop: "28px" }}>
             {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
               <div style={{ marginBottom: "16px" }}>
                 <ReCAPTCHA
@@ -694,14 +703,14 @@ export default function AuditPage() {
             >
               HOW IT WORKS
             </div>
-            {steps.map((s, i) => (
+            {formSteps.map((s, i) => (
               <div
                 key={s.n}
                 style={{
                   display: "flex",
                   gap: "12px",
                   alignItems: "flex-start",
-                  marginBottom: i < steps.length - 1 ? "14px" : 0,
+                  marginBottom: i < formSteps.length - 1 ? "14px" : 0,
                 }}
               >
                 <div
