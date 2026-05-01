@@ -185,6 +185,18 @@ export default function MarketplacesPage() {
           <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>Home</Link>
           <span style={{ color: "#2D6A4F" }}> / Marketplaces</span>
         </div>
+         <div
+          style={{
+            fontSize: "11px",
+            letterSpacing: "1.5px",
+            color: "#2D6A4F",
+            fontWeight: 500,
+            marginBottom: "12px",
+            marginTop: "10px",
+          }}
+        >
+          ALL MARKETPLACE
+        </div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "14px" }}>
           Every marketplace you sell on,{" "}
           <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>covered.</em>

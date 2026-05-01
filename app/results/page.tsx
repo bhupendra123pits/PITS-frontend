@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Results – Professional ITS",
@@ -128,15 +129,24 @@ export default function ResultsPage() {
           borderBottom: "0.5px solid #D5C9B0",
         }}
       >
-        <div
+        <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
+          <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>
+            Home
+          </Link>
+          <span> / </span>
+          <span style={{ color: "#2D6A4F" }}>Results</span>
+        </div>
+         <div
           style={{
             fontSize: "11px",
+            letterSpacing: "1.5px",
             color: "#2D6A4F",
             fontWeight: 500,
-            marginBottom: "16px",
+            marginBottom: "12px",
+            marginTop: "10px",
           }}
         >
-          Results
+          CLIENT RESULTS
         </div>
         <h1
           style={{

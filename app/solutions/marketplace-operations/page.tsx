@@ -220,6 +220,18 @@ export default function MarketplaceOperationsPage() {
           </Link>
           <span style={{ color: "#2D6A4F" }}> / Marketplace Operations</span>
         </div>
+         <div
+          style={{
+            fontSize: "11px",
+            letterSpacing: "1.5px",
+            color: "#2D6A4F",
+            fontWeight: 500,
+            marginBottom: "12px",
+            marginTop: "10px",
+          }}
+        >
+          MARKETPLACE
+        </div>
         <h1
           style={{
             fontFamily: "var(--font-serif)",

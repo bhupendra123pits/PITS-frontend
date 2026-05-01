@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service – Professional ITS",
@@ -107,16 +108,24 @@ export default function TermsPage() {
           maxWidth: "760px",
         }}
       >
+        <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
+          <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>
+            Home
+          </Link>
+          <span> / </span>
+          <span style={{ color: "#2D6A4F" }}>Terms of Service</span>
+        </div>
         <div
           style={{
             fontSize: "11px",
             letterSpacing: "1.5px",
             color: "#2D6A4F",
             fontWeight: 500,
-            marginBottom: "16px",
+            marginBottom: "12px",
+            marginTop: "10px",
           }}
         >
-          LEGAL
+          TERMS OF SERVICES
         </div>
         <h1
           style={{

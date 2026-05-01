@@ -57,6 +57,7 @@ export default function AuditPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [form, setForm] = useState(emptyForm);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const formStartedRef = useRef(false);
@@ -75,9 +76,21 @@ export default function AuditPage() {
       trackEvent("audit_form_start");
     }
     setForm({ ...form, [e.target.name]: e.target.value });
+    if (fieldErrors[e.target.name]) {
+      setFieldErrors((prev) => ({ ...prev, [e.target.name]: "" }));
+    }
   };
 
   const handleSubmit = async () => {
+    const errors: Record<string, string> = {};
+    if (!form.name.trim()) errors.name = "Please enter your name.";
+    if (!form.email.trim()) errors.email = "Please enter your email address.";
+    if (!form.storeUrl.trim()) errors.storeUrl = "Please enter your store URL.";
+    if (!form.primaryPlatform) errors.primaryPlatform = "Please select a selling channel.";
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      return;
+    }
     if (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) {
       setError("Please complete the CAPTCHA verification.");
       return;
@@ -326,6 +339,8 @@ export default function AuditPage() {
           .audit-main { grid-template-columns: 1fr; }
           .audit-form { padding: 28px 20px 40px; border-right: none; border-bottom: 0.5px solid #D5C9B0; }
           .audit-sidebar { padding: 28px 20px; }
+          .audit-submit-row { flex-direction: column; align-items: stretch !important; }
+          .audit-submit-row button { width: 100%; }
         }
       `}</style>
 
@@ -495,15 +510,33 @@ export default function AuditPage() {
           </div>
 
           <div style={{ marginBottom: "14px" }}>
-            <label style={labelStyle}>Store URL</label>
+            <label style={labelStyle}>
+              Store URL <span style={{ color: "#2D6A4F" }}>*</span>
+            </label>
             <input
-              style={inputStyle}
+              style={{
+                ...inputStyle,
+                border: fieldErrors.storeUrl
+                  ? "0.5px solid #DC2626"
+                  : "0.5px solid #D5C9B0",
+              }}
               name="storeUrl"
               type="text"
               placeholder="www.yourstore.com"
               value={form.storeUrl}
               onChange={handleChange}
             />
+            {fieldErrors.storeUrl && (
+              <div
+                style={{
+                  fontSize: "11px",
+                  color: "#DC2626",
+                  marginTop: "4px",
+                }}
+              >
+                {fieldErrors.storeUrl}
+              </div>
+            )}
           </div>
 
           <div style={{ marginBottom: "14px" }}>
@@ -568,17 +601,7 @@ export default function AuditPage() {
           </div>
 
           {/* SUBMIT */}
-          <div style={{ borderTop: "0.5px solid #edd9d5", paddingTop: "28px" }}>
-            {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
-              <div style={{ marginBottom: "16px" }}>
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                  onChange={(token) => setCaptchaVerified(!!token)}
-                  onExpired={() => setCaptchaVerified(false)}
-                />
-              </div>
-            )}
+          <div>
             {error && (
               <div
                 style={{
@@ -594,25 +617,42 @@ export default function AuditPage() {
                 {error}
               </div>
             )}
-            <button
-              onClick={handleSubmit}
-              disabled={loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified)}
+            <div
+              className="audit-submit-row"
               style={{
-                width: "100%",
-                background: loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) ? "#88B8A0" : "#2D6A4F",
-                color: "#fff",
-                border: "none",
-                padding: "14px 24px",
-                borderRadius: "4px",
-                fontSize: "14px",
-                fontWeight: 500,
-                cursor: loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) ? "not-allowed" : "pointer",
-                letterSpacing: "0.2px",
-                transition: "background 0.15s",
+                display: "flex",
+                alignItems: "center",
+                gap: "16px",
               }}
             >
-              {loading ? "Submitting..." : "Request my free audit →"}
-            </button>
+              {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                  onChange={(token) => setCaptchaVerified(!!token)}
+                  onExpired={() => setCaptchaVerified(false)}
+                />
+              )}
+              <button
+                onClick={handleSubmit}
+                disabled={loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified)}
+                style={{
+                  flex: 1,
+                  background: loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) ? "#88B8A0" : "#2D6A4F",
+                  color: "#fff",
+                  border: "none",
+                  padding: "30px 24px",
+                  borderRadius: "4px",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  cursor: loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) ? "not-allowed" : "pointer",
+                  letterSpacing: "0.2px",
+                  transition: "background 0.15s",
+                }}
+              >
+                {loading ? "Submitting..." : "Request my free audit →"}
+              </button>
+            </div>
             <div
               style={{
                 textAlign: "center",
@@ -621,8 +661,7 @@ export default function AuditPage() {
                 marginTop: "10px",
               }}
             >
-              No credit card required · We respond within 4 hours · Your data is
-              never shared
+            
             </div>
           </div>
         </div>
@@ -790,7 +829,8 @@ export default function AuditPage() {
           </div>
 
           <a
-            href="https://wa.me/919811018501?text=Hi%2C%20I%27d%20like%20a%20free%20catalog%20audit"
+       
+            href="https://wa.me/919811018501?text=I%20have%20a%20question%20about%20the%20free%20audit"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("audit_whatsapp_click")}

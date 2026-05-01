@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import PricingFaq from "./PricingFaq";
 
 export const metadata: Metadata = {
   title: "Pricing – Professional ITS",
@@ -118,7 +119,9 @@ export default function PricingPage() {
       />
 
       <div className="pricing-hero">
-        <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
+        <div
+          style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}
+        >
           <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>
             Home
           </Link>
@@ -158,23 +161,26 @@ export default function PricingPage() {
           }}
         >
           No long contracts. No hidden fees. Three ways to engage — pick what
-          fits, scale as you grow. Start with a free catalog audit if you&apos;re
-          not sure.
+          fits, scale as you grow. Start with a free catalog audit if
+          you&apos;re not sure.
         </p>
       </div>
 
       {/* Decision aid */}
-      <div style={{ padding: "40px 32px 0", background: "#FDFAF5" }} className="pricing-decision">
+      <div
+        style={{ padding: "22px 32px", background: "#2D6A4F" }}
+        className="pricing-decision"
+      >
         <div
           style={{
-            fontSize: "13px",
+            fontSize: "11px",
+            letterSpacing: "1.5px",
+            color: "rgba(255,255,255,0.45)",
             fontWeight: 500,
-            color: "#1C1C1C",
-            marginBottom: "20px",
-            letterSpacing: "0.1px",
+            marginBottom: "10px",
           }}
         >
-          Choose by what you need
+          CHOOSE BY WHAT YOU NEED
         </div>
         <div className="pricing-grid" style={{ marginBottom: 0 }}>
           {[
@@ -182,35 +188,38 @@ export default function PricingPage() {
               title: "One-time work",
               body: "Catalog cleanup, listing creation, migrations, image processing, attribute fixes.",
               tag: "Per SKU",
+              anchor: "#card-catalog",
             },
             {
               title: "Ongoing managed operations",
               body: "Account-managed engagement with weekly reporting and a dedicated contact.",
               tag: "Monthly retainer",
+              anchor: "#card-retainer",
             },
             {
               title: "Dedicated team member",
               body: "A specialist working your hours, on tasks you assign. You direct the workflow.",
               tag: "Virtual assistant",
+              anchor: "#card-va",
             },
           ].map((opt) => (
             <div
               key={opt.title}
               style={{
-                background: "#F5F0E8",
-                border: "0.5px solid #D5C9B0",
-                borderBottom: "none",
-                borderRadius: "8px 8px 0 0",
-                padding: "20px 20px 18px",
+                background: "rgba(255,255,255,0.07)",
+                border: "0.5px solid rgba(255,255,255,0.15)",
+                borderRadius: "10px",
+                padding: "10px 20px 10px",
               }}
             >
               <div
                 style={{
-                  fontSize: "13px",
-                  fontWeight: 500,
-                  color: "#1C1C1C",
-                  marginBottom: "8px",
-                  lineHeight: 1.4,
+                  fontSize: "16px",
+                  fontWeight: 600,
+                  color: "#ffffff",
+                  marginBottom: "10px",
+                  lineHeight: 1.35,
+                  fontFamily: "var(--font-serif)",
                 }}
               >
                 {opt.title}
@@ -218,32 +227,35 @@ export default function PricingPage() {
               <div
                 style={{
                   fontSize: "12px",
-                  color: "#555550",
+                  color: "rgba(255,255,255,0.6)",
                   lineHeight: 1.65,
-                  marginBottom: "14px",
+                  marginBottom: "18px",
                 }}
               >
                 {opt.body}
               </div>
-              <div
+              <a
+                href={opt.anchor}
                 style={{
                   fontSize: "11px",
                   fontWeight: 500,
-                  color: "#2D6A4F",
+                  color: "#7ECBA7",
                   letterSpacing: "0.2px",
+                  textDecoration: "none",
                 }}
               >
                 → {opt.tag}
-              </div>
+              </a>
             </div>
           ))}
         </div>
       </div>
 
-      <section className="pricing-section" style={{ paddingTop: "0" }}>
+      <section className="pricing-section">
         <div className="pricing-grid">
           {/* Catalog & Listing */}
           <div
+            id="card-catalog"
             style={{
               border: "0.5px solid #D5C9B0",
               borderRadius: "8px",
@@ -331,6 +343,7 @@ export default function PricingPage() {
 
           {/* Monthly Retainer - Featured */}
           <div
+            id="card-retainer"
             style={{
               border: "2px solid #2D6A4F",
               borderRadius: "8px",
@@ -497,6 +510,7 @@ export default function PricingPage() {
 
           {/* Virtual Assistants */}
           <div
+            id="card-va"
             style={{
               border: "0.5px solid #D5C9B0",
               borderRadius: "8px",
@@ -688,7 +702,7 @@ export default function PricingPage() {
               letterSpacing: "0.1px",
             }}
           >
-            Included across every engagement
+            INCLUDED ACROSS EVERY ENGAGEMENT
           </div>
           <div className="inclusions-grid">
             {[
@@ -765,12 +779,7 @@ export default function PricingPage() {
                     marginBottom: "12px",
                   }}
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="none"
-                  >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
                     {item.icon}
                   </svg>
                 </div>
@@ -807,15 +816,13 @@ export default function PricingPage() {
               lineHeight: 1.65,
             }}
           >
-            All prices in USD. Quotes available in GBP, EUR, and AUD on
-            request. Prices exclusive of applicable taxes (GST, VAT, sales
-            tax).
+            All prices in USD. Quotes available in GBP, EUR, and AUD on request.
+            Prices exclusive of applicable taxes (GST, VAT, sales tax).
           </div>
         </div>
 
         {/* CTA Row */}
         <div className="pricing-cta-row">
-
           {/* Free audit CTA */}
           <div
             style={{
@@ -908,7 +915,9 @@ export default function PricingPage() {
                 back with a scoped quote within 4 business hours.
               </div>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+            >
               <Link
                 href="/contact"
                 style={{
@@ -930,22 +939,25 @@ export default function PricingPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
                   fontSize: "12px",
                   color: "#555550",
                   textDecoration: "none",
                 }}
               >
-                Or message us on WhatsApp:{" "}
-                <span style={{ color: "#2D6A4F", fontWeight: 500 }}>
-                  +91 98110 18501
-                </span>
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Or message us on WhatsApp
               </a>
             </div>
           </div>
-
         </div>
       </section>
 
+      <PricingFaq />
       <Footer />
     </div>
   );

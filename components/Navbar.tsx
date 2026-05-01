@@ -108,6 +108,7 @@ const marketplaceLinks = [
 // All searchable pages
 const allPages = [
   { title: "Home", sub: "Professional ITS homepage", href: "/" },
+  { title: "About", sub: "Our story, team, and 19 years in e-commerce", href: "/about" },
   { title: "Results", sub: "Client results & case studies", href: "/results" },
   { title: "Pricing", sub: "Plans and pricing", href: "/pricing" },
   { title: "Free Catalog Audit", sub: "Get a free audit of your catalog", href: "/audit" },
@@ -242,14 +243,14 @@ export default function Navbar() {
           style={{ textDecoration: "none", flexShrink: 0 }}
         >
           <img
-            src="/PITS_Logo.png"
+            src="/Professionalits_logo.png"
             alt="Professional ITS — E-Commerce Back-Office Specialists"
             style={{
               height: "53px",
               width: "auto",
               display: "block",
               objectFit: "contain",
-              marginTop: "4px",
+              marginTop: "2px",
             }}
           />
         </Link>

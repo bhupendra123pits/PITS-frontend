@@ -36,7 +36,7 @@ const platformLinks = [
   { label: "BigCommerce", href: "/platforms/bigcommerce" },
   { label: "WooCommerce", href: "/platforms/woocommerce" },
   { label: "Magento", href: "/platforms/magento" },
-  { label: "Opencart", href: "/platforms/opencart" },
+  { label: "OpenCart", href: "/platforms/opencart" },
   { label: "Volusion", href: "/platforms/volusion" },
   { label: "All Platforms", href: "/platforms" },
 ];
@@ -202,7 +202,7 @@ export default function Footer() {
         <div className="footer-brand-col">
           <div style={{ marginBottom: "12px" }}>
             <img
-              src="/PITS_Logo.png"
+              src="/Professionalits_logo.png"
               alt="Professional ITS — E-Commerce Back-Office Specialists"
               style={{ height: "65px" }}
             />

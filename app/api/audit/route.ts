@@ -67,11 +67,11 @@ export async function POST(req: NextRequest) {
       await transporter.sendMail({
         from: `"Professional ITS" <${process.env.GMAIL_USER}>`,
         to: email,
-        subject: "We received your audit request — Professional ITS",
+        subject: "Your audit request is confirmed — Professional ITS",
         html: `
           <div style="font-family: sans-serif; max-width: 560px; color: #1C1C1C; line-height: 1.6;">
             <p style="color:#555;">Hi ${name},</p>
-            <p style="color:#555;">We received your audit request — Professional ITS → Your audit request is confirmed — Professional ITS:</p>
+            <p style="color:#555;">We've received your free catalog audit request. Here's a summary of what we have on file:</p>
 
             <div style="background:#F5F0E8; border-radius:6px; padding:16px 20px; margin:20px 0;">
               <p style="margin:0 0 6px 0; color:#555;">— Name: <strong>${name}</strong></p>

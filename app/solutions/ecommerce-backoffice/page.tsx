@@ -57,6 +57,18 @@ export default function EcommerceBackofficePage() {
           <Link href="/solutions" style={{ color: "#888780", textDecoration: "none" }}>Solutions</Link>
           <span style={{ color: "#2D6A4F" }}> / Ecommerce Backoffice</span>
         </div>
+         <div
+          style={{
+            fontSize: "11px",
+            letterSpacing: "1.5px",
+            color: "#2D6A4F",
+            fontWeight: 500,
+            marginBottom: "12px",
+            marginTop: "10px",
+          }}
+        >
+          ECOMMERCE BACKOFFICE
+        </div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "36px", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "14px" }}>
           Your full back-office. <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>Handled.</em>
         </h1>

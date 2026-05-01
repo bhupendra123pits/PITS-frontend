@@ -175,16 +175,24 @@ export default function AboutPage() {
 
       {/* Section 1 — Hero */}
       <section className="about-section">
-        <div
+        <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
+          <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>
+            Home
+          </Link>
+          <span> / </span>
+          <span style={{ color: "#2D6A4F" }}>About</span>
+        </div>
+         <div
           style={{
             fontSize: "11px",
             letterSpacing: "1.5px",
             color: "#2D6A4F",
             fontWeight: 500,
-            marginBottom: "16px",
+            marginBottom: "12px",
+            marginTop: "10px",
           }}
         >
-          ABOUT
+          ABOUT PROFESSIONALITS
         </div>
         <h1
           style={{
@@ -581,7 +589,7 @@ export default function AboutPage() {
       </section>
 
       {/* Section 7 — CTA */}
-      <div className="about-cta-banner">
+      <div className="audit-banner">
         <div>
           <div
             style={{
@@ -592,7 +600,7 @@ export default function AboutPage() {
               marginBottom: "8px",
             }}
           >
-            Want to see how we&apos;d handle your catalog?
+           
           </div>
           <div
             style={{
@@ -619,6 +627,7 @@ export default function AboutPage() {
             whiteSpace: "nowrap",
             textDecoration: "none",
             marginRight: "120px",
+           
           }}
         >
           Get free catalog audit
