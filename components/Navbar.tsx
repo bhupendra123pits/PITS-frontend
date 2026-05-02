@@ -113,6 +113,7 @@ const allPages = [
   { title: "Pricing", sub: "Plans and pricing", href: "/pricing" },
   { title: "Free Catalog Audit", sub: "Get a free audit of your catalog", href: "/audit" },
   { title: "Contact", sub: "Get in touch with us", href: "/contact" },
+  { title: "Blog", sub: "E-commerce operations insights and guides", href: "/blog" },
   { title: "Privacy Policy", sub: "Information", href: "/privacy" },
   { title: "Terms of Services", sub: "Terms of Use", href: "/terms" },
 

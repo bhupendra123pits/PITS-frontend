@@ -130,7 +130,7 @@ const marqueebrands = [
   { name: "OpenCart",    color: "#23ACDF", Icon: OpenCartIcon,                                       href: "/platforms/opencart" },
   { name: "Volusion",    color: "#4DB8FF", Icon: VolusionIcon,                                       href: "/platforms/volusion" },
   { name: "BestBuy",     color: "#0046BE", Icon: BestBuyIcon,                                        href: "/marketplaces/bestbuy" },
-  { name: "Newegg",      color: "#E2231A", Icon: () => <img src="/Newegg_Logo_1.png" alt="Newegg" width={42} height={42} style={{ objectFit: "contain" }} />, href: "/marketplaces/newegg" },
+  { name: "Newegg",      color: "#E2231A", Icon: () => <img src="/Newegg_logo.png" alt="Newegg" width={42} height={42} style={{ objectFit: "contain" }} />, href: "/marketplaces/newegg" },
   { name: "Houzz",       color: "#73BA42", Icon: () => <SiHouzz size={24} color="#73BA42" />,        href: "/marketplaces/houzz" },
   { name: "Rakuten",     color: "#BF0000", Icon: () => <SiRakuten size={24} color="#BF0000" />,      href: "/marketplaces/rakuten" },
   { name: "Poshmark",    color: "#FF2A5E", Icon: PoshmarkIcon,                                       href: "/marketplaces/poshmark" },

@@ -59,6 +59,7 @@ const companyLinks = [
   { label: "Results", href: "/results" },
   // { label: "Team", href: "/team" },
   // { label: "Company", href: "/company" },
+  { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];

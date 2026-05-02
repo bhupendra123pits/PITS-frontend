@@ -192,7 +192,7 @@ export default function AboutPage() {
             marginTop: "10px",
           }}
         >
-          ABOUT PROFESSIONALITS
+          ABOUT PROFESSIONAL ITS
         </div>
         <h1
           style={{
@@ -457,7 +457,7 @@ export default function AboutPage() {
             }}
           >
             <img
-              src="/PITS_TEAM3.jpg"
+              src="/PITS_team.jpg"
               alt="Team photo"
               style={{
                 width: "100%",
