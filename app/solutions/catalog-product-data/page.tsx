@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { platformBrands } from "@/lib/brandIcons";
 
 export const metadata: Metadata = {
   title: "Catalog & Product Data Operations – Professional ITS",
@@ -176,11 +177,41 @@ export default function CatalogProductDataPage() {
       </section>
 
       {/* ── PLATFORMS ── */}
+      <style>{`
+        .brand-logo-grid { display: flex; flex-wrap: wrap; }
+        .brand-logo-grid a { padding: 10px 28px 10px 0; margin-right: 28px; }
+        @media (max-width: 640px) {
+          .brand-logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 0; }
+          .brand-logo-grid a { padding: 10px 0; margin-right: 0; }
+        }
+      `}</style>
       <section style={{ padding: "40px 32px", borderBottom: "0.5px solid #D5C9B0" }}>
-        <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "16px" }}>PLATFORMS WE UPLOAD TO</div>
-        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-          {["Amazon", "Shopify", "eBay", "BigCommerce", "WooCommerce", "Magento", "Walmart", "Etsy"].map((p) => (
-            <div key={p} style={{ border: "0.5px solid #D5C9B0", borderRadius: "3px", padding: "7px 16px", fontSize: "13px", color: "#555550", background: "#FDFAF5" }}>{p}</div>
+        <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "24px" }}>PLATFORMS WE UPLOAD TO</div>
+        <div className="brand-logo-grid">
+          {platformBrands.map((brand) => (
+            <Link
+              key={brand.slug}
+              href={brand.href}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+            >
+              <brand.Icon />
+              <span
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  color: "#555550",
+                  letterSpacing: "-0.2px",
+                }}
+              >
+                {brand.name}
+              </span>
+            </Link>
           ))}
         </div>
       </section>

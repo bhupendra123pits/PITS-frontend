@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { platforms, platformSlugs } from "@/lib/platforms";
+import { platformBrands } from "@/lib/brandIcons";
 
 // ── Generate all 6 static routes at build time ──
 export async function generateStaticParams() {
@@ -575,6 +576,14 @@ export default async function PlatformPage({
       </section>
 
       {/* ── OTHER PLATFORMS ── */}
+      <style>{`
+        .brand-logo-grid { display: flex; flex-wrap: wrap; }
+        .brand-logo-grid a { padding: 10px 28px 10px 0; margin-right: 28px; }
+        @media (max-width: 640px) {
+          .brand-logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 0; }
+          .brand-logo-grid a { padding: 10px 0; margin-right: 0; }
+        }
+      `}</style>
       <section
         style={{ padding: "40px 32px", borderBottom: "0.5px solid #D5C9B0" }}
       >
@@ -584,48 +593,39 @@ export default async function PlatformPage({
             letterSpacing: "1.5px",
             color: "#2D6A4F",
             fontWeight: 500,
-            marginBottom: "16px",
+            marginBottom: "24px",
           }}
         >
           WE ALSO SUPPORT
         </div>
-        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-          {p.also.map((name) => {
-            const otherSlug = Object.values(platforms).find(
-              (pl) => pl.name === name || pl.name.startsWith(name),
-            )?.slug;
-            return otherSlug ? (
+        <div className="brand-logo-grid">
+          {platformBrands
+            .filter((brand) => brand.slug !== slug)
+            .map((brand) => (
               <Link
-                key={name}
-                href={`/platforms/${otherSlug}`}
+                key={brand.slug}
+                href={brand.href}
                 style={{
-                  border: "0.5px solid #D5C9B0",
-                  borderRadius: "3px",
-                  padding: "7px 16px",
-                  fontSize: "13px",
-                  color: "#555550",
-                  background: "#FDFAF5",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
                   textDecoration: "none",
+                  cursor: "pointer",
                 }}
               >
-                {name}
+                <brand.Icon />
+                <span
+                  style={{
+                    fontSize: "14px",
+                    fontWeight: 600,
+                    color: "#555550",
+                    letterSpacing: "-0.2px",
+                  }}
+                >
+                  {brand.name}
+                </span>
               </Link>
-            ) : (
-              <div
-                key={name}
-                style={{
-                  border: "0.5px solid #D5C9B0",
-                  borderRadius: "3px",
-                  padding: "7px 16px",
-                  fontSize: "13px",
-                  color: "#555550",
-                  background: "#FDFAF5",
-                }}
-              >
-                {name}
-              </div>
-            );
-          })}
+            ))}
         </div>
       </section>
 

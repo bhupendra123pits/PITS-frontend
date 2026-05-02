@@ -4,7 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { services, serviceSlugs } from "@/lib/services";
-import { platforms } from "@/lib/platforms";
+import { platformBrands, marketplaceBrands } from "@/lib/brandIcons";
 
 export async function generateStaticParams() {
   return serviceSlugs.map((slug) => ({ service: slug }));
@@ -434,40 +434,52 @@ export default async function ServicePage({
                 </div>
               ))}
             </div>
+            <style>{`
+              .brand-logo-grid-sm { display: flex; flex-wrap: nowrap; gap: 16px; }
+              @media (max-width: 640px) {
+                .brand-logo-grid-sm { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+              }
+            `}</style>
             <div
               style={{
                 fontSize: "10px",
                 letterSpacing: "1.5px",
                 color: "#2D6A4F",
                 fontWeight: 500,
-                marginBottom: "12px",
+                marginBottom: "20px",
               }}
             >
               PLATFORMS
             </div>
-            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              {s.platforms.map((p) => {
-                const slug = p.toLowerCase().replace(/\s+/g, "");
-                const hasPage = !!platforms[slug];
-                const tagStyle = {
-                  border: "0.5px solid #D5C9B0",
-                  borderRadius: "3px",
-                  padding: "5px 12px",
-                  fontSize: "12px",
-                  background: "#FDFAF5",
-                };
-                return hasPage ? (
+            <div className="brand-logo-grid-sm">
+              {s.platforms.map((name) => {
+                const allBrands = [...platformBrands, ...marketplaceBrands];
+                const brand = allBrands.find((b) => b.name === name);
+                if (!brand) return null;
+                return (
                   <Link
-                    key={p}
-                    href={`/platforms/${slug}`}
-                    style={{ ...tagStyle, color: "#2D6A4F", textDecoration: "none", fontWeight: 500 }}
+                    key={brand.slug}
+                    href={brand.href}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                    }}
                   >
-                    {p}
+                    <brand.Icon />
+                    <span
+                      style={{
+                        fontSize: "13px",
+                        fontWeight: 600,
+                        color: "#555550",
+                        letterSpacing: "-0.2px",
+                      }}
+                    >
+                      {brand.name}
+                    </span>
                   </Link>
-                ) : (
-                  <div key={p} style={{ ...tagStyle, color: "#555550" }}>
-                    {p}
-                  </div>
                 );
               })}
             </div>
