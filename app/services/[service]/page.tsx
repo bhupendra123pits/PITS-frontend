@@ -435,9 +435,9 @@ export default async function ServicePage({
               ))}
             </div>
             <style>{`
-              .brand-logo-grid-sm { display: flex; flex-wrap: nowrap; gap: 16px; }
+              .brand-logo-grid-sm { display: flex; flex-wrap: nowrap; gap: 23px; }
               @media (max-width: 640px) {
-                .brand-logo-grid-sm { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+                .brand-logo-grid-sm { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-left:10px }
               }
             `}</style>
             <div

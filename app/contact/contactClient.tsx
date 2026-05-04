@@ -82,7 +82,7 @@ const labelStyle = {
   letterSpacing: "0.3px",
 };
 
-const emptyForm = { name: "", email: "", topic: "", message: "", hearAbout: "" };
+const emptyForm = { name: "", email: "", topic: "", message: "", hearAbout: "", hearAboutOther: "" };
 
 export default function ContactClient() {
   const [submitted, setSubmitted] = useState(false);
@@ -100,10 +100,15 @@ export default function ContactClient() {
     setLoading(true);
     setError("");
     try {
+      const payload = { ...form };
+      if (payload.hearAbout === "Other" && payload.hearAboutOther.trim()) {
+        payload.hearAbout = payload.hearAboutOther.trim();
+      }
+      delete (payload as { hearAboutOther?: string }).hearAboutOther;
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       if (data.success) {
@@ -249,6 +254,17 @@ export default function ContactClient() {
               <option>Industry forum or group</option>
               <option>Other</option>
             </select>
+            {form.hearAbout === "Other" && (
+              <input
+                style={{ ...inputStyle, marginTop: "8px" }}
+                name="hearAboutOther"
+                type="text"
+                placeholder="Please tell us how you found us"
+                value={form.hearAboutOther}
+                onChange={handleChange}
+                autoFocus
+              />
+            )}
           </div>
 
           {/* SUBMIT */}

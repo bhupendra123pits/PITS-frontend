@@ -63,6 +63,9 @@ const nextConfig = {
       // Hub pages
       { source: '/Services_solutions.html', destination: '/services', permanent: true },
 
+      // Old terms page URL
+      { source: '/terms-conditions', destination: '/terms', permanent: true },
+
       // Blog redirect from old website
       { source: '/our-blogs', destination: '/blog', permanent: true },
       { source: '/our-blogs/:path*', destination: '/blog', permanent: true },
@@ -74,6 +77,7 @@ const nextConfig = {
       { source: '/Data_Entry_Services/:path*', destination: '/services/product-data-management', permanent: true },
       { source: '/data-entry-services/:path*', destination: '/services/product-data-management', permanent: true },
       { source: '/back-office-services/:path*', destination: '/solutions', permanent: true },
+      
     ]
   },
 }

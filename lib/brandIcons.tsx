@@ -27,7 +27,7 @@ export const platformBrands: BrandItem[] = [
     slug: "woocommerce",
     href: "/platforms/woocommerce",
     Icon: () => (
-      <img src="/woologo.png" alt="WooCommerce" width={32} height={32} style={{ objectFit: "contain" }} />
+      <img src="/woologo.png" alt="WooCommerce" width={32} height={32} style={{ objectFit: "contain", marginLeft:"-3px" }} />
     ),
   },
   {
