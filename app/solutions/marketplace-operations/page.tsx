@@ -487,7 +487,7 @@ export default function MarketplaceOperationsPage() {
       {/* ── ALSO SUPPORT ── */}
       <style>{`
         .brand-logo-grid { display: flex; flex-wrap: wrap; }
-        .brand-logo-grid a { padding: 10px 28px 10px 0; margin-right: 28px; }
+        .brand-logo-grid a { padding: 10px 28px 10px 0; margin-right: 36px; }
         @media (max-width: 640px) {
           .brand-logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 0; }
           .brand-logo-grid a { padding: 10px 0; margin-right: 0; }
