@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -135,11 +135,57 @@ export default function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [barWidth, setBarWidth] = useState(0);
+  const [barVisible, setBarVisible] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const searchRef = useRef<HTMLDivElement>(null);
   const mobileSearchRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const prevPathname = useRef(pathname);
+  const tickRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const completeBar = useCallback(() => {
+    if (tickRef.current) clearTimeout(tickRef.current);
+    setBarWidth(100);
+    tickRef.current = setTimeout(() => {
+      setBarVisible(false);
+      setBarWidth(0);
+    }, 300);
+  }, []);
+
+  useEffect(() => {
+    if (prevPathname.current !== pathname) {
+      prevPathname.current = pathname;
+      completeBar();
+    }
+  }, [pathname, completeBar]);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const anchor = (e.target as Element).closest("a");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href");
+      if (
+        !href ||
+        href.startsWith("#") ||
+        href.startsWith("http") ||
+        href.startsWith("mailto") ||
+        href.startsWith("tel") ||
+        href === pathname
+      ) return;
+      if (tickRef.current) clearTimeout(tickRef.current);
+      setBarVisible(true);
+      setBarWidth(15);
+      tickRef.current = setTimeout(() => setBarWidth(50), 150);
+      tickRef.current = setTimeout(() => setBarWidth(75), 600);
+    };
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+      if (tickRef.current) clearTimeout(tickRef.current);
+    };
+  }, [pathname]);
 
   const toggle = (id: string) => setOpen(open === id ? null : id);
   const close = () => setOpen(null);
@@ -196,6 +242,23 @@ export default function Navbar() {
 
   return (
     <>
+      {barVisible && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: `${barWidth}%`,
+            height: "2.5px",
+            background: "#2D6A4F",
+            zIndex: 9999,
+            transition: barWidth === 100 ? "width 0.2s ease" : "width 0.4s ease",
+            boxShadow: "0 0 6px rgba(45,106,79,0.5)",
+            pointerEvents: "none",
+          }}
+        />
+      )}
+
       <style>{`
         .nav-desktop-links { display: flex; }
         .nav-cta-desktop { display: block; }

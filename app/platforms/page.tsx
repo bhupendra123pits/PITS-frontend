@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { platforms } from "@/lib/platforms";
 
 export const metadata: Metadata = {
-  title: "ECommerce Platforms We Support — Professional ITS",
+  title: "ECommerce Platforms We Support",
   description:
     "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009",
   keywords: ["Amazon back-office", "Shopify management", "eBay operations", "ecommerce platform support"],

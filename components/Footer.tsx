@@ -9,7 +9,7 @@ const solutionLinks = [
     label: "Marketplace operations",
     href: "/solutions/marketplace-operations",
   },
-  { label: "Ecommerce backoffice", href: "/solutions/ecommerce-backoffice" },
+  { label: "E-commerce back-office", href: "/solutions/ecommerce-backoffice" },
   { label: "Product data cleanup", href: "/solutions/product-data-cleanup" },
   { label: "High-SKU catalog scaling", href: "/solutions/high-sku-scaling" },
   { label: "All Solutions", href: "/solutions" },

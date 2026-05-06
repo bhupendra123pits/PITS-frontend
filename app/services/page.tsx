@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Services – Professional ITS | E-Commerce Execution Services",
+  title: "Services – E-Commerce Execution Services",
   description:
     "Product data management, bulk product uploads, attribute structuring, image processing, and order & inventory support. Execution services for e-commerce businesses.",
   keywords: [

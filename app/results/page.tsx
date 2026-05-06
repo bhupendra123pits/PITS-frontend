@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Results – Professional ITS",
+  title: "Results – Client Outcomes",
   description:
     "Real outcomes from 1,500+ e-commerce stores. 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce",
   alternates: {

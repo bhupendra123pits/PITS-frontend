@@ -20,7 +20,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://professionalits.com'),
   title: {
-    default: 'Ecommerce Back-Office Specialists Since 2009 | Professional ITS',
+    default: 'Ecommerce Back-Office Specialists Since 2009 ',
     template: '%s | Professional ITS',
   },
   description:

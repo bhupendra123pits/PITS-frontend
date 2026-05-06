@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog — E-Commerce Operations Insights | Professional ITS",
+  title: "Blog — E-Commerce Operations Insights",
   description:
     "Practical guides and insights on catalog management, marketplace operations, and e-commerce back-office — from the team at Professional ITS.",
   alternates: {

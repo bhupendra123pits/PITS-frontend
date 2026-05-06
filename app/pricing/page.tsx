@@ -5,14 +5,14 @@ import Link from "next/link";
 import PricingFaq from "./PricingFaq";
 
 export const metadata: Metadata = {
-  title: "Pricing – E-Commerce Back-Office Services | Professional ITS",
+  title: "Pricing – E-Commerce Back-Office Services",
   description:
     "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50, monthly retainers from $400, and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
   alternates: {
     canonical: "https://professionalits.com/pricing",
   },
   openGraph: {
-    title: "Pricing – E-Commerce Back-Office Services | Professional ITS",
+    title: "Pricing – E-Commerce Back-Office Services",
     description:
       "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50, monthly retainers from $400, and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
     url: "https://professionalits.com/pricing",
@@ -363,7 +363,7 @@ export default function PricingPage() {
               style={{
                 fontSize: "11px",
                 letterSpacing: "1.4px",
-                color: "#888780",
+                color: "#2D6A4F",
                 fontWeight: 700,
                 marginBottom: "12px",
                 textTransform: "uppercase",
@@ -464,7 +464,7 @@ export default function PricingPage() {
               style={{
                 fontSize: "11px",
                 letterSpacing: "1.4px",
-                color: "#888780",
+                color: "#2D6A4F",
                 fontWeight: 700,
                 marginBottom: "12px",
                 textTransform: "uppercase",
@@ -499,19 +499,19 @@ export default function PricingPage() {
             {[
               {
                 label: "Starter",
-                rate: "$10.00/hour",
+                rate: "$10.00/hr",
                 sub: "40 hours/month · ~300–500 simple SKU updates/month",
                 price: "from $400 per month",
               },
               {
                 label: "Growth",
-                rate: "$9.00/hour",
+                rate: "$9.00/hr",
                 sub: "80 hours/month · ~700–1,000 simple SKU updates/month",
                 price: "from $720 per month",
               },
               {
                 label: "Scale",
-                rate: "$7.50/hour",
+                rate: "$7.50/hr",
                 sub: "160 hours/month · dedicated account manager included",
                 price: "from $1,200 per month",
               },
@@ -564,7 +564,7 @@ export default function PricingPage() {
               style={{
                 fontSize: "11px",
                 letterSpacing: "1.4px",
-                color: "#888780",
+                color: "#2D6A4F",
                 fontWeight: 700,
                 marginBottom: "12px",
                 textTransform: "uppercase",

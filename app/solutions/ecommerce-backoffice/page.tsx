@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Backoffice Management – Professional ITS",
+  title: "Ecommerce Backoffice Management",
   description:
     "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
   keywords: ["ecommerce backoffice", "customer support outsourcing", "order processing", "inventory monitoring", "ecommerce operations"],

@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy – Professional ITS",
+  title: "Privacy Policy",
   description:
     "How Professional ITS collects, uses, and protects the information you share with us.",
   openGraph: {

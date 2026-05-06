@@ -5,7 +5,7 @@ import Link from "next/link";
 import { platformBrands, marketplaceBrands } from "@/lib/brandIcons";
 
 export const metadata: Metadata = {
-  title: "Marketplace Operations – Professional ITS",
+  title: "Marketplace Operations",
   description:
     "Amazon, eBay, Walmart, and more. Listing creation, optimisation, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
   keywords: [

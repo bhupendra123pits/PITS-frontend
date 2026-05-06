@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ContactClient from "./contactClient";
 
 export const metadata: Metadata = {
-  title: "Contact – Professional ITS",
+  title: "Contact – Get in Touch",
   description:
     "Get in touch with our e-commerce operations team. US and India offices. Response within 4 hours during business hours",
   keywords: [

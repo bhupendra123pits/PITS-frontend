@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AuditClient from "./auditclient";
 
 export const metadata: Metadata = {
-  title: "Free Catalog Audit – Professional ITS",
+  title: "Free Catalog Audit",
   description:
     "We review 50 of your SKUs and deliver a written findings report. No credit card, no sales call, no commitment. Find out what we'd fix.",
   keywords: [

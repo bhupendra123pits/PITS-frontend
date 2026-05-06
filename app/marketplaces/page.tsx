@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Marketplaces We Support — Professional ITS",
+  title: "Marketplaces We Support",
   description:
     "Seller Central specialists for Amazon, eBay, Walmart, Etsy, BestBuy, Newegg, Houzz, Rakuten, and Poshmark. Listing, Buy Box, and catalog operations.",
   keywords: [

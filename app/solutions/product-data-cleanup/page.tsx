@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Product Data Cleanup & Optimisation – Professional ITS",
+  title: "Product Data Cleanup & Optimisation",
   description:
     "Messy data costs you sales. We audit, deduplicate, enrich, and restructure your product data — whether it's 200 SKUs or 200,000. Flat files, feeds, and direct platform uploads.",
   keywords: [

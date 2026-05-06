@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service – Professional ITS",
+  title: "Terms of Service",
   description:
     "Terms governing your use of the Professional ITS website and services.",
   openGraph: {
