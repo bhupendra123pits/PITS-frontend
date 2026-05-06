@@ -27,14 +27,6 @@ export const metadata: Metadata = {
     "Ecommerce back-office specialists since 2009. Catalog management, marketplace operations, and store back-office for online sellers running 500 to 500,000 SKUs. SLA-backed. No lock-in.",
     robots: { index: true, follow: true },
     alternates: { canonical: '/' },
-  keywords: [
-    "ecommerce back-office",
-    "catalog management",
-    "Amazon seller central",
-    "eBay listing optimization",
-    "Shopify product management",
-    "bulk product uploads",
-  ],
   openGraph: {
     title: "Professional ITS – E-Commerce Back-Office Specialists",
     description:

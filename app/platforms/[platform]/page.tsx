@@ -24,13 +24,6 @@ export async function generateMetadata({
   return {
     title: `${p.name} Back-Office Services – Professional ITS`,
     description: p.description,
-    keywords: [
-      `${p.name} catalog management`,
-      `${p.name} product uploads`,
-      `${p.name} back-office`,
-      `${p.name} order management`,
-      "ecommerce back-office",
-    ],
     openGraph: {
       title: `${p.name} Back-Office Services – Professional ITS`,
       description: p.description,

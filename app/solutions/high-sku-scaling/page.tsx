@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   title: "High-SKU Catalog Scaling",
   description:
     "Built for distributors, wholesalers, and multi-brand sellers. Scale your catalog to 500,000+ SKUs without scaling headcount. New product lines, seasonal launches, supplier integrations.",
-  keywords: ["high SKU catalog", "catalog scaling", "wholesale ecommerce", "distributor catalog", "bulk SKU management"],
   openGraph: {
     title: "High-SKU Catalog Scaling – Professional ITS",
     description: "Scale to 500,000 SKUs without scaling headcount. Built for distributors and wholesalers.",

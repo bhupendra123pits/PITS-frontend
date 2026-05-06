@@ -8,13 +8,6 @@ export const metadata: Metadata = {
   title: "Marketplace Operations",
   description:
     "Amazon, eBay, Walmart, and more. Listing creation, optimisation, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
-  keywords: [
-    "marketplace operations",
-    "Amazon listing optimization",
-    "eBay store management",
-    "Buy Box strategy",
-    "Walmart seller",
-  ],
   openGraph: {
     title: "Marketplace Operations – Professional ITS",
     description:

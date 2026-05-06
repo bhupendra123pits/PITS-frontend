@@ -5,11 +5,6 @@ export const metadata: Metadata = {
   title: "Contact – Get in Touch",
   description:
     "Get in touch with our e-commerce operations team. US and India offices. Response within 4 hours during business hours",
-  keywords: [
-    "contact professional ITS",
-    "ecommerce back-office contact",
-    "catalog management enquiry",
-  ],
   openGraph: {
     title: "Contact Us – Professional ITS",
     description: "Talk to someone who knows the platforms. We respond within 4 hours.",

@@ -22,12 +22,6 @@ export async function generateMetadata({
   return {
     title: `${s.name} – Professional ITS`,
     description: s.description,
-    keywords: [
-      s.name.toLowerCase(),
-      "ecommerce back-office",
-      "product data services",
-      "catalog management",
-    ],
     openGraph: {
       title: `${s.name} – Professional ITS`,
       description: s.description,

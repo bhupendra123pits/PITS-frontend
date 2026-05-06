@@ -22,13 +22,6 @@ export async function generateMetadata({
   return {
     title: `${m.name} Marketplace Services – Professional ITS`,
     description: m.description,
-    keywords: [
-      `${m.name} catalog management`,
-      `${m.name} product listings`,
-      `${m.name} marketplace management`,
-      `${m.name} seller services`,
-      "ecommerce marketplace management",
-    ],
     openGraph: {
       title: `${m.name} Marketplace Services – Professional ITS`,
       description: m.description,

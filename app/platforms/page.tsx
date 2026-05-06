@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: "ECommerce Platforms We Support",
   description:
     "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009",
-  keywords: ["Amazon back-office", "Shopify management", "eBay operations", "ecommerce platform support"],
   openGraph: {
     title: "Platforms We Support – Professional ITS",
     description: "Platform-specific back-office services for every major marketplace.",

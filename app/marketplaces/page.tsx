@@ -7,13 +7,6 @@ export const metadata: Metadata = {
   title: "Marketplaces We Support",
   description:
     "Seller Central specialists for Amazon, eBay, Walmart, Etsy, BestBuy, Newegg, Houzz, Rakuten, and Poshmark. Listing, Buy Box, and catalog operations.",
-  keywords: [
-    "marketplace management",
-    "Amazon listing optimization",
-    "eBay store management",
-    "Walmart marketplace",
-    "Etsy SEO",
-  ],
   openGraph: {
     title: "Marketplaces – Professional ITS",
     description:

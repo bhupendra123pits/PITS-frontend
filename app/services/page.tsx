@@ -8,13 +8,6 @@ export const metadata: Metadata = {
   title: "Services – E-Commerce Execution Services",
   description:
     "Product data management, bulk product uploads, attribute structuring, image processing, and order & inventory support. Execution services for e-commerce businesses.",
-  keywords: [
-    "product data management",
-    "bulk product uploads",
-    "attribute structuring",
-    "image processing ecommerce",
-    "order inventory support",
-  ],
   openGraph: {
     title: "Services – Professional ITS",
     description: "Execution services for e-commerce businesses. Available standalone or as a managed retainer.",

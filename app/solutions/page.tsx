@@ -7,13 +7,6 @@ export const metadata: Metadata = {
   title: "E-Commerce Back-Office Solutions",
   description:
     "Five solution areas for e-commerce operations: catalog, marketplace ops, back-office, data cleanup, high-SKU scaling. Tailored to your platform.",
-  keywords: [
-    "ecommerce solutions",
-    "catalog operations",
-    "marketplace management",
-    "ecommerce backoffice",
-    "product data cleanup",
-  ],
   openGraph: {
     title: "Solutions – Professional ITS",
     description:

@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: "Catalog & Product Data Operations",
   description:
     "High-SKU catalog builds, product data enrichment, attribute structuring, and bulk uploads. AI-assisted processing for faster turnaround without sacrificing accuracy.",
-  keywords: ["catalog management", "product data operations", "bulk product uploads", "attribute structuring", "ecommerce catalog"],
   openGraph: {
     title: "Catalog & Product Data Operations – Professional ITS",
     description: "High-SKU catalog builds, enrichment, attribute structuring, and bulk uploads. AI-assisted.",

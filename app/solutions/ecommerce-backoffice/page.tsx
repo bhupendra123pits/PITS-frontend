@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   title: "Ecommerce Backoffice Management",
   description:
     "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
-  keywords: ["ecommerce backoffice", "customer support outsourcing", "order processing", "inventory monitoring", "ecommerce operations"],
   openGraph: {
     title: "Ecommerce Backoffice Management – Professional ITS",
     description: "Customer support, order processing, inventory monitoring, repricing — on an SLA you can hold us to.",

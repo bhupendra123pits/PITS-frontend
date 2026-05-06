@@ -7,13 +7,6 @@ export const metadata: Metadata = {
   title: "Product Data Cleanup & Optimisation",
   description:
     "Messy data costs you sales. We audit, deduplicate, enrich, and restructure your product data — whether it's 200 SKUs or 200,000. Flat files, feeds, and direct platform uploads.",
-  keywords: [
-    "product data cleanup",
-    "catalog deduplication",
-    "ecommerce data audit",
-    "product data enrichment",
-    "SKU cleanup",
-  ],
   openGraph: {
     title: "Product Data Cleanup & Optimisation – Professional ITS",
     description:
