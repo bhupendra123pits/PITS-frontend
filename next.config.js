@@ -77,7 +77,17 @@ const nextConfig = {
       { source: '/Data_Entry_Services/:path*', destination: '/services/product-data-management', permanent: true },
       { source: '/data-entry-services/:path*', destination: '/services/product-data-management', permanent: true },
       { source: '/back-office-services/:path*', destination: '/solutions', permanent: true },
-      { source: 'https://www.professionalits.com/:path*', destination: 'https://professionalits.com/:path*', permanent: true }
+
+      { source: '/:path*',  // Relative path, no need for "https://www"
+        has: [
+          {
+            type: 'host',
+            value: 'www.professionalits.com',  // Match "www" version of the site
+          },
+        ],
+        destination: 'https://professionalits.com/:path*',  // Destination should include full URL
+        permanent: true, // 301 Permanent Redirect
+      },
     ]
   },
 }
