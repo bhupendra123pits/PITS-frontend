@@ -77,7 +77,7 @@ const nextConfig = {
       { source: '/Data_Entry_Services/:path*', destination: '/services/product-data-management', permanent: true },
       { source: '/data-entry-services/:path*', destination: '/services/product-data-management', permanent: true },
       { source: '/back-office-services/:path*', destination: '/solutions', permanent: true },
-      
+      { source: 'https://www.professionalits.com/:path*', destination: 'https://professionalits.com/:path*', permanent: true }
     ]
   },
 }
