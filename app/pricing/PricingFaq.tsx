@@ -11,7 +11,7 @@ const faqs: {
       items: [
         "A monthly retainer is a managed engagement. We direct the work, deliver weekly reports, and you have a dedicated account contact. Best when you want operational outcomes without managing the day-to-day.",
         "A virtual assistant is a dedicated specialist. You direct the work; the VA executes against your priorities. Best when you have your own playbook and want a teammate, not a service.",
-        "At equivalent volume (e.g., 80 hrs/month), the retainer and full-time VA cost roughly the same per hour. The choice is about how much management you want to take on yourself.",
+        "At equivalent volume (e.g., 80 hr/month), the retainer and full-time VA cost roughly the same per hour. The choice is about how much management you want to take on yourself.",
       ],
     },
   },
@@ -19,7 +19,7 @@ const faqs: {
     q: "Why is the Scale Retainer cheaper per hour than smaller retainers?",
     a: {
       type: "para",
-      text: "Volume discount, plus commitment. The Scale tier (160 hrs/month + dedicated account manager) is our deepest engagement, so it earns the lowest per-hour rate ($7.50/hour). Smaller tiers price higher because they have less commitment behind them. This is standard B2B services pricing — commit more, save more per hour.",
+      text: "Volume discount, plus commitment. The Scale tier (160 hr/month + dedicated account manager) is our deepest engagement, so it earns the lowest per-hour rate ($7.50/hr). Smaller tiers price higher because they have less commitment behind them. This is standard B2B services pricing — commit more, save more per hour.",
     },
   },
   {
@@ -71,7 +71,7 @@ const faqs: {
     q: "What if I need a custom scope that doesn't match these tiers?",
     a: {
       type: "paraWithLink",
-      text: "Most engagements over 200 hours/month or with specialized requirements (multi-language catalog work, senior platform specialists, dedicated team setups) are quoted custom. Tell us what you need via the contact form and we'll come back with a scoped proposal within 4 business hours.",
+      text: "Most engagements over 200 hr/month or with specialized requirements (multi-language catalog work, senior platform specialists, dedicated team setups) are quoted custom. Tell us what you need via the contact form and we'll come back with a scoped proposal within 4 business hours.",
       linkText: "contact form",
       linkHref: "/contact",
     },
