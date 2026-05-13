@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -26,7 +27,17 @@ const contactInfo = [
       </svg>
     ),
     label: "Email",
-    value: "info@professionalits.com",
+      value: (
+    <a
+      href="mailto:info@professionalits.com"
+      style={{
+        color: "#000",
+        textDecoration: "none",
+      }}
+    >
+      info@professionalits.com
+    </a>
+  ),
     sub: "General enquiries & sales",
   },
   {
@@ -89,6 +100,8 @@ export default function ContactClient() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [form, setForm] = useState(emptyForm);
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -97,6 +110,10 @@ export default function ContactClient() {
   };
 
   const handleSubmit = async () => {
+    if (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) {
+      setError("Please complete the CAPTCHA verification.");
+      return;
+    }
     setLoading(true);
     setError("");
     try {
@@ -171,6 +188,11 @@ export default function ContactClient() {
         .contact-main { display: grid; grid-template-columns: 1fr 360px; }
         .contact-form { padding: 40px 40px 56px; border-right: 0.5px solid #D5C9B0; }
         .contact-sidebar { padding: 32px 24px; background: #FDFAF5; }
+        .roi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+        @media (max-width: 880px) {
+          .roi-grid { grid-template-columns: 1fr; }
+        }
 
         @media (max-width: 768px) {
           .contact-hero { padding: 28px 20px 24px; }
@@ -178,6 +200,8 @@ export default function ContactClient() {
           .contact-main { grid-template-columns: 1fr; }
           .contact-form { padding: 28px 20px 40px; border-right: none; border-bottom: 0.5px solid #D5C9B0; }
           .contact-sidebar { padding: 28px 20px; }
+          .contact-submit-row { flex-direction: column; align-items: stretch !important; }
+          .contact-submit-row button { width: 100%; }
         }
       `}</style>
 
@@ -185,9 +209,10 @@ export default function ContactClient() {
 
       {/* HERO */}
       <div className="contact-hero" style={{ background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}>
-        <Link href="/" style={{ fontSize: "11px", color: "#888780", marginBottom: "14px", textDecoration: "none" }}>
-          Home <span style={{ color: "#2D6A4F" }}>/ Contact</span>
-        </Link>
+         <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
+                  <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>Home</Link>
+                  <span style={{ color: "#2D6A4F" }}> / Contact</span>
+                </div>
         <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "12px", marginTop: "10px" }}>
           GET IN TOUCH
         </div>
@@ -228,7 +253,7 @@ export default function ContactClient() {
           </div>
 
           <div style={{ marginBottom: "14px" }}>
-            <label style={labelStyle}>What are you enquiring about? <span style={{ color: "#2D6A4F" }}>*</span></label>
+            <label style={labelStyle}>What are you inquiring about? <span style={{ color: "#2D6A4F" }}>*</span></label>
             <select style={{ ...inputStyle, appearance: "none" as const }} name="topic"
               value={form.topic} onChange={handleChange}>
               <option value="">Select a topic</option>
@@ -274,13 +299,32 @@ export default function ContactClient() {
                 {error}
               </div>
             )}
+            <div
+              className="contact-submit-row"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "16px",
+              }}
+            >
+            {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+              <>
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                  onChange={(token) => setCaptchaVerified(!!token)}
+                  onExpired={() => setCaptchaVerified(false)}
+                />
+              </>
+            )}
             <button
               onClick={handleSubmit}
-              disabled={loading}
-              style={{ width: "100%", background: loading ? "#88B8A0" : "#2D6A4F", color: "#fff", border: "none", padding: "14px 24px", borderRadius: "4px", fontSize: "14px", fontWeight: 500, cursor: loading ? "not-allowed" : "pointer", transition: "background 0.15s" }}
+              disabled={loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified)}
+              style={{ flex: 1, background: loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) ? "#88B8A0" : "#2D6A4F", color: "#fff", border: "none", padding: "30px 24px", borderRadius: "4px", fontSize: "14px", fontWeight: 500, cursor: loading || (!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && !captchaVerified) ? "not-allowed" : "pointer", transition: "background 0.15s" }}
             >
               {loading ? "Sending..." : "Send message →"}
             </button>
+            </div>
             <div style={{ textAlign: "center", fontSize: "11px", color: "#888780", marginTop: "10px" }}>
               We respond within 4 hours on business days · Your data is never shared
             </div>
@@ -296,7 +340,7 @@ export default function ContactClient() {
 
             {/* WhatsApp — top of contact details */}
             <a
-              href="https://wa.me/919811018501?text=Hi%2C%20I%27d%20like%20a%20free%20catalog%20audit"
+              href="https://wa.me/919811018501?text=Hi%2C%20I%20have%20a%20question%20about%20Professional%20IT%20Services"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "flex", alignItems: "center", gap: "12px", background: "#25D366", borderRadius: "6px", padding: "10px 14px", textDecoration: "none", marginBottom: "16px" }}
@@ -362,6 +406,62 @@ export default function ContactClient() {
           </div>
         </div>
       </div>
+
+      {/* Trust Stats */}
+      <section style={{ padding: "32px", background: "#FDFAF5", borderTop: "0.5px solid #D5C9B0" }}>
+        <div className="roi-grid">
+          {[
+            {
+              number: "1,500+",
+              title: "Stores served globally",
+              body: "Across 15+ platforms and marketplaces — small catalogs to 500,000-SKU enterprises.",
+            },
+            {
+              number: "98%",
+              title: "Client retention",
+              body: "Year-on-year. The work renews because the operations team earns it.",
+            },
+            {
+              number: "4 hr",
+              title: "Response SLA",
+              body: "Across every account, every size — measured and reported weekly.",
+            },
+            {
+              number: "17 yrs",
+              title: "In e-commerce ops",
+              body: "Exclusively. We've never pivoted, never become a generalist agency.",
+            },
+          ].map((stat) => (
+            <div
+              key={stat.title}
+              style={{
+                background: "#F5F0E8",
+                border: "0.5px solid #D5C9B0",
+                borderRadius: "6px",
+                padding: "16px",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "28px",
+                  color: "#2D6A4F",
+                  fontWeight: 500,
+                }}
+              >
+                {stat.number}
+              </div>
+              <strong style={{ display: "block", fontSize: "13px", marginBottom: "4px", marginTop: "4px" }}>
+                {stat.title}
+              </strong>
+              <p style={{ fontSize: "12px", color: "#555550", lineHeight: 1.6, margin: 0 }}>
+                {stat.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
 
       <Footer />
     </div>

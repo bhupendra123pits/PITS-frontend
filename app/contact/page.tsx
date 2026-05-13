@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import ContactClient from "./contactClient";
 
 export const metadata: Metadata = {
-  title: "Contact – Get in Touch",
+  
+  title: { absolute: "Professional ITS"},
   description:
-    "Get in touch with our e-commerce operations team. US and India offices. Response within 4 hours during business hours",
+    "Talk to someone who knows the platforms. We respond within 4 hours",
   openGraph: {
     title: "Contact Us – Professional ITS",
     description: "Talk to someone who knows the platforms. We respond within 4 hours.",
@@ -15,6 +16,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://professionalits.com/contact",
+  },
+   twitter: {
+    card: "summary_large_image",
+    title: "Contact Us – Professional ITS",
+    description:
+      "Talk to someone who knows the platforms. We respond within 4 hours",
+    images: ["https://professionalits.com/og-image.png"],
   },
 };
 

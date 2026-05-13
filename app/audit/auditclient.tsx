@@ -331,6 +331,11 @@ export default function AuditPage() {
         .audit-main { display: grid; grid-template-columns: 1fr 340px; }
         .audit-form { padding: 40px 40px 56px; border-right: 0.5px solid #D5C9B0; }
         .audit-sidebar { padding: 32px 24px; background: #FDFAF5; }
+        .roi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+        @media (max-width: 880px) {
+          .roi-grid { grid-template-columns: 1fr; }
+        }
 
         @media (max-width: 768px) {
           .audit-hero { padding: 28px 20px 24px; }
@@ -864,6 +869,61 @@ export default function AuditPage() {
           </a>
         </div>
       </div>
+
+      {/* Trust Stats */}
+      <section style={{ padding: "32px", background: "#FDFAF5", borderTop: "0.5px solid #D5C9B0" }}>
+        <div className="roi-grid">
+          {[
+            {
+              number: "1,500+",
+              title: "Stores served globally",
+              body: "Across 15+ platforms and marketplaces — small catalogs to 500,000-SKU enterprises.",
+            },
+            {
+              number: "98%",
+              title: "Client retention",
+              body: "Year-on-year. The work renews because the operations team earns it.",
+            },
+            {
+              number: "4 hr",
+              title: "Response SLA",
+              body: "Across every account, every size — measured and reported weekly.",
+            },
+            {
+              number: "17 yrs",
+              title: "In e-commerce ops",
+              body: "Exclusively. We've never pivoted, never become a generalist agency.",
+            },
+          ].map((stat) => (
+            <div
+              key={stat.title}
+              style={{
+                background: "#F5F0E8",
+                border: "0.5px solid #D5C9B0",
+                borderRadius: "6px",
+                padding: "16px",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "28px",
+                  color: "#2D6A4F",
+                  fontWeight: 500,
+                }}
+              >
+                {stat.number}
+              </div>
+              <strong style={{ display: "block", fontSize: "13px", marginBottom: "4px", marginTop: "4px" }}>
+                {stat.title}
+              </strong>
+              <p style={{ fontSize: "12px", color: "#555550", lineHeight: 1.6, margin: 0 }}>
+                {stat.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <Footer />
     </div>

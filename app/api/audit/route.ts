@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     try {
       await transporter.sendMail({
         from: `"Professional ITS" <${process.env.GMAIL_USER}>`,
-        to: process.env.MAIL_RECEIVER,
+        to: process.env.AUDIT_MAIL_RECEIVER,
         subject: `New Audit Request #${record.id} — ${name}`,
         html: `
           <div style="font-family: sans-serif; max-width: 540px; color: #1C1C1C;">
