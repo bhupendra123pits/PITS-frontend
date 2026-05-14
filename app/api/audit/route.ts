@@ -63,6 +63,7 @@ export async function POST(req: NextRequest) {
       console.error("Admin email failed:", mailErr);
     }
 
+    let userMailError: string | null = null;
     try {
       await transporter.sendMail({
         from: `"Professional ITS" <${process.env.GMAIL_USER}>`,
@@ -103,9 +104,10 @@ export async function POST(req: NextRequest) {
       });
     } catch (mailErr) {
       console.error("User confirmation email failed:", mailErr);
+      userMailError = mailErr instanceof Error ? mailErr.message : String(mailErr);
     }
 
-    return NextResponse.json({ success: true, id: record.id });
+    return NextResponse.json({ success: true, id: record.id, _mailError: userMailError });
 
   } catch (error) {
     console.error("Audit API error:", error);
