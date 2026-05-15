@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/solutions/marketplace-operations",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marketplace Operations | Professional ITS",
+    description:
+      "Listing optimisation, Buy Box strategy, suppressed listing management, and competitor intelligence across Amazon, eBay, and Walmart.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 const platforms = [

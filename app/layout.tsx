@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing – E-Commerce Back-Office Services",
+    title: "Professional ITS – E-Commerce Back-Office Specialists",
     description:
-      "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50, monthly retainers from $400, and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
+      "Ecommerce back-office specialists since 2009. Catalog management, marketplace operations, and store back-office for online sellers running 500 to 500,000 SKUs.",
     images: ["https://professionalits.com/og-image.png"],
   },
   icons: {

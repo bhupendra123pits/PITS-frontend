@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     type: "website",
     images: [{ url: "https://professionalits.com/og-image.png", width: 1200, height: 630, alt: "Professional ITS" }],
   },
+     twitter: {
+    card: "summary_large_image",
+    title: "Professional ITS – E-Commerce Back-Office Specialists Since 2009",
+    description:
+      "Catalog operations, marketplace management, and store back-office for e-commerce businesses running 500 to 500,000 SKUs. Execution-heavy. SLA-backed. No lock-in.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 const solutions = [
@@ -38,7 +45,7 @@ const solutions = [
   },
   {
     num: "03",
-    title: "Ecommerce backoffice management",
+    title: "E-commerce back-office management",
     body: "Customer support, order processing, inventory monitoring, repricing — on an SLA you can hold us to.",
     ai: false,
     href: "/solutions/ecommerce-backoffice",

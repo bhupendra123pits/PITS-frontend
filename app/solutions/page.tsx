@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/solutions",
   },
+     twitter: {
+    card: "summary_large_image",
+    title: "Solutions - Professional ITS",
+    description:
+      "End-to-end e-commerce solutions handled by specialists. From catalog builds to marketplace operations.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 const solutions = [
@@ -56,7 +63,7 @@ const solutions = [
   },
   {
     num: "03",
-    title: "Ecommerce backoffice management",
+    title: "E-commerce back-office management",
     href: "/solutions/ecommerce-backoffice",
     ai: false,
     tagline: "Customer support, order processing, and inventory monitoring — on an SLA you can hold us to.",

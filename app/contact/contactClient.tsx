@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 const topics = [
   "Catalog & product data operations",
   "Marketplace operations",
-  "Ecommerce backoffice management",
+  "E-commerce back-office management",
   "Product data cleanup",
   "High-SKU catalog scaling",
   "Bulk product uploads",

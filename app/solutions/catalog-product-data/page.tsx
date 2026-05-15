@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/solutions/catalog-product-data",
   },
+    twitter: {
+    card: "summary_large_image",
+    title: "Catalog & Product Data Operations | Professional ITS",
+    description:
+      "High-SKU catalog builds, attribute structuring, bulk uploads, deduplication, and ongoing maintenance.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 const includes = [

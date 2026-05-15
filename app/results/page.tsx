@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Results – Client Outcomes",
   description:
-    "Real outcomes from 1,500+ e-commerce stores. 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce",
+    "1,500 e-commerce stores served, 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce",
   alternates: {
     canonical: "https://professionalits.com/results",
   },
@@ -25,6 +25,13 @@ export const metadata: Metadata = {
         alt: "Professional ITS",
       },
     ],
+  },
+   twitter: {
+    card: "summary_large_image",
+    title: "Results – E-Commerce Back-Office Services",
+    description:
+      "1500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS",
+    images: ["https://professionalits.com/og-image.png"],
   },
 };
 
@@ -168,8 +175,7 @@ export default function ResultsPage() {
             maxWidth: "560px",
           }}
         >
-          Detailed case studies coming soon. In the meantime — the outcomes our
-          clients tell us about, and the numbers behind them.
+          The outcomes our clients tell us about, and the numbers behind them.
         </p>
       </div>
 

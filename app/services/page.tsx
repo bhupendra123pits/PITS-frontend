@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/services",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services - E-Commerce Execution Services | Professional ITS",
+    description:
+      "Product data management, bulk product uploads, attribute structuring, image processing, and order & inventory support. Execution services for e-commerce businesses.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 const nums = ["01", "02", "03", "04", "05"];

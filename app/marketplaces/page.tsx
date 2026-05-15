@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/marketplaces",
   },
+   twitter: {
+    card: "summary_large_image",
+    title: "Marketplaces - Professional ITS",
+    description:
+      "Seller Central specialists for Amazon, eBay, Walmart, Etsy, BestBuy, Newegg, Houzz, Rakuten, and Poshmark. Listing, Buy Box, and catalog operations.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 const marketplaces = [

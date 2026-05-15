@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/platforms",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "E-Commerce Platforms We Support | Professional ITS",
+    description:
+      "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 export default function PlatformsPage() {

@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/solutions/high-sku-scaling",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "High-SKU Catalog Scaling | Professional ITS",
+    description:
+      "Scale to 500,000+ SKUs without scaling headcount. Built for distributors, wholesalers, and multi-brand sellers. New product lines, seasonal launches, supplier integrations.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 const forWho = [

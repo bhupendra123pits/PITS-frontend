@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/solutions/product-data-cleanup",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Data Cleanup & Optimisation | Professional ITS",
+    description:
+      "Audit, deduplicate, enrich, and restructure your product data at any scale — whether it's 200 SKUs or 200,000. Flat files, feeds, and direct platform uploads.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 const problems = [

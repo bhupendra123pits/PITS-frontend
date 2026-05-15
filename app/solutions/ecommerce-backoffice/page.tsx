@@ -4,11 +4,11 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Backoffice Management",
+  title: "E-commerce back-office Management",
   description:
     "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
   openGraph: {
-    title: "Ecommerce Backoffice Management – Professional ITS",
+    title: "E-commerce back-office Management – Professional ITS",
     description: "Customer support, order processing, inventory monitoring, repricing — on an SLA you can hold us to.",
     url: "https://professionalits.com/solutions/ecommerce-backoffice",
     siteName: "Professional ITS",
@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://professionalits.com/solutions/ecommerce-backoffice",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "E-commerce back-office Management | Professional ITS",
+    description:
+      "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
+    images: ["https://professionalits.com/og-image.png"],
   },
 };
 
@@ -54,7 +61,7 @@ export default function EcommerceBackofficePage() {
       <div style={{ background: "#F5F0E8", padding: "48px 32px 40px", borderBottom: "0.5px solid #D5C9B0" }}>
         <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
           <Link href="/solutions" style={{ color: "#888780", textDecoration: "none" }}>Solutions</Link>
-          <span style={{ color: "#2D6A4F" }}> / Ecommerce Backoffice</span>
+          <span style={{ color: "#2D6A4F" }}> / E-commerce back-office</span>
         </div>
          <div
           style={{
@@ -66,7 +73,7 @@ export default function EcommerceBackofficePage() {
             marginTop: "10px",
           }}
         >
-          ECOMMERCE BACKOFFICE
+          E-commerce back-office
         </div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "36px", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "14px" }}>
           Your full back-office. <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>Handled.</em>

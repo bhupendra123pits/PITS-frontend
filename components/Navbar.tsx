@@ -16,7 +16,7 @@ const solutionLinks = [
     href: "/solutions/marketplace-operations",
   },
   {
-    title: "Ecommerce backoffice",
+    title: "E-commerce back-office",
     sub: "Support, orders, inventory",
     href: "/solutions/ecommerce-backoffice",
   },

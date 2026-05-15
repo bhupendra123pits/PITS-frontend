@@ -35,6 +35,12 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://professionalits.com/platforms/${slug}`,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${p.name} Back-Office Services | Professional ITS`,
+      description: p.description,
+      images: ["https://professionalits.com/og-image.png"],
+    },
   };
 }
 

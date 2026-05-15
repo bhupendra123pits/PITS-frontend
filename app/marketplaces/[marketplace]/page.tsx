@@ -33,6 +33,12 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://professionalits.com/marketplaces/${slug}`,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${m.name} Marketplace Services | Professional ITS`,
+      description: m.description,
+      images: ["https://professionalits.com/og-image.png"],
+    },
   };
 }
 

@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/audit",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Catalog Audit | Professional ITS",
+    description:
+      "We review 50 of your SKUs and deliver a written findings report. No credit card. No commitment. No sales pitch.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 export default function AuditPage() {
