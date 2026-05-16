@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pricing – E-Commerce Back-Office Services",
     description:
-      "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50, monthly retainers from $400, and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
+      "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50 monthly retainers from $400 and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
     url: "https://professionalits.com/pricing",
     siteName: "Professional ITS",
     type: "website",
@@ -26,6 +26,13 @@ export const metadata: Metadata = {
         alt: "Professional ITS",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing – E-Commerce Back-Office Services",
+    description:
+      "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50 monthly retainers from $400 and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
+    images: ["https://professionalits.com/og-image.png"],
   },
 };
 

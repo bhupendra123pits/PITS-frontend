@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://professionalits.com/terms",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service – Professional ITS",
+    description:
+      "Terms governing your use of the Professional ITS website and services.",
+    images: ["https://professionalits.com/og-image.png"],
+  },
 };
 
 const sections = [

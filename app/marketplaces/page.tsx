@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Marketplaces – Professional ITS",
     description:
-      "Dedicated specialists for every major marketplace. Listings, Buy Box, account health — handled.",
+      "Seller Central specialists for Amazon eBay Walmart Etsy BestBuy Newegg Houzz Rakuten and Poshmark. Listing Buy Box and catalog operations.",
     url: "https://professionalits.com/marketplaces",
     siteName: "Professional ITS",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Marketplaces - Professional ITS",
     description:
-      "Seller Central specialists for Amazon, eBay, Walmart, Etsy, BestBuy, Newegg, Houzz, Rakuten, and Poshmark. Listing, Buy Box, and catalog operations.",
+      "Seller Central specialists for Amazon eBay Walmart Etsy BestBuy Newegg Houzz Rakuten and Poshmark. Listing Buy Box and catalog operations.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };

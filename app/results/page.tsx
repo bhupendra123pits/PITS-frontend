@@ -6,14 +6,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Results – Client Outcomes",
   description:
-    "1,500 e-commerce stores served, 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce",
+    "1500+ E-commerce stores served, 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce",
   alternates: {
     canonical: "https://professionalits.com/results",
   },
   openGraph: {
-    title: "Results – Professional ITS",
+    title: "Results – E-Commerce Back-Office",
     description:
-      "500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
+      "1500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
     url: "https://professionalits.com/results",
     siteName: "Professional ITS",
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
    twitter: {
     card: "summary_large_image",
-    title: "Results – E-Commerce Back-Office Services",
+    title: "Results – E-Commerce Back-Office",
     description:
       "1500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS",
     images: ["https://professionalits.com/og-image.png"],

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Product Data Cleanup & Optimisation – Professional ITS",
     description:
-      "We audit, deduplicate, enrich, and restructure your product data at any scale.",
+      "We audit deduplicate enrich and restructure your product data at any scale.",
     url: "https://professionalits.com/solutions/product-data-cleanup",
     siteName: "Professional ITS",
     type: "website",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Data Cleanup & Optimisation | Professional ITS",
+    title: "Product Data Cleanup & Optimisation – Professional ITS",
     description:
-      "Audit, deduplicate, enrich, and restructure your product data at any scale — whether it's 200 SKUs or 200,000. Flat files, feeds, and direct platform uploads.",
+      "We audit deduplicate enrich and restructure your product data at any scale.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };

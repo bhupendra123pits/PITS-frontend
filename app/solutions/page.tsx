@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Solutions – Professional ITS",
     description:
-      "End-to-end e-commerce solutions handled by specialists. From catalog builds to marketplace operations.",
+      "End-to-end E-commerce solutions handled by specialists. From catalog builds to marketplace operations.",
     url: "https://professionalits.com/solutions",
     siteName: "Professional ITS",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Solutions - Professional ITS",
     description:
-      "End-to-end e-commerce solutions handled by specialists. From catalog builds to marketplace operations.",
+      "End-to-end E-commerce solutions handled by specialists. From catalog builds to marketplace operations.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };

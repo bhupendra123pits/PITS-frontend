@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "High-SKU catalog builds, product data enrichment, attribute structuring, and bulk uploads. AI-assisted processing for faster turnaround without sacrificing accuracy.",
   openGraph: {
     title: "Catalog & Product Data Operations – Professional ITS",
-    description: "High-SKU catalog builds, enrichment, attribute structuring, and bulk uploads. AI-assisted.",
+    description: "High-SKU catalog builds enrichment attribute structuring and bulk uploads. AI-assisted.",
     url: "https://professionalits.com/solutions/catalog-product-data",
     siteName: "Professional ITS",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Catalog & Product Data Operations | Professional ITS",
     description:
-      "High-SKU catalog builds, attribute structuring, bulk uploads, deduplication, and ongoing maintenance.",
+      "High-SKU catalog builds enrichment attribute structuring and bulk uploads. AI-assisted.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };

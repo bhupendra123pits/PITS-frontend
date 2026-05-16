@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog — E-Commerce Operations Insights | Professional ITS",
     description:
-      "Practical guides and insights on catalog management, marketplace operations, and e-commerce back-office — from the team at Professional ITS.",
+      "Practical guides and insights on catalog management marketplace operations and e-commerce back-office — from the team at Professional ITS.",
     url: "https://professionalits.com/blog",
     siteName: "Professional ITS",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blog — E-Commerce Operations Insights | Professional ITS",
     description:
-      "Practical guides and insights on catalog management, marketplace operations, and e-commerce back-office — from the team at Professional ITS.",
+      "Practical guides and insights on catalog management marketplace operations and e-commerce back-office — from the team at Professional ITS.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };

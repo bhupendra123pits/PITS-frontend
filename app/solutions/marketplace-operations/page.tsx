@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Marketplace Operations – Professional ITS",
     description:
-      "Listing optimisation, Buy Box strategy, and competitor intelligence across Amazon, eBay, and Walmart.",
+      "Listing optimisation Buy Box strategy and competitor intelligence across Amazon eBay and Walmart.",
     url: "https://professionalits.com/solutions/marketplace-operations",
     siteName: "Professional ITS",
     type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Marketplace Operations | Professional ITS",
     description:
-      "Listing optimisation, Buy Box strategy, suppressed listing management, and competitor intelligence across Amazon, eBay, and Walmart.",
+      "Listing optimisation Buy Box strategy and competitor intelligence across Amazon eBay and Walmart.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };

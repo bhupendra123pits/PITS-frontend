@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Built for distributors, wholesalers, and multi-brand sellers. Scale your catalog to 500,000+ SKUs without scaling headcount. New product lines, seasonal launches, supplier integrations.",
   openGraph: {
     title: "High-SKU Catalog Scaling – Professional ITS",
-    description: "Scale to 500,000 SKUs without scaling headcount. Built for distributors and wholesalers.",
+    description: "Scale to 500,000+ SKUs without scaling headcount. Built for distributors and wholesalers.",
     url: "https://professionalits.com/solutions/high-sku-scaling",
     siteName: "Professional ITS",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "High-SKU Catalog Scaling | Professional ITS",
     description:
-      "Scale to 500,000+ SKUs without scaling headcount. Built for distributors, wholesalers, and multi-brand sellers. New product lines, seasonal launches, supplier integrations.",
+      "Scale to 500,000+ SKUs without scaling headcount. Built for distributors and wholesalers.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };

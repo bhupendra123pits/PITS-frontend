@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
   openGraph: {
     title: "E-commerce back-office Management – Professional ITS",
-    description: "Customer support, order processing, inventory monitoring, repricing — on an SLA you can hold us to.",
+    description: "Customer support order processing inventory monitoring repricing — on an SLA you can hold us to.",
     url: "https://professionalits.com/solutions/ecommerce-backoffice",
     siteName: "Professional ITS",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "E-commerce back-office Management | Professional ITS",
     description:
-      "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
+      "Customer support order processing inventory monitoring repricing — on an SLA you can hold us to.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };

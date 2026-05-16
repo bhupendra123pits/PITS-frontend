@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services - E-Commerce Execution Services | Professional ITS",
+    title: "Services – Professional ITS",
     description:
-      "Product data management, bulk product uploads, attribute structuring, image processing, and order & inventory support. Execution services for e-commerce businesses.",
+      "Execution services for e-commerce businesses. Available standalone or as a managed retainer.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };

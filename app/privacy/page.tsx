@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "How Professional ITS collects, uses, and protects the information you share with us.",
   openGraph: {
     title: "Privacy Policy – Professional ITS",
-    description: "How Professional ITS collects, uses, and protects the information you share with us.",
+    description: "How Professional ITS collects uses and protects the information you share with us.",
     url: "https://professionalits.com/privacy",
     siteName: "Professional ITS",
     type: "website",
@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://professionalits.com/privacy",
+  },
+   twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy – Professional ITS",
+    description:
+      "How Professional ITS collects uses and protects the information you share with us.",
+    images: ["https://professionalits.com/og-image.png"],
   },
 };
 

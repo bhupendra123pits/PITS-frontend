@@ -7,7 +7,7 @@ import { platforms } from "@/lib/platforms";
 export const metadata: Metadata = {
   title: "ECommerce Platforms We Support",
   description:
-    "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009",
+    "Back-office operations for Shopify BigCommerce WooCommerce Magento OpenCart and Volusion. Platform specialists since 2009",
   openGraph: {
     title: "Platforms We Support – Professional ITS",
     description: "Platform-specific back-office services for every major marketplace.",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "E-Commerce Platforms We Support | Professional ITS",
+    title: "Platforms We Support – Professional ITS",
     description:
-      "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009.",
+      "Platform-specific back-office services for every major marketplace..",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
