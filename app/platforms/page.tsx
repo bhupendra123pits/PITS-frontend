@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Platforms We Support – Professional ITS",
     description:
-      "Platform-specific back-office services for every major marketplace..",
+      "Platform-specific back-office services for every major marketplace.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -49,18 +49,44 @@ export default function PlatformsPage() {
             marginTop: "10px",
           }}
         >
-          ALL PLATFORMS
+          PLATFORMS
         </div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "34px", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "12px" }}>
           Every platform you sell on, <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>covered.</em>
         </h1>
-        <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.7, maxWidth: "560px" }}>
+        <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.7, maxWidth: "560px", marginBottom: "28px" }}>
           We have dedicated specialists for each major marketplace — not generalists who handle everything. Select your platform to see exactly what we do.
         </p>
+        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+          <Link href="/audit" style={{ background: "#2D6A4F", color: "#fff", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none" }}>
+            Get free catalog audit
+          </Link>
+          <Link href="/pricing" style={{ border: "0.5px solid #B4B2A9", color: "#555550", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", textDecoration: "none" }}>
+            View pricing
+          </Link>
+        </div>
+      </div>
+
+       <div style={{ background: "#2D6A4F", padding: "20px 32px", display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
+        {[
+          { n: "9", l: "Marketplaces covered" },
+          { n: "3x", l: "Avg. visibility lift" },
+          { n: "1500+", l: "Stores managed" },
+          { n: "17 yrs", l: "Marketplace experience" },
+        ].map((s) => (
+          <div key={s.l} style={{ textAlign: "center" }}>
+            <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>{s.n}</div>
+            <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.7)", marginTop: "2px" }}>{s.l}</div>
+          </div>
+        ))}
       </div>
 
       {/* ── PLATFORMS GRID ── */}
       <section style={{ padding: "56px 32px" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "10px" }}>ALL PLATFORMS</div>
+        <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 500, color: "#1C1C1C", marginBottom: "36px" }}>
+          Seven platforms. Dedicated specialists.
+        </h2>
         <style>{`
           .platforms-grid {
             display: grid;
@@ -99,6 +125,22 @@ export default function PlatformsPage() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+       {/* ── PRICING NOTE ── */}
+      <section style={{ padding: "32px", background: "#E8F5EE", borderTop: "0.5px solid #9FE1CB", borderBottom: "0.5px solid #9FE1CB" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "20px" }}>
+          <div>
+            <div style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#085041", marginBottom: "6px" }}>
+              From $0.50 per SKU · Retainers from $400/month
+            </div>
+            <div style={{ fontSize: "13px", color: "#0F6E56", lineHeight: 1.6 }}>
+              All services available standalone or bundled. Volume discounts for 500+ SKUs. No long contracts.
+            </div>
+          </div>
+          <Link href="/pricing" style={{ background: "#2D6A4F", color: "#fff", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>
+            View full pricing
+          </Link>
         </div>
       </section>
 

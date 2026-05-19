@@ -49,9 +49,9 @@ const marketplaces = [
     color: "#E53238",
     href: "/marketplaces/ebay",
     sub: "Listings, Promoted Ads, store",
-    tagline: "Cassini-optimised listings and store management to maximise visibility and conversion.",
+    tagline: "Cassini-optimized listings and store management to maximized visibility and conversion.",
     services: [
-      "Cassini-optimised listing creation",
+      "Cassini-optimized listing creation",
       "Item Specifics and category structuring",
       "Store design and category management",
       "Promoted Listings setup and management",
@@ -154,7 +154,7 @@ const marketplaces = [
     color: "#CF1E55",
     href: "/marketplaces/poshmark",
     sub: "Closet, listings, engagement",
-    tagline: "Algorithm-optimised closet management, listing creation, and community engagement.",
+    tagline: "Algorithm-optimized closet management, listing creation, and community engagement.",
     services: [
       "Closet setup and brand profile optimisation",
       "Listing creation with Poshmark SEO — titles, descriptions, hashtags",
@@ -195,7 +195,7 @@ export default function MarketplacesPage() {
             marginTop: "10px",
           }}
         >
-          ALL MARKETPLACE
+          MARKETPLACES
         </div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "14px" }}>
           Every marketplace you sell on,{" "}
@@ -219,7 +219,7 @@ export default function MarketplacesPage() {
         {[
           { n: "9", l: "Marketplaces covered" },
           { n: "3x", l: "Avg. visibility lift" },
-          { n: "500+", l: "Stores managed" },
+          { n: "1500+", l: "Stores managed" },
           { n: "17 yrs", l: "Marketplace experience" },
         ].map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>
@@ -278,6 +278,22 @@ export default function MarketplacesPage() {
             </div>
           </Link>
         ))}
+      </section>
+       {/* ── PRICING NOTE ── */}
+      <section style={{ padding: "32px", background: "#E8F5EE", borderTop: "0.5px solid #9FE1CB", borderBottom: "0.5px solid #9FE1CB" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "20px" }}>
+          <div>
+            <div style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#085041", marginBottom: "6px" }}>
+              From $0.50 per SKU · Retainers from $400/month
+            </div>
+            <div style={{ fontSize: "13px", color: "#0F6E56", lineHeight: 1.6 }}>
+              All services available standalone or bundled. Volume discounts for 500+ SKUs. No long contracts.
+            </div>
+          </div>
+          <Link href="/pricing" style={{ background: "#2D6A4F", color: "#fff", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>
+            View full pricing
+          </Link>
+        </div>
       </section>
 
       {/* ── CTA ── */}

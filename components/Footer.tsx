@@ -234,7 +234,7 @@ export default function Footer() {
               textDecoration: "none",
             }}
           >
-            Get Free catalog audit →
+            Get free catalog audit
           </Link>
         </div>
 

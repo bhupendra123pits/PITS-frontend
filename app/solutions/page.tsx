@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
      twitter: {
     card: "summary_large_image",
-    title: "Solutions - Professional ITS",
+    title: "Solutions – Professional ITS",
     description:
-      "End-to-end E-commerce solutions handled by specialists. From catalog builds to marketplace operations.",
+      "End-to-end e-commerce solutions handled by specialists. From catalog builds to marketplace operations.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -234,6 +234,23 @@ export default function SolutionsPage() {
             </div>
           </Link>
         ))}
+      </section>
+
+       {/* ── PRICING NOTE ── */}
+      <section style={{ padding: "32px", background: "#E8F5EE", borderTop: "0.5px solid #9FE1CB", borderBottom: "0.5px solid #9FE1CB" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "20px" }}>
+          <div>
+            <div style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#085041", marginBottom: "6px" }}>
+              From $0.50 per SKU · Retainers from $400/month
+            </div>
+            <div style={{ fontSize: "13px", color: "#0F6E56", lineHeight: 1.6 }}>
+              All services available standalone or bundled. Volume discounts for 500+ SKUs. No long contracts.
+            </div>
+          </div>
+          <Link href="/pricing" style={{ background: "#2D6A4F", color: "#fff", padding: "12px 24px", borderRadius: "4px", fontSize: "13px", fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}>
+            View full pricing
+          </Link>
+        </div>
       </section>
 
       {/* ── CTA ── */}

@@ -85,7 +85,7 @@ export default function ServicesPage() {
         {[
           { n: "5", l: "Core execution services" },
           { n: "99.1%", l: "Data accuracy rate" },
-          { n: "500+", l: "SKUs per day" },
+          { n: "2000+", l: "SKUs per day" },
           { n: "17 yrs", l: "Operations experience" },
         ].map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>
@@ -175,7 +175,7 @@ export default function ServicesPage() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "20px" }}>
           <div>
             <div style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 500, color: "#085041", marginBottom: "6px" }}>
-              From $0.50 per SKU · Retainers from $350/month
+              From $0.50 per SKU · Retainers from $400/month
             </div>
             <div style={{ fontSize: "13px", color: "#0F6E56", lineHeight: 1.6 }}>
               All services available standalone or bundled. Volume discounts for 500+ SKUs. No long contracts.
