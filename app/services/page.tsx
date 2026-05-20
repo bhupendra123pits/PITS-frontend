@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description:
     "Product data management, bulk product uploads, attribute structuring, image processing, and order & inventory support. Execution services for e-commerce businesses.",
   openGraph: {
-    title: "Services – Professional ITS",
-    description: "Execution services for e-commerce businesses. Available standalone or as a managed retainer.",
+    title: "Services – E-Commerce Execution Services | Professional ITS",
+    description: "Product data management, bulk product uploads, attribute structuring, image processing, and order & inventory support. Execution services for e-commerce businesses.",
     url: "https://professionalits.com/services",
     siteName: "Professional ITS",
     type: "website",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services – Professional ITS",
+    title: "Services – E-Commerce Execution Services | Professional ITS",
     description:
-      "Execution services for e-commerce businesses. Available standalone or as a managed retainer.",
+      "Product data management, bulk product uploads, attribute structuring, image processing, and order & inventory support. Execution services for e-commerce businesses.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -44,6 +44,80 @@ export default function ServicesPage() {
   return (
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
       <Navbar />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            url: "https://professionalits.com/services",
+            name: "Services – E-Commerce Execution Services | Professional ITS",
+            description:
+              "Product data management, bulk product uploads, attribute structuring, image processing, and order & inventory support. Execution services for e-commerce businesses.",
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  item: {
+                    "@type": "Service",
+                    name: "Product Data Management",
+                    description: "End-to-end management of your product information.",
+                    url: "https://professionalits.com/services/product-data-management",
+                    provider: { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  item: {
+                    "@type": "Service",
+                    name: "Bulk Product Uploads",
+                    description: "High-volume uploads to any platform — fast and accurate.",
+                    url: "https://professionalits.com/services/bulk-product-uploads",
+                    provider: { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  item: {
+                    "@type": "Service",
+                    name: "Attribute & Filter Structuring",
+                    description: "Structured attributes for search visibility and filter accuracy.",
+                    url: "https://professionalits.com/services/attribute-filter-structuring",
+                    provider: { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  position: 4,
+                  item: {
+                    "@type": "Service",
+                    name: "Image Processing & Enrichment",
+                    description: "Marketplace-compliant images, processed at scale.",
+                    url: "https://professionalits.com/services/image-processing-enrichment",
+                    provider: { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  position: 5,
+                  item: {
+                    "@type": "Service",
+                    name: "Order & Inventory Support",
+                    description: "Order processing and inventory management — on an SLA.",
+                    url: "https://professionalits.com/services/order-inventory-support",
+                    provider: { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+              ],
+            },
+          }),
+        }}
+      />
 
       {/* ── HERO ── */}
       <div style={{ background: "#F5F0E8", padding: "48px 32px 40px", borderBottom: "0.5px solid #D5C9B0" }}>
@@ -85,7 +159,7 @@ export default function ServicesPage() {
         {[
           { n: "5", l: "Core execution services" },
           { n: "99.1%", l: "Data accuracy rate" },
-          { n: "2000+", l: "SKUs per day" },
+          { n: "2000+", l: "SKUs processed daily" },
           { n: "17 yrs", l: "Operations experience" },
         ].map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>

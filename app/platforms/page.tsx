@@ -7,10 +7,10 @@ import { platforms } from "@/lib/platforms";
 export const metadata: Metadata = {
   title: "ECommerce Platforms We Support",
   description:
-    "Back-office operations for Shopify BigCommerce WooCommerce Magento OpenCart and Volusion. Platform specialists since 2009",
+    "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009.",
   openGraph: {
-    title: "Platforms We Support – Professional ITS",
-    description: "Platform-specific back-office services for every major marketplace.",
+    title: "ECommerce Platforms We Support | Professional ITS",
+    description: "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009.",
     url: "https://professionalits.com/platforms",
     siteName: "Professional ITS",
     type: "website",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Platforms We Support – Professional ITS",
+    title: "ECommerce Platforms We Support | Professional ITS",
     description:
-      "Platform-specific back-office services for every major marketplace.",
+      "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -32,6 +32,31 @@ export default function PlatformsPage() {
   return (
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
       <Navbar />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            url: "https://professionalits.com/platforms",
+            name: "ECommerce Platforms We Support | Professional ITS",
+            description:
+              "Back-office operations for Shopify, BigCommerce, WooCommerce, Magento, OpenCart, and Volusion. Platform specialists since 2009.",
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, url: "https://professionalits.com/platforms/shopify", name: "Shopify" },
+                { "@type": "ListItem", position: 2, url: "https://professionalits.com/platforms/bigcommerce", name: "BigCommerce" },
+                { "@type": "ListItem", position: 3, url: "https://professionalits.com/platforms/woocommerce", name: "WooCommerce" },
+                { "@type": "ListItem", position: 4, url: "https://professionalits.com/platforms/magento", name: "Magento" },
+                { "@type": "ListItem", position: 5, url: "https://professionalits.com/platforms/opencart", name: "OpenCart" },
+                { "@type": "ListItem", position: 6, url: "https://professionalits.com/platforms/volusion", name: "Volusion" },
+              ],
+            },
+          }),
+        }}
+      />
 
       {/* ── HERO ── */}
       <div style={{ background: "#F5F0E8", padding: "48px 32px 40px", borderBottom: "0.5px solid #D5C9B0" }}>
@@ -69,10 +94,10 @@ export default function PlatformsPage() {
 
        <div style={{ background: "#2D6A4F", padding: "20px 32px", display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
         {[
-          { n: "9", l: "Marketplaces covered" },
+          { n: "6", l: "Platforms covered" },
           { n: "3x", l: "Avg. visibility lift" },
           { n: "1500+", l: "Stores managed" },
-          { n: "17 yrs", l: "Marketplace experience" },
+          { n: "17 yrs", l: "Platform experience" },
         ].map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>
             <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>{s.n}</div>
@@ -85,7 +110,7 @@ export default function PlatformsPage() {
       <section style={{ padding: "56px 32px" }}>
         <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "10px" }}>ALL PLATFORMS</div>
         <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 500, color: "#1C1C1C", marginBottom: "36px" }}>
-          Seven platforms. Dedicated specialists.
+          Six platforms. Dedicated specialists.
         </h2>
         <style>{`
           .platforms-grid {
@@ -107,7 +132,7 @@ export default function PlatformsPage() {
             <Link key={p.slug} href={`/platforms/${p.slug}`} style={{ textDecoration: "none" }}>
               <div className="platform-card" style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "24px", transition: "border-color 0.15s", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div>
-                  <div style={{ fontSize: "18px", fontWeight: 600, color: p.color, marginBottom: "10px" }}>{p.name}</div>
+                  <h3 style={{ fontSize: "18px", fontWeight: 600, color: p.color, marginBottom: "10px", marginTop: 0 }}>{p.name}</h3>
                   <div style={{ fontSize: "13px", color: "#555550", lineHeight: 1.6, marginBottom: "16px" }}>{p.tagline}</div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "20px" }}>
                     {p.services.slice(0, 3).map((s) => (

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pricing – E-Commerce Back-Office Services",
     description:
-      "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50 monthly retainers from $400 and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
+      "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50, monthly retainers from $400, and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
     url: "https://professionalits.com/pricing",
     siteName: "Professional ITS",
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pricing – E-Commerce Back-Office Services",
     description:
-      "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50 monthly retainers from $400 and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
+      "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50, monthly retainers from $400, and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -77,9 +77,9 @@ export default function PricingPage() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             url: "https://professionalits.com/pricing",
-            name: "Pricing — Ecommerce Outsourcing Services | Professional ITS",
+            name: "Pricing — Ecommerce Back-Office Services | Professional ITS",
             description:
-              "Transparent ecommerce outsourcing pricing. Per-SKU catalog services from $0.50, monthly retainers from 40 hrs, VAs from $200/week.",
+              "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50, monthly retainers from $400, and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
             mainEntity: {
               "@type": "Offer",
               name: "Ecommerce Back-Office Services",
@@ -105,6 +105,54 @@ export default function PricingPage() {
                 },
                 {
                   "@type": "UnitPriceSpecification",
+                  name: "Listing optimisation",
+                  price: "1.50",
+                  priceCurrency: "USD",
+                  unitText: "per SKU",
+                  minPrice: "1.50",
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  name: "AI-assisted writing",
+                  price: "1.00",
+                  priceCurrency: "USD",
+                  unitText: "per SKU",
+                  minPrice: "1.00",
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  name: "Catalog enrichment",
+                  price: "1.50",
+                  priceCurrency: "USD",
+                  unitText: "per SKU",
+                  minPrice: "1.50",
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  name: "Starter retainer",
+                  price: "400.00",
+                  priceCurrency: "USD",
+                  unitText: "per month",
+                  minPrice: "400.00",
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  name: "Growth retainer",
+                  price: "720.00",
+                  priceCurrency: "USD",
+                  unitText: "per month",
+                  minPrice: "720.00",
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  name: "Scale retainer",
+                  price: "1200.00",
+                  priceCurrency: "USD",
+                  unitText: "per month",
+                  minPrice: "1200.00",
+                },
+                {
+                  "@type": "UnitPriceSpecification",
                   name: "Part-time VA (20 hrs/wk)",
                   price: "200.00",
                   priceCurrency: "USD",
@@ -121,6 +169,82 @@ export default function PricingPage() {
                 },
               ],
             },
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What's the difference between a retainer and a virtual assistant?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "A monthly retainer is a managed engagement. We direct the work, deliver weekly reports, and you have a dedicated account contact. Best when you want operational outcomes without managing the day-to-day. A virtual assistant is a dedicated specialist. You direct the work; the VA executes against your priorities. Best when you have your own playbook and want a teammate, not a service. At equivalent volume (e.g., 80 hr/month), the retainer and full-time VA cost roughly the same per hour. The choice is about how much management you want to take on yourself.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Why is the Scale Retainer cheaper per hour than smaller retainers?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Volume discount, plus commitment. The Scale tier (160 hr/month + dedicated account manager) is our deepest engagement, so it earns the lowest per-hour rate ($7.50/hr). Smaller tiers price higher because they have less commitment behind them. This is standard B2B services pricing — commit more, save more per hour.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can I switch between pricing models?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "A per-SKU project that grows often becomes a monthly retainer. A part-time VA whose work expands often becomes full-time, or moves into a managed retainer. A retainer client running a one-off bulk migration may add per-SKU work alongside the regular engagement. There's no penalty for changing. We re-scope the engagement at the start of the next billing cycle.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Is there a minimum contract length?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. Every engagement is month-to-month with 30-day cancellation. Per-SKU work is invoiced monthly with no minimum at all. We don't believe in lock-in contracts — if we're not earning the renewal, we shouldn't get it.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What's the 7-day VA replacement guarantee?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "If the VA we assign isn't the right fit for your work in the first 7 days, we'll replace them at no additional cost. New onboarding starts immediately. The guarantee window is 7 calendar days from the VA's first working day on your account.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Are taxes included in the listed prices?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "US clients: typically no additional tax — services are exported from India and generally fall outside US sales tax scope. EU/UK clients: typically no VAT charged — for B2B engagements, reverse-charge rules apply and VAT is accounted for on your end. Indian clients: billed with GST as applicable. Other jurisdictions: confirmed at engagement start.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you support currencies other than USD?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We default to USD invoicing, but quotes in GBP, EUR, and AUD are available on request. The conversion rate is set at the start of each engagement and held for the duration — you won't pay more if exchange rates move against you mid-contract.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What if I need a custom scope that doesn't match these tiers?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most engagements over 200 hr/month or with specialized requirements (multi-language catalog work, senior platform specialists, dedicated team setups) are quoted custom. Tell us what you need via the contact form and we'll come back with a scoped proposal within 4 business hours.",
+                },
+              },
+            ],
           }),
         }}
       />
