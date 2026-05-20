@@ -63,7 +63,7 @@ export default function AboutPage() {
             "@type": "AboutPage",
             "url": "https://professionalits.com/about",
             "name": "About Professional ITS — 17 Years in Ecommerce Operations",
-            "description": "Professional ITS has operated exclusively in ecommerce back-office since 2009. Founder-led, India-based, globally trusted.",
+            "description": "Professional ITS has operated exclusively in e-commerce back-office since 2009. Founder-led, India-based, globally trusted.",
             "mainEntity": {
               "@type": "Organization",
               "@id": "https://professionalits.com/#organization",
@@ -75,7 +75,7 @@ export default function AboutPage() {
                 "minValue": 10,
                 "maxValue": 50
               },
-              "description": "Ecommerce back-office specialists since 2009. Founder-led, independently operated, delivering catalog and marketplace operations exclusively.",
+              "description": "E-commerce back-office specialists since 2009. Founder-led, independently operated, delivering catalog and marketplace operations exclusively.",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "87, Kailash Vihar, City Center",
@@ -83,6 +83,19 @@ export default function AboutPage() {
                 "addressRegion": "Madhya Pradesh",
                 "postalCode": "474002",
                 "addressCountry": "IN"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/professional-it-sols-pvt.-ltd.",
+                "https://x.com/ProITS_EcomTeam",
+                "https://www.facebook.com/professionalits/",
+                "https://www.instagram.com/professional_it_solution"
+              ],
+              "image": "https://professionalits.com/PITS_team.jpg",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://professionalits.com/PITS_Logo.png",
+                "width": 200,
+                "height": 60
               }
             }
           })
@@ -458,7 +471,7 @@ export default function AboutPage() {
           >
             <img
               src="/PITS_team.jpg"
-              alt="Team photo"
+              alt="Professional ITS operations team at the Gwalior, India delivery center"
               style={{
                 width: "100%",
                 height: "100%",
