@@ -356,7 +356,7 @@ export default function AuditPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Free Ecommerce Catalog Audit",
+            name: "Free E-commerce Catalog Audit",
             url: "https://professionalits.com/audit",
             provider: { "@id": "https://professionalits.com/#organization" },
             description:
@@ -494,6 +494,7 @@ export default function AuditPage() {
               style={inputStyle}
               name="name"
               type="text"
+              required
               placeholder="Your name"
               value={form.name}
               onChange={handleChange}
@@ -508,6 +509,7 @@ export default function AuditPage() {
               style={inputStyle}
               name="email"
               type="email"
+              required
               placeholder="you@yourstore.com"
               value={form.email}
               onChange={handleChange}
@@ -527,6 +529,7 @@ export default function AuditPage() {
               }}
               name="storeUrl"
               type="text"
+              required
               placeholder="www.yourstore.com"
               value={form.storeUrl}
               onChange={handleChange}
@@ -552,6 +555,7 @@ export default function AuditPage() {
             <select
               style={{ ...inputStyle, appearance: "none" as const }}
               name="primaryPlatform"
+              required
               value={form.primaryPlatform}
               onChange={handleChange}
             >

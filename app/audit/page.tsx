@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "We review 50 of your SKUs and deliver a written findings report. No credit card, no sales call, no commitment. Find out what we'd fix.",
   openGraph: {
-    title: "Free Catalog Audit – Professional ITS",
+    title: "Free Catalog Audit | Professional ITS",
     description:
       "Free 50-SKU audit. Written report in 48 hours. No credit card. No commitment.",
     url: "https://professionalits.com/audit",

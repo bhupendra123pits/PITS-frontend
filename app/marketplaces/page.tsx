@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   description:
     "Seller Central specialists for Amazon, eBay, Walmart, Etsy, BestBuy, Newegg, Houzz, Rakuten, and Poshmark. Listing, Buy Box, and catalog operations.",
   openGraph: {
-    title: "Marketplaces – Professional ITS",
+    title: "Marketplaces We Support | Professional ITS",
     description:
-      "Seller Central specialists for Amazon eBay Walmart Etsy BestBuy Newegg Houzz Rakuten and Poshmark. Listing Buy Box and catalog operations.",
+      "Seller Central specialists for Amazon, eBay, Walmart, Etsy, BestBuy, Newegg, Houzz, Rakuten, and Poshmark. Listing, Buy Box, and catalog operations.",
     url: "https://professionalits.com/marketplaces",
     siteName: "Professional ITS",
     type: "website",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
    twitter: {
     card: "summary_large_image",
-    title: "Marketplaces - Professional ITS",
+    title: "Marketplaces We Support | Professional ITS",
     description:
-      "Seller Central specialists for Amazon eBay Walmart Etsy BestBuy Newegg Houzz Rakuten and Poshmark. Listing Buy Box and catalog operations.",
+      "Seller Central specialists for Amazon, eBay, Walmart, Etsy, BestBuy, Newegg, Houzz, Rakuten, and Poshmark. Listing, Buy Box, and catalog operations.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -177,6 +177,32 @@ const CheckIcon = () => (
 export default function MarketplacesPage() {
   return (
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "url": "https://professionalits.com/marketplaces",
+            "name": "Marketplaces We Support | Professional ITS",
+            "description": "Seller Central specialists for Amazon, eBay, Walmart, Etsy, BestBuy, Newegg, Houzz, Rakuten, and Poshmark. Listing, Buy Box, and catalog operations.",
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "url": "https://professionalits.com/marketplaces/amazon", "name": "Amazon" },
+                { "@type": "ListItem", "position": 2, "url": "https://professionalits.com/marketplaces/ebay", "name": "eBay" },
+                { "@type": "ListItem", "position": 3, "url": "https://professionalits.com/marketplaces/walmart", "name": "Walmart" },
+                { "@type": "ListItem", "position": 4, "url": "https://professionalits.com/marketplaces/etsy", "name": "Etsy" },
+                { "@type": "ListItem", "position": 5, "url": "https://professionalits.com/marketplaces/bestbuy", "name": "BestBuy" },
+                { "@type": "ListItem", "position": 6, "url": "https://professionalits.com/marketplaces/newegg", "name": "Newegg" },
+                { "@type": "ListItem", "position": 7, "url": "https://professionalits.com/marketplaces/houzz", "name": "Houzz" },
+                { "@type": "ListItem", "position": 8, "url": "https://professionalits.com/marketplaces/rakuten", "name": "Rakuten" },
+                { "@type": "ListItem", "position": 9, "url": "https://professionalits.com/marketplaces/poshmark", "name": "Poshmark" },
+              ],
+            },
+          }),
+        }}
+      />
       <Navbar />
 
       {/* ── HERO ── */}
@@ -248,16 +274,16 @@ export default function MarketplacesPage() {
       <section className="mkt-page">
         <div style={{ fontSize: "10px", letterSpacing: "1.5px", color: "#2D6A4F", fontWeight: 500, marginBottom: "10px" }}>ALL MARKETPLACES</div>
         <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 500, color: "#1C1C1C", marginBottom: "36px" }}>
-          Nine platforms. Dedicated specialists.
+          Nine marketplaces. Dedicated specialists.
         </h2>
 
         {marketplaces.map((m) => (
           <Link key={m.name} href={m.href} className="mkt-card">
             {/* Left */}
             <div>
-              <div style={{ fontSize: "22px", fontWeight: 700, color: m.color, marginBottom: "4px", fontFamily: "var(--font-sans)" }}>
+              <h3 style={{ fontSize: "22px", fontWeight: 700, color: m.color, margin: "0 0 4px 0", fontFamily: "var(--font-sans)" }}>
                 {m.name}
-              </div>
+              </h3>
               <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>{m.sub}</div>
               <p style={{ fontSize: "13px", color: "#555550", lineHeight: 1.65, marginBottom: "20px" }}>
                 {m.tagline}

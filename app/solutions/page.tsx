@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   description:
     "Five solution areas for e-commerce operations: catalog, marketplace ops, back-office, data cleanup, high-SKU scaling. Tailored to your platform.",
   openGraph: {
-    title: "Solutions – Professional ITS",
+    title: "E-Commerce Back-Office Solutions | Professional ITS",
     description:
-      "End-to-end E-commerce solutions handled by specialists. From catalog builds to marketplace operations.",
+      "Five solution areas for e-commerce operations: catalog, marketplace ops, back-office, data cleanup, high-SKU scaling. Tailored to your platform.",
     url: "https://professionalits.com/solutions",
     siteName: "Professional ITS",
     type: "website",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
      twitter: {
     card: "summary_large_image",
-    title: "Solutions – Professional ITS",
+    title: "E-Commerce Back-Office Solutions | Professional ITS",
     description:
-      "End-to-end e-commerce solutions handled by specialists. From catalog builds to marketplace operations.",
+      "Five solution areas for e-commerce operations: catalog, marketplace ops, back-office, data cleanup, high-SKU scaling. Tailored to your platform.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -122,6 +122,78 @@ const CheckIcon = () => (
 export default function SolutionsPage() {
   return (
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "url": "https://professionalits.com/solutions",
+            "name": "E-Commerce Back-Office Solutions | Professional ITS",
+            "description": "Five solution areas for e-commerce operations: catalog, marketplace ops, back-office, data cleanup, high-SKU scaling. Tailored to your platform.",
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "item": {
+                    "@type": "Service",
+                    "name": "Catalog & Product Data Operations",
+                    "description": "Build, enrich, and maintain your product catalog at any scale.",
+                    "url": "https://professionalits.com/solutions/catalog-product-data",
+                    "provider": { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "item": {
+                    "@type": "Service",
+                    "name": "Marketplace Operations",
+                    "description": "Listing optimisation, Buy Box strategy, and competitor intelligence across every major marketplace.",
+                    "url": "https://professionalits.com/solutions/marketplace-operations",
+                    "provider": { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "item": {
+                    "@type": "Service",
+                    "name": "E-Commerce Back-Office Management",
+                    "description": "Customer support, order processing, and inventory monitoring — on an SLA you can hold us to.",
+                    "url": "https://professionalits.com/solutions/ecommerce-backoffice",
+                    "provider": { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "item": {
+                    "@type": "Service",
+                    "name": "Product Data Cleanup & Optimisation",
+                    "description": "Messy data costs you sales. We audit, deduplicate, enrich, and restructure at scale.",
+                    "url": "https://professionalits.com/solutions/product-data-cleanup",
+                    "provider": { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "item": {
+                    "@type": "Service",
+                    "name": "High-SKU Catalog Scaling",
+                    "description": "For distributors, wholesalers, and multi-brand sellers. Scale to 500,000+ SKUs without scaling headcount.",
+                    "url": "https://professionalits.com/solutions/high-sku-scaling",
+                    "provider": { "@id": "https://professionalits.com/#organization" },
+                  },
+                },
+              ],
+            },
+          }),
+        }}
+      />
       <Navbar />
 
       {/* ── HERO ── */}

@@ -77,14 +77,14 @@ export default function PricingPage() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             url: "https://professionalits.com/pricing",
-            name: "Pricing — Ecommerce Back-Office Services | Professional ITS",
+            name: "Pricing – E-Commerce Back-Office Services | Professional ITS",
             description:
               "Transparent pricing for e-commerce back-office services. Per-SKU catalog work from $0.50, monthly retainers from $400, and dedicated e-commerce specialists from $9/hour. No long-term contracts.",
             mainEntity: {
               "@type": "Offer",
-              name: "Ecommerce Back-Office Services",
+              name: "E-Commerce Back-Office Services",
               description:
-                "Per-SKU catalog services, monthly retainers, and dedicated ecommerce VAs.",
+                "Per-SKU catalog services, monthly retainers, and dedicated E-Commerce VAs.",
               seller: { "@id": "https://professionalits.com/#organization" },
               priceSpecification: [
                 {

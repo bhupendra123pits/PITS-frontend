@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Professional ITS",
+  title: "Frequently Asked Questions",
   description:
     "Common questions about Professional ITS — catalog size, SLAs, supported platforms and marketplaces, contracts, and getting started.",
   alternates: {
@@ -216,17 +216,17 @@ export default function FaqPage() {
               color: "#fff",
             }}
           >
-            <div
+            <h2
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "22px",
                 fontWeight: 500,
                 color: "#fff",
-                marginBottom: "10px",
+                marginBottom: "0 0 10px 0",
               }}
             >
               Ready to see what we&apos;d fix?
-            </div>
+            </h2>
             <p
               style={{
                 color: "rgba(255,255,255,0.85)",
@@ -266,17 +266,17 @@ export default function FaqPage() {
               padding: "32px",
             }}
           >
-            <div
+            <h2
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "22px",
                 fontWeight: 500,
                 color: "#1C1C1C",
-                marginBottom: "10px",
+                marginBottom: "0 0 10px 0",
               }}
             >
               Have a specific question?
-            </div>
+            </h2>
             <p
               style={{
                 fontSize: "13px",
