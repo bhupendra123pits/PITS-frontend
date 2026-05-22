@@ -243,19 +243,19 @@ export default function ContactClient() {
           <div style={{ marginBottom: "14px" }}>
             <label style={labelStyle}>Name <span style={{ color: "#2D6A4F" }}>*</span></label>
             <input style={inputStyle} name="name" type="text" placeholder="Your name"
-              value={form.name} onChange={handleChange} />
+              value={form.name} onChange={handleChange} required />
           </div>
 
           <div style={{ marginBottom: "14px" }}>
             <label style={labelStyle}>Email <span style={{ color: "#2D6A4F" }}>*</span></label>
             <input style={inputStyle} name="email" type="email" placeholder="you@yourstore.com"
-              value={form.email} onChange={handleChange} />
+              value={form.email} onChange={handleChange} required />
           </div>
 
           <div style={{ marginBottom: "14px" }}>
             <label style={labelStyle}>What are you inquiring about? <span style={{ color: "#2D6A4F" }}>*</span></label>
             <select style={{ ...inputStyle, appearance: "none" as const }} name="topic"
-              value={form.topic} onChange={handleChange}>
+              value={form.topic} onChange={handleChange} required>
               <option value="">Select a topic</option>
               {topics.map((t) => <option key={t}>{t}</option>)}
             </select>
@@ -363,7 +363,7 @@ export default function ContactClient() {
                   {c.icon}
                 </div>
                 <div>
-                  <div style={{ fontSize: "11px", color: "#888780", marginBottom: "2px" }}>{c.label}</div>
+                  <h3 style={{ fontSize: "13px", fontWeight: 600, color: "#1C1C1C", margin: "0 0 4px 0" }}>{c.label}</h3>
                   {c.label === "Office Address" ? (
                     <div style={{ fontSize: "13px", lineHeight: 1.65 }}>
                       <span style={{ fontWeight: 600, color: "#1C1C1C" }}>Professional ITS</span>
@@ -382,6 +382,8 @@ export default function ContactClient() {
             <div style={{ borderRadius: "8px", overflow: "hidden", border: "0.5px solid #D5C9B0", marginTop: "16px" }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.6613487636378!2d78.19056254107994!3d26.207692453695984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c432313ac96b%3A0x2333ef1bc802b789!2sProfessional%20ITS!5e0!3m2!1sen!2sin!4v1776878216706!5m2!1sen!2sin"
+                title="Professional ITS office location — 87 Kailash Vihar, City Center, Gwalior, M.P., India"
+                aria-label="Google Map showing Professional ITS office location in Gwalior, India"
                 width="100%"
                 height="140"
                 style={{ border: 0, display: "block" }}

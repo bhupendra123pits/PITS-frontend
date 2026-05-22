@@ -6,14 +6,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Results – Client Outcomes",
   description:
-    "1500+ E-commerce stores served, 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce",
+    "1,500+ E-commerce stores served, 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce.",
   alternates: {
     canonical: "https://professionalits.com/results",
   },
   openGraph: {
-    title: "Results – E-Commerce Back-Office",
+    title: "Results – Client Outcomes | Professional ITS",
     description:
-      "1500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS.",
+      "1,500+ E-commerce stores served, 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce.",
     url: "https://professionalits.com/results",
     siteName: "Professional ITS",
     type: "website",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
    twitter: {
     card: "summary_large_image",
-    title: "Results – E-Commerce Back-Office",
+    title: "Results – Client Outcomes | Professional ITS",
     description:
-      "1500+ stores served globally. 98% client retention rate. See what clients consistently experience with Professional ITS",
+      "1,500+ E-commerce stores served, 98% client retention, 4-hour SLA, 17 years of execution — exclusively in e-commerce.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -77,9 +77,9 @@ export default function ResultsPage() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             url: "https://professionalits.com/results",
-            name: "Client Results & Case Studies | Professional ITS",
+            name: "Results – Client Outcomes | Professional ITS",
             description:
-              "Real outcomes from 1,500+ ecommerce stores. 98% client retention, 4-hour SLA.",
+              "Real outcomes from 1,500+ e-commerce stores. 98% client retention, 4-hour SLA.",
             mainEntity: {
               "@type": "ItemList",
               name: "Client Results",
@@ -117,7 +117,7 @@ export default function ResultsPage() {
                     "@type": "Article",
                     name: "Manufacturer: raw spreadsheet to live marketplace in three weeks",
                     description:
-                      "A manufacturer entering ecommerce provided raw supplier data in Excel. Professional ITS mapped, cleaned, enriched, and uploaded 1,200 SKUs across Amazon, eBay, and WooCommerce within three weeks.",
+                      "A manufacturer entering e-commerce provided raw supplier data in Excel. Professional ITS mapped, cleaned, enriched, and uploaded 1,200 SKUs across Amazon, eBay, and WooCommerce within three weeks.",
                     author: {
                       "@id": "https://professionalits.com/#organization",
                     },
@@ -239,20 +239,21 @@ export default function ResultsPage() {
                 padding: "20px",
               }}
             >
-              <div
+              <h2
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontSize: "16px",
                   color: "#1C1C1C",
                   fontStyle: "italic",
                   lineHeight: 1.5,
-                  marginBottom: "12px",
+                  margin: "0 0 12px 0",
                   borderLeft: "3px solid #2D6A4F",
                   paddingLeft: "14px",
+                  fontWeight: "normal",
                 }}
               >
                 {r.quote}
-              </div>
+              </h2>
               <p
                 style={{
                   fontSize: "13px",
