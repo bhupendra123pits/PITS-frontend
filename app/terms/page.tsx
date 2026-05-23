@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Terms governing your use of the Professional ITS website and services.",
   openGraph: {
-    title: "Terms of Service – Professional ITS",
+    title: "Terms of Service | Professional ITS",
     description: "Terms governing your use of the Professional ITS website and services.",
     url: "https://professionalits.com/terms",
     siteName: "Professional ITS",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service – Professional ITS",
+    title: "Terms of Service | Professional ITS",
     description:
       "Terms governing your use of the Professional ITS website and services.",
     images: ["https://professionalits.com/og-image.png"],
@@ -96,8 +96,28 @@ const sections = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TermsOfService",
+  url: "https://professionalits.com/terms",
+  name: "Terms of Service | Professional ITS",
+  description:
+    "Terms governing your use of the Professional ITS website and services.",
+  datePublished: "2026-01-01",
+  dateModified: "2026-01-01",
+  inLanguage: "en-US",
+  publisher: {
+    "@id": "https://professionalits.com/#organization",
+  },
+};
+
 export default function TermsPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div
       style={{
         fontFamily: "var(--font-sans)",
@@ -132,7 +152,7 @@ export default function TermsPage() {
             marginTop: "10px",
           }}
         >
-          TERMS OF SERVICES
+          TERMS OF SERVICE
         </div>
         <h1
           style={{
@@ -233,5 +253,6 @@ export default function TermsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description:
     "How Professional ITS collects, uses, and protects the information you share with us.",
   openGraph: {
-    title: "Privacy Policy – Professional ITS",
-    description: "How Professional ITS collects uses and protects the information you share with us.",
+    title: "Privacy Policy | Professional ITS",
+    description: "How Professional ITS collects, uses, and protects the information you share with us.",
     url: "https://professionalits.com/privacy",
     siteName: "Professional ITS",
     type: "website",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
    twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy – Professional ITS",
+    title: "Privacy Policy | Professional ITS",
     description:
-      "How Professional ITS collects uses and protects the information you share with us.",
+      "How Professional ITS collects, uses, and protects the information you share with us.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -90,8 +90,28 @@ const sections = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "PrivacyPolicy",
+  url: "https://professionalits.com/privacy",
+  name: "Privacy Policy | Professional ITS",
+  description:
+    "How Professional ITS collects, uses, and protects the information you share with us.",
+  datePublished: "2026-01-01",
+  dateModified: "2026-01-01",
+  inLanguage: "en-US",
+  publisher: {
+    "@id": "https://professionalits.com/#organization",
+  },
+};
+
 export default function PrivacyPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div
       style={{
         fontFamily: "var(--font-sans)",
@@ -226,5 +246,6 @@ export default function PrivacyPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
