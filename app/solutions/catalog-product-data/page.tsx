@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description:
     "High-SKU catalog builds, product data enrichment, attribute structuring, and bulk uploads. AI-assisted processing for faster turnaround without sacrificing accuracy.",
   openGraph: {
-    title: "Catalog & Product Data Operations – Professional ITS",
-    description: "High-SKU catalog builds enrichment attribute structuring and bulk uploads. AI-assisted.",
+    title: "Catalog & Product Data Operations | Professional ITS",
+    description: "High-SKU catalog builds, product data enrichment, attribute structuring, and bulk uploads. AI-assisted processing for faster turnaround without sacrificing accuracy.",
     url: "https://professionalits.com/solutions/catalog-product-data",
     siteName: "Professional ITS",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Catalog & Product Data Operations | Professional ITS",
     description:
-      "High-SKU catalog builds enrichment attribute structuring and bulk uploads. AI-assisted.",
+      "High-SKU catalog builds, product data enrichment, attribute structuring, and bulk uploads. AI-assisted processing for faster turnaround without sacrificing accuracy.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -52,14 +52,45 @@ const CheckIcon = () => (
   </div>
 );
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  url: "https://professionalits.com/solutions/catalog-product-data",
+  name: "Catalog & Product Data Operations",
+  description:
+    "High-SKU catalog builds, product data enrichment, attribute structuring, and bulk uploads. AI-assisted processing for faster turnaround without sacrificing accuracy.",
+  provider: { "@id": "https://professionalits.com/#organization" },
+  areaServed: ["US", "GB", "AU", "CA", "IN"],
+  serviceType: "E-Commerce Catalog Management",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Catalog & Product Data Operations Sub-Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bulk product uploads" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Attribute & filter structuring" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI-assisted enrichment" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Deduplication" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Supplier feed ingestion" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ongoing maintenance" } },
+    ],
+  },
+};
+
 export default function CatalogProductDataPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
       <Navbar />
 
       {/* ── HERO ── */}
       <div style={{ background: "#F5F0E8", padding: "48px 32px 40px", borderBottom: "0.5px solid #D5C9B0" }}>
         <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
+          <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>Home</Link>
+          <span> / </span>
           <Link href="/solutions" style={{ color: "#888780", textDecoration: "none" }}>Solutions</Link>
           <span style={{ color: "#2D6A4F" }}> / Catalog & Product Data</span>
         </div>
@@ -89,7 +120,7 @@ export default function CatalogProductDataPage() {
           { n: "99.1%", l: "Accuracy rate" },
           { n: "48hr", l: "Standard turnaround" },
           { n: "500K+", l: "SKUs processed" },
-          { n: "15yrs", l: "Operations experience" },
+          { n: "15yrs", l: "Catalog operations experience" },
         ].map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>
             <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>{s.n}</div>
@@ -151,7 +182,7 @@ export default function CatalogProductDataPage() {
         >
           <div style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "8px" }}>
             <CheckIcon />
-            <div style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C" }}>{item.title}</div>
+            <h3 style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C", margin: 0 }}>{item.title}</h3>
           </div>
           <div style={{ fontSize: "12px", color: "#555550", lineHeight: 1.6, paddingLeft: "28px" }}>
             {item.body}
@@ -172,7 +203,7 @@ export default function CatalogProductDataPage() {
           {steps.map((s, i) => (
             <div key={s.n} style={{ position: "relative" }}>
               <div style={{ fontFamily: "var(--font-serif)", fontSize: "36px", color: "#D5C9B0", fontWeight: 500, marginBottom: "12px" }}>{s.n}</div>
-              <div style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C", marginBottom: "8px" }}>{s.title}</div>
+              <h3 style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C", margin: "0 0 8px 0" }}>{s.title}</h3>
               <div style={{ fontSize: "12px", color: "#555550", lineHeight: 1.65 }}>{s.body}</div>
               {i < steps.length - 1 && (
                 <div style={{ position: "absolute", top: "20px", right: "-8px", fontSize: "20px", color: "#D5C9B0" }}>→</div>
@@ -247,5 +278,6 @@ export default function CatalogProductDataPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

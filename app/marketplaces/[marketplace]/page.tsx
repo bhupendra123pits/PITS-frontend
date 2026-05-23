@@ -103,6 +103,8 @@ export default async function MarketplacePage({
         <div
           style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}
         >
+          <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>Home</Link>
+          <span> / </span>
           <Link
             href="/marketplaces"
             style={{ color: "#888780", textDecoration: "none" }}

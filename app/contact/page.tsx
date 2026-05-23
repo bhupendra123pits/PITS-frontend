@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Talk to someone who knows the platforms. We respond within 4 hours on business days.",
   openGraph: {
     title: "Contact Us | Professional ITS",
-    description: "Talk to someone who knows the platforms. We respond within 4 hours on business days..",
+    description: "Talk to someone who knows the platforms. We respond within 4 hours on business days.",
     url: "https://professionalits.com/contact",
     siteName: "Professional ITS",
     type: "website",

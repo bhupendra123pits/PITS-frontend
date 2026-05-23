@@ -60,6 +60,8 @@ export default function EcommerceBackofficePage() {
       {/* ── HERO ── */}
       <div style={{ background: "#F5F0E8", padding: "48px 32px 40px", borderBottom: "0.5px solid #D5C9B0" }}>
         <div style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}>
+          <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>Home</Link>
+          <span> / </span>
           <Link href="/solutions" style={{ color: "#888780", textDecoration: "none" }}>Solutions</Link>
           <span style={{ color: "#2D6A4F" }}> / E-commerce back-office</span>
         </div>

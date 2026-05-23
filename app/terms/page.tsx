@@ -233,14 +233,15 @@ export default function TermsPage() {
                 <div style={{ fontWeight: 500, color: "#1C1C1C", marginBottom: "6px" }}>
                   Professional IT Sols Pvt. Ltd.
                 </div>
-                <div>Gwalior, Madhya Pradesh, India</div>
+                <div>87, Kailash Vihar, City Center</div>
+                <div>Gwalior M.P. INDIA 474002</div>
                 <div>
                   Email:{" "}
                   <a
-                    href="mailto:audit@professionalits.com"
+                    href="mailto:info@professionalits.com"
                     style={{ color: "#2D6A4F", textDecoration: "none" }}
                   >
-                    audit@professionalits.com
+                    info@professionalits.com
                   </a>
                 </div>
                 <div>US: +1 (732) 924-9050 · India: +91 98110 18501</div>
