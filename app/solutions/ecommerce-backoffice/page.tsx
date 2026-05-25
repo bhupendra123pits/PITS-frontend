@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description:
     "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
   openGraph: {
-    title: "E-commerce back-office Management – Professional ITS",
-    description: "Customer support order processing inventory monitoring repricing — on an SLA you can hold us to.",
+    title: "E-commerce back-office Management | Professional ITS",
+    description: "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
     url: "https://professionalits.com/solutions/ecommerce-backoffice",
     siteName: "Professional ITS",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "E-commerce back-office Management | Professional ITS",
     description:
-      "Customer support order processing inventory monitoring repricing — on an SLA you can hold us to.",
+      "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -52,8 +52,37 @@ const CheckIcon = () => (
   </div>
 );
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  url: "https://professionalits.com/solutions/ecommerce-backoffice",
+  name: "E-commerce back-office Management",
+  description:
+    "Customer support, order processing, inventory monitoring, repricing, and store maintenance. SLA-backed backoffice management that scales with your store.",
+  provider: { "@id": "https://professionalits.com/#organization" },
+  areaServed: ["US", "GB", "AU", "CA", "IN"],
+  serviceType: "E-Commerce Back-Office Management",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Back-Office Management Sub-Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Customer support" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Order processing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Inventory monitoring" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Repricing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Returns & refunds" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Store maintenance" } },
+    ],
+  },
+};
+
 export default function EcommerceBackofficePage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
       <Navbar />
 
@@ -180,7 +209,7 @@ export default function EcommerceBackofficePage() {
           {services.map((s) => (
             <div key={s.title} style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "24px" }}>
               <div style={{ fontSize: "24px", marginBottom: "12px" }}>{s.icon}</div>
-              <div style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C", marginBottom: "8px" }}>{s.title}</div>
+              <h3 style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C", marginBottom: "0 0 [N]px 0" }}>{s.title}</h3>
               <div style={{ fontSize: "12px", color: "#555550", lineHeight: 1.65 }}>{s.body}</div>
             </div>
           ))}
@@ -253,5 +282,6 @@ export default function EcommerceBackofficePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

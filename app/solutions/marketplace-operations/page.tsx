@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   description:
     "Amazon, eBay, Walmart, and more. Listing creation, optimisation, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
   openGraph: {
-    title: "Marketplace Operations – Professional ITS",
+    title: "Marketplace Operations | Professional ITS",
     description:
-      "Listing optimisation Buy Box strategy and competitor intelligence across Amazon eBay and Walmart.",
+      "Amazon, eBay, Walmart, and more. Listing creation, optimization, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
     url: "https://professionalits.com/solutions/marketplace-operations",
     siteName: "Professional ITS",
     type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Marketplace Operations | Professional ITS",
     description:
-      "Listing optimisation Buy Box strategy and competitor intelligence across Amazon eBay and Walmart.",
+      "Amazon, eBay, Walmart, and more. Listing creation, optimization, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -191,8 +191,40 @@ const CheckIcon = () => (
   </div>
 );
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  url: "https://professionalits.com/solutions/marketplace-operations",
+  name: "Marketplace Operations",
+  description:
+    "Amazon, eBay, Walmart, and more. Listing creation, optimisation, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
+  provider: { "@id": "https://professionalits.com/#organization" },
+  areaServed: ["US", "GB", "AU", "CA", "IN"],
+  serviceType: "Marketplace Management",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Marketplace Operations Coverage",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Amazon Seller Central Management", url: "https://professionalits.com/marketplaces/amazon" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "eBay Listing & Store Management", url: "https://professionalits.com/marketplaces/ebay" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Walmart Seller Center Management", url: "https://professionalits.com/marketplaces/walmart" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Etsy Shop Management", url: "https://professionalits.com/marketplaces/etsy" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "BestBuy Marketplace Operations", url: "https://professionalits.com/marketplaces/bestbuy" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Newegg Seller Management", url: "https://professionalits.com/marketplaces/newegg" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Houzz Pro Storefront Management", url: "https://professionalits.com/marketplaces/houzz" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rakuten Storefront & MQS Management", url: "https://professionalits.com/marketplaces/rakuten" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Poshmark Closet Management", url: "https://professionalits.com/marketplaces/poshmark" } },
+    ],
+  },
+};
+
 export default function MarketplaceOperationsPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div
       style={{
         fontFamily: "var(--font-sans)",
@@ -233,7 +265,7 @@ export default function MarketplaceOperationsPage() {
             marginTop: "10px",
           }}
         >
-          MARKETPLACE
+          MARKETPLACE OPERATIONS
         </div>
         <h1
           style={{
@@ -428,17 +460,17 @@ export default function MarketplaceOperationsPage() {
                 padding: "24px",
               }}
             >
-              <div
+              <h3
                 style={{
                   fontSize: "18px",
                   fontWeight: 600,
                   color: p.color,
-                  marginBottom: "16px",
+                  margin: "0 0 10px 0",
                   fontFamily: "var(--font-sans)",
                 }}
               >
                 {p.name}
-              </div>
+              </h3>
               {p.services.map((s) => (
                 <div
                   key={s}
@@ -599,5 +631,6 @@ export default function MarketplaceOperationsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

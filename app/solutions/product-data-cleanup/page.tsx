@@ -8,22 +8,29 @@ export const metadata: Metadata = {
   description:
     "Messy data costs you sales. We audit, deduplicate, enrich, and restructure your product data — whether it's 200 SKUs or 200,000. Flat files, feeds, and direct platform uploads.",
   openGraph: {
-    title: "Product Data Cleanup & Optimisation – Professional ITS",
+    title: "Product Data Cleanup & Optimization | Professional ITS",
     description:
-      "We audit deduplicate enrich and restructure your product data at any scale.",
+      "Messy data costs you sales. We audit, deduplicate, enrich, and restructure your product data — whether it's 200 SKUs or 200,000. Flat files, feeds, and direct platform uploads.",
     url: "https://professionalits.com/solutions/product-data-cleanup",
     siteName: "Professional ITS",
     type: "website",
-    images: [{ url: "https://professionalits.com/og-image.png", width: 1200, height: 630, alt: "Professional ITS" }],
+    images: [
+      {
+        url: "https://professionalits.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Professional ITS",
+      },
+    ],
   },
   alternates: {
     canonical: "https://professionalits.com/solutions/product-data-cleanup",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Data Cleanup & Optimisation – Professional ITS",
+    title: "Product Data Cleanup & Optimization | Professional ITS",
     description:
-      "We audit deduplicate enrich and restructure your product data at any scale.",
+      "Messy data costs you sales. We audit, deduplicate, enrich, and restructure your product data — whether it's 200 SKUs or 200,000. Flat files, feeds, and direct platform uploads.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -105,240 +112,325 @@ const CheckIcon = () => (
   </div>
 );
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  url: "https://professionalits.com/solutions/product-data-cleanup",
+  name: "Product Data Cleanup & Optimization",
+  description:
+    "Messy data costs you sales. We audit, deduplicate, enrich, and restructure your product data — whether it's 200 SKUs or 200,000. Flat files, feeds, and direct platform uploads.",
+  provider: { "@id": "https://professionalits.com/#organization" },
+  areaServed: ["US", "GB", "AU", "CA", "IN"],
+  serviceType: "Product Data Cleanup & Optimization",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Product Data Cleanup Deliverables",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Full catalog data audit and completeness scoring",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Missing attribute identification and enrichment",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Title and description standardisation",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Duplicate detection and merging",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Category and subcategory correction",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Post-cleanup QA and accuracy report",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Works with flat files, CSVs, and direct platform exports",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Delivery as upload-ready file or direct platform upload",
+        },
+      },
+    ],
+  },
+};
+
 export default function ProductDataCleanupPage() {
   return (
-    <div
-      style={{
-        fontFamily: "var(--font-sans)",
-        background: "#FDFAF5",
-        color: "#1C1C1C",
-      }}
-    >
-      <Navbar />
-
-      {/* ── HERO ── */}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div
         style={{
-          background: "#F5F0E8",
-          padding: "48px 32px 40px",
-          borderBottom: "0.5px solid #D5C9B0",
+          fontFamily: "var(--font-sans)",
+          background: "#FDFAF5",
+          color: "#1C1C1C",
         }}
       >
-        <div
-          style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}
-        >
-          <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>Home</Link>
-          <span> / </span>
-          <Link
-            href="/solutions"
-            style={{ color: "#888780", textDecoration: "none" }}
-          >
-            Solutions
-          </Link>
-          <span style={{ color: "#2D6A4F" }}> / Product Data Cleanup</span>
-        </div>
+        <Navbar />
+
+        {/* ── HERO ── */}
         <div
           style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "6px",
-            background: "#E8F5EE",
-            color: "#085041",
-            fontSize: "10px",
-            padding: "4px 10px",
-            borderRadius: "3px",
-            marginBottom: "16px",
+            background: "#F5F0E8",
+            padding: "48px 32px 40px",
+            borderBottom: "0.5px solid #D5C9B0",
           }}
         >
           <div
-            style={{
-              width: "5px",
-              height: "5px",
-              borderRadius: "50%",
-              background: "#2D6A4F",
-            }}
-          />
-          AI-assisted
-        </div>
-        <h1
-          style={{
-            fontFamily: "var(--font-serif)",
-            fontSize: "36px",
-            fontWeight: 500,
-            lineHeight: 1.15,
-            color: "#1C1C1C",
-            marginBottom: "14px",
-          }}
-        >
-          Messy data is costing you{" "}
-          <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>sales.</em>
-        </h1>
-        <p
-          style={{
-            fontSize: "14px",
-            color: "#555550",
-            lineHeight: 1.75,
-            maxWidth: "580px",
-            marginBottom: "28px",
-          }}
-        >
-          We audit, deduplicate, enrich, and restructure your product data —
-          whether it&apos;s 200 SKUs or 200,000. We work with feeds, flat files,
-          and direct platform uploads.
-        </p>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <Link
-            href="/audit"
-            style={{
-              background: "#2D6A4F",
-              color: "#fff",
-              padding: "12px 24px",
-              borderRadius: "4px",
-              fontSize: "13px",
-              fontWeight: 500,
-              textDecoration: "none",
-            }}
+            style={{ fontSize: "11px", color: "#888780", marginBottom: "14px" }}
           >
-            Get free catalog audit
-          </Link>
-          <Link
-            href="/pricing"
-            style={{
-              border: "0.5px solid #B4B2A9",
-              color: "#555550",
-              padding: "12px 24px",
-              borderRadius: "4px",
-              fontSize: "13px",
-              textDecoration: "none",
-            }}
-          >
-            View pricing
-          </Link>
-        </div>
-      </div>
-
-      {/* ── STATS BAR ── */}
-      <div
-        style={{
-          background: "#2D6A4F",
-          padding: "20px 32px",
-          display: "grid",
-          gridTemplateColumns: "repeat(4,1fr)",
-        }}
-      >
-        {[
-          { n: "72hr", l: "1,000 SKU cleanup" },
-          { n: "99.1%", l: "Post-clean accuracy" },
-          { n: "200K+", l: "SKUs cleaned to date" },
-          { n: "AI", l: "Assisted enrichment" },
-        ].map((s) => (
-          <div key={s.l} style={{ textAlign: "center" }}>
-            <div
-              style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "22px",
-                color: "#fff",
-                fontWeight: 500,
-              }}
+            <Link href="/" style={{ color: "#888780", textDecoration: "none" }}>
+              Home
+            </Link>
+            <span> / </span>
+            <Link
+              href="/solutions"
+              style={{ color: "#888780", textDecoration: "none" }}
             >
-              {s.n}
-            </div>
-            <div
-              style={{
-                fontSize: "11px",
-                color: "rgba(255,255,255,0.7)",
-                marginTop: "2px",
-              }}
-            >
-              {s.l}
-            </div>
+              Solutions
+            </Link>
+            <span style={{ color: "#2D6A4F" }}> / Product Data Cleanup</span>
           </div>
-        ))}
-      </div>
-
-      {/* ── THE PROBLEM ── */}
-      <section
-        style={{ padding: "56px 32px", borderBottom: "0.5px solid #D5C9B0" }}
-      >
-        <div
-          style={{
-            fontSize: "10px",
-            letterSpacing: "1.5px",
-            color: "#2D6A4F",
-            fontWeight: 500,
-            marginBottom: "10px",
-          }}
-        >
-          THE PROBLEM
-        </div>
-        <h2
-          style={{
-            fontFamily: "var(--font-serif)",
-            fontSize: "26px",
-            fontWeight: 500,
-            color: "#1C1C1C",
-            marginBottom: "8px",
-          }}
-        >
-          What bad data looks like in practice.
-        </h2>
-        <p
-          style={{
-            fontSize: "13px",
-            color: "#555550",
-            lineHeight: 1.65,
-            maxWidth: "520px",
-            marginBottom: "36px",
-          }}
-        >
-          Most sellers don&apos;t realise how much bad data is hurting their
-          visibility and conversion. These are the four most common issues we
-          find.
-        </p>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2,1fr)",
-            gap: "16px",
-          }}
-        >
-          {problems.map((p) => (
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              background: "#E8F5EE",
+              color: "#085041",
+              fontSize: "10px",
+              padding: "4px 10px",
+              borderRadius: "3px",
+              marginBottom: "16px",
+            }}
+          >
             <div
-              key={p.title}
               style={{
-                background: "#FDF8F0",
-                border: "0.5px solid #EDE5D5",
-                borderRadius: "8px",
-                padding: "20px",
-                borderLeft: "3px solid #D5C9B0",
+                width: "5px",
+                height: "5px",
+                borderRadius: "50%",
+                background: "#2D6A4F",
+              }}
+            />
+            AI-assisted
+          </div>
+          <h1
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "36px",
+              fontWeight: 500,
+              lineHeight: 1.15,
+              color: "#1C1C1C",
+              marginBottom: "14px",
+            }}
+          >
+            Messy data is costing you{" "}
+            <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>sales.</em>
+          </h1>
+          <p
+            style={{
+              fontSize: "14px",
+              color: "#555550",
+              lineHeight: 1.75,
+              maxWidth: "580px",
+              marginBottom: "28px",
+            }}
+          >
+            We audit, deduplicate, enrich, and restructure your product data —
+            whether it&apos;s 200 SKUs or 200,000. We work with feeds, flat
+            files, and direct platform uploads.
+          </p>
+          <div style={{ display: "flex", gap: "10px" }}>
+            <Link
+              href="/audit"
+              style={{
+                background: "#2D6A4F",
+                color: "#fff",
+                padding: "12px 24px",
+                borderRadius: "4px",
+                fontSize: "13px",
+                fontWeight: 500,
+                textDecoration: "none",
               }}
             >
+              Get free catalog audit
+            </Link>
+            <Link
+              href="/pricing"
+              style={{
+                border: "0.5px solid #B4B2A9",
+                color: "#555550",
+                padding: "12px 24px",
+                borderRadius: "4px",
+                fontSize: "13px",
+                textDecoration: "none",
+              }}
+            >
+              View pricing
+            </Link>
+          </div>
+        </div>
+
+        {/* ── STATS BAR ── */}
+        <div
+          style={{
+            background: "#2D6A4F",
+            padding: "20px 32px",
+            display: "grid",
+            gridTemplateColumns: "repeat(4,1fr)",
+          }}
+        >
+          {[
+            { n: "72hr", l: "1,000 SKU cleanup" },
+            { n: "99.1%", l: "Post-clean accuracy" },
+            { n: "200K+", l: "SKUs cleaned to date" },
+            { n: "AI", l: "Assisted enrichment" },
+          ].map((s) => (
+            <div key={s.l} style={{ textAlign: "center" }}>
               <div
                 style={{
-                  fontSize: "14px",
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "22px",
+                  color: "#fff",
                   fontWeight: 500,
-                  color: "#1C1C1C",
-                  marginBottom: "8px",
                 }}
               >
-                {p.title}
+                {s.n}
               </div>
               <div
-                style={{ fontSize: "13px", color: "#555550", lineHeight: 1.6 }}
+                style={{
+                  fontSize: "11px",
+                  color: "rgba(255,255,255,0.7)",
+                  marginTop: "2px",
+                }}
               >
-                {p.body}
+                {s.l}
               </div>
             </div>
           ))}
         </div>
-      </section>
 
-      {/* ── OUR PROCESS ── */}
-      <section
-        className="process-section"
-        style={{ background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}
-      >
-        <style>{`
+        {/* ── THE PROBLEM ── */}
+        <section
+          style={{ padding: "56px 32px", borderBottom: "0.5px solid #D5C9B0" }}
+        >
+          <div
+            style={{
+              fontSize: "10px",
+              letterSpacing: "1.5px",
+              color: "#2D6A4F",
+              fontWeight: 500,
+              marginBottom: "10px",
+            }}
+          >
+            THE PROBLEM
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "26px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "8px",
+            }}
+          >
+            What bad data looks like in practice.
+          </h2>
+          <p
+            style={{
+              fontSize: "13px",
+              color: "#555550",
+              lineHeight: 1.65,
+              maxWidth: "520px",
+              marginBottom: "36px",
+            }}
+          >
+            Most sellers don&apos;t realise how much bad data is hurting their
+            visibility and conversion. These are the four most common issues we
+            find.
+          </p>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2,1fr)",
+              gap: "16px",
+            }}
+          >
+            {problems.map((p) => (
+              <div
+                key={p.title}
+                style={{
+                  background: "#FDF8F0",
+                  border: "0.5px solid #EDE5D5",
+                  borderRadius: "8px",
+                  padding: "20px",
+                  borderLeft: "3px solid #D5C9B0",
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    color: "#1C1C1C",
+                    margin: "0 0 [N]px 0",
+                  }}
+                >
+                  {p.title}
+                </h3>
+                <div
+                  style={{
+                    fontSize: "13px",
+                    color: "#555550",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {p.body}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── OUR PROCESS ── */}
+        <section
+          className="process-section"
+          style={{ background: "#F5F0E8", borderBottom: "0.5px solid #D5C9B0" }}
+        >
+          <style>{`
     .process-section {
       padding: 56px 32px;
     }
@@ -373,127 +465,139 @@ export default function ProductDataCleanupPage() {
     }
   `}</style>
 
-        <div
-          style={{
-            fontSize: "10px",
-            letterSpacing: "1.5px",
-            color: "#2D6A4F",
-            fontWeight: 500,
-            marginBottom: "10px",
-          }}
-        >
-          OUR PROCESS
-        </div>
-        <h2
-          className="process-heading"
-          style={{
-            fontFamily: "var(--font-serif)",
-            fontSize: "26px",
-            fontWeight: 500,
-            color: "#1C1C1C",
-            marginBottom: "36px",
-          }}
-        >
-          Audit → Clean → Restructure → Deliver.
-        </h2>
+          <div
+            style={{
+              fontSize: "10px",
+              letterSpacing: "1.5px",
+              color: "#2D6A4F",
+              fontWeight: 500,
+              marginBottom: "10px",
+            }}
+          >
+            OUR PROCESS
+          </div>
+          <h2
+            className="process-heading"
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "26px",
+              fontWeight: 500,
+              color: "#1C1C1C",
+              marginBottom: "36px",
+            }}
+          >
+            Audit → Clean → Restructure → Deliver.
+          </h2>
 
-        <div className="process-grid">
-          {process.map((s, i) => (
-            <div key={s.n} style={{ position: "relative" }}>
-              <div
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "32px",
-                  color: "#D5C9B0",
-                  fontWeight: 500,
-                  marginBottom: "10px",
-                }}
-              >
-                {s.n}
-              </div>
-              <div
-                style={{
-                  fontSize: "13px",
-                  fontWeight: 500,
-                  color: "#1C1C1C",
-                  marginBottom: "6px",
-                }}
-              >
-                {s.title}
-              </div>
-              <div
-                style={{ fontSize: "12px", color: "#555550", lineHeight: 1.6 }}
-              >
-                {s.body}
-              </div>
-              {i < process.length - 1 && (
+          <div className="process-grid">
+            {process.map((s, i) => (
+              <div key={s.n} style={{ position: "relative" }}>
                 <div
-                  className="process-arrow"
                   style={{
-                    position: "absolute",
-                    top: "16px",
-                    right: "-6px",
-                    fontSize: "16px",
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "32px",
                     color: "#D5C9B0",
+                    fontWeight: 500,
+                    marginBottom: "10px",
                   }}
                 >
-                  →
+                  {s.n}
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+                <div
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: 500,
+                    color: "#1C1C1C",
+                    margin: "0 0 [N]px 0",
+                  }}
+                >
+                  {s.title}
+                </div>
+                <div
+                  style={{
+                    fontSize: "12px",
+                    color: "#555550",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {s.body}
+                </div>
+                {i < process.length - 1 && (
+                  <div
+                    className="process-arrow"
+                    style={{
+                      position: "absolute",
+                      top: "16px",
+                      right: "-6px",
+                      fontSize: "16px",
+                      color: "#D5C9B0",
+                    }}
+                  >
+                    →
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* ── WHAT'S INCLUDED ── */}
-      <section
-        style={{ padding: "40px 32px", borderBottom: "0.5px solid #D5C9B0" }}
-      >
-        <div
-          style={{
-            fontSize: "10px",
-            letterSpacing: "1.5px",
-            color: "#2D6A4F",
-            fontWeight: 500,
-            marginBottom: "16px",
-          }}
+        {/* ── WHAT'S INCLUDED ── */}
+        <section
+          style={{ padding: "40px 32px", borderBottom: "0.5px solid #D5C9B0" }}
         >
-          WHAT&apos;S INCLUDED
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2,1fr)",
-            gap: "10px",
-          }}
-        >
-          {[
-            "Full catalog data audit and completeness scoring",
-            "Duplicate detection and merging",
-            "Missing attribute identification and enrichment",
-            "Category and subcategory correction",
-            "Title and description standardisation",
-            "Post-cleanup QA and accuracy report",
-            "Works with flat files, CSVs, and direct platform exports",
-            "Delivery as upload-ready file or direct platform upload",
-          ].map((item) => (
-            <div
-              key={item}
-              style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}
-            >
-              <CheckIcon />
-              <span
-                style={{ fontSize: "13px", color: "#555550", lineHeight: 1.5 }}
+          <div
+            style={{
+              fontSize: "10px",
+              letterSpacing: "1.5px",
+              color: "#2D6A4F",
+              fontWeight: 500,
+              marginBottom: "16px",
+            }}
+          >
+            WHAT&apos;S INCLUDED
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2,1fr)",
+              gap: "10px",
+            }}
+          >
+            {[
+              "Full catalog data audit and completeness scoring",
+              "Duplicate detection and merging",
+              "Missing attribute identification and enrichment",
+              "Category and subcategory correction",
+              "Title and description standardisation",
+              "Post-cleanup QA and accuracy report",
+              "Works with flat files, CSVs, and direct platform exports",
+              "Delivery as upload-ready file or direct platform upload",
+            ].map((item) => (
+              <div
+                key={item}
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  alignItems: "flex-start",
+                }}
               >
-                {item}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
+                <CheckIcon />
+                <span
+                  style={{
+                    fontSize: "13px",
+                    color: "#555550",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* ── CTA BANNER ── */}
-      <style>{`
+        {/* ── CTA BANNER ── */}
+        <style>{`
         .audit-banner { background: #1C1C1C; padding: 40px 32px; display: flex; justify-content: space-between; align-items: center; }
         .audit-banner-btn { margin-left: 80px; flex-shrink: 0; }
         @media (max-width: 600px) {
@@ -501,53 +605,52 @@ export default function ProductDataCleanupPage() {
           .audit-banner-btn { margin-left: 0; margin-top: 20px; }
         }
       `}</style>
-      <div
-        className="audit-banner"
-      >
-        <div>
-          <div
+        <div className="audit-banner">
+          <div>
+            <div
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "22px",
+                color: "#fff",
+                fontWeight: 500,
+                marginBottom: "8px",
+              }}
+            >
+              See exactly what&apos;s wrong with your data.
+            </div>
+            <div
+              style={{
+                fontSize: "13px",
+                color: "rgba(255,255,255,0.6)",
+                maxWidth: "440px",
+                lineHeight: 1.7,
+              }}
+            >
+              Free 50-SKU audit. Written findings report in 48 hours. We&apos;ll
+              show you exactly what we&apos;d fix first.
+            </div>
+          </div>
+          <Link
+            href="/audit"
             style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "22px",
+              background: "#2D6A4F",
               color: "#fff",
-              fontWeight: 500,
-              marginBottom: "8px",
-            }}
-          >
-            See exactly what&apos;s wrong with your data.
-          </div>
-          <div
-            style={{
+              padding: "13px 28px",
+              borderRadius: "4px",
               fontSize: "13px",
-              color: "rgba(255,255,255,0.6)",
-              maxWidth: "440px",
-              lineHeight: 1.7,
+              fontWeight: 500,
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              marginRight: "120px",
+              marginTop: "5px",
             }}
           >
-            Free 50-SKU audit. Written findings report in 48 hours. We&apos;ll
-            show you exactly what we&apos;d fix first.
-          </div>
+            Get free catalog audit
+          </Link>
         </div>
-        <Link
-          href="/audit"
-          style={{
-            background: "#2D6A4F",
-            color: "#fff",
-            padding: "13px 28px",
-            borderRadius: "4px",
-            fontSize: "13px",
-            fontWeight: 500,
-            textDecoration: "none",
-            whiteSpace: "nowrap",
-            marginRight:"120px",
-            marginTop:"5px"
-          }}
-        >
-          Get free catalog audit
-        </Link>
-      </div>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }
