@@ -105,7 +105,7 @@ export default function PricingPage() {
                 },
                 {
                   "@type": "UnitPriceSpecification",
-                  name: "Listing optimisation",
+                  name: "Listing optimization",
                   price: "1.50",
                   priceCurrency: "USD",
                   unitText: "per SKU",
@@ -534,7 +534,7 @@ export default function PricingPage() {
               <strong>from $2.00/SKU</strong>
             </div>
             <div className="price-line">
-              <span>Listing optimisation</span>
+              <span>Listing optimization</span>
               <strong>from $1.50/SKU</strong>
             </div>
             <div className="price-line">

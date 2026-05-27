@@ -37,7 +37,7 @@ export const services: Record<string, Service> = {
     items: [
       { title: "Supplier data ingestion", body: "We accept product data in any format — CSV, XLSX, XML, EDI, PDF datasheets — and transform it into platform-ready records." },
       { title: "Field mapping", body: "Your supplier fields mapped to platform taxonomy. Every attribute, every category, every variant relationship — correctly structured." },
-      { title: "Data transformation", body: "Unit conversion, value standardisation, formatting normalisation — raw supplier data transformed into consistent, compliant records." },
+      { title: "Data transformation", body: "Unit conversion, value standardization, formatting normalization — raw supplier data transformed into consistent, compliant records." },
       { title: "Quality assurance", body: "Every record checked against platform requirements before upload. Error rates tracked and reported weekly." },
       { title: "Live record maintenance", body: "Ongoing updates to live platform records — price changes, stock updates, description edits, new variants." },
       { title: "Reporting & audits", body: "Regular data health reports showing completeness scores, error rates, and recommendations." },
@@ -45,7 +45,7 @@ export const services: Record<string, Service> = {
     includes: [
       "Supplier data ingestion in any format",
       "Field mapping to platform taxonomy",
-      "Data transformation and normalisation",
+      "Data transformation and normalization",
       "Pre-upload quality assurance",
       "Live platform record maintenance",
       "Weekly data health reporting",
@@ -112,10 +112,10 @@ export const services: Record<string, Service> = {
       "Buyers use filters to find products. If your attributes are wrong, incomplete, or non-standard — your products don't appear in filtered results. In technical and industrial categories, this is the single biggest driver of invisible inventory.",
     items: [
       { title: "Platform taxonomy mapping", body: "Your product attributes mapped to the correct platform taxonomy — Amazon Browse Node, eBay Item Specifics, Shopify tags, BigCommerce facets." },
-      { title: "Filter-ready structuring", body: "Attributes structured so your products appear in every relevant filter result. Size, colour, material, spec — all standardised." },
+      { title: "Filter-ready structuring", body: "Attributes structured so your products appear in every relevant filter result. Size, color, material, spec — all standardized." },
       { title: "Technical specification tables", body: "For industrial, electrical, and technical products — full spec table population. Voltage, dimensions, certifications, compatibility." },
-      { title: "Multi-variant attribute setup", body: "Colour/size matrices, option groups, and variation attributes correctly structured so buyers can select and compare." },
-      { title: "Attribute standardisation", body: "Mixed units, inconsistent values, and non-standard terms normalised across your full catalog." },
+      { title: "Multi-variant attribute setup", body: "color/size matrices, option groups, and variation attributes correctly structured so buyers can select and compare." },
+      { title: "Attribute standardization", body: "Mixed units, inconsistent values, and non-standard terms normalized across your full catalog." },
       { title: "Compliance checking", body: "Attributes checked against platform requirements and category-specific rules before upload." },
     ],
     includes: [
@@ -123,9 +123,9 @@ export const services: Record<string, Service> = {
       "Filter-ready attribute structuring",
       "Technical specification table population",
       "Multi-variant attribute setup",
-      "Value standardisation and normalisation",
+      "Value standardization and normalization",
       "Platform compliance checking",
-      "Amazon Browse Node optimisation",
+      "Amazon Browse Node optimization",
       "eBay Item Specifics completion",
     ],
     stats: [
@@ -163,7 +163,7 @@ export const services: Record<string, Service> = {
       "Infographic and callout image creation",
       "Platform compliance checking",
       "Bulk batch processing",
-      "Image set organisation per SKU",
+      "Image set organization per SKU",
       "Delivery in upload-ready format",
     ],
     stats: [
@@ -185,7 +185,7 @@ export const services: Record<string, Service> = {
     description:
       "Order processing, fulfilment tracking, inventory level monitoring, and reorder point management across your sales platforms. Delivered as a managed service with agreed SLAs.",
     whyItMatters:
-      "Order errors and stockouts cost you money and reviews. As order volume grows, manual management breaks down — late shipments, missed reorder points, unsynchronised inventory across channels. We take over the operational layer so nothing falls through the cracks.",
+      "Order errors and stockouts cost you money and reviews. As order volume grows, manual management breaks down — late shipments, missed reorder points, unsynchronized inventory across channels. We take over the operational layer so nothing falls through the cracks.",
     items: [
       { title: "Order processing", body: "Orders received, verified, routed to fulfilment, and tracked through to delivery — across all your sales channels." },
       { title: "Fulfilment tracking", body: "Every order tracked from dispatch to delivery. Exceptions flagged and handled before they become customer complaints." },
@@ -200,7 +200,7 @@ export const services: Record<string, Service> = {
       "Inventory level monitoring",
       "Reorder point alerts and management",
       "Returns and refund processing",
-      "Cross-channel inventory synchronisation",
+      "Cross-channel inventory synchronization",
       "Weekly operational SLA report",
       "Dedicated account contact",
     ],

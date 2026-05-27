@@ -11,7 +11,7 @@ const whatYouGet = [
   "50-SKU data completeness review — missing fields, blank attributes, truncated titles",
   "Listing quality score — titles, bullets, descriptions, image count",
   "Attribute & filter accuracy check against platform taxonomy",
-  "Written findings report with prioritised recommendations",
+  "Written findings report with prioritized recommendations",
   "15-minute optional walkthrough call — no sales pitch, just findings",
 ];
 

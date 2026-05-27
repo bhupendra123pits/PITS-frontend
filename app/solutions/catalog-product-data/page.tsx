@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 const includes = [
   { title: "Bulk product uploads", body: "Flat files, CSV feeds, or direct platform tools — Amazon, Shopify, eBay, BigCommerce, WooCommerce, Magento." },
-  { title: "Attribute & filter structuring", body: "Standardised attributes mapped to platform taxonomy. Filter-ready for on-site search engines." },
+  { title: "Attribute & filter structuring", body: "Standardized attributes mapped to platform taxonomy. Filter-ready for on-site search engines." },
   { title: "AI-assisted enrichment", body: "Automated attribute extraction from PDFs and datasheets. AI-generated descriptions with human QA." },
   { title: "Deduplication", body: "Duplicate detection and merging at scale. Clean SKUs, clean catalog, clean data." },
   { title: "Supplier feed ingestion", body: "We ingest raw supplier data in any format and transform it into platform-ready product records." },

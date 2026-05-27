@@ -53,7 +53,7 @@ const solutions = [
   {
     num: "02",
     title: "Marketplace operations",
-    body: "Listing optimisation, Buy Box strategy, suppressed listing management, competitor intelligence — on Amazon, eBay, Walmart.",
+    body: "Listing optimization, Buy Box strategy, suppressed listing management, competitor intelligence — on Amazon, eBay, Walmart.",
     ai: false,
     href: "/solutions/marketplace-operations",
   },
@@ -66,7 +66,7 @@ const solutions = [
   },
   {
     num: "04",
-    title: "Product data cleanup & optimisation",
+    title: "Product data cleanup & optimization",
     body: "Messy data costs you sales. We audit, deduplicate, enrich, and restructure — at scale.",
     ai: true,
     href: "/solutions/product-data-cleanup",
@@ -375,7 +375,7 @@ const marqueebrands = [
 const trustItems = [
   { n: "Amazon", l: "Seller Central specialists" },
   { n: "Shopify", l: "Full back-office support" },
-  { n: "eBay", l: "Cassini-optimised listings" },
+  { n: "eBay", l: "Cassini-optimized listings" },
 ];
 
 export default function HomePage() {
@@ -504,7 +504,7 @@ export default function HomePage() {
                   "Product Data Entry",
                   "Bulk Product Uploads",
                   "Amazon Seller Central Management",
-                  "eBay Listing Optimisation",
+                  "eBay Listing optimization",
                   "E-Commerce Back-Office Outsourcing",
                 ],
                 telephone: "+17329249050",
@@ -537,7 +537,7 @@ export default function HomePage() {
                         name: "Marketplace Operations",
                         url: "https://professionalits.com/solutions/marketplace-operations",
                         description:
-                          "Listing optimisation, Buy Box strategy, suppressed listing management on Amazon, eBay, and Walmart.",
+                          "Listing optimization, Buy Box strategy, suppressed listing management on Amazon, eBay, and Walmart.",
                       },
                     },
                     {
@@ -554,7 +554,7 @@ export default function HomePage() {
                       "@type": "Offer",
                       itemOffered: {
                         "@type": "Service",
-                        name: "Product Data Cleanup & Optimisation",
+                        name: "Product Data Cleanup & optimization",
                         url: "https://professionalits.com/solutions/product-data-cleanup",
                         description:
                           "Audit, deduplicate, enrich, and restructure messy E-Commerce product data at scale.",

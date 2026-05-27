@@ -40,7 +40,7 @@ export const marketplaces: Record<string, Marketplace> = {
       "The world's most competitive marketplace demands more than a good product. Ranking in search, winning the Buy Box, and keeping your account healthy requires disciplined, daily execution. We provide the specialist team to deliver that — every day.",
     services: [
       {
-        title: "Listing creation & optimisation",
+        title: "Listing creation & optimization",
         body: "Keyword-rich titles, bullet points, descriptions, and backend search terms — structured for Seller Central compliance and A9 visibility.",
       },
       {
@@ -84,13 +84,13 @@ export const marketplaces: Record<string, Marketplace> = {
     also: ["eBay", "Walmart", "Etsy", "BestBuy"],
     whatWeHandle: [
       {
-        title: "Listing creation & optimisation",
-        body: "Every listing we write is built for both the A9 ranking algorithm and the buyer reading it. We research real buyer search behaviour, analyse competitor listings, and write titles, bullets, and descriptions that rank and convert.",
+        title: "Listing creation & optimization",
+        body: "Every listing we write is built for both the A9 ranking algorithm and the buyer reading it. We research real buyer search behavior, analyze competitor listings, and write titles, bullets, and descriptions that rank and convert.",
         bullets: [
           "Keyword-rich titles aligned to real buyer search intent — not guesswork",
           "Benefit-led bullet points that answer buying objections before they form",
           "Product descriptions written for conversion, not just compliance",
-          "Backend search term optimisation — all 250 bytes used correctly",
+          "Backend search term optimization — all 250 bytes used correctly",
           "A+ Content and Enhanced Brand Content creation",
           "Parent-child variation setup and management",
         ],
@@ -136,13 +136,13 @@ export const marketplaces: Record<string, Marketplace> = {
     slug: "ebay",
     color: "#E53238",
     heroHeadline: "eBay marketplace operations, ",
-    heroEm: "optimised for Cassini.",
+    heroEm: "optimized for Cassini.",
     description:
-      "eBay rewards sellers who keep their listings fresh, their prices sharp, and their customers satisfied. We do the work behind that consistency — Cassini-optimised listings, sharp pricing, clean store structure, and support that keeps your feedback scores high.",
+      "eBay rewards sellers who keep their listings fresh, their prices sharp, and their customers satisfied. We do the work behind that consistency — Cassini-optimized listings, sharp pricing, clean store structure, and support that keeps your feedback scores high.",
     services: [
       {
-        title: "Listing creation & optimisation",
-        body: "Cassini-optimised titles, item specifics, descriptions, and category selection — structured for maximum search visibility.",
+        title: "Listing creation & optimization",
+        body: "Cassini-optimized titles, item specifics, descriptions, and category selection — structured for maximum search visibility.",
       },
       {
         title: "Item Specifics structuring",
@@ -150,7 +150,7 @@ export const marketplaces: Record<string, Marketplace> = {
       },
       {
         title: "Store design & management",
-        body: "eBay store setup, category organisation, promotional banners, and ongoing store maintenance.",
+        body: "eBay store setup, category organization, promotional banners, and ongoing store maintenance.",
       },
       {
         title: "Promoted Listings management",
@@ -166,7 +166,7 @@ export const marketplaces: Record<string, Marketplace> = {
       },
     ],
     includes: [
-      "Cassini-optimised title and description writing",
+      "Cassini-optimized title and description writing",
       "Complete Item Specifics for all categories",
       "eBay File Exchange bulk uploads",
       "Store category and navigation setup",
@@ -185,10 +185,10 @@ export const marketplaces: Record<string, Marketplace> = {
     also: ["Amazon", "Walmart", "Etsy", "Newegg"],
     whatWeHandle: [
       {
-        title: "Listing creation & optimisation",
+        title: "Listing creation & optimization",
         body: "eBay's Cassini search engine rewards listings that are complete, specific, and match buyer search queries precisely. We write listings that satisfy Cassini's ranking criteria while remaining readable and compelling to the buyer.",
         bullets: [
-          "Title optimisation for Cassini — 80-character titles with primary keywords front-loaded",
+          "Title optimization for Cassini — 80-character titles with primary keywords front-loaded",
           "Item Specifics completion — every relevant field filled to maximise search visibility",
           "Description writing for both desktop and mobile display",
           "Category selection and subcategory mapping for accurate placement",
@@ -223,7 +223,7 @@ export const marketplaces: Record<string, Marketplace> = {
     ],
     whySection: {
       title: "Why eBay specialist knowledge matters",
-      body: "Cassini is not Google, and it's not A9. It rewards different signals — completeness of Item Specifics, listing freshness, seller performance metrics, and competitive pricing within a category. Getting this right requires platform-specific knowledge that generalist BPOs simply don't have. We've been optimising for Cassini since before most agencies knew what it was.",
+      body: "Cassini is not Google, and it's not A9. It rewards different signals — completeness of Item Specifics, listing freshness, seller performance metrics, and competitive pricing within a category. Getting this right requires platform-specific knowledge that generalist BPOs simply don't have. We've been optimizing for Cassini since before most agencies knew what it was.",
     },
   },
 
@@ -232,7 +232,7 @@ export const marketplaces: Record<string, Marketplace> = {
     slug: "walmart",
     color: "#0071CE",
     heroHeadline: "Walmart marketplace operations, ",
-    heroEm: "content score optimised.",
+    heroEm: "content score optimized.",
     description:
       "Walmart Marketplace is one of the fastest-growing e-commerce platforms in the US — and one of the most demanding when it comes to content quality standards. Meeting Walmart's data requirements, maintaining a competitive Content Score, and winning the Buy Box requires consistent, specialist execution.",
     services: [
@@ -241,11 +241,11 @@ export const marketplaces: Record<string, Marketplace> = {
         body: "Account setup, onboarding, item setup, and category configuration for new Walmart marketplace sellers.",
       },
       {
-        title: "Listing creation & optimisation",
-        body: "Walmart-compliant titles, descriptions, attributes, and content score optimisation for maximum visibility.",
+        title: "Listing creation & optimization",
+        body: "Walmart-compliant titles, descriptions, attributes, and content score optimization for maximum visibility.",
       },
       {
-        title: "Content score optimisation",
+        title: "Content score optimization",
         body: "We systematically improve your Walmart content scores — images, descriptions, attributes, and rich media.",
       },
       {
@@ -292,7 +292,7 @@ export const marketplaces: Record<string, Marketplace> = {
         ],
       },
       {
-        title: "Listing creation & content score optimisation",
+        title: "Listing creation & content score optimization",
         body: "Walmart's Content Score system ranks your listings on completeness and quality — directly affecting search visibility. We build listings that score well from day one.",
         bullets: [
           "Product listing creation with titles, descriptions, and key features",
@@ -331,8 +331,8 @@ export const marketplaces: Record<string, Marketplace> = {
       "Etsy is a discovery-driven marketplace where great presentation, precise keywords, and consistent shop management determine whether buyers find you — or your competitor. We handle the operational work behind a high-performing Etsy shop so you can focus on making.",
     services: [
       {
-        title: "Listing creation & optimisation",
-        body: "SEO-optimised titles, tags, descriptions, and attributes — structured around how Etsy's search algorithm surfaces results.",
+        title: "Listing creation & optimization",
+        body: "SEO-optimized titles, tags, descriptions, and attributes — structured around how Etsy's search algorithm surfaces results.",
       },
       {
         title: "Tag & attribute structuring",
@@ -356,7 +356,7 @@ export const marketplaces: Record<string, Marketplace> = {
       },
     ],
     includes: [
-      "SEO-optimised listing titles and descriptions",
+      "SEO-optimized listing titles and descriptions",
       "All 13 tags used per listing",
       "Attribute and material field completion",
       "Shop section and navigation setup",
@@ -376,22 +376,22 @@ export const marketplaces: Record<string, Marketplace> = {
     also: ["Amazon", "eBay", "Poshmark", "Houzz"],
     whatWeHandle: [
       {
-        title: "Listing creation & SEO optimisation",
+        title: "Listing creation & SEO optimization",
         body: "Etsy's search algorithm rewards listings with precise titles, complete tags, and descriptions that match how buyers actually search. We research your niche, identify the terms buyers use, and build every listing to rank.",
         bullets: [
-          "Title optimisation — front-loading primary keywords in Etsy's 140-character title field",
+          "Title optimization — front-loading primary keywords in Etsy's 140-character title field",
           "Tag research and selection — all 13 tags used, matched to real buyer search queries",
           "Description writing — informative, brand-consistent, and keyword-aware",
-          "Attribute completion — material, colour, occasion, style, and all relevant fields",
+          "Attribute completion — material, color, occasion, style, and all relevant fields",
           "Shipping profile setup and management",
           "Pricing research using sold listing data and competitor analysis",
         ],
       },
       {
         title: "Shop structure & management",
-        body: "A well-organised Etsy shop builds trust and repeat custom. We manage the structure and ongoing maintenance so your shop stays in good shape.",
+        body: "A well-organized Etsy shop builds trust and repeat custom. We manage the structure and ongoing maintenance so your shop stays in good shape.",
         bullets: [
-          "Shop section creation and category organisation",
+          "Shop section creation and category organization",
           "Shop policies setup — returns, exchanges, shipping, and custom orders",
           "About section and maker story copywriting",
           "Shop banner and branding asset setup",
@@ -403,16 +403,16 @@ export const marketplaces: Record<string, Marketplace> = {
         title: "Customer communication",
         body: "Etsy buyers expect prompt, personal responses. We handle your message queue in your brand voice — keeping response times down and review scores up.",
         bullets: [
-          "Buyer message handling and enquiry responses",
+          "Buyer message handling and inquiry responses",
           "Review follow-up and feedback management",
-          "Custom order enquiry management",
+          "Custom order inquiry management",
           "Dispute and return request handling",
         ],
       },
     ],
     whySection: {
       title: "Why Etsy specialist knowledge matters",
-      body: "Etsy is unlike any other marketplace — it combines search engine optimisation with social signals, community engagement, and buyer psychology that's unique to its platform. Sellers who treat it like Amazon or eBay consistently underperform. Our team understands the Etsy algorithm, the importance of tags over descriptions, and how recency and engagement affect ranking in ways that aren't obvious from the outside.",
+      body: "Etsy is unlike any other marketplace — it combines search engine optimization with social signals, community engagement, and buyer psychology that's unique to its platform. Sellers who treat it like Amazon or eBay consistently underperform. Our team understands the Etsy algorithm, the importance of tags over descriptions, and how recency and engagement affect ranking in ways that aren't obvious from the outside.",
     },
   },
 
@@ -439,7 +439,7 @@ export const marketplaces: Record<string, Marketplace> = {
       },
       {
         title: "Category & attribute mapping",
-        body: "Products correctly categorised within BestBuy's taxonomy with all required and optional attributes populated.",
+        body: "Products correctly categorized within BestBuy's taxonomy with all required and optional attributes populated.",
       },
       {
         title: "Content quality management",
@@ -522,7 +522,7 @@ export const marketplaces: Record<string, Marketplace> = {
     services: [
       {
         title: "Tech product listing creation",
-        body: "Newegg-optimised titles, descriptions, and feature bullets written for technically informed buyers.",
+        body: "Newegg-optimized titles, descriptions, and feature bullets written for technically informed buyers.",
       },
       {
         title: "Spec sheet structuring",
@@ -594,7 +594,7 @@ export const marketplaces: Record<string, Marketplace> = {
           "Competitor price monitoring and repricing",
           "Newegg Flash deal submission and management",
           "Promotional pricing and volume discount setup",
-          "EggXpert review programme participation management",
+          "EggXpert review program participation management",
         ],
       },
     ],
@@ -627,7 +627,7 @@ export const marketplaces: Record<string, Marketplace> = {
       },
       {
         title: "Category & style mapping",
-        body: "Products correctly categorised within Houzz's home décor taxonomy with style and room tags applied.",
+        body: "Products correctly categorized within Houzz's home décor taxonomy with style and room tags applied.",
       },
       {
         title: "Seller account management",
@@ -658,7 +658,7 @@ export const marketplaces: Record<string, Marketplace> = {
     whatWeHandle: [
       {
         title: "Seller setup & storefront",
-        body: "Houzz's Pro seller environment has its own setup requirements and storefront customisation options. We configure yours to present well to design-conscious buyers.",
+        body: "Houzz's Pro seller environment has its own setup requirements and storefront customization options. We configure yours to present well to design-conscious buyers.",
         bullets: [
           "Houzz Pro storefront setup and configuration",
           "Business profile and brand story setup",
@@ -672,7 +672,7 @@ export const marketplaces: Record<string, Marketplace> = {
         bullets: [
           "Product title creation following Houzz category conventions",
           "Description writing for design-conscious buyers — material, finish, dimension, style",
-          "Attribute and specification mapping to Houzz taxonomy — style, colour, material, dimensions",
+          "Attribute and specification mapping to Houzz taxonomy — style, color, material, dimensions",
           "Room type and design style tagging for discovery",
           "Image editing and compliance with Houzz visual standards",
           "Lifestyle and room-setting image brief preparation",
@@ -681,11 +681,11 @@ export const marketplaces: Record<string, Marketplace> = {
       },
       {
         title: "Ongoing management",
-        body: "Keeping your Houzz shop active, accurate, and responsive to enquiries sustains visibility and buyer trust.",
+        body: "Keeping your Houzz shop active, accurate, and responsive to inquiries sustains visibility and buyer trust.",
         bullets: [
           "Pricing strategy and competitive analysis within home furnishings categories",
           "Product information updates — seasonal collections, discontinued items, new launches",
-          "Customer enquiry handling and specification questions",
+          "Customer inquiry handling and specification questions",
           "Review and recommendation management",
           "Order and fulfilment tracking",
         ],
@@ -704,7 +704,7 @@ export const marketplaces: Record<string, Marketplace> = {
     heroHeadline: "Rakuten marketplace listings, ",
     heroEm: "localised and compliant.",
     description:
-      "Rakuten is unique among marketplaces — it gives sellers genuine storefront customisation, a loyalty-driven buyer base, and a platform that actively supports merchant success. Getting the most from Rakuten means understanding its distinct ecosystem, Merchant Quality Score, and the role of Super Points in driving repeat purchases.",
+      "Rakuten is unique among marketplaces — it gives sellers genuine storefront customization, a loyalty-driven buyer base, and a platform that actively supports merchant success. Getting the most from Rakuten means understanding its distinct ecosystem, Merchant Quality Score, and the role of Super Points in driving repeat purchases.",
     services: [
       {
         title: "Product listing creation",
@@ -716,7 +716,7 @@ export const marketplaces: Record<string, Marketplace> = {
       },
       {
         title: "Attribute & category mapping",
-        body: "Products correctly categorised within Rakuten's taxonomy with all required attributes populated for search and filter visibility.",
+        body: "Products correctly categorized within Rakuten's taxonomy with all required attributes populated for search and filter visibility.",
       },
       {
         title: "Image compliance",
@@ -752,7 +752,7 @@ export const marketplaces: Record<string, Marketplace> = {
     also: ["Amazon", "eBay", "Walmart", "Etsy"],
     whatWeHandle: [
       {
-        title: "Seller setup & storefront customisation",
+        title: "Seller setup & storefront customization",
         body: "Unlike most marketplaces, Rakuten lets sellers build a genuinely branded storefront. We set yours up to make the most of that opportunity.",
         bullets: [
           "Seller account setup and storefront configuration",
@@ -763,7 +763,7 @@ export const marketplaces: Record<string, Marketplace> = {
         ],
       },
       {
-        title: "Listing creation & optimisation",
+        title: "Listing creation & optimization",
         body: "Rakuten's buyer base is loyal and brand-aware. Listings that communicate quality, brand identity, and complete product information perform best.",
         bullets: [
           "Product listing creation — titles, descriptions, and key feature copy",
@@ -800,15 +800,15 @@ export const marketplaces: Record<string, Marketplace> = {
     heroHeadline: "Poshmark marketplace listings, ",
     heroEm: "styled to sell.",
     description:
-      "Poshmark is a social marketplace with 80 million users and an algorithm that rewards engagement, sharing cadence, and listing quality in equal measure. Growing a high-performing Poshmark closet requires consistent daily activity, optimised listings, and an understanding of the platform's community-driven mechanics — all of which we handle for you.",
+      "Poshmark is a social marketplace with 80 million users and an algorithm that rewards engagement, sharing cadence, and listing quality in equal measure. Growing a high-performing Poshmark closet requires consistent daily activity, optimized listings, and an understanding of the platform's community-driven mechanics — all of which we handle for you.",
     services: [
       {
-        title: "Listing creation & optimisation",
-        body: "Poshmark-optimised titles, descriptions, and brand/category tags — structured to surface in search and attract the right buyers.",
+        title: "Listing creation & optimization",
+        body: "Poshmark-optimized titles, descriptions, and brand/category tags — structured to surface in search and attract the right buyers.",
       },
       {
         title: "Closet management",
-        body: "Ongoing closet organisation, re-listing, sharing strategy, and follower engagement to keep your listings visible.",
+        body: "Ongoing closet organization, re-listing, sharing strategy, and follower engagement to keep your listings visible.",
       },
       {
         title: "Photography guidance",
@@ -816,7 +816,7 @@ export const marketplaces: Record<string, Marketplace> = {
       },
       {
         title: "Attribute & sizing structuring",
-        body: "Brand, size, colour, condition, and category fields completed accurately for maximum filter and search visibility.",
+        body: "Brand, size, color, condition, and category fields completed accurately for maximum filter and search visibility.",
       },
       {
         title: "Offer & pricing management",
@@ -830,7 +830,7 @@ export const marketplaces: Record<string, Marketplace> = {
     includes: [
       "Poshmark listing titles and descriptions",
       "Brand, size, and condition tagging",
-      "Closet organisation and management",
+      "Closet organization and management",
       "Re-listing and sharing strategy",
       "Offer to Likers configuration",
       "Bundle discount setup",
@@ -858,13 +858,13 @@ export const marketplaces: Record<string, Marketplace> = {
         ],
       },
       {
-        title: "Listing creation & SEO optimisation",
+        title: "Listing creation & SEO optimization",
         body: "Poshmark's search algorithm uses title keywords and description content to match listings to buyer searches. We research what your buyers look for and build every listing to rank.",
         bullets: [
-          "Listing title creation — brand, item name, colour, size, and relevant keywords in 80 characters",
+          "Listing title creation — brand, item name, color, size, and relevant keywords in 80 characters",
           "Description writing — detailed, keyword-rich, and conversational for Poshmark's social feel",
           "Category and subcategory selection for accurate search placement",
-          "Size, colour, condition, and attribute completion",
+          "Size, color, condition, and attribute completion",
           "Hashtag strategy — relevant tags that extend listing reach",
           "Product photography editing to Poshmark's visual standards",
         ],
@@ -885,7 +885,7 @@ export const marketplaces: Record<string, Marketplace> = {
         title: "Customer communication",
         body: "",
         bullets: [
-          "Buyer message handling — enquiries, sizing questions, bundle requests",
+          "Buyer message handling — inquiries, sizing questions, bundle requests",
           "Offer negotiation management within your pricing parameters",
           "Returns and dispute handling",
         ],

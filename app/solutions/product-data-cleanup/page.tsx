@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Product Data Cleanup & Optimisation",
+  title: "Product Data Cleanup & Optimization",
   description:
     "Messy data costs you sales. We audit, deduplicate, enrich, and restructure your product data — whether it's 200 SKUs or 200,000. Flat files, feeds, and direct platform uploads.",
   openGraph: {
@@ -73,7 +73,7 @@ const process = [
   {
     n: "04",
     title: "Restructure",
-    body: "Categories corrected, attributes standardised, formatting normalised — platform-ready output.",
+    body: "Categories corrected, attributes standardized, formatting normalized — platform-ready output.",
   },
   {
     n: "05",
@@ -144,7 +144,7 @@ const jsonLd = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Title and description standardisation",
+          name: "Title and description standardization",
         },
       },
       {
@@ -379,7 +379,7 @@ export default function ProductDataCleanupPage() {
               marginBottom: "36px",
             }}
           >
-            Most sellers don&apos;t realise how much bad data is hurting their
+            Most sellers don&apos;t realize how much bad data is hurting their
             visibility and conversion. These are the four most common issues we
             find.
           </p>
@@ -503,7 +503,7 @@ export default function ProductDataCleanupPage() {
                 >
                   {s.n}
                 </div>
-                <div
+                <h3
                   style={{
                     fontSize: "13px",
                     fontWeight: 500,
@@ -512,7 +512,7 @@ export default function ProductDataCleanupPage() {
                   }}
                 >
                   {s.title}
-                </div>
+                </h3>
                 <div
                   style={{
                     fontSize: "12px",
@@ -568,7 +568,7 @@ export default function ProductDataCleanupPage() {
               "Duplicate detection and merging",
               "Missing attribute identification and enrichment",
               "Category and subcategory correction",
-              "Title and description standardisation",
+              "Title and description standardization",
               "Post-cleanup QA and accuracy report",
               "Works with flat files, CSVs, and direct platform exports",
               "Delivery as upload-ready file or direct platform upload",

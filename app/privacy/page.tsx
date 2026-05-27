@@ -66,7 +66,7 @@ const sections = [
   {
     title: "Data security",
     body: [
-      "We take reasonable technical and organisational precautions to protect your information against unauthorised access, disclosure, alteration, or destruction. No method of internet transmission is completely secure, and we cannot guarantee absolute security.",
+      "We take reasonable technical and organizational precautions to protect your information against unauthorised access, disclosure, alteration, or destruction. No method of internet transmission is completely secure, and we cannot guarantee absolute security.",
     ],
   },
   {

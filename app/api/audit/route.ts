@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Save to DB — if this fails the whole request fails (correct behaviour)
+    // Save to DB — if this fails the whole request fails (correct behavior)
     const record = await prisma.auditRequest.create({
       data: { name, email, storeUrl: storeUrl || null, primaryPlatform: primaryPlatform || null, challenge: challenge || null, hearAbout: hearAbout || null },
     });
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
             <p style="color:#555; margin:0 0 4px 0;">— 50-SKU data completeness review</p>
             <p style="color:#555; margin:0 0 4px 0;">— Listing quality score</p>
             <p style="color:#555; margin:0 0 4px 0;">— Attribute and filter accuracy check</p>
-            <p style="color:#555; margin:0 0 16px 0;">— Prioritised recommendations — what we'd fix first</p>
+            <p style="color:#555; margin:0 0 16px 0;">— Prioritized recommendations — what we'd fix first</p>
 
             <p style="color:#555;">At the end, you can optionally book a 15-minute walkthrough call with the auditor. No sales pitch, just the findings.</p>
             <p style="color:#555;">No credit card required. No commitment. No lock-in, ever.</p>

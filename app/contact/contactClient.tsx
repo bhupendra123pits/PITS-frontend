@@ -15,7 +15,7 @@ const topics = [
   "Bulk product uploads",
   "Image processing",
   "Pricing & packages",
-  "Partnership or reseller enquiry",
+  "Partnership or reseller inquiry",
   "Other",
 ];
 
@@ -38,7 +38,7 @@ const contactInfo = [
       info@professionalits.com
     </a>
   ),
-    sub: "General enquiries & sales",
+    sub: "General inquiries & sales",
   },
   {
     icon: (

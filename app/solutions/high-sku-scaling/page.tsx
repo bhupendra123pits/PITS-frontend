@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description:
     "Built for distributors, wholesalers, and multi-brand sellers. Scale your catalog to 500,000+ SKUs without scaling headcount. New product lines, seasonal launches, supplier integrations.",
   openGraph: {
-    title: "High-SKU Catalog Scaling – Professional ITS",
-    description: "Scale to 500,000+ SKUs without scaling headcount. Built for distributors and wholesalers.",
+    title: "High-SKU Catalog Scaling | Professional ITS",
+    description: "Built for distributors, wholesalers, and multi-brand sellers. Scale your catalog to 500,000+ SKUs without scaling headcount. New product lines, seasonal launches, supplier integrations.",
     url: "https://professionalits.com/solutions/high-sku-scaling",
     siteName: "Professional ITS",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "High-SKU Catalog Scaling | Professional ITS",
     description:
-      "Scale to 500,000+ SKUs without scaling headcount. Built for distributors and wholesalers.",
+      "Built for distributors, wholesalers, and multi-brand sellers. Scale your catalog to 500,000+ SKUs without scaling headcount. New product lines, seasonal launches, supplier integrations.",
     images: ["https://professionalits.com/og-image.png"],
   },
 };
@@ -39,7 +39,7 @@ const capabilities = [
   "Automated field mapping to platform taxonomy",
   "High-volume bulk upload pipelines — 500+ SKUs/day",
   "Multi-brand catalog architecture and governance",
-  "Cross-platform synchronisation — one feed, multiple platforms",
+  "Cross-platform synchronization — one feed, multiple platforms",
   "Ongoing scaled maintenance retainers",
   "Dedicated account manager for large accounts",
   "AI-assisted attribute extraction at scale",
@@ -53,8 +53,45 @@ const CheckIcon = () => (
   </div>
 );
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  url: "https://professionalits.com/solutions/high-sku-scaling",
+  name: "High-SKU Catalog Scaling",
+  description:
+    "Built for distributors, wholesalers, and multi-brand sellers. Scale your catalog to 500,000+ SKUs without scaling headcount. New product lines, seasonal launches, supplier integrations.",
+  provider: { "@id": "https://professionalits.com/#organization" },
+  areaServed: ["US", "GB", "AU", "CA", "IN"],
+  serviceType: "High-SKU Catalog Scaling",
+  audience: [
+    { "@type": "BusinessAudience", audienceType: "Distributors" },
+    { "@type": "BusinessAudience", audienceType: "Wholesalers" },
+    { "@type": "BusinessAudience", audienceType: "Multi-brand sellers" },
+    { "@type": "BusinessAudience", audienceType: "Seasonal launchers" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "High-SKU Scaling Capabilities",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Supplier feed ingestion in any format — CSV, XML, XLSX, EDI" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "High-volume bulk upload pipelines — 500+ SKUs/day" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cross-platform synchronization — one feed, multiple platforms" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Dedicated account manager for large accounts" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Automated field mapping to platform taxonomy" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Multi-brand catalog architecture and governance" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ongoing scaled maintenance retainers" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI-assisted attribute extraction at scale" } },
+    ],
+  },
+};
+
 export default function HighSkuScalingPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div style={{ fontFamily: "var(--font-sans)", background: "#FDFAF5", color: "#1C1C1C" }}>
       <Navbar />
 
@@ -71,7 +108,7 @@ export default function HighSkuScalingPage() {
           AI-assisted
         </div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "36px", fontWeight: 500, lineHeight: 1.15, color: "#1C1C1C", marginBottom: "14px" }}>
-          Scale to 500,000 SKUs without <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>scaling headcount.</em>
+          Scale to 500,000+ SKUs without <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>scaling headcount.</em>
         </h1>
         <p style={{ fontSize: "14px", color: "#555550", lineHeight: 1.75, maxWidth: "580px", marginBottom: "28px" }}>
           Built for distributors, wholesalers, and multi-brand sellers. When your catalog needs to grow at speed — new product lines, seasonal launches, supplier integrations — we scale with you.
@@ -92,7 +129,7 @@ export default function HighSkuScalingPage() {
           { n: "500K+", l: "SKUs managed" },
           { n: "500+", l: "SKUs per day" },
           { n: "99.1%", l: "Accuracy rate" },
-          { n: "15yrs", l: "Operations experience" },
+          { n: "15yrs", l: "Catalog scaling experience" },
         ].map((s) => (
           <div key={s.l} style={{ textAlign: "center" }}>
             <div style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#fff", fontWeight: 500 }}>{s.n}</div>
@@ -113,7 +150,7 @@ export default function HighSkuScalingPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "16px" }}>
           {forWho.map((f) => (
             <div key={f.title} style={{ background: "#FFFFFF", border: "0.5px solid #D5C9B0", borderRadius: "8px", padding: "24px", borderLeft: "3px solid #2D6A4F" }}>
-              <div style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C", marginBottom: "8px" }}>{f.title}</div>
+              <h3 style={{ fontSize: "14px", fontWeight: 500, color: "#1C1C1C", margin: "0 0 [N]px 0" }}>{f.title}</h3>
               <div style={{ fontSize: "13px", color: "#555550", lineHeight: 1.65 }}>{f.body}</div>
             </div>
           ))}
@@ -175,5 +212,6 @@ export default function HighSkuScalingPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

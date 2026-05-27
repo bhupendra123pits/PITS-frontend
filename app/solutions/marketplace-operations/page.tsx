@@ -7,7 +7,7 @@ import { platformBrands, marketplaceBrands } from "@/lib/brandIcons";
 export const metadata: Metadata = {
   title: "Marketplace Operations",
   description:
-    "Amazon, eBay, Walmart, and more. Listing creation, optimisation, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
+    "Amazon, eBay, Walmart, and more. Listing creation, optimization, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
   openGraph: {
     title: "Marketplace Operations | Professional ITS",
     description:
@@ -48,7 +48,7 @@ const platforms = [
     color: "#E53238",
     href: "/marketplaces/ebay",
     services: [
-      "Cassini-optimised listing creation",
+      "Cassini-optimized listing creation",
       "Item Specifics and category structuring",
       "Store design and category management",
       "Promoted Listings setup and management",
@@ -64,7 +64,7 @@ const platforms = [
       "Seller Center setup and onboarding",
       "Listing creation and attribute mapping",
       "Buy Box strategy for Walmart marketplace",
-      "Content score optimisation",
+      "Content score optimization",
       "Order and fulfilment management",
       "Performance dashboard monitoring",
     ],
@@ -76,7 +76,7 @@ const platforms = [
     services: [
       "Listing creation with Etsy SEO best practices — titles, tags, and descriptions",
       "Keyword research for Etsy search algorithm",
-      "Shop section and category organisation",
+      "Shop section and category organization",
       "Product photography editing to Etsy image standards",
       "Pricing research and competitor analysis",
       "Customer message handling and review follow-up",
@@ -126,7 +126,7 @@ const platforms = [
       "Image editing and compliance with Houzz visual standards",
       "Ideabook and project integration support",
       "Pricing strategy and competitor analysis within home furnishings categories",
-      "Customer enquiry handling and review management",
+      "Customer inquiry handling and review management",
     ],
   },
   {
@@ -134,8 +134,8 @@ const platforms = [
     color: "#BF0000",
     href: "/marketplaces/rakuten",
     services: [
-      "Seller account setup and storefront customisation",
-      "Product listing creation and optimisation for Rakuten search",
+      "Seller account setup and storefront customization",
+      "Product listing creation and optimization for Rakuten search",
       "Merchant Quality Score (MQS) monitoring and improvement",
       "Rakuten Super Points promotional campaign setup",
       "Product description writing for Rakuten's brand-forward buyer base",
@@ -149,9 +149,9 @@ const platforms = [
     color: "#CF1E55",
     href: "/marketplaces/poshmark",
     services: [
-      "Closet setup and brand profile optimisation",
+      "Closet setup and brand profile optimization",
       "Listing creation with Poshmark SEO — titles, descriptions, and hashtags",
-      "Algorithm optimisation — sharing cadence, engagement strategy, and listing refresh",
+      "Algorithm optimization — sharing cadence, engagement strategy, and listing refresh",
       "Product photography editing to Poshmark's visual standards",
       "Pricing strategy accounting for Poshmark's fee structure and negotiation culture",
       "Bundle discount structuring and Offers to Likers management",
@@ -197,7 +197,7 @@ const jsonLd = {
   url: "https://professionalits.com/solutions/marketplace-operations",
   name: "Marketplace Operations",
   description:
-    "Amazon, eBay, Walmart, and more. Listing creation, optimisation, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
+    "Amazon, eBay, Walmart, and more. Listing creation, optimization, Buy Box strategy, suppressed listing management, and competitor intelligence — handled by specialists.",
   provider: { "@id": "https://professionalits.com/#organization" },
   areaServed: ["US", "GB", "AU", "CA", "IN"],
   serviceType: "Marketplace Management",
@@ -291,7 +291,7 @@ export default function MarketplaceOperationsPage() {
             marginBottom: "28px",
           }}
         >
-          Amazon, eBay, Walmart, and more. Listing creation, optimisation, Buy
+          Amazon, eBay, Walmart, and more. Listing creation, optimization, Buy
           Box strategy, suppressed listing management, and competitor
           intelligence — handled by specialists who work in Seller Central every
           day.

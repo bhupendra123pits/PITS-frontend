@@ -10,12 +10,12 @@ export async function POST(req: NextRequest) {
 
     if (!name || !email || !topic) {
       return NextResponse.json(
-        { success: false, error: "Name, email and enquiry topic are required." },
+        { success: false, error: "Name, email and inquiry topic are required." },
         { status: 400 }
       );
     }
 
-    // Save to DB — if this fails the whole request fails (correct behaviour)
+    // Save to DB — if this fails the whole request fails (correct behavior)
     const record = await prisma.contactSubmission.create({
       data: { name, email, topic, message: message || null, hearAbout: hearAbout || null },
     });
@@ -25,10 +25,10 @@ export async function POST(req: NextRequest) {
       await contactTransporter.sendMail({
         from: `"Professional ITS" <info@professionalits.com>`,
         to: process.env.CONTACT_MAIL_RECEIVER,
-        subject: `New Contact Enquiry — ${name}`,
+        subject: `New Contact Inquiry — ${name}`,
         html: `
           <div style="font-family: sans-serif; max-width: 540px; color: #1C1C1C;">
-            <h2 style="color: #2D6A4F;">New Contact Enquiry</h2>
+            <h2 style="color: #2D6A4F;">New Contact Inquiry</h2>
             <table style="width:100%; border-collapse:collapse;">
               <tr style="border-bottom:1px solid #eee;">
                 <td style="padding:8px 0;color:#888;width:160px;">Name</td>

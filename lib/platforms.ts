@@ -74,8 +74,8 @@ export const platforms: Record<string, Platform> = {
         bullets: [
           "Product upload — title, description, price, variants, tags, and metadata",
           "Collection and tag structuring for on-site navigation and search",
-          "Product description writing and SEO optimisation — meta titles, descriptions, and alt text",
-          "Variant setup — size, colour, material — with correct pricing and SKU mapping",
+          "Product description writing and SEO optimization — meta titles, descriptions, and alt text",
+          "Variant setup — size, color, material — with correct pricing and SKU mapping",
           "Inventory level setup and stock tracking configuration",
           "Bulk catalog imports from supplier spreadsheets or existing platform exports",
           "Product deduplication and data cleanup",
@@ -96,7 +96,7 @@ export const platforms: Record<string, Platform> = {
         title: "Customer support",
         body: "We handle your Shopify customer support in your brand voice — keeping response times within SLA and satisfaction scores high.",
         bullets: [
-          "Email and chat support — pre-sale enquiries, order status, returns, and complaints",
+          "Email and chat support — pre-sale inquiries, order status, returns, and complaints",
           "Agreed SLA windows — 4-hour, 12-hour, or 24-hour response times",
           "Returns and refund request management",
           "Shopify Inbox and chat app management",
@@ -117,7 +117,7 @@ export const platforms: Record<string, Platform> = {
     ],
     whySection: {
       title: "Why a Shopify specialist matters",
-      body: "Shopify is deceptively simple to set up and genuinely complex to operate well at scale. Catalog data that's inconsistently structured, images that aren't optimised, and product descriptions that ignore SEO all compound quietly until they're costing you significant revenue. Our team knows Shopify's data model, its SEO requirements, and the operational patterns that keep growing stores running without breaking.",
+      body: "Shopify is deceptively simple to set up and genuinely complex to operate well at scale. Catalog data that's inconsistently structured, images that aren't optimized, and product descriptions that ignore SEO all compound quietly until they're costing you significant revenue. Our team knows Shopify's data model, its SEO requirements, and the operational patterns that keep growing stores running without breaking.",
     },
   },
 
@@ -161,12 +161,12 @@ export const platforms: Record<string, Platform> = {
         body: "BigCommerce's data model supports greater complexity than most platforms — multi-currency, complex variants, custom fields, and channel-specific pricing. We manage that complexity so it doesn't slow you down.",
         bullets: [
           "Product upload — name, description, SKU, price, categories, and custom fields",
-          "Variant and modifier setup — size, colour, custom options with correct pricing rules",
+          "Variant and modifier setup — size, color, custom options with correct pricing rules",
           "Category tree design and product category mapping",
           "Brand page creation and management",
           "Bulk catalog imports via CSV and BigCommerce data tools",
           "Custom field and product specification setup",
-          "SEO field optimisation — page title, meta description, URL, and alt text",
+          "SEO field optimization — page title, meta description, URL, and alt text",
           "Multi-channel listing preparation for Google Shopping, Amazon, and eBay integrations",
         ],
       },
@@ -195,7 +195,7 @@ export const platforms: Record<string, Platform> = {
     ],
     whySection: {
       title: "Why BigCommerce specialist knowledge matters",
-      body: "BigCommerce's flexibility is its strength and its challenge. The platform supports significant customisation — but that means there are many ways to structure catalog data, and the wrong approach creates technical debt that's painful to unpick later. We understand BigCommerce's data model, its channel manager, and how to structure catalogs that work across multiple sales channels without duplication.",
+      body: "BigCommerce's flexibility is its strength and its challenge. The platform supports significant customization — but that means there are many ways to structure catalog data, and the wrong approach creates technical debt that's painful to unpick later. We understand BigCommerce's data model, its channel manager, and how to structure catalogs that work across multiple sales channels without duplication.",
     },
   },
 
@@ -244,7 +244,7 @@ export const platforms: Record<string, Platform> = {
           "Attribute setup and management — global attributes, product-specific attributes, and variation configuration",
           "Product category and tag structure",
           "Bulk product imports via WooCommerce CSV and third-party tools",
-          "Product description writing and SEO optimisation — Yoast and RankMath compatible",
+          "Product description writing and SEO optimization — Yoast and RankMath compatible",
           "Custom field and ACF data management",
           "Product deduplication and catalog cleanup",
           "Upsell and cross-sell product linking",
@@ -256,7 +256,7 @@ export const platforms: Record<string, Platform> = {
         bullets: [
           "Featured image and product gallery setup",
           "Background removal and image editing to store visual standards",
-          "Image compression and optimisation for page load performance",
+          "Image compression and optimization for page load performance",
           "Alt text writing for SEO and accessibility",
         ],
       },
@@ -322,7 +322,7 @@ export const platforms: Record<string, Platform> = {
           "Attribute set design and management — creating structured, reusable product templates",
           "Category tree design, hierarchy management, and product category assignment",
           "Bulk product import via Magento data import tools and custom feeds",
-          "Product description writing and SEO field optimisation",
+          "Product description writing and SEO field optimization",
           "URL key, meta title, and meta description management",
           "Product image upload and alt text management",
           "Tier pricing and customer group pricing configuration",
@@ -395,14 +395,14 @@ export const platforms: Record<string, Platform> = {
     whatWeHandle: [
       {
         title: "Product catalog & data",
-        body: "OpenCart's product management system supports a broad range of product types and customisation options. We manage your catalog to a consistent standard that supports search visibility and buyer confidence.",
+        body: "OpenCart's product management system supports a broad range of product types and customization options. We manage your catalog to a consistent standard that supports search visibility and buyer confidence.",
         bullets: [
           "Product creation — name, description, model, SKU, price, and tax class",
-          "Option and variant setup — size, colour, material with price adjustments",
+          "Option and variant setup — size, color, material with price adjustments",
           "Category creation, hierarchy design, and product assignment",
           "Attribute group and attribute setup for specification data",
           "Bulk product import via OpenCart's built-in import tool and extensions",
-          "Product description writing and SEO field optimisation",
+          "Product description writing and SEO field optimization",
           "Meta title, meta description, and keyword field management",
           "Manufacturer and brand page setup",
           "Related products and product filter configuration",
@@ -414,7 +414,7 @@ export const platforms: Record<string, Platform> = {
         bullets: [
           "Main product image and additional image gallery upload",
           "Background removal and image editing to store standards",
-          "Image compression and optimisation for load performance",
+          "Image compression and optimization for load performance",
           "Alt text management for SEO",
         ],
       },
@@ -477,10 +477,10 @@ export const platforms: Record<string, Platform> = {
         body: "Keeping a Volusion catalog accurate and well-structured requires consistent attention — particularly for stores with large product ranges where bulk management tools are essential.",
         bullets: [
           "Product creation — name, description, SKU, price, and category assignment",
-          "Option and variant setup — size, colour, and other configurable attributes",
+          "Option and variant setup — size, color, and other configurable attributes",
           "Category creation and hierarchy management",
           "Bulk product import and export via Volusion's CSV tools",
-          "Product description writing and SEO field optimisation",
+          "Product description writing and SEO field optimization",
           "Meta title, meta description, and keyword management",
           "Product image upload and management",
           "Inventory level management and stock tracking",
