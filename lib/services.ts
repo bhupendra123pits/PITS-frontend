@@ -183,12 +183,12 @@ export const services: Record<string, Service> = {
     heroHeadline: "Order and inventory operations, ",
     heroEm: "fully managed.",
     description:
-      "Order processing, fulfilment tracking, inventory level monitoring, and reorder point management across your sales platforms. Delivered as a managed service with agreed SLAs.",
+      "Order processing, fulfillment tracking, inventory level monitoring, and reorder point management across your sales platforms. Delivered as a managed service with agreed SLAs.",
     whyItMatters:
       "Order errors and stockouts cost you money and reviews. As order volume grows, manual management breaks down — late shipments, missed reorder points, unsynchronized inventory across channels. We take over the operational layer so nothing falls through the cracks.",
     items: [
-      { title: "Order processing", body: "Orders received, verified, routed to fulfilment, and tracked through to delivery — across all your sales channels." },
-      { title: "Fulfilment tracking", body: "Every order tracked from dispatch to delivery. Exceptions flagged and handled before they become customer complaints." },
+      { title: "Order processing", body: "Orders received, verified, routed to fulfillment, and tracked through to delivery — across all your sales channels." },
+      { title: "fulfillment tracking", body: "Every order tracked from dispatch to delivery. Exceptions flagged and handled before they become customer complaints." },
       { title: "Inventory monitoring", body: "Stock levels monitored across all platforms. Low-stock alerts triggered at your agreed reorder points." },
       { title: "Reorder management", body: "Reorder point management and purchase order initiation. We flag when to reorder so you never run out." },
       { title: "Returns processing", body: "Returns received, inspected, restocked or written off according to your policy. Refunds initiated and tracked." },
@@ -196,7 +196,7 @@ export const services: Record<string, Service> = {
     ],
     includes: [
       "Order processing across all channels",
-      "Fulfilment coordination and tracking",
+      "fulfillment coordination and tracking",
       "Inventory level monitoring",
       "Reorder point alerts and management",
       "Returns and refund processing",

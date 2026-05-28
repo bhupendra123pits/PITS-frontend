@@ -96,7 +96,7 @@ const platformLinks = [
 const marketplaceLinks = [
   { title: "Amazon", sub: "Listings, Buy Box, A+ Content", href: "/marketplaces/amazon" },
   { title: "eBay", sub: "Listings, Promoted Ads, store", href: "/marketplaces/ebay" },
-  { title: "Walmart", sub: "Listings, Buy Box, fulfilment", href: "/marketplaces/walmart" },
+  { title: "Walmart", sub: "Listings, Buy Box, fulfillment", href: "/marketplaces/walmart" },
   { title: "Etsy", sub: "Listings, SEO, shop setup", href: "/marketplaces/etsy" },
   { title: "BestBuy", sub: "Onboarding, listings, compliance", href: "/marketplaces/bestbuy" },
   { title: "Newegg", sub: "Listings, repricing, tech specs", href: "/marketplaces/newegg" },

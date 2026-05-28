@@ -97,7 +97,7 @@ export const marketplaces: Record<string, Marketplace> = {
       },
       {
         title: "Buy Box strategy",
-        body: "The Buy Box drives the overwhelming majority of Amazon sales. Getting there — and staying there — requires the right combination of price, fulfilment method, seller metrics, and inventory levels. We monitor and manage all of these.",
+        body: "The Buy Box drives the overwhelming majority of Amazon sales. Getting there — and staying there — requires the right combination of price, fulfillment method, seller metrics, and inventory levels. We monitor and manage all of these.",
         bullets: [
           "Buy Box eligibility monitoring and improvement",
           "Competitor pricing benchmarking and repricing strategy",
@@ -249,8 +249,8 @@ export const marketplaces: Record<string, Marketplace> = {
         body: "We systematically improve your Walmart content scores — images, descriptions, attributes, and rich media.",
       },
       {
-        title: "Order & fulfilment management",
-        body: "Order processing, fulfilment coordination, tracking updates, and Walmart fulfilment compliance.",
+        title: "Order & fulfillment management",
+        body: "Order processing, fulfillment coordination, tracking updates, and Walmart fulfillment compliance.",
       },
       {
         title: "Performance monitoring",
@@ -276,7 +276,7 @@ export const marketplaces: Record<string, Marketplace> = {
       { n: "99.1%", l: "Listing accuracy" },
       { n: "Content", l: "Score specialists" },
       { n: "Seller Center ", l: "Specialists review" },
-      // { n: "Content Score ", l: "Optimisation" },
+      
 
     ],
     also: ["Amazon", "eBay", "BestBuy", "Newegg"],
@@ -287,7 +287,7 @@ export const marketplaces: Record<string, Marketplace> = {
         bullets: [
           "Seller Center account setup and configuration",
           "Tax and payment information setup",
-          "Shipping template and fulfilment method configuration",
+          "Shipping template and fulfillment method configuration",
           "Category approval support for restricted categories",
         ],
       },
@@ -305,10 +305,10 @@ export const marketplaces: Record<string, Marketplace> = {
       },
       {
         title: "Buy Box & performance",
-        body: "Walmart's Buy Box algorithm weighs price, fulfilment speed, and seller performance. We monitor and manage all three.",
+        body: "Walmart's Buy Box algorithm weighs price, fulfillment speed, and seller performance. We monitor and manage all three.",
         bullets: [
           "Buy Box strategy and competitive pricing analysis",
-          "Order and fulfilment management",
+          "Order and fulfillment management",
           "Performance dashboard monitoring — on-time delivery, cancellation rate, return rate",
           "Walmart Fulfillment Services (WFS) support",
           "Walmart Connect advertising setup and management support",
@@ -344,7 +344,7 @@ export const marketplaces: Record<string, Marketplace> = {
       },
       {
         title: "Order processing",
-        body: "Order acknowledgements, fulfilment coordination, tracking updates, and customer communication.",
+        body: "Order acknowledgements, fulfillment coordination, tracking updates, and customer communication.",
       },
       {
         title: "Customer support",
@@ -477,7 +477,7 @@ export const marketplaces: Record<string, Marketplace> = {
           "Seller account setup via BestBuy's vendor portal",
           "Product category approval support",
           "Tax and payment configuration",
-          "Shipping and fulfilment template setup",
+          "Shipping and fulfillment template setup",
           "Initial catalog submission and compliance checks",
         ],
       },
@@ -499,7 +499,7 @@ export const marketplaces: Record<string, Marketplace> = {
         bullets: [
           "Pricing strategy and competitor monitoring",
           "Content compliance monitoring and error resolution",
-          "Order management and fulfilment tracking",
+          "Order management and fulfillment tracking",
           "Customer question handling",
           "Performance reporting and account health monitoring",
         ],
@@ -687,7 +687,7 @@ export const marketplaces: Record<string, Marketplace> = {
           "Product information updates — seasonal collections, discontinued items, new launches",
           "Customer inquiry handling and specification questions",
           "Review and recommendation management",
-          "Order and fulfilment tracking",
+          "Order and fulfillment tracking",
         ],
       },
     ],
@@ -783,7 +783,7 @@ export const marketplaces: Record<string, Marketplace> = {
           "Super Points campaign strategy and execution",
           "Competitor pricing research and repricing",
           "Customer support — message handling, returns, dispute management",
-          "Order management and fulfilment tracking",
+          "Order management and fulfillment tracking",
         ],
       },
     ],

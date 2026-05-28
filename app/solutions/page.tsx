@@ -69,7 +69,7 @@ const solutions = [
     tagline: "Customer support, order processing, and inventory monitoring — on an SLA you can hold us to.",
     bullets: [
       "Customer support — email, chat, and ticket management",
-      "Order processing and fulfilment coordination",
+      "Order processing and fulfillment coordination",
       "Inventory monitoring and low-stock alerts",
       "Returns and refund handling",
       "Repricing and competitor monitoring",

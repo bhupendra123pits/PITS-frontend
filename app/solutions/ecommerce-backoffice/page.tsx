@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 const services = [
   { title: "Customer support", body: "Email, chat, and marketplace messaging — Amazon, eBay, Shopify. Managed to your SLA with weekly reporting.", icon: "💬" },
-  { title: "Order processing", body: "Order routing, fulfilment coordination, tracking updates, and exception handling. Every order tracked end to end.", icon: "📦" },
+  { title: "Order processing", body: "Order routing, fulfillment coordination, tracking updates, and exception handling. Every order tracked end to end.", icon: "📦" },
   { title: "Inventory monitoring", body: "Stock level alerts, reorder point management, and low-stock notifications before you run out.", icon: "📊" },
   { title: "Repricing", body: "Rule-based repricing execution across Amazon, eBay, and Walmart. Buy Box strategy aligned with your margin targets.", icon: "🏷️" },
   { title: "Returns & refunds", body: "Returns processing, refund management, and dispute resolution — handled according to your policy.", icon: "↩️" },
