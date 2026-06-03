@@ -3,6 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   generateEtags: false,
 
+   experimental: {
+    cpus: 1,
+    workerThreads: false,
+  },
+
   async headers() {
     return [
       {
